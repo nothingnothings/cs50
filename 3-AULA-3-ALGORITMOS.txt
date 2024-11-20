@@ -1,0 +1,5570 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+help50 
+
+
+
+style50 
+
+
+
+check50 
+
+
+
+
+printf 
+
+
+
+
+
+debug50
+
+
+
+
+
+
+
+
+
+ddb --> não sei o que é...
+
+
+
+
+
+duck debugger --> é uma coisa do cs50...
+
+
+
+
+
+
+--> é um pato de borracha no cs50...
+
+
+
+
+
+
+
+
+
+
+
+BLOCO DE MEMÓRIA --> É UM ARRAY...
+
+
+
+
+
+
+score1
+score2
+score3 
+
+
+
+
+
+scores = []
+
+
+
+
+
+
+
+
+
+int scores[3];    (ARRAY DE 3 VALUES, integers)...
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS HÁ 1 CATCH, COM ARRAYS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> COMPUTADORES SÃO METÓDICOS, RÍTMICOS...
+
+
+
+
+
+
+
+
+
+-> COMPUTADORES PODEM APENAS VER 1 LOCALIZAÇÃO, DENTRO DO ARRAY,
+    AT A TIME....
+
+
+
+
+
+--> É DIFERENTE DE NÓS, HUMANOS,
+    QUE PODEMOS 'VIEW EVERYTHING ON THE ARRAY, AT THE SAME TIME'...
+
+
+
+
+
+
+
+
+-> O COMPUTADOR, EM VEZ DISSO,
+    PRECISA DE 1 ALGORITMO PARA VISUALIZAR TUDO DENTRO DO ARRAY...
+
+
+
+
+
+
+
+--> PRECISAMOS 'HIDE' O FACT DE QUE 
+
+    O ARRAY NÃO PODE SER 'SEEN' DE UMA VEZ SÓ...
+
+    QUE PODEMOS APENAS VISUALIZAR 'SOME VALUE IN THE ARRAY, ONE AT A TIME'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O PROBLEMA, AQUI, É UM PROBLEMA DE 'SEARCHING'...
+
+
+
+
+
+
+
+
+-> QUEREMOS TER UM ALGORITMO QUE 'SEARCHES THINGS WELL', BASICAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+-> BASICAMENTE, TEMOS:
+
+
+1) UM INPUT (1 array de números, ou webpages)...
+
+
+
+
+2) OUTPUT -> UM BOOL (yes ou no) --> ''O VALUE QUE VC ESTÁ PROCURANDO É DISCOVERABLE? PODE SER ENCONTRADO DENTRO DO DATA SET'?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O PROFESSOR INTRODUZ MAIS ALGUNS TERMOS,
+
+RELATIVOS 
+
+
+
+
+AO 'RUNTIME'...
+
+
+
+
+
+
+
+
+
+
+
+--> RUNNING TIME...
+
+
+
+
+
+
+
+
+
+
+
+
+''HOW LONG IT TAKES TO RUN'' --> RUNNING TIME... --> QUANTAS ETAPAS TOMA, QUANTAS ITERAÇÕES, QUANTOS SEGUNDOS... ETC..
+
+
+
+
+
+
+
+
+
+
+
+
+--> QUANTO TEMPO  1 ALGORITMO TOMA, BASICAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> AINDA NÃO ATRIBUÍMOS 1 NOME A ESSE 'RUNTIME'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> O RUNTIME DE ALGORITMOS,
+    EM MATEMÁTICA 
+    E 
+    COMPUTAÇAÕ,
+
+
+    FREQUENTEMENTE É REPRESENTADO COM 
+
+    UM 'O',
+     
+     um 'BIG O'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ANTERIORMENTE, O PROFESSOR PROPÔS QUE 
+
+    BUSCÁSSEMOS 1 NÚMERO EM 1 LISTA TELEFÔNICA COM 'STEPS' De metade, metade, metade, para 
+
+    acelerar o processo um monte (bem mais rápido do que procurar 1 por 1, os números 
+    dentro da lista...)..
+
+
+
+
+
+
+
+
+
+
+-> o approach do professor, naquela aula, tinha sido logarítmico (log2n), 
+    pq fomos dividindo por 2 várias vezes...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> CIÊNCIAS DE COMPUTAÇÃO 
+
+    REPRESENTARIAM COMO 
+
+
+
+    'O(n)'
+
+
+
+    'O(n/2)'
+
+
+
+    'O(log2n)'
+
+
+
+
+
+
+
+
+
+
+
+--> CIÊNCIAS DA COMPUTAÇÃO 
+
+
+TENDEM A FOCAR APENAS 
+
+
+NAS COISAS 'DOMINANTES' (qual fator vai CRESCER mais do que os outros)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O (n2) 
+
+    O (n log n)
+    
+    O(n)
+
+    O(log n)
+
+    O(1)
+
+
+
+
+
+
+
+
+
+
+    O(1) -> SIGNIFICA QUE UM ALGORITMO TOMA APENAS 1 ETAPA...
+
+
+
+
+
+
+    O(n2) --> SIGNIFICA QUE O ALGORITMO VAI TOMAR MAIS E MAIS ETAPAS... É MAIS LENTO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OMEGA --> SÍMBOLO DE OMEGA -> É UMA REPRESENTAÇÃO DO __ OPOSTO...
+
+
+
+
+            ''WHAT IS THE LOWER 
+            BOUND, ON THE RUNNING TIME OF THE 
+            ALGORITHM??''
+
+
+
+
+
+
+
+
+
+
+
+
+--> QUER DIZER QUE É UM LIMITE INFERIOR... O MÍNIMO DE ETAPAS 
+
+QUE 1 ALGORITMO PODE TER...
+
+
+
+
+
+
+
+--> E O 'O' significa o MÁXIMO DE ETAPAS QUE 1 ALGORITMO PODE TER...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''LINEAR SEARCH''' --> É AQUELE PRIMEIRO APPROACH DE PROCURAR 
+                        NA LISTA TELEFÔNICA, 1 NÚMERO POR VEZ,
+                        BEM LENTAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+--> PRECISAMOS SER MAIS METÓDICOS,
+PARA CONVERTER A IDEIA DE BROWSE 
+A LISTA TELEFÔNICA 
+
+
+EM 1 CÓDIGO DE VERDADE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PROFESSOR FICA COM 7 PORTAS,
+
+E ATRÁS DE CADA 1 DELAS, TEMOS 1 NÚMERO...
+
+
+
+
+
+
+
+
+
+
+
+--> ''SEARCHING FOR A NUMBER, IN AN ARRAY,
+    IS QUITE EQUIVALENT TO SEARCHING FOR A NUMBER 
+    BEHIND CLOSED DOORS''...
+
+
+
+
+
+
+
+
+
+--> PRECISAMOS 
+    BOLAR 1 ALGORITMO PARA ABRIR ESSAS PORTAS
+     (da esquerda para direita, inside-out, out-inside, etc etc)...
+
+
+
+
+    
+
+
+
+
+
+
+
+-> POR EXEMPLO, SUPONHA QUE O PROFESSOR QUER PROCURAR PELO NÚMERO 0...
+
+
+
+COMO ELE PROCURARIA ESSE NÚMERO, DENTRO DE ESSAS PORTAS?
+
+
+
+
+
+
+
+começamos pela esquerda...
+
+
+
+
+
+
+
+
+0 --> não...
+
+
+
+
+1 --> não 
+
+
+3 ---> não 
+
+
+
+último número --> 0...
+
+
+
+
+
+
+
+
+
+
+
+
+--> números são totalmente aleatórios, nesse array-exemplo...
+
+
+
+
+
+
+
+
+-> checar os values por trás de cada 1 das portas, 1 por vez... --> LINEAR SEARCH... DEMORA MT...
+
+
+
+
+
+
+
+
+
+
+
+
+For i from 0 to n-1
+    If number behind i'th door 
+        Return true
+    Return False
+
+
+
+
+
+
+
+isso é PSEUDOCÓDIGO...
+
+
+
+n -> número de portas...
+
+
+
+
+
+
+number --> 0, por exemplo...
+
+
+
+
+
+
+O 'False' não é parte de um else...
+
+
+
+
+
+
+
+--> o Return False só é executado 
+
+    SE NADA É ENCONTRADO, DENTRO DO ARRAY...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> QUAL É A EFICIÊNCIA DO LINEAR SEARCH?
+
+
+
+
+
+
+
+--> NÃO É MT BOA...
+
+
+
+    É TIPO 'O'...
+
+
+
+
+
+--> O --> RUNTIME...
+
+
+
+
+
+
+
+
+
+OU SEJA,
+
+É 
+
+
+'O(n)'
+
+
+
+
+
+
+
+
+(que significa que TEREMOS MAIS ETAPAS, MAIS DEMORA,
+    SE TIVERMOS MAIS ELEMENTOS NO ARRAY...)
+
+
+
+
+
+
+
+
+
+
+
+LOWER LIMIT OF RUNTIME --> NESSE CASO, É 'OMEGA(1)' ... ISSO PQ VC PODE ACABAR SENDO 'LUCKY', E ABRIR O ELEMENTO DE PRIMEIRA...
+
+
+
+
+
+
+
+
+
+MAS O UPPER BOUND 
+
+é 
+
+
+
+'O(n)'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS TEMOS OUTRO ALGORITMO NO NOSSO TOOLKIT... É 
+
+AQUELE ALGORITHM DE 'SPLIT BY HALF' VÁRIAS VEZES...
+
+
+
+
+
+
+
+
+
+
+-> ESSE TIPO DE SEARCH É 'BINARY SEARCH'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> QUEREMOS ENCONTRAR O NÚMERO 6, DENTRO DE ESSE ARRAY...
+
+
+
+
+
+
+
+
+
+
+--> OK, MAS O PROFESSOR LANÇA 1 PERGUNTA:
+
+'''POR QUE NÓS, ANTERIORMENTE, NÃO 
+    CONSEGUIMOS USAR BINARY SEARCH???'''
+
+
+
+
+
+
+
+
+
+--> ISSO É PQ, ANTERIORMENTE, NÃO TÍNHAMOS 
+    CERTEZA SE OS NÚMEROS ESTAVAM 'SORTED' OU NÃO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> OK... MAS AGORA OS NÚMEROS ESTÃO SORTED...
+
+
+
+
+
+--> COM ESSE SORTING, PODEMOS COMEÇAR 
+    DO MEIO... 
+
+
+
+
+
+    COMEÇAMOS DO MEIO, ARRAY DE 7 ITEMS....
+
+
+
+
+
+
+
+
+--> ABRIMOS '5'...
+
+
+
+
+
+
+--> QUER DIZER QUE O ITEM DESEJADO PROVAVELMENTE É O PRÓXIMO...
+
+
+
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+      ^
+2 3 4 5 6 7 8
+
+
+
+
+
+
+
+
+
+
+depois ASSIM:
+
+      ^   ^
+2 3 4 5 6 7 8
+
+
+
+
+
+FINALMENTE, ENCONTRAMOS O ELEMENTO, QUE FICA NO MEIO:
+
+
+
+
+
+      ^ O ^
+2 3 4 5 6 7 8
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> QUER DIZER QUE 
+
+    PODEMOS APLICAR O ALGORITMO DE 'BINARY SEARCH' 
+
+    __ APENAS___ SE SEUS ELEMENTS ESTÃO 
+    'SORTED'...
+
+
+
+
+
+
+
+
+
+-> OK... MAS COMO PODEMOS IMPLEMENTAR ESSE BINARY SEARCH,
+        COM PSEUDOCODE?
+
+
+
+
+
+
+
+
+
+
+    TIPO ASSIM:
+
+
+
+
+
+    If no doors
+        return False
+    If number behind middle door
+        Return true 
+    Else if number < middle door
+        Search left half
+    Else if number > middle door 
+        Search right half
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    OK...
+
+
+
+
+
+
+RECAPITULANDO:
+
+
+
+
+
+
+     O (n2) 
+
+    O (n log n)
+    
+    O(n)   linear search 
+
+    O(log n)
+
+    O(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAS QUAL SERIA O RUNTIME DO 'binary search'?
+
+
+
+
+
+
+
+
+
+
+     O (n2) 
+
+    O (n log n)
+    
+    O(n) 
+
+    O(log n) binary search
+
+    O(1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> ok... mas qual é o lower bound 
+    nesse algorithm?
+
+
+
+
+
+
+
+
+
+
+--> NO BEST CASE,
+    O LOWER BOUND 
+
+    É 
+
+
+    DE 'Omega(one)', exatamente como o algoritmo do linear search...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> binary search, basicamente, é bem mais 
+    eficiente... bem melhor.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PODEMOS TRADUZIR ISSO PARA CÓDIGO, AGORA...
+
+
+
+
+
+
+
+
+
+
+criamos um arquivo chamado de 'numbers.c'...
+
+
+
+
+
+
+
+
+
+VAI FICANDO TIPO ASSIM:
+
+
+
+
+
+#include <stdio.h>
+#include <cs50.h>
+
+
+int main(void) 
+{
+
+
+    int numbers[] = { 4, 6, 8, 2, 7, 5, 0 };
+    
+
+}
+
+
+
+
+
+
+
+esse é um truque para definir os values dentro do array, sem 
+declarar o tamanho do array... o compiler já faz isso, automaticamente, para nós...
+
+
+
+
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <cs50.h>
+
+
+int main(void) 
+{
+
+
+    int numbers[] = { 4, 6, 8, 2, 7, 5, 0 };
+    
+    for (int i = 0; i < 6; i++) {
+        if (numbers[i] === 0) {
+            printf("Found a zero\n");
+            return 0;
+        }
+
+        printf("Not Found\n");
+        return 1;
+    }
+}
+
+
+
+0 é uma boa coisa, nesse caso...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> agora vamos escrever 1 programa que procura por nomes,
+e não números...
+
+
+
+
+
+
+
+--> arquivo de 'names.c'..
+
+
+
+
+
+
+
+
+-> ESCREVEMOS TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    // Alphabetical order
+    string names[] = { "Bill", "Charlie", "Fred", "George", "Ginny", "Percy", "Ron" };
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+estão em ordem alfabética...
+
+
+
+
+
+
+
+
+podemos procurar essas strings, mas primeiramente 
+
+
+sem considerar a ordem alfabética (com linear search), tipo assim:
+
+
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    // Alphabetical order
+    string names[] = { "Bill", "Charlie", "Fred", "George", "Ginny", "Percy", "Ron" };
+
+
+    for (int i = 0; i < 6; i++) {
+        if (names[i] == "Ron") { 
+            printf("Ron is at index %i\n", i);
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... MAS AQUI TEMOS 1 PROBLEMA...
+
+
+
+
+
+
+
+VC NÃO PODE PRINTAR O 'Ron' dessa forma aí,
+
+diretamente... é bem diferente do que acontece com python e em outras 
+
+languages, em que podemos CHECAR POR 1 STRING, DIRETAMENTE...
+
+
+
+
+
+em C, vc não pode checar pelo value de 1 string, diretamente...
+
+
+
+
+
+
+
+
+EM C, VC NÃO PODE FAZER ISSO...
+
+
+
+
+
+
+
+
+
+
+
+
+MAS, POR ENQUANTO,
+
+
+O C CONSEGUE RESOLVER ISSO HISTORICAMENTE...
+
+
+
+
+ELE RESOLVE ISSO, NO CASO,
+
+COM UMA FUNCTION,
+
+A FUNCTION DE 'strcmp()'...
+
+
+
+
+
+
+
+'strlen()'
+
+
+e 
+
+
+
+'strcomp()',
+
+
+
+
+STRING COMPARE...
+
+
+
+
+
+
+-> te deixa passar 2 strings, que são comparadas...
+
+
+
+
+
+
+
+
+-> É TIPO ASSIM:
+
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    // Alphabetical order
+    string names[] = { "Bill", "Charlie", "Fred", "George", "Ginny", "Percy", "Ron" };
+
+
+    for (int i = 0; i < 6; i++) {
+        // if (names[i] == "Ron") {  // ! THIS DOES NOT WORK (we can't compare strings directly, ''all at once'', because of the limitations of C). So, to solve this, we use 'strcmp()' instead, to compare two strings.
+           if (strcmp(names[i], "Ron") == 0) {
+            printf("Ron is at index %i\n", i);
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+ESSA FUNCTION VAI COMPARAR 2 STRINGS... 
+
+
+
+DEPOIS, VAI RETORNAR 3 POSSIBLE VALUES:
+
+
+
+
+
+1) EQUAL STRINGS, LETTER FOR LETTER --> RETORNA '0'...
+
+
+
+
+
+2) ''IF THE FIRST STRING IS SUPPOSED TO 
+    COME BEFORE THE SECOND STRING, AlphabeticalLY,
+    IT RETURNS A NEGATIVE VALUE...''
+
+
+
+
+3) ''IF THE FIRST STRING IS SUPPOSED TO COME AFTER THE SECOND STRING,
+    AlphabeticalY, IT RETURNS A __ POSITIVE VALUE''..
+
+
+
+
+
+
+
+
+
+-> e esses 'negative' e 'positive' values 
+    PODEM SER QUAISQUER VALUES... VC TEM QUE CHECAR POR QUALQUER VALUE 
+    POSITIVO E QUALQUER VALUE NEGATIVO...
+
+
+
+
+
+
+
+
+
+--> MAS ESSA FUNCTION NÃO CHECA ESSAS STRINGS POR ORDEM ALFABÉTICA,
+    E SIM CHECA POR 'ASCII ORDER'... OU 'ASCII-BETICALLY'...
+
+
+
+
+
+--> QUER DIZER QUE ESSA FUNCTION VAI:
+
+    1) CHECAR CADA CARACTER, NAS 2 STRINGS...
+
+
+    2) AÍ CALCULA O ASCII VALUE DAS 2 STRINGS...
+
+
+    3) AÍ COMPARA OS ASCII VALUES DESSAS STRINGS,
+        CHARACTER POR CHARACTER...
+
+
+
+
+
+
+Arthur --> A vira 64
+
+
+
+Andre --> A vira 64
+
+
+
+'n' --> vira um numero maior do que 'r...
+
+
+
+
+
+
+
+--> A COMPARAÇÃO ACABA NO NULL TERMINATOR (aquele caracter 0, no final de cada string)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    // Alphabetical order
+    string names[] = { "Bill", "Charlie", "Fred", "George", "Ginny", "Percy", "Ron" };
+
+
+    for (int i = 0; i < 6; i++) {
+        // if (names[i] == "Ron") {  // ! THIS DOES NOT WORK (we can't compare strings directly, ''all at once'', because of the limitations of C). So, to solve this, we use 'strcmp()' instead, to compare two strings.
+           if (strcmp(names[i], "Ron") == 0) 
+            {
+            printf("Ron is at index %i\n", i);
+            }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O programa funcionaria 
+
+
+
+
+com 'RON'?
+
+
+
+
+
+--> funciona...
+
+
+
+mas funcionou por conta de um bug...
+
+
+
+
+
+
+
+
+
+
+--> o bug foi causado por conta da falta de compare...
+
+
+
+pq o professor havia escrito assim:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+           if (strcmp(names[i], "Ron")) 
+            {
+            printf("Ron is at index %i\n", i);
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+mas a questão é que 'RON' 
+
+
+
+não deve ser encontrado...
+
+
+
+
+
+
+
+
+'Not found'...
+
+
+
+
+
+
+
+
+
+--> quer dizer que é case-sensitive, basicamente...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR INTRODUZ UMA NOVA FEATURE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR DIZ QUE ÀS VEZES VAMOS QUERER CRIAR NOSSOS PRÓPRIOS DATA TYPES...
+
+
+
+
+
+
+
+
+
+
+EX: PHONE BOOK..
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR QUER TER 1 DATA TYPE QUE TENHA 1 ESTRUTURA,
+
+E QUE CONSIGA ARMAZENAR 
+
+NAMES E NUMBERS..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR QUER CRIAR 1 DATA TYPE DE NOME 'PERSON',
+
+
+
+COM NAMES E NUMBERS..
+
+
+
+
+
+
+
+
+
+ISSO NÃO EXISTE NO C NATIVO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> NAME E NUMBER, AMBOS DE TIPO STRING....
+
+
+
+
+
+
+
+
+
+
+PHONE NUMBERS DEVEM SER ESCRITOS COMO STRINGS, E NÃO NUMBERS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... MAS COMO PODEMOS CRIAR ESSE DATA TYPE?
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O C NOS DÁ ESSA SINTAXE:
+
+
+
+
+
+
+
+
+
+
+
+
+typedef struct 
+{
+    string name;
+    string number;
+}
+person; 
+
+
+
+
+
+
+'typedef'
+
+
+TE DEIXA DEFINIR 1 TYPE...
+
+
+
+
+
+
+
+E TYPES SERÃO DATA STRUCTURES, BASICAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+--> COM TYPEDEF E A KEYWORD DE 'struct',
+
+
+podemos criar nossos próprios data types,
+
+
+
+
+fazer tipo objects...
+
+
+
+
+
+
+
+
+typedef struct 
+{
+    string name;
+    string number;
+}
+person;
+
+
+
+
+
+
+
+
+
+
+MAS COMO PODEMOS UTILIZAR ESSA FEATURE?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---> PRIMEIRO, DEVEMOS VER COMO PODEMOS ESCREVER NOSSO CÓDIGO SEM ESSA FEATURE,
+
+PARA CONSTATAR O QUÃO ÚTIL ELA SERÁ...
+
+
+
+
+
+
+
+CRIAMOS UM ARQUIVO CHAMADO DE 'phonebook.c'...
+
+
+
+-> ESCREVEMOS TIPO ASSIM:
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+
+int main(void) {
+
+    string names[] = { "Brian", "David"};
+    string numbers[] = {'+1-212-555-1212', '+1-212-555-1213'};
+
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> O PRIMEIRO NOME É ASSIGNADO AO PRIMEIRO NUMBER,
+
+E POR AÍ VAI...
+
+
+
+
+
+
+
+
+
+
+--> AÍ ESCREVEMOS UM FOR LOOP,
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+
+int main(void) {
+
+    string names[] = { "Brian", "David"};
+    string numbers[] = {'+1-212-555-1212', '+1-212-555-1213'};
+
+    for (int i = 0; i < 2; i++) {
+
+        if (strcmp(names[i], "David") == 0) {
+            printf("Found %s\n", numbers[i]);
+            return 0;
+        }
+    }  
+
+    printf("Not found\n");
+    return 1;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... COM ISSO, CRIAMOS ESSE PHONEBOOK RÚSTICO...
+
+
+
+
+
+
+
+
+
+
+ENCONTRAMOS O NOME 'David',
+
+e aí o number dele...
+
+
+
+
+
+
+
+
+
+
+-> MAS PQ O DESIGN DESSE CÓDIGO NÃO É O MELHOR?
+
+
+
+
+
+
+
+
+-> O PROBLEMA É QUE OS DADOS NÃO ESTÃO AGRUPADOS,
+NÃO ESTÃO LINKADOS...
+
+
+
+
+
+
+
+
+-> SEMPRE É MELHOR ESCREVER UM CÓDIGO 'SELF-DEFENSIVE'...
+
+
+
+
+
+--> TUDO PARA EVITAR ERROS...
+
+
+
+
+
+
+
+
+
+
+
+--> VC SEMPRE PODE COMETER ERRORS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> É MT FÁCIL FAZER MESS UP DA ORDER DE ESSES ITEMS DO ARRAY...
+
+
+
+
+
+
+
+
+
+--> É POR ISSO QUE OBJECTS SÃO BONS,
+    PODEMOS AGRUPAR DATA...
+
+
+
+
+
+
+
+
+
+
+
+
+É POR ISSO QUE O PROFESSOR ESCREVE ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+
+
+typedef struct 
+{
+    string name;
+    string number;
+} 
+person;
+
+
+
+
+
+
+
+
+
+
+--> COM ISSO, PODEMOS MUDAR O CÓDIGO INFERIOR,
+
+
+CRIAR 1 ARRAY DE PERSONS... TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+typedef struct 
+{
+    string name;
+    string number;
+} 
+person;
+
+
+int main(void) {
+
+    person people[2];
+
+    people[0].name = "Brian";
+    people[0].number = "12211920220";
+
+    people[1].name = "David";
+    people[1].number = "121212211421";
+
+    for (int i = 0; i < 2; i++) {
+
+        if (strcmp(names[i], "David") == 0) {
+            printf("Found %s\n", numbers[i]);
+            return 0;
+        }
+    }  
+
+    printf("Not found\n");
+    return 1;
+
+}
+
+
+
+
+
+
+
+
+Ex:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// This is how you define data structures (like objects), in C...
+typedef struct 
+{
+    string name;
+    string number;
+} 
+person;
+
+
+int main(void) {
+
+    person people[2];
+
+    people[0].name = "Brian";
+    people[0].number = "12211920220";
+
+    people[1].name = "David";
+    people[1].number = "121212211421";
+
+    for (int i = 0; i < 2; i++) {
+        if (strcmp(names[i], "David") == 0) {
+            printf("Found %s\n", numbers[i]);
+            return 0;
+        }
+    }  
+
+    printf("Not found\n");
+    return 1;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAS PRECISAMOS USAR A DOT NOTATION NO FOR LOOP,
+
+TAMBÉM..
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+// This is how you define data structures (like objects), in C...
+typedef struct 
+{
+    string name;
+    string number;
+} 
+person;
+
+
+int main(void) {
+
+    person people[2];
+
+    people[0].name = "Brian";
+    people[0].number = "12211920220";
+
+    people[1].name = "David";
+    people[1].number = "121212211421";
+
+    for (int i = 0; i < 2; i++) {
+        if (strcmp(people[i].name, "David") == 0) {
+            printf("Found %s\n", people[i].number);
+            return 0;
+        }
+    }  
+
+    printf("Not found\n");
+    return 1;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COM ISSO, FICAMOS COM 1 CÓDIGO MAIS VERBOSE,
+
+MAS MAIS WELL-DESIGNED,
+
+
+PQ AGRUPAMOS A DATA TUDO EM 1 OBJECT...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> É ASSIM QUE GOOGLE, INSTAGRAM, FACEBOOK E ETC
+
+
+ARMAZENAM A DATA DE SEUS USERS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ESCREVEM CÓDIGO COM ESSA ENCAPSULAÇÃO,
+
+    ESSA DATA STRUCTURE...
+
+
+
+
+
+
+
+
+
+
+
+
+-> ENCAPSULATION...
+
+
+
+
+
+
+
+
+
+
+
+--> ENCAPSULATION EXISTE TAMBÉM EM C,
+
+PORTANTO... ISSO 
+NOS DEIXA MANTER RELATED DATA AGRUPADA..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> É NORMAL DEFINIR DATA STRUCTURES NO LADO DE FORA DE 'main()'?
+
+
+
+
+
+SIM...
+
+
+
+
+
+
+
+
+
+
+MAIS FEATURES --> MAIS FUNCTIONS... --> VC QUER QUE SUA DATA STRUCTURE FIQUE DISPONÍVEL A TODAS ESSAS FUNCTIONS...
+
+
+
+
+
+
+
+
+EVENTUALMENTE, VAMOS DEFINIR ESSAS DATA STRUCTURES EM HEADER FILES EXTERNAS, CRIADAS 
+POR NÓS...
+
+
+
+
+
+
+
+
+
+
+
+
+--> RETURN 0 E 1...
+
+
+
+
+
+
+
+
+
+--> EVENTUALMENTE, VAMOS USAR ISSO COM TRY E CATCH BLOCKS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> o professor adapta o código, deixa tipo assim:
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+
+// int main(void) {
+
+//     string names[] = { "Brian", "David"};
+//     string numbers[] = {'+1-212-555-1212', '+1-212-555-1213'};
+
+//     for (int i = 0; i < 2; i++) {
+
+//         if (strcmp(names[i], "David") == 0) {
+//             printf("Found %s\n", numbers[i]);
+//             return 0;
+//         }
+//     }  
+
+//     printf("Not found\n");
+//     return 1;
+
+// }
+
+
+
+
+
+// This is how you define data structures (like objects), in C...
+typedef struct 
+{
+    string name;
+    string number;
+} 
+person;
+
+
+
+const inst NUMBER = 10;
+
+
+int main(void) {
+
+    person people[NUMBER];
+
+    people[0].name = "Brian";
+    people[0].number = "12211920220";
+
+    people[1].name = "David";
+    people[1].number = "121212211421";
+
+    for (int i = 0; i < 2; i++) {
+        if (strcmp(people[i].name, "David") == 0) {
+            printf("Found %s\n", people[i].number);
+            return 0;
+        }
+    }  
+
+    printf("Not found\n");
+    return 1;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+MAS AINDA PRECISAMOS HARDCODAR TODAS ESSAS PESSOAS... O QUE NÃO É BOM...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> EVENTUALMENTE, VEREMOS COMO ARMAZENAR ISSO EM 1 DATABASE...
+
+
+
+
+MAS, POR ENQUANTO, PODEMOS FAZER TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+
+// int main(void) {
+
+//     string names[] = { "Brian", "David"};
+//     string numbers[] = {'+1-212-555-1212', '+1-212-555-1213'};
+
+//     for (int i = 0; i < 2; i++) {
+
+//         if (strcmp(names[i], "David") == 0) {
+//             printf("Found %s\n", numbers[i]);
+//             return 0;
+//         }
+//     }  
+
+//     printf("Not found\n");
+//     return 1;
+
+// }
+
+
+
+
+
+// This is how you define data structures (like objects), in C...
+typedef struct 
+{
+    string name;
+    string number;
+} 
+person;
+
+
+int main(void) {
+
+    person people[2];
+
+
+    for (int i = 0; i < NUMBER; i++) {
+        people[i].name = get_string("What's their name?\n");
+        people[i].number = get_string("What's their number?\n");
+    }
+
+    for (int i = 0; i < 2; i++) {
+        if (strcmp(people[i].name, "David") == 0) {
+            printf("Found %s\n", people[i].number);
+            return 0;
+        }
+    }  
+
+    printf("Not found\n");
+    return 1;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+QUEREMOS TER BINARY  SEARCH, AGORA, EM VEZ DE LINEAR SEARCH...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> PRECISAMOS DE SORTED NUMBERS... OU SORTED NAMES...
+
+
+
+
+
+
+
+
+
+--> PRECISAMOS DISSO PARA CONSEGUIR APLICAR O BINARY SEARCH...
+
+
+
+
+
+
+
+
+
+--> O GOOGLE E FACEBOOK USAM ALGORITMOS COMO BINARY SEARCH PARA ENCONTRAR ITEMS 
+RAPIDAMENTE, DENTRO DE ARRAYS, ARRAYS QUE JÁ ESTÃO SORTED IN ADVANCE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+INPUT --> [ ALGORITHM ] -> OUTPUT...
+
+
+
+
+
+
+
+
+
+
+
+--> QUEREMOS APLICAR SORTING, NO ALGORITHM...
+
+
+
+
+
+
+
+
+
+
+
+PARA ISSO, PROVAVELMENTE VAMOS USAR O 'strcmp()',
+
+
+PARA COMPARAR STRINGS E 
+
+
+
+ORDENAR ALFABETICAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+pergunta:
+
+
+
+
+
+
+
+''IN WHICH CASES CAN LINEAR SEARCH BE BETTER THAN BINARY SEARCH?''
+
+
+
+
+
+
+
+
+--> MAYBE ERRORS IN THE CODE...
+
+
+
+
+
+
+
+--> ''BINARY SEARCH'' --> IS MORE DIFFICULT THAN LINEAR SEARCH...
+
+
+
+
+
+
+
+
+--> BINARY SEARCH --> INVOLVES ROUNDING DOWN, ROUNDING UP...
+
+    
+
+
+
+
+
+
+
+
+
+--> binary search --> já foi implementado várias vezes, ao longo dos anos...
+
+
+
+
+
+
+
+
+
+-> SE TEMOS 1 SMALLER DATASET,
+
+TIPO APENAS 1 ÚNICO ITEM,
+
+
+
+
+SERÁ MAIS RÁPIDO...
+
+
+
+
+
+
+
+
+
+
+TRADE-OFF:
+
+
+
+TIME 
+
+
+VS 
+
+
+COMPLEXITY...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+''MINIMIZE THE AMOUNT OF MEMORY 
+
+THAT OUR PROGRAM TAKES WHILE RUNNING''...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> SORTING...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> COMO O SORTING DE 1 MÁQUINA,
+
+
+
+
+O "SELECTION SORT",
+
+tipo de sorting mais básicoo,
+
+
+
+é feito:
+
+
+
+
+
+
+
+
+
+
+
+    For i from 0 to n - 1
+        Find smallest item between i'th item and last item 
+        Swap smallest item with i'th item
+
+
+
+
+
+
+
+
+
+
+
+Selection sort... --> demora bastante...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> o tempo que demorou foi:
+
+
+
+
+
+n + (n - 1) + (n - 2) + ... + 1
+
+
+
+É SIMPLIFICADO COMO:
+
+
+
+n(n+1)/2 
+
+
+
+
+
+
+
+(n2 + n)/2
+
+
+
+
+que fica assim:
+
+
+
+n2/2 + n/2
+
+
+
+
+
+
+
+
+
+
+MAS É MELHOR USAR A 'BIG O' NOTATION...
+
+
+
+
+
+--> QUANTO MAIOR O PHONEBOOK,
+
+MAIS PORTAS TEMOS,
+
+MAIS LUZES TEMOS...
+
+
+
+
+
+E FICA CADA VEZ MAIOR...
+
+
+
+
+
+QUAL É O FATOR QUE REALMENTE IMPORTA,
+
+
+
+A MEDIDA QUE O 'n' fica cada vez maior?
+
+
+
+
+
+
+--> 'n2' --> O n2 é o que realmente importa...
+
+
+
+
+
+
+
+QUER DIZER QUE O QUE REALMENTE IMPORTA É 
+
+
+
+'O(n2)'...
+
+
+
+
+
+
+
+
+
+
+--> QUER DIZER QUE O PROBLEMA DE VERDADE É O 'TAMANHO DA LISTA',
+
+    a quantidade de items... 
+
+
+
+
+
+
+
+
+
+-> SELECTION SORT...
+
+
+
+
+
+
+O(n2) selection sort 
+
+
+
+
+
+
+
+
+
+
+
+
+selection sort não é bom, é comum, mas não é bom... é um algoritmo de search 
+bem ruim...
+
+
+
+
+
+
+--> o professor acha que podemos melhorar bastante...
+
+
+
+
+
+--> devemos examinar outro algoritmo, de nome 
+
+'bubble sort'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+BUBBLE SORT:
+
+
+
+
+
+--> ''WE LOOK AT PAIR OF NUMBERS, ADJACENT TO ONE ANOTHER''...
+
+
+
+
+
+
+
+
+
+
+
+
+-> ex:
+ 
+
+ 6 3 8 5 2 7 4 1
+
+
+
+
+
+
+
+
+
+ 6 3 --> É O PRIMEIRO PAR DE NÚMEROS, NO ARRAY...
+
+
+         ESTÁ FORA DE ORDEM, O 3 DEVE FICAR NA ESQUERDA, E O 6 NA DIREITA...
+
+
+
+
+
+ 6 8 --> ESSE PAR JÁ ESTÁ OK...
+
+
+
+ 8 5 --> O 8 É MAIOR DO QUE O 5... DEVEMOS INVERTER...
+
+
+
+ 8 2 --> O 8 É MAIOR DO QUE O 2, ENTÃO TROCAMOS OS 2...
+
+
+
+
+
+ 8 7 --> DEVEMOS TROCAR O 7 PELO 8...
+
+
+
+
+ 8 4 --> 8 É MAIOR DO QUE 4, DEVEMOS TROCAR NOVAMENTE...
+
+
+
+ 8 1 --> TROCAMOS NOVAMENTE, DE LUGAR, OS 2 NÚMEROS...
+
+
+
+
+
+
+
+ NO FINAL, FICOU TIPO ASSIM:
+
+
+
+
+
+ 3 6 5 2 7 4 1 8
+
+
+
+
+
+
+
+
+
+ no final das contas, não ficou tão sorted assim...
+
+
+
+
+
+
+
+
+--> os resultados bons, disso aí:
+
+
+
+o 1 moveu 1 etapa para a esquerda... e o 8 agora está posicionado no lugar correto.
+
+
+
+o 8 ficou bem posicionado pq 
+
+
+ele foi sendo 'empurrado' até a parte bem do final...
+
+
+
+
+
+
+
+
+
+
+o nome de esse algoritmo é 'BUBBLE' SORT 
+
+justamente pq os NÚMEROS MAIORES ACABAM 'bubbling' até a parte 
+
+mais da direita...
+
+
+
+
+
+
+
+
+
+mas o negócio está melhor do que antes...
+
+
+
+
+
+
+
+
+
+--> PODEMOS CONTINUAR, REPETINDO ESSE PROCESSO..
+
+
+
+
+
+
+
+
+CADA VEZ QUE REPETIRMOS O PROCESSO, O 1 VAI 
+
+ir mais para o início... 1 casa por vez...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> É UM APPROACH TOTALMENTE DIFERENTE, MAS LEVOU AO MESMO RESULTADO....
+
+
+
+
+
+
+
+
+--> FOI MAIS EFICIENTE DO QUE O PRIMEIRO APPROACH?
+
+
+
+
+'fix all the tiny bite-sized problems, 
+    until the bigger problem is resolved'' 
+
+
+    (foi isso que aconteceu, basicamente)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ISSO FOI MAIS RÁPIDO?
+
+
+
+
+
+
+
+
+
+SELECTION SORT --> É BEM RUIM, ATÉ MESMO EM TERMOS DE 'LOWER BOUND', LOWER LIMIT, do omega...
+
+
+
+
+
+
+
+
+
+
+
+É OMEGA2, o tempo fica cada vez pior...
+
+
+
+
+
+
+
+
+
+
+
+-> QUER DIZER QUE O SELECTION SORT NÃO É NADA OPTIMIZADO, NEM PARA O 'BEST-CASE SCENARIO' (todos os numbers já 'ordered')...
+    
+    isso pq ainda teríamos de certificar isso, com TODOS OS NÚMEROS, TODAS AS CASAS, 1 casa por vez...
+
+
+
+
+
+
+
+
+
+
+
+--> MAS O BUBBLE SORT PROVAVELMENTE É DIFERENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+O BUBBLE SORT FICA TIPO ASSIM:
+
+
+
+
+
+
+
+
+    Repeat until sorted 
+        For i from 0 to n-2
+            If i'th and i+1'th elements out of order 
+                Swap them
+
+
+
+
+
+
+
+
+
+
+
+                o '(n -2 )' foi usado para evitar um BUG, evitar o check além do array que temos 
+                ali... evitar tocar na MEMÓRIA...
+
+
+
+
+
+
+
+
+
+
+
+
+OK... MAS COMO FICA O 'BEST CASE SCENARIO',
+
+
+no caso do bubble sort ?
+
+
+
+
+
+
+
+
+
+
+
+--> fica bem melhor... 
+    pq não tivemos de swappar nenhuma vez,
+
+
+    nenhum swap foi necessário, o que quer dizer que 
+    os items já estão sortados... quer dizer que o loop nem mesmo 
+
+    roda outra vez... roda apenas 1 vez, e para...
+
+
+
+
+    TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+        Repeat n-1 times 
+            For i from 0 to n-2
+                If i'th and i+1'th elements out of order 
+                    Swap them 
+            If no swaps 
+                    Quit
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+    OK, MAS COMO FICA ESSE ALGORITMO, COM O 'WORST CASE SCENARIO'?
+
+
+
+
+
+
+
+
+
+
+
+
+fica tipo assim:
+
+
+
+
+
+(n - 1) * (n - 1)
+
+
+n2 -2n + 1
+
+
+
+
+
+
+
+
+
+
+O UPPER BOUND FICA COMO 
+
+
+
+O(n2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> ISSO QUER DIZER QUE TEM O MESMO VALUE DE WORST CASE SCENARIO 
+
+
+    DO 'SELECTION SORT'...
+
+
+
+
+
+    --> QUER DIZER QUE ELES SÃO QUASE IGUAIS, EM QUESTÃO DE RUINDADE...
+
+
+
+
+
+
+    -> MAS O LOWER BOUND DO BUBBLE SORT É MELHOR... ISSO É 100% CERTEZA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> é o OMEGA(N) --> ESSE É O VALUE DO LOWER BOUND DO 'BUBBLE SORT'...
+
+
+
+
+
+
+
+
+
+
+
+
+n2 -> é bem ruim...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VEREMOS 1 ALGORITMO QUE É BEM MELHOR DO QUE SELECTION SORT E BUBBLE SORT...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PARA ISSO, DEVEMOS LEVERAGE 1 TECHNIQUE, CHAMADA DE 'RECURSION'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''RECURSION'' ->  É A CAPACIDADE DE FUNCTIONS 
+
+
+                    '''CALL THEMSELVES'''...
+
+
+
+
+
+            --> 1 FUNCTION PODE CHAMAR A SI MESMA...
+
+
+
+            ''HAVE OUR OWN FUNCTIONS CALL THEMSELVES''...
+
+
+
+
+
+
+
+
+-> pode parecer que a function ficaria em 1 infinite loop...
+
+
+    ESSE É O PERIGO DE RECURSION... VC PODE SCREW UP EASILY...
+
+    
+    MAS ISSO TAMBÉM TE AJUDA A RESOLVER PROBLEMAS 
+
+    DE MANEIRAS BEM:
+
+    1) ELEGANTES 
+
+    2) EFICIENTES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> FICAMOS COM BETTER DESIGN,  BASICAMENTE...
+
+
+
+
+
+
+
+
+
+
+LEMBRE-SE DESTE PSEUDOCÓDIGO:
+
+
+
+
+
+
+
+
+
+
+
+
+1 PICK UP PHONE BOOK 
+
+
+2 OPEN TO MIDDLE OF PHONE BOOK 
+
+
+3 LOOK AT PAGE 
+
+
+4) IF PERSON IS ON PAGE 
+      5)  CALL PERSON 
+
+
+6) ELSE IF PERSON IS EARLIER IN THE BOOK 
+      7) open to middle of left half of book 
+       8)  GO BACK TO LINE 3
+
+9) else if person is later in book 
+10)     OPEN TO MIDDLE OF RIGHT HALF OF BOOK 
+11)     GO BACK TO LINE 3 
+12) ELSE 
+        QUIT
+
+
+
+
+
+
+
+
+
+
+
+
+
+AQUELA PARTE DE 'GO BACK TO LINE 3'
+
+É REPRESENTATIVA DE LOOPS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS ESSE PSEUDOCÓDIGO 
+    É UMA 'MISSED OPPORTUNITY''...
+
+
+
+
+    ---> É PQ ESSE CÓDIGO AÍ É 'ITERATIVE',
+
+    OU SEJA,
+
+    É 'LOOP-BASED'... 
+
+
+    --> ELA BASICAMENTE DIZ 'VÁ DE VOLTA PARA ESTA LINHA, VÁ PARA ESTA LINHA DNV'...
+
+
+
+
+
+    --> mas podemos implementar esse 'call yourself'...
+
+
+
+
+
+
+
+
+
+    -> PARA ISSO, PODEMOS MUDAR A LÓGICA, PARA FICAR TIPO ASSIM:
+
+
+
+
+
+    1 PICK UP PHONE BOOK 
+
+
+2 OPEN TO MIDDLE OF PHONE BOOK 
+
+
+3 LOOK AT PAGE 
+
+
+4) IF PERSON IS ON PAGE 
+      5)  CALL PERSON 
+6) ELSE IF PERSON IS EARLIER IN THE BOOK 
+        7-8) Search left half of book
+9) else if person is later in book 
+        10-11) Search right half of book
+12) ELSE 
+        QUIT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OU SEJA,
+
+ISTO:
+
+
+
+
+6) ELSE IF PERSON IS EARLIER IN THE BOOK 
+        7-8) Search left half of book
+9) else if person is later in book 
+        10-11) Search right half of book
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'RECURSION':
+
+
+
+a function can call itself...
+
+
+
+
+
+'SEARCH' left half of book'...
+
+
+
+
+
+
+'SEARCH' right half of book...
+
+
+
+
+
+
+
+
+
+
+
+
+ISSO JÁ É _ UM EXEMPLO __ DE RECURSION...
+
+
+
+
+''IT WOULD BE __ FOOLISH AND INCORRECT AND COUNTERPRODUCTIVE 
+    TO CALL THE __ SAME FUNCTION __ WITH THE SAME INPUTS...
+    BECAUSE THE OUTPUT WOULD ALWAYS BE THE SAME'''..
+
+
+
+
+
+
+--> E É EXATAMENTE POR ISSO QUE MUDAMOS O INPUT,
+    FAZEMOS ELE SER 'SMALLER AND SMALLER AND SMALLER'...
+
+
+    se fazemos isso, fica ok FICAR CHAMANDO 1 MESMA FUNCTION REPETIDAMENTE,
+    com inputs diferentes sendo passadas a ela...
+
+
+
+    --> mas PRECISAMOS TER 1 'BASE-CASE',
+
+    um CASE/LINHA DE CÓDIGO QUE DIGA 
+
+    '''WAIT, THERE IS NO MORE PROBLEM TO BE SOLVED!!!',
+
+
+    e que então faça QUIT do processo, terminando o runtime...
+
+
+
+
+
+
+
+
+
+
+MAS COMO PODEMOS ESCREVER ISSO, EM CÓDIGO?
+
+
+
+
+
+
+
+
+
+PARA ENTENDER MELHOR, BASTA RECORDAR A PIRÂMIDE DO MARIO, QUE CONSTRUÍMOS 
+
+NA PRIMEIRA SEMANA...
+
+
+
+
+
+
+
+TINHA ESTA ESTRUTURA:
+
+#
+##
+###
+#### 
+
+
+
+
+
+
+
+
+--> MAS COMO FIZEMOS O PRINT DE 1 PIRAMIDE, DE TAMANHO 4?
+
+
+
+
+
+
+
+
+BEM... BASICAMENTE, ESSA PIRAMIDE 
+
+É UMA 'RECURSIVE STRUCTURE'...
+
+
+
+
+
+
+
+
+
+
+
+-> ISSO PQ ELA É 'KIND OF DEFINED IN TERMS OF ITSELF'...
+
+
+
+
+
+
+
+COMO ELA É CONSTRUÍDA?
+
+
+
+
+
+
+
+PODEMOS DIZER, AVACALHANDO:
+
+
+
+
+
+
+''BASTA CRIAR UMA PIRAMIDE DE TAMANHO 3,
+E AÍ ADICIONA 1 LAYER DE 4 BRICKS EM BAIXO....''
+
+
+
+
+
+E AÍ CONTINUAMOS FAZENDO ISSO, ATÉ CHEGAR 
+
+
+A 'CREATE A PYRAMID OF SIZE 1, AND THEN 
+    ADD A LAYER OF 2 BRICKS, BELOW'...
+
+
+
+
+
+
+
+
+
+
+-> QUER DIZER QUE A PIRAMIDE CONTINUA 
+
+FICANDO MENOR E MENOR,
+
+ATÉ CONSEGUIRMOS 'HANDLE THAT SINGLE CASE'...
+
+
+
+
+
+
+
+
+
+
+# -> 1 BLOCO...
+
+
+
+
+
+
+REWIND THE STORY:
+
+
+''YOU ADD A PYRAMID OF A SINGLE BLOCK,
+AND THEN YOU ADD A SECOND LAYER'':
+
+
+#
+## 
+
+
+
+
+
+REWIND THE STORY AGAIN:
+
+''
+''You add a pyramid of height 2,
+and then you add a THIRD LAYER'''....
+
+
+
+
+
+#
+##
+###
+
+
+
+
+
+
+REWIND THE STORY AGAIN:
+
+
+
+
+''
+''You add a pyramid of height 3,
+and then you add a FOURTH LAYER'''....:
+
+
+
+
+#
+##
+###
+####
+
+
+
+
+
+
+
+
+
+
+
+quer dizer que a mágica é O 
+
+
+
+always 'do a little more work',
+
+
+
+
+
+que eventualmente faz o resultado final emergir...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... QUER DIZER QUE ATÉ MESMO OBJETOS FÍSICOS PODEM TER RECURSION...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PODEMOS LEVERAGE RECURSION PARA RESOLVER PROBLEMAS DE MANEIRA BEM 
+MAIS ELEGANTE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---> TEMOS OUTRO ALGORITMO DE SORTING,
+QUE É 
+O 
+
+'MERGE-SORT'..
+
+
+
+
+
+
+
+
+ESSE ALGORITMO É TIPO ASSIM:
+
+
+
+
+
+1) SORT THE LEFT HALF OF NUMBERS 
+
+2) SORT THE RIGHT HALF OF NUMBERS 
+
+3) MERGE THE SORTED HALVES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> ISSO PODE PARECER MEIO 'UNFAIR'...
+
+
+
+
+
+
+
+
+
+
+--> QUER DIZER QUE ESSE ALGORITMO ESTÁ 
+    DIVIDINDO, ENCOLHENDO, O PROBLEMA, A CADA ITERATION...
+
+
+
+
+
+
+--> POR FIM, TEMOS O BASE-CASE:
+
+''IF WE HAVE ONLY A SINGLE NUMBER, QUIT...'':
+
+
+
+
+
+
+
+
+
+
+
+O PSEUDOCODIGO FICA ASSIM:
+
+
+
+    If only one number:
+        Quit 
+    Else 
+        sort left half of numbers 
+        sort right half of numbers 
+        merge sorted halves
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MERGE-SORT...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> 'MERGING'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> COMO FICA ISSO, COM AQUELE EXEMPLO ANTERIOR?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> DIVIDIMOS AQUELE ARRAY DE NUMBERS ANTERIOR, EM 2 HALVES..
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+3568 1247 
+
+
+
+
+
+
+
+
+
+--> AS 2 HALVES JÁ ESTÃO SORTED, 'smallest to largest'...
+
+
+
+
+
+
+
+
+
+
+--> 3568  1247
+
+
+
+
+
+
+
+
+
+-> um dos numbers de ambos os arrays 
+    será o SMALLEST NUMBER OF THEM ALL, of the merged two halves...
+
+    será o 1....
+
+
+
+
+
+
+
+
+
+--> 3568  247
+
+
+    1
+
+
+
+
+
+
+
+
+
+
+DEPOIS, COMPARAMOS ENTRE OS NÚMEROS QUE SOBRARAM, O SEGUNDO MENOR NÚMERO:
+
+
+
+
+
+
+
+
+--> 3568  47
+
+
+    12
+
+
+
+
+
+
+
+
+
+DEPOIS, MESMA COISA:
+
+
+
+
+
+--> 568  47
+
+
+    123
+
+
+
+
+
+
+
+
+
+
+
+DEPOIS, ASSIM:
+
+
+
+
+
+--> 568  7
+
+
+    1234
+
+
+
+
+
+
+
+
+
+
+
+
+DEPOIS, ASSIM:
+
+
+
+
+
+--> 68  7
+
+
+    12345
+
+
+
+
+
+
+
+
+
+
+
+DEPOIS, ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+--> 8  7
+
+
+    123456
+
+
+
+
+
+
+
+
+
+
+
+DEPOIS, ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+
+--> 8  
+
+
+    1234567
+
+
+
+
+
+
+
+
+
+
+
+
+
+DEPOIS, ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+
+--> 
+
+
+    12345678
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E, ENTÃO, ESTÃO SORTED...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> BASICAMENTE, USAMOS 1 HELPER FUNCTION,
+    FUNCTION USADA PARA REALIZAR O MERGING ENTRE OS 2 ARRAYS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> A 'MIND-BENDING' PART É QUE 
+
+'sort right half of numbers' 
+
+e 
+
+'sort right half of numbers'
+
+
+
+
+JÁ ESTAVA IMPLEMENTADA, BASICAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> a única coisa que tivemos de fazer, aqui, 
+    foi executar a última parte, o 'merge'...
+
+
+
+
+
+
+
+
+
+
+
+
+--> CERTO... MAS DIGAMOS QUE AGORA FAREMOS 
+    ISSO COM 1 UNSORTED ARRAY COMPLETO..
+
+
+
+
+
+    TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+63852741
+
+
+
+
+
+
+AGORA RECAPITULE O PROCEDIMENTO, DO MERGE-SORT:
+
+
+
+1) SORT LEFT HALF 
+
+
+2) SORT RIGHT HALF 
+
+3) MERGE SORTED HALVES..
+
+
+
+
+
+
+
+
+
+
+
+-> E VAMOS APLICAR O MERGE-SORT 
+TAMBÉM 
+
+NOS NUMBERS DENTRO DOS ARRAYS MENORES...
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+6385 2741
+
+
+
+
+
+
+
+
+
+
+DEPOIS ASSIM:
+
+
+
+
+
+
+
+63 85 27 41
+
+
+
+
+
+
+
+
+
+
+
+DEPOIS, ASSIM:
+
+
+
+
+
+
+
+63 85 27 41
+
+
+
+
+
+
+AÍ FICA ASSIM:
+
+
+
+
+
+
+36 85 27 41
+
+
+
+
+
+
+
+
+
+AÍ FICA ASSIM:
+
+
+
+
+
+
+
+36 58 27 41
+
+
+
+
+
+
+
+
+
+
+AÍ FICA ASSIM:
+
+
+
+
+
+36 58 27 41
+
+
+
+
+AÍ FICA ASSIM:
+
+
+
+
+
+
+36 58 27 14
+
+
+
+
+
+
+
+
+
+AÍ FICA ASSIM:
+
+
+
+
+
+
+
+
+
+3658 2714 
+
+
+
+
+
+
+
+AÍ FICA ASSIM:
+
+
+
+
+
+36 58 
+
+
+
+
+
+AÍ FICA ASSIM:
+
+
+
+
+
+
+
+--> 6 58 
+
+
+
+    3 
+
+
+
+
+
+AÍ FICA ASSIM:
+
+
+
+
+
+--> 6 8 
+
+
+
+    35
+
+
+
+
+AÍ FICA ASSIM:
+
+
+
+
+
+
+--> 8 
+
+
+
+    356
+
+
+
+
+
+
+
+AÍ FICA ASSIM:
+
+
+
+
+
+--> 
+
+
+
+    3568
+
+
+
+
+
+
+
+
+
+
+
+
+
+AÍ, PARA A OUTRA METADE, FAZEMOS ASSIM:
+
+
+
+
+ 27 41
+
+
+
+
+
+
+
+
+ E ASSIM:
+
+
+
+
+
+-->   27 41
+
+
+
+
+
+E ASSIM:
+
+
+
+
+-->   27 4
+
+
+1
+
+
+
+
+
+
+E ASSIM:
+
+
+
+
+
+
+
+-->   7 4
+
+
+12
+
+
+
+
+
+
+
+E ASSIM:
+
+
+
+
+
+
+-->   7 
+
+
+124
+
+
+
+
+
+
+
+
+E ASSIM:
+
+
+
+
+
+-->   
+
+
+1247
+
+
+
+
+
+
+
+
+COM ISSO, FICAMOS COM 2 SORTED ARRAYS:
+
+
+
+
+
+      3568   1247
+
+
+
+
+
+
+
+
+
+
+
+
+AÍ FAZEMOS A MESMA COISA QUE FIZEMOS ANTES, TIPO ASSIM:
+
+
+
+
+
+--> 3568  247
+
+
+    1
+
+
+
+
+
+
+
+
+
+
+DEPOIS, COMPARAMOS ENTRE OS NÚMEROS QUE SOBRARAM, O SEGUNDO MENOR NÚMERO:
+
+
+
+
+
+
+
+
+--> 3568  47
+
+
+    12
+
+
+
+
+
+
+
+
+
+DEPOIS, MESMA COISA:
+
+
+
+
+
+--> 568  47
+
+
+    123
+
+
+
+
+
+
+
+
+
+
+
+DEPOIS, ASSIM:
+
+
+
+
+
+--> 568  7
+
+
+    1234
+
+
+
+
+
+
+
+
+
+
+
+
+DEPOIS, ASSIM:
+
+
+
+
+
+--> 68  7
+
+
+    12345
+
+
+
+
+
+
+
+
+
+
+
+DEPOIS, ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+--> 8  7
+
+
+    123456
+
+
+
+
+
+
+
+
+
+
+
+DEPOIS, ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+
+--> 8  
+
+
+    1234567
+
+
+
+
+
+
+
+
+
+
+
+
+
+DEPOIS, ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+
+--> 
+
+
+    12345678
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... MAS QUANTAS VEZES O CARA MUDOU OS NÚMEROS...?
+
+
+
+CADA ARRAY, ELE MEXEU 3 VEZES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> a vantagem disso tudo é que 
+
+ele não faz 'back and forth',
+
+
+
+e sim 
+
+
+
+
+
+vai sempre sortando pouco a pouco...
+
+
+
+
+
+
+
+
+
+
+ele mergeou as coisas 3 vezes, no total...
+
+
+
+
+
+
+SE VC TEM 8 ELEMENTOS NA ESTANTE,
+
+O NÚMERO DE ESTANTES ADICIONAIS USADAS PARA ORGANIZAR TUDO 
+
+SERÁ 3...
+
+
+
+
+
+
+
+
+QUER DIZER QUE O BRIAN FEZ 
+
+
+n things log n times...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O MERGE SORT, BASICAMENTE,
+
+
+
+TEM O 'BIG O'
+
+
+
+
+
+de 
+
+
+O(n2) --> selection sort, bubble sort
+
+O (n log n) --> merge sort 
+
+O(n) --> linear sort 
+
+O (log n) --> binary search
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LOWER BOUND:
+
+
+
+
+
+
+
+
+''MERGE SORT DOESN'T OPTIMIZE THE LOWER BOUND...
+
+
+IT IS 'OMEGA(n log n)'... ''
+
+
+
+
+
+
+
+
+
+
+
+
+o price que vc paga com o merge sort -> é melhor do que selection sort e bubble sort,
+                                        MAS VC PAGA 1 PREÇO... O PREÇO É 
+
+
+                                        ''ALMOST ALWAYS WHEN YOU DO SOMETHING BETTER, IN CODE,
+                                        OR YOU SOVE A PROBLEM, YOU PAY A PRICE... 
+                                        MAYBE YOU SPENT MORE TIME, AS A DEVELOPER, CREATING THE CODE... 
+
+                                        MAYBE YOU HAD TO USE MORE SPACE... IN THIS CASE, WE HAD TO HAVE 
+                                        ADDITIONAL SPACE, ONE EXTRA SHELF, TO IMPLEMENT MERGE-SORT''..
+
+
+                                        ''IN PROGRAMMING, TO IMPLEMENT THIS TYPE OF SORTING, YOU NEED 
+                                        TO HAVE TWO SEPARATE ARRAYS... THIS MEANS YOU NEED TWICE 
+                                        THE AMOUNT OF SPACE''...
+
+                                        (sempre um tradeoff)...
+
+
+
+
+
+-> money sempre é um fator... às vezes 
+    é melhor rodar 1 código mais lento, se vc 
+    evita pagar mais servidores, etc...
+
+
+
+
+
+
+
+
+
+
+
+
+
+THETA --> 0 --> GRAÇAS AO SELECTION SORT E MERGE SORT,
+
+                podemos usar essa representação...
+
+
+
+                '''ANY TIME AN ALGORITHM HAS THE SAME UPPER BOUND 
+                AS THE LOWER BOUND RUNNING TIME, YOU CAN ACTUALLY 
+                DESCRIBE IT IN A SINGLE SENTENCE, INSTEAD OF TWO,
+                WITH THE "THETA NOTATION" '''
+
+
+
+            
+
+            EX:
+
+
+
+
+            0 (n log n) --> ELA É APLICÁVEL AO merge sort...
+
+
+
+
+
+
+
+
+            merge sort é BEM mais rápido...
+
+
+            bubble sort demorou mais...
+
+
+            tudo depende do input... Às vezes o bubble sort é mais rápido do que 
+            o selection sort...

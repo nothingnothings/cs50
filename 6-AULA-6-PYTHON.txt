@@ -1,0 +1,3194 @@
+
+
+
+
+
+
+
+
+
+
+
+
+vamos re-aprender python...
+
+
+
+
+
+
+
+
+
+--> ISTO TUDO:
+
+
+
+
+
+#include <stdio.h>
+
+
+int main(void) {
+    printf("Hello World\n");
+}
+
+
+
+
+
+
+VIRA ISTO:
+
+
+
+
+print("Hello, World");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> É UM LAYER EM CIMA DO C...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> NOVAS FEATURES, NOVAS SINTAXES...
+
+
+
+
+
+
+
+
+
+
+
+
+--> HÁ SEMPRE LINGUAGENS MAIS POPULARES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> A SINTAXE DO PYTHON:
+
+
+
+
+
+
+
+
+print("Your string")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> ';' não é necessário...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NO SCRATCH, TÍNHAMOS 'ask'...
+
+
+
+
+
+
+
+
+
+
+
+
+o código para isso, em C, era algo como:
+
+
+
+
+
+
+
+
+
+
+
+
+
+string answer = get_string("What's your name?");
+printf("hello, %s\n", answer);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EM PYTHON, É ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+
+answer = get_string("What's your name?");
+print("hello, " + answer);
+
+
+
+
+
+
+
+
+
+
+
+NO IDE, O PROFESSOR ESCREVE O PRIMEIRO PROGRAMA PYTHON, TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+hello.py 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+print("hello, world");
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O PYTHON NÃO PRECISA QUE VC COMPILE AS SUAS FILES...
+
+
+
+
+
+
+
+
+
+
+
+-> basta vc rodar 'python hello.py',
+
+    para executar seu arquivo...
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR ENTÃO ESCREVE VARIABLES,
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+answer = get_string("What's your name? ");
+
+print("hello, " + answer);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAS É CLARO QUE 'get_string' não existe no python... precisamos 
+
+importar 
+
+essa package,
+
+com 
+
+
+
+
+
+'from cs50 import get_string;'
+
+
+
+
+
+EX:
+
+
+
+
+
+
+from cs50 import get_string
+
+answer = get_string("What's your name? ")
+
+print("hello, " + answer)
+
+
+
+
+
+
+
+
+
+
+Ex:
+
+
+
+
+
+
+
+from cs50 import get_string
+
+answer = get_string("What's your name? ")
+print("hello, " + answer)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E ISSO REALMENTE FUNCIONA...
+
+
+
+
+
+
+
+
+
+
+O OPERATOR DE '+' realiza concatenação...
+
+
+
+
+
+
+
+
+
+
+ISSO REALIZA O JOIN DE STRINGS...
+
+
+
+
+
+
+
+
+
+
+quais são outras features do python?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+answer = get_string("What's your name? ")
+
+
+print(f"hello, {answer}")
+
+
+
+
+
+
+
+
+
+
+'f' --> isso comunica ao computador que vc 
+
+            quer 'format the contents of this string',
+
+
+
+    
+
+
+
+
+
+
+
+
+--> O PROFESSOR ESCREVE ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+from cs50 import get_string 
+
+answer = get_string("What's your name?")
+print(f"hello, {answer}")
+
+
+
+
+
+
+É MAIS CONVENIENTE DO QUE O C COMUM...
+
+
+
+
+
+
+
+
+
+
+
+
+--> FORMAT STRINGS...
+
+
+
+
+
+
+
+
+'f strings' --> EXISTEM NO PYTHON...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... ENTÃO O PROFESSOR MOSTRA 1 EXEMPLO DE 'COUNTER'...
+
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+int counter = 0;
+
+
+
+
+
+
+ESSA É A SINTAXE NO C..
+
+
+
+
+
+
+
+
+
+
+MAS NO PYTHON É ASSIM:
+
+
+
+
+
+
+
+
+
+
+counter = 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> COMO VC PODE VER, NÃO PODEMOS DECLARAR 
+    O TIPO DA VARIÁVEL...
+
+
+
+
+--> O TYPE DA VARIABLE É INFERRED, BASICAMENTE...
+
+
+
+
+
+
+
+
+
+PARA INCREMENTAR 1 VARIABLE,
+BASTA ESCREVER ASSIM:
+
+
+
+
+
+
+
+
+
+
+counter = counter + 1; 
+
+
+
+
+
+ISSO NO C...
+
+
+
+
+
+
+
+
+
+
+JÁ NO PYTHON, PODEMOS ESCREVER ASSIM:
+
+
+
+counter = counter + 1
+
+
+
+
+
+
+
+
+
+
+
+counter += 1
+
+
+
+
+
+
+
+
+
+
+
+
+mas a sintaxe de 'counter++'
+
+AINDA NÃO EXISTE, NO PYTHON...
+
+
+
+
+
+
+
+
+--> CONDIÇÕES:
+
+
+
+
+
+
+
+C:
+
+
+--> if (x < y) 
+    {
+        printf("some string");
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+O PYTHON É SIMILAR, MAS 1 POUCO DIFERENTE:
+
+
+
+
+
+
+
+
+if x < y:
+    print("x is less than y")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAS AQUI HÁ UM DETALHE:
+
+
+
+
+
+
+
+''INDENTAÇÃO''...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C, CS50 E BOA PARTE DO MUNDO:
+
+
+
+
+
+''INDENT YOUR CODE BY 4 SPACES...
+    ONE TAB, 4 SPACES... IS THE SAME THING''..
+
+
+
+
+
+
+
+
+
+
+
+if x < y:
+    print("schrebers");
+
+
+
+
+
+
+
+
+
+
+
+
+
+C:
+
+
+if (x < y) 
+{
+    printf("x is less than y")
+}
+else
+{
+    printf("x is not less than y")
+}
+
+
+
+
+PYTHON:
+
+
+if x < y:
+    print("x is less than y")
+else:
+    print("x is not less than y")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+PYTHON:
+
+
+if x < y:
+    print("x is less than y")
+elif x > y:
+    print("x is greater than y")
+else:
+    print("x is not less than y")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EM C, TÍNHAMOS O WHILE LOOP:
+
+
+
+
+
+
+
+
+
+while (true)
+{
+    printf("hello, world");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+O PYTHON É ASSIM:
+
+
+
+
+
+
+
+
+while True:
+    print("hello, world");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NO PYTHON, O 'True' é MAIÚSCULO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DIGAMOS QUE QUEREMOS REPETIR 1 COISA 3 VEZES, NO C...
+
+
+
+
+
+
+
+
+
+
+
+
+É BEM TRABALHOSO, NO C...
+
+
+É TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+int i = 0;
+while (i < 3) 
+{
+    printf("hello, world\n");
+    i++;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+CERTO...
+
+
+
+
+
+
+
+
+NO PYTHON, É BEM MAIS FÁCIL FAZER ISSO, BASTA ESCREVER ASSIM:
+
+
+
+
+
+int i = 0
+while i < 3:
+    printf("hello, world\n")
+    i += 1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+no c, tínhamos o approach do for loop...
+
+
+
+
+
+
+tipo assim:
+
+
+
+
+
+for (int i = 0; i < 3; i++) {
+    printf("hello, world");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+MAS NO PYTHON, AS COISAS COMEÇAM A FICAR MAIS ELEGANTES...
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+
+for i in [0, 1, 2]:
+    print("hello, world")
+
+
+
+
+
+
+
+
+
+
+
+--> PODEMOS USAR ESSA SINTAXE AÍ, MAIS SUCINTA,
+    USAR 1 LISTA DE VALUES (ou uma range),
+
+    PARA USÁ-LOS COMO 'items' a serem percorridos...
+
+
+
+
+
+
+
+--> É BASICAMENTE UMA LIST...
+
+
+
+
+
+
+
+
+
+
+--> ARRAYS SÃO CHAMADOS DE 'lists',
+    no python...
+
+
+
+
+
+
+
+
+
+
+
+
+MAS ISSO AÍ PODE FICAR RUIM, BEM RÁPIDO..
+
+
+
+
+
+
+
+
+
+
+
+--> PQ TERÍAMOS DE ESCREVE 1 BILHAO DE NÚMEROS...
+    ISSO É TERRÍVEL...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> HÁ UMA MANEIRA BEM MELHOR 
+    DE FAZER COISAS MÚLTIPLAS VEZES,
+
+    EM PYTHON,
+
+    QUE É 
+
+    A FUNCTION DE 'range(3)'...
+
+
+
+
+
+--> BASTA ESCREVER ASSIM:
+
+
+
+
+
+
+
+
+for i in range(3):
+    print("hello, world")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'range()'--> É UMA FUNCTION DO PYTHON QUE VAI AUTOMATICAMENTE 
+            GERAR, PARA VOCÊ, UMA LIST DE 3 VALUES, [0, 1, 2]...
+
+
+
+
+
+
+
+É POR ISSO QUE É BEM MELHOR USAR 
+
+
+for i in range(3):
+    print("hello, world")
+
+
+
+
+
+
+
+
+
+
+
+
+ESSA É A MANEIRA MAIS 'PYTHON' 
+DE FAZER ALGO...
+
+
+
+
+
+
+
+
+
+
+-> PROGRAMADORES/TÉCNICOS 
+    SÃO BEM RELIGIOSOS QUANTO "A MANEIRA CORRETA DE FAZER AS COISAS"...
+    RECOMENDAÇÕES DE COMO DEVEMOS ESCREVER CÓDIGO PYTHON...
+
+
+
+
+
+
+
+
+
+
+--> PYTHONIC WAY... É ESSA MANEIRA AÍ, BASICAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ALGUMAS OUTRAS FEATURES DO PYTHON...
+
+
+
+
+
+
+
+
+
+
+OS DATA TYPES DO C, INICALMENTE, ERAM ESTES:
+
+
+
+
+bool 
+
+char 
+
+double 
+
+float 
+
+int 
+
+long
+
+string
+
+
+
+
+
+O PYTHON TEM INFERENCE...
+
+
+
+
+
+
+--> PYTHON TEM DATA TYPES, SIM...
+
+
+
+MAS É UMA LOOSELY TYPED LANGUAGE...
+
+
+
+
+
+
+
+
+
+
+--> C -> TYPES EXISTEM, E DEVEM SER USADOS EXPLICITAMENTE...
+
+
+
+
+
+
+-> PYTHON --> TYPES EXISTEM, MAS VC PODE 
+                FAZER 'INFER' DELES, IMPLICITAMENTE..
+
+
+
+
+
+
+
+
+
+
+
+OS DATA TYPES DO PYTHON:
+
+
+
+
+
+
+
+
+
+
+
+bool 
+
+float 
+
+int 
+
+str 
+
+
+
+
+
+
+lists... e objects..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O DATA TYPE     
+    DE 'STRING', PROPRIAMENTE DITO, NÃO EXISTE NO C...
+
+
+
+
+
+
+
+
+-> NO 'C', 'STRINGS' SÃO BASICAMENTE 'char*'... 
+
+
+
+
+
+--> na library do CS50, os professores colocaram o alias de 'string' 
+
+    para 'char*'...
+
+
+
+
+
+
+
+
+
+
+
+-> NO PYTHON, EXISTE 1 DATA TYPE PARA STRINGS PROPRIAMENTE DITO,
+    CHAMADO DE 'str' (string)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> python tem features boas...
+
+
+
+
+
+
+
+
+
+
+ALGUMAS DELAS:
+
+
+
+
+
+
+
+1) range 
+
+
+2) list --> SÃO SEMELHANTES A ARRAYS DO C...
+
+                MAS, AO CONTRARIO DOS ARRAYS DO C,
+                OS ARRAYS/LISTS DO __ PYTHON___ CONSEGUEM
+                 'SHRINK' E 'GROW' AUTOMATICAMENTE...
+
+                 A MAIOR PARTE DAS LANGUAGES HIGHER  LEVEL JÁ 
+                 FAZEM ESSE RESIZE DAS LISTS PARA VOCÊ, 'FOR FREE'... VC NAÕ 
+                 PRECISA IMPLEMENTAR COISA ALGUMA....
+
+
+3) tuple --> comma separated values, 2 values por vez... tipo 'X,Y'...
+
+        --> TUPLE --> ''IS A COLLECTION WHICH IS _ ORDERED AND _ UNCHANGEABLE'...
+
+        tipo thistuple = ("apple", "banana", "cherry")
+
+
+4) dict  --> são objects, basicamente....
+
+                {
+                    "key1": "value1",
+                    "key2": "value"
+                }
+
+
+5) set --> ex:  myset = {"apple", "banana", "cherry"}
+
+
+        --> sets são collections UNORDERED, UNCHANGEABLE E __ UNINDEXED...
+
+        ---> ELES SÃO 'UNCHANGEABLE', MAS VC PODE _ ADICIONAR novos items E REMOVER 
+            ITEMS de dentro deles...
+
+
+        --> SETS --> SÃO __ VALUES_  SEM DUPLICATAS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EM C ->  TÍNHAMOS USADO 
+
+            A LIBRARY CS50 PARA CONSEGUIR:
+
+
+            get_char 
+
+            get_double 
+
+            get_float 
+
+            get_int 
+
+            get_long 
+
+            get_string 
+
+
+
+
+
+
+
+
+
+
+-> NÃO VAMOS PRECISAR DE MTAS DESSAS... VAMOS PRECISAR APENAS DE:
+
+
+
+1) get_float 
+
+
+2) get_int 
+
+
+3) get_string 
+
+
+
+
+
+
+
+
+--> VAMOS USAR ESSAS FUNCTIONS PARA DEIXAR NOSSA VIDA MAIS FÁCIL, DURANTE 
+ESSA SEMANA..
+
+
+
+
+
+
+--> OK...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> EM C, TÍNHAMOS DE IMPORTAR COISAS 
+
+COM 
+
+
+#include <cs50.h>
+
+
+
+
+
+
+
+
+
+
+--> NO PYTHON, IMPORTAMOS ASSIM:
+
+
+
+
+from cs50 import get_float 
+from cs50 import get_string 
+
+
+
+
+
+
+
+
+
+
+
+OU, ENTÃO, PODEMOS IMPORTAR A LIBRARY INTEIRA,
+
+COM ESTA SINTAXE:
+
+
+
+
+import cs50 
+
+
+
+
+
+
+
+
+
+
+TAMBÉM PODEMOS SIMPLIFICAR, ESCREVER 1 LIST DE FUNCTIONS,
+TIPO ASSIM:
+
+
+
+
+
+from cs50 import get_float, get_string, get_int 
+
+
+
+
+
+
+
+
+
+
+certo...
+
+
+
+
+
+
+
+
+
+
+
+eu já sabia sobre essa sintaxe...
+
+
+
+
+
+
+
+
+
+
+AGORA VEREMOS ALGUMAS DAS FEATURES DO PYTHON...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+''em 1 for loop,
+    se vc quer incrementar por algo 
+    diferente de 1,
+
+    mas se vc não quer digitar a lista explicitamente, como vc vai fazer isso?''
+
+
+
+
+
+
+
+
+
+
+
+DIGAMOS QUE VC QUER QUE O ARRAY SEJA DE '0, 2, 4, 6',
+
+
+em vez de 
+
+'0,1,2,3'..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> SE QUISERMOS FAZER ISSO, BASTA ESCREVER ASSIM:
+
+
+
+
+
+for i in range(0, 101, 2);
+    print("hello, world");
+
+
+
+
+0 --> where you want to START counting
+
+101 --> where you want to STOP counting (not counting the last value)
+
+
+
+
+-> SE TIVERMOS 1 SEGUNDO PARAMETER,
+
+
+    ESSE PARAMETER VAI DIZER ''INCREMENTE 1 POR VEZ''...
+
+
+
+
+
+
+    VC PODERIA COLOCAR ''2'',
+
+    PARA CONTAR ''INCREMENTE 2 POR VEZ''..
+
+
+
+
+
+
+
+
+
+
+
+--> O PYTHON TAMBÉM TE DEIXA 'START COUNTING NOT FROM 0, BUT FROM THIS NUMBER'',
+        com 
+        outro parameter...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> AS FUNCTIONS QUE VC PODE ESCREVER COM O PYTHON, NO CASO,
+
+
+    PODEM RECEBER DIFERENTES QUANTIDADES DE ARGUMENTOS... as signatures podem 
+    ter mais de 1 formato, no caso...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> ranges()
+
+
+
+
+
+
+--> RANGES() -> POUCOS USE-CASES ALÉM DE FOR-LOOPS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> SEMPRE QUE VC QUER GERAR 1 LISTA DE VALUES QUE SEGUE 1 CERTO PADRÃO (como 1,2,3, ou 2,4,6),
+
+
+    VC VAI USAR A 'range()',
+
+    PQ ELA VAI TE DEIXAR EVITAR TER DE HARDCODE O ARRAY...
+
+
+
+
+
+
+
+
+
+--> VC TAMBÉM PODE ESCREVER 1 GENERATOR FUNCTION,
+    1 FUNCTION QUE RETORNA O PADRÃO DE VALUES QUE VC QUER...
+
+
+
+
+
+
+
+
+
+
+
+
+
+CERTO...
+
+
+
+
+
+
+
+
+PYTHON --> É MT MAIS FÁCIL DE USAR DO QUE 
+            C, PARA MTOS PROBLEMAS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+O PROFESSOR ABRE UMA FOTO DO 'bridge.bmp'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+tive de escrever 1 código para BLUR THIS IMAGE...
+
+
+
+
+
+
+
+
+
+
+
+
+-> o python vai nos deixar pensar em termos de abstraction bem maior,
+
+    o que vai facilitar nossa vida...
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+blur.py...
+
+
+
+
+
+
+
+
+
+
+PRECISAMOS TER ALGUMA FUNCIONALIDADE PARA 
+
+
+BLUR IMAGES...
+
+
+
+
+
+
+
+
+
+-> O PROFESSOR IMPORTA 
+
+
+
+
+DA LIBRARY DE 'PIL'
+
+
+
+
+as features de 'Image' e 'ImageFilter'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TIPO ALGO ASSIM:
+
+
+
+
+
+
+
+
+
+import sys
+from PIL import Image, ImageFilter
+
+if len(sys.argv) != 3:
+    print("Usage: python blur.py <input image> <output image>")
+    sys.exit(1)
+
+input_image = sys.argv[1]
+output_image = sys.argv[2]
+
+image = Image.open(input_image)
+blurred = image.filter(ImageFilter.BLUR)
+blurred.save(output_image)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NO 'C',
+
+
+
+usamos 'dot' operator apenas 
+
+para STRUCTS...
+
+
+
+
+
+
+
+
+
+
+--> ENTRETANTO, NO PYTHON,
+
+VC PODE USAR ISSO EM OBJECTS...
+
+
+E OBJECTS PODEM TER FUNCTIONS NO INTERIOR (como no javascript)....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> IMPORTAMOS O Struct/object de nome 'Image',
+
+    e aí USAMOS A FUNCTION de nome 'open()'...
+
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+import sys
+from PIL import Image, ImageFilter
+
+if len(sys.argv) != 3:
+    print("Usage: python blur.py <input image> <output image>")
+    sys.exit(1)
+
+input_image = sys.argv[1]
+output_image = sys.argv[2]
+
+image = Image.open(input_image)
+blurred = image.filter(ImageFilter.BoxBlur(1))
+blurred.save(output_image)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESSE CÓDIGO FAZ A MESMA COISA QUE FIZEMOS 
+
+NO NOSSO CÓDIGO C,
+
+
+
+
+
+
+
+MAS COM BEM MENOS LINHAS DE CÓDIGO, POR CONTA DA ABSTRAÇÃO...
+
+
+
+
+
+
+
+
+basta rodar isso, com 
+
+
+python blur.py <input> <output>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> O PROFESSOR MOSTRA OUTRO PROBLEMA...
+
+
+
+
+
+
+
+
+
+O PROBLEMA DE DICTIONARIES...
+
+
+
+
+
+
+
+-> O SPELLER...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> O PROFESSOR CRIOU O 'speller.py'...
+
+
+
+
+
+    --> ele basicamente traduziu o código 
+        C do speller para py...
+
+
+
+
+
+    
+
+
+
+
+
+
+
+--> O PROFESSOR 
+    PRECISA CRIAR 1 FUNCTIONS...
+
+
+
+
+
+
+
+
+load 
+
+unload 
+
+check 
+
+size 
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> TIVEMOS MT COMPLEXIDADE, NA VERSAO DO C...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR CRIA 1 SET, DE NOME 'words'...
+
+
+
+--> PRECISAMOS DE 1 SET PQ 
+    VAMOS QUERER NÃO TER VALUES DUPLICADOS, DENTRO DELE...
+
+
+
+
+
+
+
+
+
+
+
+
+-> DEPOIS DISSO, O PROFESSOR DEFINE 1 FUNCTION, DE NOME 'load()'...
+
+
+
+
+
+EX:
+
+
+
+
+
+
+words = set()
+
+
+
+def load(dictionary):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OUTRA DIFERENÇA, DO PYTHON PARA O C,
+
+É QUE VC NÃO PRECISA DE UMA FUNCTION 'main()'
+
+no body dos seus arquivos...
+
+
+
+
+
+
+
+
+
+--> SE VC QUER DEFINIR FUNCTIONS, NO PYTHON,
+
+VC USA A KEYWORD DE 'def'...
+
+
+
+
+
+
+
+--> vc coloca o nome do parameter que vc quer que a function aceite..
+    mas vc não precisa definir o type da function..
+
+
+
+
+
+
+ex:
+
+
+
+
+
+
+
+words = set()
+
+def load(dictionary):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ''THE PURPOSE OF THIS FUNCTION 
+    IS TO LOAD EACH WORD FROM THE DICTIONARY, AND THEN 
+
+    PUT IT INTO THE HASH TABLE... IN THIS CASE, THE 'words' set''...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> PARA ISSO, 
+
+    ABRIMOS O ARQUIVO 'dictionary', usando 
+
+    'open()'...
+
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+words = set()
+
+def load(dictionary):
+    file = open(dictionary, "r")
+
+
+
+
+
+
+
+
+É AGORA QUE O PYTHON FICA LEGAL..
+
+
+
+
+
+
+
+
+
+
+
+
+--> LER FILES, NO C, ERA MEIO RUIM... TÍNHAMOS QUE USAR 'fread' 
+
+e while para 
+
+LER CADA LINHA 
+
+
+DA FILE..
+
+
+
+
+
+
+
+
+
+
+
+-> NO PYTHON,
+
+BASTA 
+
+RODAR 
+
+
+'for line in file:  '
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+words = set()
+
+def load(dictionary):
+    file = open(dictionary, "r")
+    for line in file:
+        words.add(line.strip())
+
+
+
+
+
+
+
+
+
+
+
+
+
+ISSO VAI ASSIGNAR CADA LINE DA NOSSA FILE À VARIABLE de 'line'...
+
+
+
+
+
+
+--> O QUE QUEREMOS FAZER, EM CADA LINE,
+    É ADICIONAR CADA LINE, COMO ITEM,
+
+    à GLOBAL VARIABLE DE 'words'...
+
+
+
+
+
+
+
+--> USAMOS '.strip()'
+    PARA NOS LIVRARMOS DO 'new line' no final de cada line,
+
+    do conteúdo em branco, também...
+
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+words = set()
+
+def load(dictionary):
+    file = open(dictionary, "r")
+    for line in file:
+        words.add(line.rstrip())
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+STRINGS SÃO PODEROSAS, NO PYTHON:
+
+
+
+
+
+
+
+
+''BECAUSE THEY ARE THEIR OWN DATA TYPE,
+    THEY HAVE, INSIDE OF THEM NOT ONLY THE CHARACTERS,
+    BUT FUNCTIONS...''
+
+
+
+
+
+
+
+
+
+-> por fim, fechamos a file,
+
+e aí retornamos 'True',
+
+TIPO ASSIM:
+
+
+
+
+
+words = set()
+
+def load(dictionary):
+    file = open(dictionary, "r")
+    for line in file:
+        words.add(line.rstrip())
+    file.close()
+    return True
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> DEPOIS DISSO,
+    TEMOS A FUNCTION DE CHECK...
+
+
+
+
+
+
+
+
+
+
+
+--> ela vai receber 1 'word' como argumento,
+
+e aí 
+
+TESTAR SE ESSA WORD ESTÁ DENTRO DO SET DE 'words',
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+
+words = set()
+
+
+def check(word):
+    if word in words:
+        return True
+    return False
+
+def load(dictionary):
+    file = open(dictionary, "r")
+    for line in file:
+        words.add(line.rstrip())
+    file.close()
+    return True
+
+
+
+
+
+
+
+
+
+
+
+
+MAS ESSA IMPLEMENTAÇÃO ESTÁ MEIO BUGGY....
+
+
+
+
+
+
+
+
+
+
+
+
+
+case-sensitivity...
+
+
+
+
+
+
+
+
+-> PARA ISSO, PRECISAMOS CONVERTER 
+
+TODAS AS STRINGS EM lowercase...
+
+
+
+
+
+-> BASTA USAR A FUNCTION '.toLower()',
+
+
+ou algo assim.....
+
+
+
+'.lower()'...
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+words = set()
+
+
+def check(word):
+    if word.lower() in words:
+        return True
+    return False
+
+def load(dictionary):
+    file = open(dictionary, "r")
+    for line in file:
+        words.add(line.rstrip())
+    file.close()
+    return True
+
+
+
+
+
+
+
+
+
+
+CERTO...
+
+
+
+
+
+
+
+
+
+
+
+
+MAS E QUANTO A 'size'?
+
+
+
+
+
+
+
+
+
+-> TÍNHAMOS ESCRITO 1 FUNCTION IMENSA...
+
+
+
+
+
+
+--> MAS AQUI PODEMOS ESCREVER DE FORMA DIFERENTE, BASTA RETORNAR A LENGTH DAQUELE SET DE WORDS,
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+words = set()
+
+
+def check(word):
+    if word.lower() in words:
+        return True
+    return False
+
+def load(dictionary):
+    file = open(dictionary, "r")
+    for line in file:
+        words.add(line.rstrip())
+    file.close()
+    return True
+
+
+def size():
+    return len(words)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> COMO NÃO É NECESSÁRIO FAZER MEMORY MANAGEMENT EM PYTHON,
+    TUDO É FEITO AUTOMATICAMENTE,
+
+    NÃO CHAMAMOS 'malloc()'
+    nenhuma vez,
+
+    e por isso a function de 'unload()'
+
+    pode simplesmente retornar 'True',
+
+    TIPO ASSIM:
+
+
+
+
+
+
+words = set()
+
+
+def check(word):
+    if word.lower() in words:
+        return True
+    return False
+
+def load(dictionary):
+    file = open(dictionary, "r")
+    for line in file:
+        words.add(line.rstrip())
+    file.close()
+    return True
+
+def size():
+    return len(words)
+
+def unload():
+    return True
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> O GERENCIAMENTO DE MEMÓRIA AINDA ACONTECE,
+    MAS UNDER THE HOOD...
+
+
+
+
+
+
+
+
+
+
+
+
+malloc/free/realloc 
+
+
+estão acontecendo por trás das cenas,
+
+mas o python está fazendo isso por você...
+
+
+
+
+
+
+
+
+
+--> com isso, podemos focar na lógica de negócio...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> SPELLER.PY...
+
+
+
+
+python speller.py  filename.txt 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O PROFESSOR COMPARA O RUNTIME 
+
+
+
+DO SPELLER DO C, VERSUS A VERSÃO DO PYTHON....
+
+
+
+
+
+
+
+
+
+
+
+
+A VERSÃO DO C FOI _ __ BEM MAIS RÁPIDA___...
+
+
+
+
+
+
+
+
+
+
+
+
+A VERSÃO DO C FOI MUUUUITO MAIS RÁPIDA... MAS PQ ISSO?
+
+
+
+
+
+
+
+
+
+
+--> C -> APESAR DE SER BAIXO NÍVEL,
+            ELE DIZ EXPLICITAMENTE AO COMPUTADOR O QUE FAZER..
+
+
+
+
+
+
+
+--> PYTHON --> TEMOS 1 GENERAL-PURPOSE SOLUTION 
+                AO PROBLEMA DE MEMORY MANAGEMENT..
+
+
+                MAS TEM 1 PREÇO QUE VC PAGA, POR USAR 1 CÓDIGO DE OUTRA PESSOA 
+                PARA RESOLVER ESSES PROBLEMAS...
+
+
+                --> E VC PAGA 1 PREÇO AINDA MAIOR POR USAR O TIPO DE LINGUAGEM QUE É O PYTHON..
+
+
+
+
+
+
+
+
+
+
+C CODE --> SEMPRE COMPILÁVAMOS 
+            O CÓDIGO __ ANTES__ DE EXECUTÁ-LO...
+
+
+
+
+
+--> MAS COM O PYTHON, É DIFERENTE...
+    O PYTHON SEMPRE 
+
+    __ COMPILA__ ANTES__ DE EXECUTAR O SEU CÓDIGO...
+
+
+
+
+
+
+
+
+--> ''PYTHON IS OFTEN IMPLEMENTED WITH AN INTERPRETER''
+
+
+
+(quer dizer que o python não é apenas uma language, 
+mas 1 programa em si... )
+
+
+
+
+
+
+
+
+
+
+-> ISSO QUER DIZER QUE O PROGRAMA 'PYTHON' QUE 
+
+ESTAMOS EXECUTANDO SEMPRE 
+
+
+
+
+É 1 PROGRAMA QUE CONTÉM 1 COMPILADOR,
+
+1 INTERPRETADOR,
+
+QUE INTERPRETA 
+
+NOSSO CÓDIGO 
+
+
+PYTHON.... COM ISSO, VC FICA 
+
+
+
+COM 1 TIPO DE OVERHEAD... 1 PREÇO QUE VC PAGA,
+
+POR ESSA CONVENIÊNCIA...
+
+
+
+
+
+
+
+
+
+
+VC PAGA 1 PREÇO, PQ ALGUÉM VAI TER QUE IMPLEMENTAR ESSE 'TRANSLATOR' 
+
+PARA VOCÊ....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NO MUNDO PYTHON, TEMOS ALGO ASSIM:
+
+
+
+
+
+
+
+
+source code -> [ INTERPRETER ] -> output 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> QUER DIZER QUE, NO MUNDO PYTHON,
+
+ESTAMOS ESCREVENDO SOURCE CODE,
+
+E AÍ ESTAMOS USANDO 
+
+1 INTERPRETER, 
+O INTERPRETER 
+
+PYTHON,
+
+PARA CONVERTER O CÓDIGO HUMAN-READABLE EM 
+
+
+MACHINE CODE...
+
+
+
+
+
+
+
+
+é por isso que o programa está ficando 'atrasado',
+
+
+é por conta desse 'man-in-the-middle',
+
+que está traduzindo seu código, para linguagem capaz de ser compreendida 
+
+pelo computador...
+
+
+
+
+
+
+
+
+
+É POR ISSO QUE A VERSÃO C DEMOROU APENAS 0.5 SEGUNDOS,
+
+E O PYTHON LEVOU 1 SEGUNDO...
+
+
+
+
+
+
+
+
+TROCA EQUIVALENTE... TODA VEZ QUE VC 
+OBTÉM 1 MELHORIA, HÁ UMA TROCA, ALGO FICA PIOR...

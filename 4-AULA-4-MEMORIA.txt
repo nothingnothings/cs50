@@ -1,0 +1,535 @@
+
+
+
+
+
+Nesta quarta aula, iremos aprender sobre números hexadecimais,
+ endereços de memória, ponteiros e strings. 
+ Também iremos ver ponteiros aritméticos, comparação 
+ e cópia de variáveis, valgrind, valores de lixo, swap(troca).
+  Para finalizar a aula, também você vai aprender sobre layout de memória,
+   scanf, arquivos e gráficos. Aula de hoje tá recheaaada de conteúdo importante!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+até agora, usamos a cs50 library...
+
+
+
+
+
+
+
+
+
+
+
+--> HOJE VAMOS TER 1 FOCO MAIOR EM 'MÁQUINAS',
+    e não em algoritmos..
+
+
+
+
+
+
+
+
+
+
+--> VEREMOS O QUE ACONTECE POR TRÁS DO CAPÔ DO COMPUTADOR...
+
+
+
+
+
+
+
+MEMÓRIA DO COMPUTADOR:
+
+
+
+
+
+[][][][][][][][][]
+[][][][][][][][][]
+[][][][][][][][][]
+[][][][][][][][][]
+[][][][][][][][][]
+[][][][][][][][][]
+[][][][][][][][][]
+
+
+
+
+
+
+
+
+
+
+--> cientistas da computação não usam decimal...
+
+
+
+
+
+
+
+
+
+
+
+----> usam hexadecimal, que é 
+    uma convenção...
+
+
+
+
+
+
+
+
+
+0-9 A-F
+
+
+
+
+
+
+
+
+HEXADECIMAL --> BASE 16..
+
+
+
+
+
+
+
+
+
+A VANTAGEM DISSO É QUe, dentro do hexadecimal,
+
+
+vc tem 16 dígitos individuais...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+IMAGINE 2 DÍGITOS, HEXADECIMAL...
+
+
+
+
+
+
+
+## 
+
+
+
+
+
+3A 
+
+
+
+
+48 + 11
+
+
+
+
+
+
+
+
+
+
+
+
+
+FF --> É 255...
+
+
+
+
+
+
+
+
+
+
+
+
+255 --> É A MESMA COISA QUE 1111 1111 ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+os cientistas gostam disso pq hexadecimal
+
+
+
+te deixa representar 16 values possíveis,
+
+
+e é o sistema perfeito para representar 
+
+
+4bits por vez...
+
+
+
+
+
+
+
+
+
+
+
+1 hex digit --> é igual a 4 bits, 4 0s ou 1s...
+
+
+
+
+
+
+
+
+72 73 33 
+
+
+
+
+É A MESMA COISA QUE 
+
+
+
+48 49 21,
+
+
+
+
+
+em hexadecimal...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> UMA CONVENÇÃO, NO MUNDO DA COMPUTAÇÃO,
+
+É QUE SEMPRE QUE VC VAI REPRESENTAR DÍGITOS HEXADECIMAIS,
+
+VC COLOCA UM '0x' no início,
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+0x48  0x49  0x21
+
+
+
+
+
+
+
+
+FF0000 --> RED 
+
+
+00FF00 --> GREEN 
+
+
+0000FF --> BLUE 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TEMOS ESTA LINHA DE CÓDIGO:
+
+
+
+
+
+
+
+
+
+
+
+
+int n = 50;
+
+
+
+
+
+
+
+
+O QUE ACONTECE, QUANDO ASSIGNAMOS ESSA VARIABLE,
+
+
+
+
+
+NO NOSSO COMPUTADOR?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> podemos escrever assim:
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main(void) 
+{
+    int n = 50;
+    print("%i\n", n);
+}
+
+
+
+
+
+
+
+
+FICAMOS COM O NÚMERO 50...
+
+
+
+
+
+
+
+
+
+
+MAS O PROFESSOR NOS DÁ MAIS ALGUMAS TOOLS...
+
+
+
+
+
+
+
+
+
+
+ESSE 'n' precisa existir em algum lugar da memória do seu pc...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> INTEGERS OCUPAM 4 BYTES....
+
+
+
+
+
+por isso 
+
+
+
+ocupa 4 espaços, tipo assim:
+
+
+
+
+
+
+
+
+
+[x][x][x][x][][][][][]
+[][][][][][][][][]
+[][][][][][][][][]
+[][][][][][][][][]
+[][][][][][][][][]
+[][][][][][][][][]
+[][][][][][][][][]
+
+
+
+
+
+
+
+
+
+--> E PODEMOS NOS REFERIR A ESSA 'COISA', a esse valor,
+
+    USANDO UM 'ENDEREÇO',
+
+    endereço que EXISTE DENTRO DA MEMÓRIA DE NOSSO PC...
+
+
+
+
+
+
+
+esse endereço é a variável, ou, mais especificamente,
+
+está armazenado DENTRO DA VARIÁVEL...
+
+
+
+
+
+
+
+
+
+--> A PARTE LEGAL DO C
+    É QUE PODEMOOS 
+
+    COMEÇAR A VER ISSO..
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR ADICIONA 1 POUCO DE SINTAXE NOVA,
+    QUE TE DEIXA 
+
+    'POKE AROUND YOUR COMPUTER'S MEMORY',
+
+    para visualizar esse tipo de coisa...
+
+
+
+
+
+
+
+
+
+EM VEZ DE PRINTAR O VALUE DE 'n',
+
+que é '50',
+
+
+
+
+''LET'S SEE WHAT IS THE ACTUAL __ ADDRESS_ OF n...''...
+
+
+
+
+
+--> para isso, para conseguirmos printar o actual ADDRESS do 'n',
+
+    USAREMOS 2 NOVOS OPERADORES, EM C, QUE 
+    SÃO:
+
+
+    1) '&' --> AMPERSAND...
+
+    2) '*'

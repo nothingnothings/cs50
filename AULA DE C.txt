@@ -1,0 +1,5895 @@
+AULA DE C...
+
+
+
+
+
+
+
+
+
+functions 
+
+conditions 
+
+boolean expressions 
+
+loops
+
+
+
+
+
+
+
+
+
+
+1) CORRECTNESS....
+
+
+
+
+
+
+CORRECT AND WELL-DESIGNED CODE...
+
+
+
+
+
+
+
+
+
+
+
+
+2) GOOD DESIGN 
+
+
+
+
+
+
+
+
+3) STYLE 
+
+
+
+
+
+
+
+
+
+
+-> É A ESTÉTICA... É COMO USAR 
+BOA PONTUAÇÃO,
+INDENTAÇÃO, ETC...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CS50 IDE...
+
+
+
+
+
+
+
+
+
+
+
+INTEGRATED DEVELOPMENT ENVIRONMENT...
+
+
+
+
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+// int main(int argc, char *argv[])
+// {
+//     int i;
+//     for (i = 0; i < argc; i++)
+//         printf("%s\n", argv[i]);
+//     return 0;
+// }
+
+
+int main(void) {
+    printf("Hello World!\n");
+    return 0;
+}
+
+// To compile, use the following command:
+// gcc -o example example.c
+
+
+// Gnu stands for GNU Compiler Collection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MACHINE LANGUAGE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BINARY...
+
+
+
+
+
+
+
+
+
+
+
+
+MACHINE LANGUAGE...
+
+
+
+
+
+
+
+
+
+
+1s and 0s...
+
+
+
+
+
+
+FUNCTIONS ARE ALSO REPRESENTED BY 0s and 1s...
+
+
+
+
+
+
+
+
+
+
+para traduzir esse código HUMANO,
+
+
+SOURCE CODE, em formato C,
+
+
+para MACHINE LANGUAGE,
+
+
+
+
+precisamos COMPILAR...
+
+
+
+
+
+
+O OUTPUT É MACHINE CODE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MACHINE CODE, MACHINE LANGUAGE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SOURCE CODE --> COMPILER --> MACHINE CODE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COMPILER --> É UM PROGRAMA 
+             GRÁTIS/PAGO,
+
+             QUE EXISTE PARA CONVERTER 
+
+
+             HUMAN LANGUAGE EM MACHINE LANGUAGE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> 'make' --> essa é a tool do CS50....
+
+
+
+
+
+
+
+
+--> MAS O COMPILER QUE UTILIZEI, NO MEU UBUNTU,
+
+FOI O 'gcc',
+
+
+'GNU Compiller Collection'...
+
+
+
+
+
+
+
+
+
+
+FUNCTIONS, ARGUMENTS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> FUNCTIONS --> SÃO VERBOS, ACTIONS...
+
+
+
+
+
+
+
+
+
+
+--> FUNCTIONS PODEM RECEBER INPUTS...
+
+
+INPUTS SÃO CHAMADOS DE ARGUMENTS/PARAMETERS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ARGUMENTS E PARAMETERS SÃO SINÔNIMOS...
+
+
+
+
+
+
+
+
+
+O CÓDIGO FICA TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+int main(void) {
+    printf("Hello World!\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COM ARGUMENTO,
+
+
+FICA TIPO ASSIM:
+
+
+
+
+
+
+
+
+int main(argc, argv){
+    // print the argument as a string:
+    printf("%s\n", argv[0]);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> FUNCTIONS PODEM TER 'SIDE EFFECTS'...
+
+
+
+
+
+
+
+
+
+
+E ISSO É UM PROBLEMA...
+
+
+
+
+
+
+
+
+-> RETURN VALUES....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+RETURN VALUE --> 1 FUNCTION PODE TE DAR 1 VALUE,
+                    QUE VC PODE PEGAR E USAR 
+
+                    EM OUTRAS FUNCTIONS,
+
+                    OU ARMAZENAR EM OUTRAS VARIABLES...
+
+
+
+
+
+        
+
+
+
+
+
+
+        ASK WHATS YOUR NAME AND WAIT:
+
+        ANSWER --> essa é a variable...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LIBRARIES --> FACILITAM A ESCRITA DE FUNCIONALIDADES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CS50 LIBRARY -->  É UMA LIBRARY ESCRITA PELO PROFESSOR E MAIS ALGUMAS PESSOAS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+STRING --> TEXT...
+
+
+
+
+
+
+
+
+
+
+
+'get_string()'
+
+
+
+É A FUNCTION ESCRITA PELO PROFESSOR...
+
+
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+get_string("What's your name? ");
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> NO c,
+    se vc quer que algo 
+
+    ACABE DENTRO DE 1 VARIABLE,
+
+    VC PRECISA FAZER ISSO POR CONTA PRÓPRIA...
+
+
+
+
+
+
+
+
+
+
+
+--> DEVEMOS ESCREVER O NOME DA VARIABLE DESEJADA...
+
+
+
+TIPO EM PYTHON,
+
+TIPO ASSIM:
+
+
+
+
+
+answer = get_string("What's your name? ");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COM ISSO, ASSIGNAMOS O RETURN VALUE DA FUNCTION 
+
+
+
+A ESSA VARIABLE, DE NOME 'answer'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- OK... MAS, NO C,
+
+
+VC PRECISA COMUNICAR 
+
+
+AO 
+
+COMPUTER 'QUE TIPO DE VARIABLE VC QUER'...
+
+
+
+
+
+
+
+
+
+
+--> QUEREMOS DIZER QUE A VARIABLE SERÁ UMA STRING..
+
+
+
+
+
+
+
+
+
+--> PARA DEIXAR 1 TYPE DE 'string',
+
+
+
+escreva 'string'...
+
+EX:
+
+
+
+
+
+
+
+// You need to define the type of the variable
+char *name = "Arthur";
+
+string answer = get_string("What is your name?");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... MAS 'string' PROVAVELMENTE NÃO VAI FUNCIONAR..
+
+
+
+
+O NOME É  'char'...
+
+
+
+
+
+
+
+
+TAMBÉM PRECISAMOS DE ';'...
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+
+
+
+
+// You need to define the type of the variable
+char *name = "Arthur";
+
+string answer = get_string("What is your name?");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ok... o que mais podemos fazer?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> USAMOS O RETURN VALUE NO OUTPUT...
+
+
+
+
+
+
+
+
+
+SIDE EFFECTS 
+
+
+VS 
+
+RETURN VALUE (1 pedaço de info, como 1 nome, 
+                armazenado em algum lugar, 1 pedaço de info que será usado mais tarde)
+
+
+
+
+
+
+
+printf("hello, %s");
+
+
+
+
+
+
+
+
+'%s' É UM PLACEHOLDER 
+
+
+PARA O QUE SERÁ UMA STRING...
+
+
+
+
+
+
+
+
+
+PODEMOS FAZER O HARDCODE de 1 string,
+
+
+ou então 
+
+
+
+
+colocar a variable de 'answer',
+
+
+TIPO ASSIM:
+
+
+
+string answer = get_string("What is your name?");
+
+
+printf("hello, %s", answer);
+
+
+
+
+
+
+
+
+
+
+
+COM ISSO, CONSEGUIMOS PRINTAR 'hello, YOUR_NAME',
+
+
+com essa sintaxe aí...
+
+
+
+
+
+
+
+
+mas como podemos obter input do user?
+
+
+
+
+
+
+
+
+
+
+
+--> BASTA ESCREVER ASSIM:
+
+
+
+
+
+
+
+        
+
+
+int main(void) {
+string answer = get_string("What is your name? ");
+printf("hello, %s", answer);
+}
+
+
+
+
+
+
+
+
+
+
+-_> MAS PRECISAMOS DA LIBRARY DO CS50...
+
+
+
+
+
+
+
+--> PARA ISSO, PRECISAMOS DE UM INCLUDE,
+
+
+
+TIPO #include <cs50.h>
+
+
+
+
+
+
+
+
+
+
+
+
+--> ISSO VAI NOS DAR ACESSO À FUNCTION DE 'get_string',
+
+criado pela equipe do MIT....
+
+
+
+
+
+
+
+OK... MAS AO RODARMOS ISSO, NÃO FICAMOS COM O OUTPUT ESPERADO,
+
+FICAMOS COM APENAS 'HELLO, WORLD'...
+
+
+
+
+
+
+
+
+iSSO ACONTECEU pq 
+
+
+NÃO COMPILAMOS NOSSO CÓDIGO, AINDA...
+
+
+
+
+
+
+
+
+
+-> PRECISAMOS RECOMPILAR O CÓDIGO...
+
+
+
+
+
+
+
+
+--> TODA VEZ QUE ALTERAMOS NOSSO ARQUIVO,
+
+
+
+TEMOS QUE RECOMPILAR,
+
+
+
+COM ou:
+
+make hello 
+
+
+
+ou 
+
+
+
+gcc -o file_output_name file_input_name 
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... AGORA NOSSO PROGRAMA FUNCIONA...
+
+
+
+
+
+
+
+EM C, PODEMOS COLOCAR O VARIABLE NAME ,
+
+
+COLOCAR ALGO COMO 
+
+
+
+string a = function();
+
+
+printf("hello, %s", a);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAS É CLARO QUE É MELHOR USAR VARIABLE NAMES QUE 
+FAÇAM SENTIDO...
+
+
+
+
+
+
+
+É GOOD STYLE...
+
+
+
+POR ISSO NÃO DEVEMOS USAR APENAS 'a'...
+
+
+
+
+
+
+
+
+
+
+
+
+-> DEPENDENDO DO IDE,
+
+
+
+O COMPILE ACONTECE AUTOMATICAMENTE,
+
+
+
+INTEGRATED DEVELOPMENT ENVIRONMENTS...
+
+
+
+
+
+
+
+code.org 
+
+
+codecademyonline.com,
+
+
+
+ETC...
+
+
+
+
+
+
+
+
+--> A LINGUAGEM C 
+    EXIGE A COMPILAÇÃO,
+
+
+    PQ É SUPER VELHA...
+
+
+
+
+
+
+
+--> PYTHON --> NÃO PRECISA DE COMPILING...
+
+
+
+
+
+
+
+
+
+
+-> 'SORT OF' NÃO PRECISA DE COMPILING...
+
+
+
+
+
+
+
+
+
+
+
+--> SOURCE CODE --> 
+
+
+
+
+'\n'...
+
+
+
+
+
+
+
+
+
+
+--> É UM ESCAPE CHARACTER...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> \n 
+
+
+
+
+FAZ COM QUE A LINHA PULE PARA BAIXO...
+
+
+
+
+
+--> ISSO MOSTRA QUE PRECISAMOS SER SUPER PRECISOS,
+    NO NOSSO CÓDIGO...
+
+
+
+
+
+
+
+    COMO NÃO TÍNHAMOS ESCRITO '\n',
+
+
+    ele NÃO PULOU a linha...
+
+
+
+
+
+
+
+
+
+
+
+
+CERTO....
+
+
+
+
+
+
+
+
+
+
+
+answer = get_string() 
+
+
+
+
+
+
+
+
+
+
+--> O C 
+
+
+SEMPRE FAZ EVALUATE 
+
+DE LINHAS DE CÓDIGO 
+
+
+
+__ DA DIREITA PARA A ESQUERDA...
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+<-------------------
+answer = get_string() 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+quer dizer que 'get_string()'
+
+realmente é executado, basicamente...
+
+
+
+
+
+
+A MAIOR PARTE DOS PROGRAMAS DO SCRATCH 
+
+
+
+
+
+É INICIADO COM 'WHEN GREEN FLAG IS CLICKED'...
+
+
+
+
+
+
+
+O EQIUVALENTE A ISSO É 
+
+
+
+'int main(void) {
+
+
+}
+'
+
+
+
+
+
+
+
+
+
+
+
+
+ESSA FUNCTION DE 'main()'
+
+
+É BASICAMENTE O CÓDIGO BOILERPLATE 
+
+
+DO C...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR ENTÃO FALA DE 'HEADER FILES'...
+
+
+
+
+
+
+
+
+
+-> É 1 TERMO QUE SE REFERE A 1 ARQUIVO 
+
+    ESCRITO NA LINGUAGEM C,
+
+    MAS QUE TERMINA 
+
+
+    NÃO COM '.c',
+
+    E SIM COM 
+
+
+    '.h'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> UM EXEMPLO DISSO É 
+
+
+
+
+'#include <stdio.h>'...
+
+
+
+
+
+
+
+
+
+-> ESSE CÓDIGO FAZ O IMPORT DA HEADER FILE 'stdio'...
+
+
+
+
+
+
+
+
+STANDARD INPUT OUTPUT...
+
+
+
+
+
+
+ESSA HEADER FILE TE PROVIDENCIA A FUNCTION DE 
+
+'printf()',
+
+
+QUE TE DEIXA 
+
+OUTPUTTAR o input...
+
+
+
+
+
+
+
+
+
+---> NÓS ANTES COLOCAMOS OUTRA HEADER FILE,
+
+
+DO 'cc50',
+
+
+com 
+
+
+#include <cc50.h>
+
+
+
+
+
+
+
+
+
+
+
+E FIZEMOS ISSO PARA CONSEGUIR A FUNCTION 
+
+
+'get_string()'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> CAUSAS DE ERRO:
+
+
+
+
+1) ';' errado 
+
+
+2) () errado 
+
+
+
+3) {} errado...
+
+
+
+
+
+
+
+
+
+
+
+
+MENSAGENS DE ERRO PODEM SER CRYPTIC...
+
+
+
+
+
+''include the header <stdio.h>''...
+
+
+
+
+
+
+
+c:3:5 --> ESTAMOS COM 1 PROBLEMA NA LINHA 3, CARACTER 5...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+help50 --> É UM COMANDO DO MIT,
+
+            QUE CONVERTE 
+
+            MENSAGENS DE ERRO EM VERSOES MAIS USER-FRIENDLY...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+help50 make hello 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O PROFESSOR MOSTRA COMO PODE SER RUIM A FALTA DE INDENTAÇÃO... BAD STYLE...
+
+
+
+
+
+
+O PROFESSOR MOSTRA OUTRO COMANDO, 'style50',
+
+
+
+QUE É TIPO UM LINTER... TE FORÇA A MELHORAR O STYLE DO SEU CÓDIGO...
+
+
+
+
+
+
+
+
+
+
+
+''Greet user''
+
+
+é melhor do que ''print user''...
+
+
+
+
+
+
+
+--> pq estamos explicando quase exatamente o que o código faz...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> programas com 1 linha de código não precisam de comments...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> OUTRA TOOL:
+
+
+
+
+
+
+'check50'...
+
+
+
+
+
+
+
+
+
+-> ESSE COMANDO CHECA A 'CORRECTNESS' DO SEU CÓDIGO...
+
+
+
+
+
+
+
+
+help50 --> TE AJUDA A COMPILAR SEU CÓDIGO, QUANDO NÃO ESTÁ COMPILANDO 
+
+
+
+style50 --> TE AJUDA A MELHORAR O STYLE DO SEU CÓDIGO...
+
+
+
+
+
+check50 --> RODA ALGUNS TESTS AUTOMATIZADOS PARA 
+            AQUELE CÓDIGO ESPECÍFICO, PARA VER SE ELE ESTÁ REALMENTE 
+            FUNCIONANDO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+check50 -> os tests que são executados 
+            sempre dependem do problem-set / lab...
+
+
+            DEPENDE DA AULA DO DIA...
+
+
+
+
+
+
+
+
+
+POR EXEMPLO:
+
+
+
+check50 cs50/problems/hello 
+
+
+
+
+
+
+
+
+ISSO VAI, ENTÃO,
+
+
+UPLOADAR NOSSA FILE AO GITHUB,
+
+
+E AÍ A TOOL DO MIT VAI VERIFICAR ESSE CÓDIGO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> cs50 --> ESTAMOS USANDO 1 WEBSERVER, NA NUVEM...
+
+
+
+
+
+
+
+
+
+CS50 --> É PRATICAMENTE SEU PRÓPRIO PC, NA NUVEM...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MACHINE CODE (files em binary, produzidas pelo compiler do C)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VIMOS STRINGS, MAS HÁ MAIS DATA TYPES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+PODEMOS MANIPULAR FOLDERS E FILES DENTRO DO TERMINAL...
+
+
+
+
+
+
+
+
+
+
+ls --> list 
+
+
+
+cd 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TEMOS ISTO:
+
+
+
+
+
+
+
+hello*
+
+
+
+
+
+
+o asterisco quer dizer ''ESTE ARQUIVO É EXECUTÁVEL''...
+
+
+
+
+ISSO É PQ ESSE ARQUIVO É UM __ PROGRAMA...
+
+
+
+
+
+
+
+
+
+--> PODEMOS RENOMEAR NOSSO ARQUIVO,
+
+
+COM A INTERFACE VISUAL...
+
+
+
+
+
+
+
+
+-> MAS NA COMMAND LINE 
+
+É MAIS SIMPLES,
+
+
+
+BASTA USAR 'mv'...
+
+
+
+
+
+move hello bye
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+Usuario@DESKTOP-S1M32O5 MINGW64 ~/Desktop/CC50
+$ mv example.c example25.c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CERTO...
+
+
+
+
+
+
+
+PODEMOS REMOVER ARQUIVOS COM 'rm',
+
+
+
+e também com 'rm -rf''..
+
+
+
+
+
+
+
+
+
+
+REMOVE recursive, force...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+./hello
+
+
+
+
+
+
+
+
+
+
+./ --> É O CURRENT DIRECTORY...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cd 
+
+cp 
+
+ls 
+
+mkdir 
+
+mv 
+
+
+rm 
+
+
+rmdir 
+
+
+
+
+
+
+
+--> SÃO COMANDOS UNIX...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+hello.c 
+
+
+
+hello
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'make' -> NÃO É UM COMPILER EM SI.... 
+
+
+
+
+
+O PROFESSOR FALARÁ MAIS SOBRE ISSO NA PRÓXIMA AULA...
+
+
+
+
+
+
+
+
+
+
+
+no c, e em outras languages,
+
+há DATA TYPES..
+
+
+
+
+
+
+
+
+
+
+INTEGERS, FLOAT POINT VALUES,
+
+
+ETC ETC..
+
+
+
+
+
+
+
+
+ARRAYS,
+
+BOOLEAN VALUES...
+
+
+
+
+
+CHARACTERS (single characters)...
+
+
+
+
+
+
+bool
+
+char 
+
+double 
+
+float 
+
+int 
+
+long 
+
+string 
+
+...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NO CS50 library,
+
+
+
+TEMOS OUTRAS FUNCTIONS, COMO ESTAS:
+
+
+
+
+
+
+
+get_char 
+
+
+get_double 
+
+
+
+
+get_float 
+
+
+get_int 
+
+
+
+get_long 
+
+
+get_string 
+
+
+
+
+
+
+
+
+
+
+--> CADA 1 DESSES DATA TYPES 
+
+
+POSSUI 1 NÚMERO FINITO DE BITS...
+
+
+
+
+
+
+
+--> OU SEJA, HÁ LIMITES 
+
+    PARA AS COISAS QUE PODEM ARMAZENAR...
+
+
+
+
+
+
+
+
+
+--> TODOS ESSES DATA TYPES USAM 
+    1 NÚMERO ESPECÍFICO DE BITS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+    INTS -> em C, usam apenas 32 bits...
+
+
+
+
+
+
+
+
+--> E ISSO É BOM,
+
+    ATÉ CHEGAR EM 1 PONTO (tipo 4 bilhoes),
+
+
+    1 ponto em que esse data type não será suficiente... 
+
+    (you can only count so high)...
+
+
+
+
+
+
+--> LONG --> ELE USA 64 BITS --> te dá a capacidade de contar bem mais alto, pq temos bem mais bits...
+
+
+
+
+
+
+
+bem mais 0s e 1s...
+
+
+
+
+
+
+
+
+
+
+
+
+--> double --> TE DEIXA TER AINDA MAIS DÍGITOS....
+
+
+
+
+
+
+
+
+
+
+PRINTF ---> PODE PRINTAR 
+            OUTRAS COISAS, ALÉM DE STRINGS..
+
+
+
+
+
+SÃO ELAS:
+
+
+
+
+
+%s --> STRING 
+
+%c --> 1 SINGLE CHARACTER 
+
+%i --> UM INTEGER...
+
+
+%f --> FLOAT 
+
+
+
+%li --> PRINTAR UM 'LONG INTEGER'...
+
+
+
+
+
+
+
+
+
+
+-> HÁ OUTROS, MAS ESSES SÃO OS MAIS COMUNS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+C -> EXIGE QUE O PROGRAMADOR SEJA 
+    BEM PRECISO...
+
+
+
+
+
+    NÃO É NADA DECLARATIVO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OS PROGRAMAS INICIALMENTE NÃO TINHAM GUI...
+
+
+
+
+
+
+
+
+
+O PROFESSOR ESCREVE UM OUTRO PROGRAMA, COM MAIS FUNCTIONS..
+
+
+
+
+
+
+
+
+
+addition.c 
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> CERTO...
+
+
+
+
+
+
+
+
+AÍ ELE ESCREVE ASSIM:
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+
+
+
+
+
+
+
+
+
+AÍ TIPO ASSIM:
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+
+int main(void) {
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK...
+
+
+
+
+
+
+
+
+ESSA DECLARAÇÃO DE TYPE É NECESSÁRIA, E O ARGUMENT TAMBÉM (mesmo sendo 'void')...
+
+
+
+
+
+
+
+
+VAMOS FAZER A CALCULADORA MAIS SIMPLES DO MUNDO,
+
+COM ISTO:
+
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+
+int main(void) {
+
+
+        // Prompt user for two integers, then add them together
+        int x = get_int("x: ");
+        int y = get_int("y: ");
+
+        printf("x + y = %d\n", x + y);
+
+        return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+para compilar, escrevemos assim:
+
+
+
+
+
+
+
+$ gcc addition.c -o addition
+
+
+
+
+
+
+
+
+ok... temos 1 calculadora básica...
+
+
+
+
+
+
+
+o professor nos mostra 1 overflow...
+
+
+
+
+
+
+
+
+depois, ele troca a function  para 'get_long', em vez de 'get_int()'...
+
+
+
+
+isso para conseguirmos usar 'get_long'...
+
+
+
+
+
+
+
+
+
+--> O COMPILADOR PODE INDICAR MTOS ERRORS...
+
+
+
+
+
+
+
+-> SEMPRE CONSERTE O PRIMEIRO ERROR DO STACK... COMECE POR CIMA,
+
+SEMPRE...
+
+
+
+
+
+PQ OS OUTROS ERRORS PODEM SER APENAS SIDE-EFFECTS...
+
+
+--> O ERRO FOI CAUSADO POR CONTA DE '%i',
+
+que deveria ser '%li',
+
+
+para 'LONG INTEGER'...
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+
+int main(void) {
+
+
+        // Prompt user for two integers, then add them together
+        int x = get_int("x: ");
+        int y = get_int("y: ");
+
+        printf("x + y = %li\n", x + y);
+
+        return 0;
+}
+
+// to compile this on windows, run the command prompt as administrator and type:
+// gcc addition.c -o addition.exe
+
+
+
+
+
+
+
+
+
+
+
+In C programming, %d is a format specifier that represents a decimal integer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O PROFESSOR ESCREVE OUTRO PROBLEMA,
+
+DE NOME 'truncation.c'...
+
+
+
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+
+int main(void) {
+        // Prompt user for a int
+        int x = get_int("x: ");
+        int y = get_int("y: ");
+
+        float z = x / y;
+}
+
+
+
+
+
+
+
+
+
+
+CERTO... OS 2 PRIMEIROS SERÃO INT,
+
+MAS O Z PODERÁ SER OU 1 INT, OU 1 FLOAT... e isso é um problema...
+
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+
+int main(void) {
+        // Prompt user for a int
+        int x = get_int("x: ");
+        int y = get_int("y: ");
+
+        float z = x / y;
+}
+
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+
+int main(void) {
+        // Get numbers from user
+        int x = get_int("x: ");
+        int y = get_int("y: ");
+
+        // Divide x by y
+        float z = x / y;
+
+        printf("%f\n", z);
+
+        return 0;
+}
+
+
+
+
+
+
+
+
+
+
+O PROFESSOR COMPILA E EXECUTA,
+
+
+
+E 
+
+
+
+RODA 
+
+
+4 
+E 
+
+2 
+
+
+PARA OS VALUES...
+
+
+
+
+
+
+
+
+
+
+MAS DEPOIS ELE TENTA DIVIDIR '2 POR 3'...
+
+
+
+
+--> E FICA COM '0.00000'...
+ 
+
+ (ou seja, ficamos com 1 BUG...)
+
+
+
+
+
+
+
+
+
+
+--> O CÓDIGO COMPILA,
+
+ESTÁ FINE... MAS ESTAMOS COM 1 
+
+_ 'LOGICAL BUG'...
+
+
+
+
+
+ISSO ACONTECEU PQ USAMOS O C INCORRETAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+--> C, COMO A MAIOR PARTE DAS LINGUAGENS DE PROGRAMAÇÃO,
+
+
+INTERPRETA TUDO BEM LITERALMENTE...
+
+
+
+
+
+
+
+
+float z = x / y;
+
+
+
+
+
+
+
+
+
+
+
+
+VC DEVE PERGUNTAR 'QUAL É O TYPE DESSES 2 VALUES'...
+
+
+
+
+
+
+
+-> se são 2 ints,
+
+vc vai receber 1 int, como resultado...
+
+
+
+
+
+
+
+
+
+
+-> '''BUT IF YOU TRY TO DIVIDE TWO INTS
+    THAT HAVE A REMAINDER,
+
+    EVERYTHING AFTER THE DECIMAL POINT WILL BE _ TRUNCATED''
+
+
+    (tudo pq vc não pode encaixar a parte decimal/float 
+    DENTRO DE 1 VARIABLE DE TIPO 'INT'... a parte decimal 
+    
+    
+    
+    É BASICAMENTE DESCARTADA...)
+
+
+
+
+
+
+
+
+
+    TUDO DEPOIS DO 'DECIMAL POINT' É DESCARTADO, BASICAMENTE...
+
+
+
+
+
+
+
+
+
+--> OK.. MAS COMO PODEMOS CONSERTAR ESSE PROBLEMA?
+
+
+
+
+
+
+
+
+
+
+TALVEZ TROCAR TUDO PARA 'get_float()', em vez de 'get_int()'...
+
+
+
+
+
+
+
+
+
+
+-> MAS O PROFESSOR APONTA QUE ESSA 
+
+
+É BASICAMENTE UMA 'HEAVY-HANDED SOLUTION' 
+
+AO PROBLEMA... ISSO PQ VC TERIA DE MUDAR TODAS AS PARTES DO SEU CÓDIGO 
+
+QUE UTILIZARAM ESSE TIPO DE FUNÇÃO...
+
+
+
+
+
+
+
+
+EM VEZ DISSO, EM VEZ DE SER FORÇADO A MUDAR TUDO ISSO,
+
+
+VC PODE SIMPLESMENTE PEDIR AO COMPUTADOR PARA QUE 
+
+ELE 
+
+
+
+__ MUDE __ 1 INTEGER PARA 1 FLOAT,
+
+
+POR MEIO DE 'CASTING'...
+
+
+
+
+
+
+
+
+
+
+
+
+-> PARA FAZER O CAST DE 1 VALUE COMO SENDO OUTRO VALUE,
+BASTA USAR A MESMA SINTAXE DO PHP,
+
+COM ALGO COMO 
+
+
+
+
+
+
+float z = (float) x / (float) y;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> OU SEJA, PODEMOS FAZER TYPECAST DE 1 DATA TYPE COMO 
+OUTRO TYPE,
+
+
+POR MEIO DE '(YOUR_DATA_TYPE)'...
+
+
+
+
+
+
+
+
+
+FICA TIPO ASSIM:
+
+
+
+
+
+
+int main(void) {
+        // Prompt user for a int
+        int x = get_int("x: ");
+        int y = get_int("y: ");
+
+        float z = (float) x / (float) y; // This is type casting in C (similar to PHP).
+
+        printf("%f\n", z);
+
+        return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VARIABLES... 
+
+
+
+
+SYNTACTIC SUGAR...
+
+
+
+
+
+
+
+
+
+
+
+
+
+'SET COUNTER TO 0'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PODEMOS DEFINIR 1 VARIABLE COMO 
+
+
+
+'int counter = 0;'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+counter = counter + 1;
+
+
+
+
+
+
+
+
+
+counter += 1;
+
+
+
+
+
+
+
+
+
+counter = counter + 1;
+
+counter += 1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+counter *= 1;
+
+
+
+
+
+counter -= 1;
+
+
+
+
+
+
+
+
+
+
+ok...
+
+
+isso tudo é bem óbvio...
+
+
+
+
+
+
+
+
+
+
+-> ou isto:
+
+
+
+
+
+
+
+counter++;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONDITIONS:
+
+
+
+
+
+
+
+if xxx 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if (x < y)
+{
+    printf("x is less than y!\n");
+}
+
+
+
+
+
+
+
+
+
+
+if (xxx) 
+{
+
+} else {
+
+}
+
+
+
+
+
+
+
+
+
+
+if (x < y)
+{
+    printf("x is less than y!\n");
+} 
+else 
+{
+    printf("x is not less than y!\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+if (x < y)
+{
+    printf("x is less than y!\n");
+} 
+else if (x > y)
+{
+    printf("x is greater than y!\n");
+}
+else if (x == y)
+{
+    printf("x is equal to y!\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+-> '==' é usado para equality...
+
+
+
+
+
+
+
+
+
+
+--> ESSE CÓDIGO ESTÁ CORRETO,
+
+
+MAS O CÓDIGO NÃO ESTÁ 
+
+
+
+BEM PROJETADO...
+
+
+
+
+
+
+
+
+
+
+
+
+-> É MELHOR USAR UM 'ELSE' FINAL, EM VEZ DE 'ELSE IF'...
+
+
+
+
+
+
+
+
+FICA TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+if (x < y)
+{
+    printf("x is less than y!\n");
+} 
+else if (x > y)
+{
+    printf("x is greater than y!\n");
+}
+else
+{
+    printf("x is equal to y!\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+O PROFESSOR CRIA UM NOVO ARQUIVO, CHAMADO DE 'conditions.c'...
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+int main(void) {
+        // Prompt user for a number
+        int x = get_int("x: ");
+        int y = get_int("y: ");
+
+        if (x < y) {
+                printf("x is less than y!\n");
+        } else if (x > y) {
+                printf("x is greater than y!\n");
+        } else {
+                printf("x is equal to y!\n");
+        }
+
+        return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O PROFESSOR CRIA OUTRA FILE, DE NOME 'agree.c'...
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+int main(void) {
+        // Prompt user for a string 
+        char c = get_char("Do you agree? (y/n): ");
+        if (c == 'y') {
+                printf("Agreed!\n");
+        } else {
+                printf("Not agreed.\n");
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+COM ISSO, 
+
+
+
+CONTEMPLAMOS TODOS OS CASES QUE NÃO SÃO 'y'...
+
+
+
+
+
+
+
+
+
+
+
+--> CERTO...
+
+
+OUTRAS COISAS QUE VC DEVE TER EM MENTE:
+
+
+
+
+
+1) NÓS USAMOS '==' para as boolean expressions 
+
+
+
+
+2) EM C, 
+
+    SEMPRE DEVEMOS USAR ' (single quotes) 
+    QUANDO RODAMOS COMPARISONS COM SINGLE CHARACTERS...
+
+
+
+
+
+
+
+
+
+'''chars''' -> são INDIVIDUAL CHARACTERS, COMO 'a', 'b', 'c'...
+
+
+
+
+
+
+
+
+e, quando VC ESTÁ LIDANDO COM CARACTERES INDIVIDUAIS, VC SEMPRE DEVE 
+ESCREVÊ-LOS NO FORMATO 'j', e nunca "j"...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+rodamos:
+
+
+
+
+
+
+make agree
+
+
+
+
+
+
+
+
+./agree
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAS AQUI FICAMOS COM 1 PROBLEMA:
+
+
+
+
+
+
+SÓ 'y' funciona... 'Y' não funciona...
+
+
+
+
+
+
+
+
+
+
+-> PARA ISSO, PODEMOS USAR O OR OPERATOR, COM PIPE...
+
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+int main(void) {
+        // Prompt user for a string 
+        char c = get_char("Do you agree? (y/n): ");
+        if (c == 'y' || c == 'Y') {
+                printf("Agreed!\n");
+        } else {
+                printf("Not agreed.\n");
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+int main(void) {
+        // Prompt user for a string 
+        char c = get_char("Do you agree? (y/n): ");
+        if (c == 'y' || c == 'Y') {
+                printf("Agreed!\n");
+        } else if (c == 'n' || c == 'N') {
+                printf("Not agreed.\n");
+        } else {
+                printf("Not agreed.\n");
+        }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... AGORA O PROFESSOR FALA DE ___LOOPS__...
+
+
+
+
+
+
+
+
+
+
+
+
+
+NÃO EXISTE 'FOREVER' NO C,
+
+
+MAS EXISTE O 'WHILE'...
+
+
+
+
+
+
+
+
+WHILE LOOP....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+while true
+{
+    printf("hello, world\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PRECISAMOS DE UMA BOOLEAN EXPRESSION...
+
+
+
+
+
+
+
+
+
+--> COLOCAMOS '()' DEPOIS DE 'while',
+
+TIPO ASSIM:
+
+
+
+
+while ()
+{
+    printf("hello, world\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+while (true)
+{
+        printf("hello, world\n");
+}
+
+
+
+
+
+
+
+
+
+ISSO CRIA UM LOOP INFINITO, NO C...
+
+
+
+
+
+
+
+
+
+PODEMOS FAZER ALGO FINITO 1 NÚMERO X DE VEZES,
+
+
+
+COM 1 FOR LOOP,
+
+
+
+OU COM 1 WHILE LOOP...
+
+
+
+
+
+
+
+
+
+
+--> VAMOS USAR A VARIABLE DE 'COUNTER'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+int i = 0;
+
+
+
+
+
+
+
+
+--> VAMOS USAR 1 VARIABLE DE NOME 'i'...
+
+
+
+
+
+
+
+quando programadores querem contar de 1 número a outro,
+
+ou de 1 coisa para outra,
+
+
+
+
+eles frequentemente usam 
+
+
+coisas como:
+
+
+
+
+i --> para INTEGERS 
+
+
+
+
+c --> PARA CHARACTERS 
+
+
+
+
+s --> PARA STRINGS...
+
+
+
+
+
+
+
+
+
+
+
+--> para coisas simples como essas,
+ 
+ podemos usar 
+
+ realmente 'i', 'c', 's'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ QUEREMOS CONTAR ATÉ 50...
+
+
+
+
+
+
+
+
+
+ PODEMOS ESCREVER ASSIM:
+
+
+
+
+
+
+
+
+ int i = 0;
+ while (i < 50) {
+    printf("hello, world\n");
+    i++;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+CERTO...
+
+
+
+
+
+
+
+
+
+
+FAZ SENTIDO...
+
+
+
+
+
+
+
+
+
+
+IMPLEMENTAMOS 1 LOOP,
+
+
+COM ESSAS VARIABLES E BOOLEANS...
+
+
+
+
+
+
+
+
+OU, ENTÃO, ESCREVER ASSIM:
+
+
+
+
+int i = 0;
+ while (i <= 50) {
+    printf("hello, world\n");
+    i++;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAS A MANEIRA MELHOR É REALMENTE ESCREVER ASSIM:
+
+
+
+
+
+
+
+int i = 0;
+ while (i < 50) {
+    printf("hello, world\n");
+    i++;
+ }
+
+
+
+
+
+
+
+
+
+
+OU PODEMOS ESCREVER ASSIM:
+
+
+
+
+int i = 50;
+ while (i > 0) {
+    printf("hello, world\n");
+    i++;
+ }
+
+
+
+
+
+-> PODEMOS USAR FOR LOOP...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FOR LOOP, É TIPO ASSIM:
+
+
+
+
+
+
+
+
+for ()
+ {
+    printf("hello, world\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PODEMOS COLOCAR QUALQUER VARIABLE DENTRO DO '()"...
+
+
+
+
+
+INICIALIZAR QUALQUER VARIABLE...
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+for (int i = 0; i < 50; i++)
+ {
+    printf("hello, world\n");
+}
+
+
+
+
+
+
+
+
+CERTO....
+
+
+
+
+
+
+
+ESSA É A MANEIRA MAIS CONVENCIONAL DE FAZER ALGO 50 VEZES,
+
+
+TANTO NO C, COMO EM OUTRAS PROGRAMMING LANGUAGES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... AGORA VEREMOS MAIS ALGUNS PROBLEMAS, E ABSTRACTION...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ABSTRACTION:
+
+
+
+
+É 1 APPROACH PARA SIMPLIFICAR 
+
+
+
+DETALHES MAIS COMPLEXOS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> O PROFESSOR ESCREVE 1 NOVO PROGRAMA,
+
+DE NOME 'meow'...
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+int main(void) {
+    printf("meow\n");
+    printf("meow\n");
+    printf("meow\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... 
+
+
+
+
+
+
+
+
+
+
+NOSSA FUNCTION FAZ MEOW 3 VEZES...
+
+
+
+
+
+MAS ESTAMOS NOS REPETINDO...
+
+
+
+
+
+
+
+PODEMOS USAR LOOPS,
+PARA EVITAR REPETIR ISSO 3 VEZES...
+
+
+
+
+
+
+
+
+
+
+
+--> VAMOS USAR 1 FOR LOOP, EM VEZ DE 1 WHILE LOOP...
+
+
+
+
+
+
+
+
+
+
+Ex:
+
+
+
+
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+int main(void) {
+
+    for (int i = 0; i < 3; i++) {
+        printf("meow\n");
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+COMPILAMOS ISSO, E AÍ RODAMOS, E FUNCIONA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NOSSO PROGRAMA, COM ISSO, FUNCIONA, E DE FORMA MAIS BEM PROJETADA...
+
+
+
+
+
+
+
+
+PODEMOS CRIAR NOSSAS PRÓPRIAS FUNCTIONS, NO C...
+
+
+
+
+
+
+
+
+
+
+
+
+-> PARA FAZER ISSO,
+
+
+
+O PROFESSOR PRECISA ESCREVER ALGO NO INÍCIO DO ARQUIVO,
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+void meow() {
+        printf("meow\n");
+}
+
+
+int main(void) {
+
+    for (int i = 0; i < 3; i++) {
+        meow();
+    }
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+COM ISSO, CONSEGUIMOS PRINTAR 'meow',
+
+
+POR CONTA DO CALL DE ESSA FUNCTION, REPETIDAMENTE...
+
+
+
+FICA MAIS LEGÍVEL...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS O PROFESSOR NÃO GOSTA DE DEIXAR CUSTOM FUNCTIONS 
+
+
+NA PARTE DE CIMA 
+
+
+DOS ARQUIVOS..
+
+
+
+
+
+
+
+
+
+
+
+
+--> ''IT'S HUMAN CONVENTION TO PUT THE MAIN PROGRAM 
+    AT THE TOP OF YOUR FILE, AND THE CUSTOM FUNCTIONS BELOW'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+int main(void) {
+
+    for (int i = 0; i < 3; i++) {
+        meow();
+    }
+
+    return 0;
+}
+
+void meow() {
+        printf("meow\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK...
+
+
+
+
+
+
+
+
+MAS FICAMOS COM 1 ERROR... É PQ 
+
+A FUNCTION AINDA NÃO FOI DEFINIDA, ANTES DE SER CHAMADA NESSE 'MAIN'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+''PQ ALGUMAS DAS LINHAS 
+    PRECISAM DE ';', e outras não?''
+
+
+
+
+
+
+
+
+
+
+    -> É PQ ';' deve ser escrito depois 
+
+    de verbos/ações...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A SOLUÇÃO É IMPORTAR ESSA FUNCTION DE OUTRO ARQUIVO...
+
+
+
+
+
+
+
+
+O COMPILER NÃO É ESPERTO/USER-FRIENDLY 
+
+O SUFICIENTE PARA ENTENDER
+
+QUE A FUNCTION 
+
+
+FOI DEFINIDA LÁ EMBAIXO...
+
+
+
+
+
+
+
+
+
+--> A OUTRA ALTERNATIVA, PARA CONSEGUIR CHAMAR ESSA FUNCTION 
+    ANTES DE DEFINÍ-LA, EM 1 MESMO ARQUIVO,
+
+
+
+
+    É:
+
+
+
+1) COPY ONLY THE FIRST LINE OF YOUR FUNCTION
+
+
+2) PASTE THE FIRST LINE AT THE TOP OF THE FILE,
+    AFTER THE IMPORTS..
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+void meow(void);
+
+int main(void) {
+
+    for (int i = 0; i < 3; i++) {
+        meow();
+    }
+
+    return 0;
+}
+
+void meow(void) {
+        printf("meow\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+OK... MAS QUAL É O NOME DISSO AÍ?
+
+
+
+
+
+
+
+
+
+
+
+
+O NOME DISSO É 'PROTOTYPE'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+''PROTOTYPES'' 
+
+
+
+SÃO BASICAMENTE 'ONLY HINTS'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+ISSO É BASICAMENTE UMA MANEIRA DE 
+
+
+DIZER AO COMPILER ''EXISTIRÁ UMA FUNCTION CHAMADA DE 'meow', mas ela ainda não existe, nesse momento''...
+
+
+
+
+
+E FAZEMOS ISSO BASICAMENTE PARA RESOLVER ESSE PROBLEMA...
+
+
+
+
+
+
+
+
+
+
+
+-> OK... 
+
+
+
+
+
+
+
+
+
+
+
+MAS PRECISAMOS TERMINAR NOSSO EXEMPLO...
+
+
+
+
+
+
+
+
+
+
+--> QUEREMOS QUE 'meow' SEJA CAPAZ DE 
+RECEBER ALGUNS PARAMETERS/ARGUMENTS...
+
+
+
+
+
+
+
+
+
+
+-> tipo 'meow(3)'..
+
+
+
+
+
+
+
+
+
+
+--> PARA ISSO, TEMOS QUE MUDAR A DEFINIÇÃO DA FUNCTION,
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+// Prototype:
+void meow(int n);
+
+int main(void) {
+
+    meow(3);
+    return 0;
+}
+
+void meow(int n) {
+       for (int i = 0; i < n; i++) {
+           printf("meow\n");
+       }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+CERTO...
+
+
+
+
+
+
+
+
+
+
+O PROFESSOR ENTÃO DECIDE MOSTRAR MAIS 1 TIPO DE LOOP...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PARA ISSO, O PROFESSOR COPIA O ARQUIVO DE NOME 'positive.c'..
+
+
+
+
+
+
+
+
+o código é este:
+
+
+
+
+
+
+
+// Abstraction and scope
+
+#include <cc50.h>
+#include <stdio.h>
+
+// Prototype (a hint for the function that is implemented down there):
+int get_positve_int(void);
+
+int main(void) {
+
+    int i = get_positve_int();
+    printf("i = %i\n", i);
+
+    return 0;
+}
+
+int get_positve_int(void) {
+    int n;
+
+    do {
+        n = get_int("Enter a positive integer: ");
+    } while (n < 1);
+    return n;
+}
+
+
+
+
+
+
+
+
+
+
+ESSA FUNCTION DE 'get_positve_int'
+
+
+
+TEM 1 RETURN VALUE...
+
+
+
+
+
+
+
+''''
+
+    return n;
+
+
+
+''''
+
+
+
+
+
+
+
+
+
+
+
+-> BASICAMENTE, É RETORNADO 1 INTEGER...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> ESSE NÃO É UM 'WHILE LOOP',
+
+E SIM É UM 
+
+'DO WHILE LOOP'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+''UM DO-WHILE LOOP 
+
+É QUASE IGUAL A 1 WHILE LOOP,
+
+MAS ELE BLINDLY FAZ ALGO ___ ANTEs__ MESMO __ DE 
+
+CHECAR A CONDITION''..
+
+
+
+
+
+
+
+
+(quer dizer que o do-while loop,
+
+SEMPRE VAI RODAR PELO MENOS 1 ÚNICA VEZ... ao contrário 
+
+do while loop tradicional, que pode acabar nem sendo executado,
+
+a depender do caso concreto)...
+
+
+
+
+
+
+
+
+
+O VALUE DO RETURN É USADO LÁ COm 
+
+
+'int i = get_positve_int()'...
+
+
+
+
+
+
+
+
+
+
+ISSO ENTÃO É OUTPUTTADO, com 'printf()'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... ESSA ABSTRAÇÃO FAZ SENTIDO, MAS O PROFESSOR FORMULA 1 PERGUNTA:
+
+
+
+
+
+
+
+
+
+''PQ DIABOS EU DEFINI O 'n' SEM UM TYPE,
+
+DENTRO DO 'DO-WHILE LOOP'???''
+
+
+
+
+
+int get_positve_int(void) {
+    int n;
+
+    do {
+        n = get_int("Enter a positive integer: ");
+    } while (n < 1);
+    return n;
+}
+
+
+
+
+
+
+
+
+
+
+
+OU SEJA, ESTE TRECHO:
+
+
+
+
+
+
+        n = get_int("Enter a positive integer: ");
+
+
+
+
+
+
+QUANDO VC DEFINE 1 VARIABLE DENTRO DE CURLY BRACES,
+
+
+
+
+VC SE DEPARA COM O CONCEITO DE 'SCOPE'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A REGRA DE HOJE É 
+
+
+
+''IF YOU DECLARE A VARIABLE INSIDE OF CURLY BRACES,
+LIKE 'int n', THAT VARIABLE ONLY EXISTS INSIDE OF THE CURLY BRACES''...
+
+
+
+
+
+
+
+
+
+
+
+--> ISSO QUER DIZER QUE NÃO PODEMOS USÁ-LA NO LADO DE FORA DO SCOPE...
+
+
+
+
+
+
+
+
+
+
+
+É POR ISSO QUE PRECISAMOS DECLARAR O 'n'
+
+NO LADO DE FORA, TIPO ASSIM:
+
+
+
+
+
+
+
+int get_positve_int(void) {
+    int n;
+
+    do {
+        n = get_int("Enter a positive integer: ");
+    } while (n < 1);
+    return n;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK.. É ASSIM QUE PODEMOS RESOLVER ESSE PROBLEMA, DE SCOPE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... AGORA O PROFESSOR QUER QUE RESOLVEMOS UM PROBLEMA DO MARIO BROS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR QUER QUE ESCREVEMOS 1 PROBLEMA EM C 
+
+QUE PRINTE 4 ? BLOCKS...
+
+
+
+
+
+
+
+
+
+
+criamos 'mario.c',
+
+E AÍ ESCREVEMOS ASSIM:
+
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+
+int main(void) {
+    printf("????\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... ISSO VAI PRINTAR ESSES 4 '????'...
+
+
+
+
+
+
+
+
+
+
+
+MAS PODEMOS MELHORAR ISSO....
+
+
+
+
+
+
+
+
+
+
+
+PODEMOS USAR LOOPS,
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+
+// int main(void) {
+//     printf("????\n");
+// }
+
+
+
+int main(void) {
+    for (int i = 0; i < 4; i++) {
+        printf("?");
+    }
+    printf("\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DEPOIS DISSO, O PROFESSOR ESCREVE OUTRA VERSÃO, TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+
+// int main(void) {
+//     printf("????\n");
+// }
+
+
+
+int main(void) {
+
+    int n;
+    do {
+        n = get_int("Width: ");
+    }
+    while (n < 1);
+
+
+    // Print out that many question marks:
+    for (int i = 0; i < n; i++) {
+        print("?");
+    }
+    printf("\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> OK... PRECISAMOS IMPORTAR 'stdio.h'...
+
+
+
+
+E AÍ FUNCIONA...
+
+
+
+
+
+
+
+FICAMOS COM 1 PROBLEMA BEM MAIS DINÂMICO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NO MARIO, MAIS TARDE, TEMOS OS CASTLES...
+
+
+
+
+
+
+
+-> ELES TEM VÁRIOS BRICKS..
+
+
+
+
+
+
+-> QUEREMOS PRINTAR 3 BRICKS ACROSS BY 3 BRICKS DOWN...
+
+
+
+
+
+
+
+
+
+--> 3 BY 3 GRID...
+
+
+
+
+
+
+
+
+
+-> O APPROACH RUIM SERIA PRINTAR 3, AÍ NEW LINE,
+
+E AÍ 
+
+
+PRINTAR 3, NEW LINE, ETC ETC...
+
+
+
+
+
+
+
+
+--> A MANEIRA CORRETA SERIA TIPO ASSIM:
+
+
+
+
+
+
+
+QUERO 3 ROWS... EM CADA ROW, QUERO 3 HASHES..
+
+
+
+
+
+int main(void) {
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++) {
+            printf("#");
+        }
+        printf("\n");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+
+// int main(void) {
+//     printf("????\n");
+// }
+
+
+
+int main(void) {
+    for (int i = 0; i < 4; i++) {
+        printf("?");
+    }
+    printf("\n");
+}
+
+
+
+
+// Brick:
+int main(void) {
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++) {
+            printf("#");
+        }
+        printf("\n");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+BASICAMENTE, CRIAMOS ROWS E COLUMNS...
+
+
+
+
+
+
+
+
+
+MAS AINDA NÃO FALAMOS SOBRE OS LIMITES 
+
+
+
+DOS COMPUTADORES...
+
+
+
+
+
+
+
+
+
+
+
+
+--> COMPUTADORES NÃO SÃO BONS EM TUDO...
+
+
+
+
+
+
+
+
+
+-> O PROFESSOR MOSTRA 1 FOTO DE 1 RAM DE 1 PC...
+
+
+
+
+
+
+
+
+
+--> OS PROGRAMAS SÃO ARMAZENADOS NA RAM,
+
+QUANDO SÃO EXECUTADOS...
+
+
+
+
+
+
+
+
+
+
+-> SE VC TEM APENAS 1 QUANTIDADE FINITA DE RAM,
+
+
+VC NÃO CONSEGUE RESOLVER TODOS OS PROBLEMAS DO MUNDO,
+
+PQ HÁ LIMITES PARA SUA RAM..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> O PROFESSOR CRIA UM OUTRO PROGRAMA,
+
+DE NOME 'imprecision.c'...
+
+
+
+
+
+
+
+
+
+--> AÍ ESCREVE ASSIM:
+
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+int main(void) {
+        // Prompt user for a float
+        float x = get_float("x: ");
+        float y = get_float("y: ");
+
+        printf("%f\n", x / y);
+
+        return 0;
+}
+
+
+
+
+
+
+
+
+CERTO...
+
+
+
+
+
+
+
+ESSE É O MESMO CÓDIGO DE ANTES...
+
+
+
+
+
+
+
+aí ele escreve 1/10...
+
+
+
+
+
+
+
+
+
+MAS O PRINTF PODE PRINTAR 
+
+
+
+
+
+MAIS COISAS DO QUE OUTPUTS SIMPLES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> DIGAMOS QUE QUEREMOS PRINTAR 
+    1 value com 10 casas decimais...
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+#include <cc50.h>
+#include <stdio.h>
+
+int main(void) {
+        // Prompt user for a float
+        float x = get_float("x: ");
+        float y = get_float("y: ");
+
+        printf("%.50f\n", x / y);
+
+        return 0;
+}
+
+
+
+
+
+
+
+
+
+
+fica 1 número totalmente irregular,
+
+
+como 
+
+
+
+
+0.100002112920190129120129
+
+
+
+
+
+
+
+
+ou seja,
+
+
+OS COMPUTADORES PODEM SER IMPRECISOS
+
+
+
+
+''CANNOT EVEN CALCULATE 1/10 correctly'...
+
+
+
+
+
+
+
+
+
+-> É 1 LIMITAÇÃO FUNDAMENTAL... -> PCS TEM APENAS 
+                                    CERTAS QUANTIDADES 
+
+                                    DE RAM/BITS/ETC..
+
+
+
+
+
+
+                                    -> VC PODE CONTAR BEM ALTO,
+
+                                    MAS NÃO PODE CONTAR 
+
+                                    INFINITAMENTE ALTO,
+
+                                    NEM INFINITAMENTE PRECISAMENTE....
+
+
+
+
+
+
+
+
+
+                            32 BITS... --> SE VC TENTA 
+                                            USAR MAIS DO QUE ISSO,
+
+                                            O PC COMEÇA A 'CUT CORNERS'...
+
+
+
+
+                                            E É POR ISSO QUE FICAMOS COM IMPRECISÃO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OUTRO PROBLEMA QUE PCS TÊM:
+
+
+
+
+
+
+
+
+''EVEN INTEGERS HAVE LIMITATIONS''...
+
+
+
+
+
+
+
+000
+
+
+111 
+
+
+
+
+ADICIONAMOS 1 a esse '7',
+
+e aí 
+
+
+
+fica tipo 
+
+'000',
+
+PQ O CARRY, o '1',
+
+SOME...
+
+
+
+
+
+
+
+
+
+Y2K PROBLEM --> MTAS COISAS QUEBRARAM, NO MUNDO,
+
+
+                    PQ OS HUMANOS 
+                    DECIDIRAM ARMAZENAR ANOS USANDO APENAS 2 DÍGITOS... (para economizar memória)...
+
+
+
+
+
+
+                    99 + 1 --> VIRA '00'...
+
+
+
+
+
+
+
+
+
+
+
+
+                E ISSO VAI ACONTECER DE NOVO,
+
+                EM '2038'...
+
+
+
+
+                VAMOS ACABAR SEM BITS PARA 
+
+                REPRESENTAR TEMPO... NÃO VÃO BASTAR...
+
+
+
+
+                32 BITS não vão bastar para contar os segundos desde ''1970''... vamos voltar a '1970', se deixarmos isso acontecer...

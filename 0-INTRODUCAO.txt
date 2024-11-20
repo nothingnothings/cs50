@@ -1,0 +1,87 @@
+Vamos escrever seu primeiro programa?
+
+No menu File, clique em New File e salve-o (como por meio da opção Save no menu File) como olamundo.c dentro do diretório /primeiro_programa /olamundo.
+
+Escreva seu primeiro programa, digitando precisamente estas linhas no arquivo criado:
+
+#include <stdio.h>
+
+int main(void)
+{
+    printf("hello, world!\n");
+}
+
+Observe como o CS50 IDE adiciona “realce de sintaxe” (ou seja, cor) conforme você digita, embora a escolha de cores do CS50 IDE possa ser diferente da escolha deste conjunto de problemas. Essas cores não são realmente salvas dentro do próprio arquivo, eles são apenas adicionados pelo CS50 IDE para destacar a sintaxe. Se você não tivesse salvado o arquivo como olamundo.c desde o início, o CS50 IDE não saberia (pela falta da extensão do nome do arquivo) que você está escrevendo o código C, caso em que essas cores estariam ausentes.
+
+Listagem de arquivos
+
+A seguir, na janela do seu terminal, imediatamente à direita do prompt (~/primeiro_programa /olamundo $), execute
+
+ls
+
+Você deve ver apenas olamundo.c.
+
+Isso porque você acabou de listar os arquivos em sua pasta olamundo. Em particular, você executou um comando chamado ls, que é uma abreviação de "list". É um comando usado com tanta frequência que seus autores o chamaram apenas de ls para salvar as teclas digitadas. Faz sentido?
+
+Compilando programas
+
+Agora, antes de podermos executar o programa olamundo.c, lembre-se de que devemos compilá-lo com um compilador, traduzindo-o do código-fonte para o código de máquina (ou seja, zeros e uns). Execute o comando abaixo para fazer exatamente isso:
+
+Abra o terminal novamente, se ainda não estiver aberto, e verifique se você está no diretório ~/primeiro_programa/olamundo.
+
+Se estiver, execute:
+
+make olamundo
+
+E então execute este novamente:
+
+ls
+
+Desta vez, você deve ver não apenas olamundo.c, mas também olamundo. Agora você traduziu o código-fonte em olamundo.c em código de máquina em olamundo.
+
+Agora execute o próprio programa executando o seguinte.
+
+./olamundo
+
+hello, world!
+
+
+
+
+
+
+
+
+
+Obtendo o input do usuário
+
+Basta dizer, não importa como você compila ou executa este programa, ele sempre imprime hello, world. Vamos personalizá-lo um pouco, assim como fizemos em sala de aula.
+
+Modifique este programa de forma que ele primeiro solicite o nome do usuário e, em seguida, imprima “hello, usuário” onde usuário é o nome real do quem esta executando o programa.
+
+Como antes, certifique-se de compilar seu programa com:
+
+make olamundo
+
+E certifique-se de executar seu programa, testando-o algumas vezes com entradas diferentes, com:
+
+./olamundo]
+
+
+
+
+ficou tipo assim:
+
+
+
+
+#include <stdio.h>
+
+
+int main()
+{
+    char name[50];
+    printf("Enter your name: ");
+    scanf("%s", name);
+    printf("hello, %s\n", name);
+}

@@ -1,0 +1,24 @@
+{% extends "layout.html" %} {% block title %} History {% endblock %} {%
+block main %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th class="text-start">Symbol</th>
+      <th class="text-end">Shares</th>
+      <th class="text-end">Price</th>
+      <th class="text-end">Transacted</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- TODO: Loop through the database entries to display them in this table -->
+    {% for entry in entries %}
+    <tr>
+      <td class="text-start">{{ entry.symbol }}</td>
+      <td class="text-end">{{ entry.shares }}</td>
+      <td class="text-end">{{ entry.price }}</td>
+      <td class="text-end">{{ entry.date }}</td>
+      {% endfor %}
+    </tr>
+  </tbody>
+</table>
+{% endblock %}

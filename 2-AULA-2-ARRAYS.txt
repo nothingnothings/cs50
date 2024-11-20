@@ -1,0 +1,6846 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+AGORA VEREMOS O QUE ACONTECE POR TRÁS DAS CENAS, NOS COMPUTADORES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+
+int main(void) {
+    printf("Hello, world\n");
+}
+
+
+
+
+
+
+
+
+
+
+NÓS COMPILAMOS ISSO, ESSE CÓDIGO EM FORMATO C, 
+
+
+
+
+
+
+EM MACHINE LANGUAGE, PARA AÍ CONSEGUIR EXECUTÁ-LO...
+
+
+
+
+
+
+
+
+
+
+hello.c,
+
+
+
+o arquivo,
+
+acabava convertido 
+
+
+no arquivo em binários 'hello'...
+
+
+
+
+
+
+
+
+
+
+
+FAZÍAMOS ESSA CONVERSÃO COM O 
+
+COMANDO 'make'..
+
+
+
+
+
+
+
+
+
+'make hello' 
+
+
+
+
+
+
+
+
+
+
+
+->  MAS ESSE COMANDO AÍ ERA DO 
+
+
+
+CS50,
+
+
+
+
+
+é um helper do CS50..
+
+
+
+
+
+
+
+
+
+
+
+
+-> NÃO É EXATAMENTE 1 COMPILER, MAS USA 1 COMPILER..
+
+
+
+
+
+
+
+
+
+
+
+
+-> NO TERMINAL,
+
+    APARECE ESTA MESSAGE, QUANDO 
+
+    ESCREVEMOS 'make hello':
+
+
+
+
+
+
+
+
+
+    clang --gdb3 -O0 -std=cl1 -Wall
+
+
+
+
+
+
+
+
+
+
+
+ISSO QUER DIZER QUE O QUE ESTÁ ACONTECENDO, AQUI,
+
+
+É O EXECUTE DE UM COMANDO, CHAMADO DE 
+
+'clang'..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CLANG É ACTUALLY O COMPILER...
+
+
+
+
+
+
+
+
+
+O COMPILER COMPILA A HUMAN LANGUAGE PARA BINARY LANGUAGE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS O CLANG É 1 POUCO MAIS COMPLEXO DO QUE O COMANDO 'make', customizado...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PARA USAR ISSO, O CLANG,
+
+
+O PROFESSOR 
+
+
+REMOVE O PROGRAMA CHAMADO DE 'hello',
+
+
+E aí 
+
+DECIDE USAR O COMPILER 'clang'
+
+PARA COMPILAR 
+
+
+
+
+ESSE ARQUIVO,
+
+
+sem usar o helper 'make'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> COMO PODEMOS USAR O CLANG DIRETAMENTE?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> CLANG --> É UM COMPILADOR FAMOSO..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PARA RODÁ-LO,
+
+
+
+PODEMOS ESCREVER ASSIM:
+
+
+
+
+
+
+
+
+
+
+clang hello.c 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> PARECE QUE NADA ACONTECEU.... MAS ISSO QUER 
+    DIZER QUE NOSSO PROGRAMA FOI COMPILADO CORRETAMENTE..
+
+
+
+
+
+
+
+
+
+
+
+--> MAS EM VEZ DE  TER OUTPUTTADO 'hello.c',
+
+
+ficamos com 'a.out'...
+
+
+
+
+
+
+
+
+
+
+
+--> A RAZÃO DO FILENAME TER SIDO 'a.out'
+
+É HISTÓRICA:
+
+
+
+
+''ANOS ATRÁS, 
+    O DEFAULT NAME QUE TODOS 
+    OS PROGRAMAS RECEBÍAM ERA 
+    a.out, que significava 
+    'ASSEMBLY OUT''...
+
+
+
+
+
+
+
+--> MAS ESSE É 1 NOME IDIOTA PARA 1 PROGRAMA...
+
+    É POR ISSO QUE 
+
+
+    PROGRAMAS COMO O CLANG PODEM SER CONFIGURADOS NO CLI...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PARA CONFIGURÁ-LO,
+
+REMOVEMOS O 'a.out',
+
+
+com 
+
+
+'rm a.out',
+
+
+
+
+
+
+E AÍ ESCREVEMOS TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+clang -o hello hello.c 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COM ISSO, CONSEGUIMOS PROVIDENCIAR 1 ARGUMENT AO COMANDO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-o --> SIGNIFICA 'OUTPUT'...
+
+
+
+
+
+
+
+
+
+rode clang,
+
+
+faça output de 1 file de nome 'hello',
+
+
+
+
+e processe a file chamada de 'hello.c'..
+
+
+
+
+
+
+
+
+
+
+
+-> OK... É ASSIM QUE O CLANG NOS AJUDA A 
+    COMPILAR O NOSSO CÓDIGO..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS É CLARO QUE NOSSO CÓDIGO ANTERIOR ERA BEM MAIS COMPLEXO,
+
+TINHA COISAS COMO ESTAS:
+
+
+
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+
+
+
+int main(void) {
+
+    string_name = get_string("What's your name? ");
+    printf("hello, %s\n", name);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+AÍ TENTAMOS COMPILAR, COM 
+
+
+
+
+
+clang -o hello hello.c 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> FICAMOS COM 1  ERROR, O ERROR DE 
+
+
+
+'undefined reference to `get_string`'
+
+
+
+
+
+
+
+
+
+
+
+E EXISTE 1 RAZÃO PARA ISSO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> A RAZÃO PARA ISSO:
+
+
+
+
+''WHEN WE USE A LIBRARY, LIKE cs50,
+    IT IS SOMETIMES NOT SUFFICIENT 
+    SIMPLY DECLARING THE HEADER FILE AT THE 
+    TOP OF YOUR CODE''...
+
+
+
+
+
+
+
+--> MTAS VEZES, VC PRECISA DE 1 MANEIRA DE INDICAR AO COMPUTADOR 
+
+''WHERE TO FIND THE 0s and 1s that someone has written, to implement 
+    a function like 'get_string()', in this case''...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> QUER DIZER QUE O HEADER FILE,
+
+COMO 'cs50.h',
+
+
+
+APENAS INDICA 
+
+
+AO COMPILER QUE 
+
+''A FUNCTION EXISTE''..
+
+
+
+
+
+
+
+--> MAS EXISTE 1 SEGUNDO MECANISMO, QUE ATÉ AGORA TINHA SIDO AUTOMATIZADO,
+    QUE ACTUALLY INDICA AO COMPUTADOR ''WHERE TO FIND THE 0s and 1s to implement 
+    the FUNCTIONS IN THAT HEADER FILE''...
+
+
+
+
+
+
+
+
+
+
+
+--> É POR ISSO QUE VAMOS PRECISAR DE OUTRO ARGUMENT AO CLI,
+A ESSE COMANDO...
+
+
+
+
+
+O outro argument é 
+
+'-lcs50'..
+
+
+
+
+
+
+
+
+
+
+
+
+
+'-lcs50' --> ISSO SIGNIFICA 
+
+            ''''LINK IN THE __ CS50 LIBRARY, in this file''...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+''-l'' 
+
+
+
+
+
+
+
+
+
+--> LINK --> É O NOME...
+
+
+
+
+
+
+
+
+
+--> PEGUE TODO O CÓDIGO DA LIBRARY 'CS50',
+
+e inclua nessa file...
+
+
+
+
+
+
+
+
+
+
+-> OK... AÍ ESCREVEMOS 
+
+
+
+clang -o hello hello.c -lcs50
+
+
+
+
+
+
+
+
+
+E ISSO REALMENTE COMPILA NOSSO 
+CÓDIGO, E ELE FUNCIONA...
+
+
+
+
+
+
+
+
+
+
+
+
+--> NÃO FIZEMOS 
+    ISSO NA AULA ANTERIOR PQ 
+
+
+    DIGITAR TUDO ISSO 
+
+    ACABA FICANDO 
+
+    ENTEDIANTE AO LONGO DO TEMPO...
+
+
+
+
+
+
+
+
+
+-> DESENVOLVEDORES GOSTAM DE AUTOMATIZAR COISAS ASSIM...
+
+
+
+
+
+
+
+
+
+
+-> O MAKE BASICAMENTE RODA 1 COMANDO COM 1 MONTE DE ARGUMENTS,
+
+
+INCLUSIVE 
+
+ESSES ARGUMENTS DE 
+
+
+-lcs50 -lm (math library) 
+
+
+
+
+
+-lcrypt --> é uma library de CRIPTOGRAFIA....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OU SEJA, TODAS ESSAS COISAS ADICIONADAS COM '-lXXXXXX'
+
+
+são LIBRARIES..
+
+
+
+
+
+
+
+e são MUITAS:
+
+
+
+
+
+
+
+crypt 
+
+cs50 
+
+math...
+
+
+
+
+
+
+e outras...
+
+
+
+TUDO ISSO FOI PRE-CONFIGURADO PELO STAFF DO CS50...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAKE HELLO É BEM MELHOR PQ EVITA ESSA REPETIÇÃO DESNECESSÁRIA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HOJE REVELAMOS QUE 
+
+
+HÁ MAIS COISAS QUE ACONTECEM, POR BAIXO DOS PANOS:
+
+
+
+
+
+
+
+
+
+
+
+
+
+1) PREPROCESSING 
+
+2) COMPILING 
+
+3) ASSEMBLING 
+
+4) LINKING 
+
+
+
+
+
+
+
+O TERMO "COMPILING",
+NA VERDADE,
+
+
+REFERE-SE A ESSAS 4 ETAPAS... AS 4 ETAPAS COMPÕEM O COMPILING...
+
+
+MAS SÃO LOW-LEVEL STEPS...
+
+
+NÃO VAMOS ESTUDÁ-LAS TOTALMENTE,
+
+
+
+MAS É BOM SABER 1 POUCO SOBRE ELAS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+preprocessing --> ESSA É A PRIMEIRA  ETAPA..
+
+
+
+                ELA PEGA TODO SEU CÓDIGO,
+
+                QUE É ESTE:
+
+            
+
+
+#include <cs50.h>
+#include <stdio.h>
+
+
+
+int main(void) {
+
+    string_name = get_string("What's your name? ");
+    printf("hello, %s\n", name);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ele PRE-PROCESSA TODO 
+
+
+SEU CÓDIGO,
+
+
+TOP-BOTTOM,
+
+LEFT-RIGHT..
+
+
+
+
+
+
+
+
+
+ELE PRIMEIRAMENTE PROCURA POR TODOS OS 'HASHES' ,
+
+
+EM CADA LINHA...
+
+
+
+
+
+--> ele encontra CADA HASH,
+
+E AÍ 
+
+FAZ UM 'FIND AND REPLACE',
+
+
+
+
+SUBSTIUI 
+
+AS PARTES COM '#'
+
+
+com 
+
+
+OS CÓDIGOS 
+
+
+
+
+DE CADA FILE...
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+string get_string(string prompt);
+#include <stdio.h>
+
+
+
+int main(void) {
+
+    string_name = get_string("What's your name? ");
+    printf("hello, %s\n", name);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+DEPOIS, MESMA COISA PARA O 'stdio.h'.
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+string get_string(string prompt);
+int printf(string format, ...);
+
+
+
+int main(void) {
+
+    string_name = get_string("What's your name? ");
+    printf("hello, %s\n", name);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... E TUDO ISSO ACONTECE AUTOMATICAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS PQ ISSO ACONTECE?
+
+
+
+
+
+
+
+
+
+
+
+--> PQ O PRE-PROCESSADOR 
+    PRECISA FAZER TUDO ISSO?
+
+
+
+
+
+
+
+
+--> BASICAMENTE 
+    ESTÃO SENDO DEFINIDAS TODAS AS FUNCTIONS QUE USAREMOS 
+    NO NOSSO CÓDIGO...
+
+
+    ESTÁ ORDENANDO, BASICAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+--> BASICAMENTE, 
+    ESSAS HEADER FILES CONTÉM TODOS OS PROTOTYPES (definições das functions)
+    necessários para fazer com que o computador entenda que 
+    essas functions existam, para evitar o throw do error....
+
+
+
+
+
+--> ESSE PRE-PROCESSAMENTO EVITA 
+    A ESCRITA MANUAL DE TODOS ESSES PROTOTYPES NA FILE, POR NÓS...
+
+
+
+
+
+
+
+
+
+a segunda etapa:
+
+
+
+
+
+
+2) COMPILING:
+
+
+
+
+
+
+
+O SIGNIFICADO MAIS PRECISO DESSA ETAPA É 
+
+
+''TAKE THIS C CODE,
+    AND CONVERT IT FROM SOURCE CODE,
+
+
+    TO ANOTHER TYPE OF SOURCE CODE....'''
+
+
+
+
+
+
+
+o outro tipo de source code é algo como isto:
+
+
+
+
+
+
+main:
+    .cfi_startproc 
+# BB#0:
+    pushq %rbp 
+
+
+
+
+
+
+
+
+
+E ETC...
+
+
+
+
+
+
+
+
+
+--> ISSO É BASICAMENTE ASSEMBLY CODE...
+
+
+
+
+
+
+
+
+--> O PROFESSOR RESUME QUE HÁ 
+    MTOS DIFERENTES COMPUTADORES NO MUNDO.... E MTAS DIFERENTES 
+    ESPÉCIES DE CPU...
+
+
+
+
+
+
+--> CENTRAL PROCESSING UNIT...
+
+
+
+
+
+
+
+
+
+-> E 1 CPU ENTENDE CERTOS COMANDOS... E ESSES COMANDOS 
+    TENDEM A SER EXPRESSOS 
+
+    EM CÓDIGO ASSEMBLY...
+
+
+
+
+
+
+
+
+NEM O PROFESSOR ENTENDE TUDO ISSO....
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS HÁ ALGUMAS DE NOSSAS STRINGS:
+
+
+
+
+
+
+main:
+
+
+
+get_string 
+
+
+printf 
+
+
+
+
+
+
+
+
+-> VC ESCREVE O CÓDIGO C,
+
+E AÍ O COMPUTADOR CONVERTE EM 1 LINGUAGEM 
+MAIS COMPUTER-FRIENDLY,
+
+
+QUE É O ASSEMBLY...
+
+
+
+--> DÉCADAS ATRÁS, HUMANOS 
+ESCREVIAM ASSEMBLY CODE..
+
+
+
+
+
+
+
+
+
+
+-> MAS HOJE EM DIA, TEMOS CÓDIGOS MAIS USER-FRIENDLY, COMO PYTHON...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AÍ TEMOS A ETAPA 3:
+
+
+
+
+
+
+
+
+
+3) ASSEMBLY
+
+
+
+
+
+-> NESSA ETAPA, 
+FINALMENTE PEGAMOS 
+O ASSEMBLY CODE 
+
+E O CONVERTEMOS EM 0s e 1s...
+
+
+o compilador faz isso...
+
+
+
+
+
+
+-> AÍ FICA COM UM MONTE DE 0s e 1s...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DEPOIS DISSO, TEMOS A ETAPA FINAL, QUE É 
+
+
+
+
+
+
+
+4) LINKING:
+
+
+
+
+
+
+
+
+
+-> O LINKING É A COMBINAÇÃO ENTRE OS '0s' e '1s' 
+
+
+DE NOSSO CÓDIGO, DE 'hello' 
+
+
+
+
+
+
+
+com stdio.c  e  cs50.c ,
+
+
+
+AS FILES 
+
+
+
+
+DAS OUTRAS HEADER FILES,
+
+
+
+
+
+
+
+
+
+
+TODOS OS 0s e 1s dessas 
+
+outras files...
+
+
+
+
+
+
+
+
+
+tudo isso é aglutinado em 1 único arquivo,
+
+
+com muitos 1s e 0s...
+
+
+
+
+
+
+
+
+
+
+
+
+TODOS ESSES 4 PASSOS 
+
+
+
+SÃO SEGUIDOS DENTRO 
+
+
+
+DO COMPILER...
+
+
+
+
+
+
+
+
+
+
+
+
+--> 'COMPILE' --> É UMA ABSTRAÇÃO,  
+                SIMPLIFICA 
+
+                AQUELES 4 PASSOS 
+                ALI,
+
+                BEM LOW-LEVEL....
+
+
+
+
+
+
+
+
+O Que importa é o processo, e não as minúcias...
+
+
+
+
+
+
+
+
+COMPILER --> TEM 1 MONTE DE .h files 
+                em algum lugar do pc...
+
+
+
+
+
+
+
+
+--> ESSAS FILES JÁ VÊM PRÉ-INSTALADAS COM 
+    O COMPILADOR...
+
+
+
+
+
+
+
+-> NO IDE CS50,
+
+    TEMOS VÁRIAS DESSAS FILES JÁ PRÉ-INSTALADAS...
+
+
+
+
+
+
+
+
+-> NÓS OBTEMOS TODAS AS COISAS DAS HEADER FILES,
+    ATÉ 
+
+    MESMO AS COISAS QUE NÃO UTILIZAMOS...
+
+
+
+
+
+
+
+
+
+--> COMO PODEMOS 
+
+    DEBUGGAR CÓDIGOS 
+
+    MAIS EFICIENTEMENTE?
+
+
+
+
+
+
+
+
+
+
+
+help50 
+
+
+style50
+
+
+check50
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAS DEVEMOS TER MAIS ALGUMAS TOOLS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+'printf()'...
+
+
+
+
+
+
+
+
+
+-> É BASICAMENTE O CONSOLE.LOG()...
+
+
+
+
+
+
+
+
+
+-> É UMA TOOL QUE PODEMOS USAR PARA PROCURAR PROBLEMAS NO NOSSO CÓDIGO...
+
+
+
+
+
+
+
+
+
+
+
+
+-> QUASE TODAS AS LANGUAGES POSSUEM 'PRINT'...
+
+
+
+
+
+
+
+
+
+O PROFESSOR ESCREVE UM PROGRAMA DE NOME 'buggy0.c',
+
+UM PROGRAMA COM BUGS...
+
+
+
+
+
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    for (int i = 0; i <= 10; i++) {
+        print("i is now %i\n", i);
+        printf("#\n");
+    }
+}
+
+
+
+
+
+
+
+
+ficamos com:
+
+
+
+
+
+
+i is now 0
+i is now 1
+i is now 2
+i is now 3
+i is now 4
+i is now 5
+i is now 6
+i is now 7
+i is now 8
+i is now 9
+i is now 10
+
+
+
+PARA CONSERTAR, IR DE 0 A 10,
+
+
+PODEMOS ESCREVER ASSIM:
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    for (int i = 0; i < 10; i++) {
+        print("i is now %i\n", i);
+        printf("#\n");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ISSO ME DÁ 10 HASHES... ERA ISSO QUE QUERÍAMOS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> O PROFESSOR MOSTRA OUTRA FERRAMENTA...
+
+
+
+
+
+
+
+
+
+
+PROVAVELMENTE É UM DEBUGGER...
+
+
+
+
+
+
+
+
+
+DEBUG50...
+
+
+
+
+
+
+
+-> ESSA FERRAMENTA FOI CONSTRUÍDA EM CIMA DE 
+
+UMA OUTRA FERRAMENTA,
+
+O 'GDB',
+
+
+
+GNU DEBUGGER,
+
+
+
+
+
+USADO POR MTAS MÁQUINAS,
+
+
+
+
+
+QUE É USADO PARA DEBUGGAR SEU CÓDIGO DE MANEIRA MAIS SOFISTICADA DO QUE 
+
+
+'printf()'..
+
+
+
+
+
+
+
+PRECISAMOS SETTAR BREAKPOINTS...
+
+
+
+
+
+
+
+
+
+
+STEP INTO VS STEP OVER..
+
+
+
+
+
+
+
+
+
+
+
+ESCREVEMOS OUTRO PROGRAMA,
+
+
+DE NOME buggy1...
+
+
+
+
+
+
+o código fica tipo assim:
+
+
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+
+    int i = get_negative_int(); // this function does not exist
+    printf("i: %i\n", i);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> OK... ESSA FUNCTION NÃO EXISTE... ESSA 'get_negative_int'...
+
+
+
+
+
+
+
+
+
+
+-> PODEMOS DEFINIR ESSA FUNCTION, TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+
+    int i = get_negative_int(); // this function does not exist
+    printf("i: %i\n", i);
+    return 0;
+}
+
+
+
+int get_negative_int(void)
+{
+    int n;
+    do
+    {
+        n = get_int("Negative Integer: ");
+    }
+    while (n < 0);
+    return i;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... 
+
+
+
+
+
+
+
+
+
+
+TENTAMOS COMPILAR ISSO AÍ, MAS FICAMOS COM ERRORS...
+
+
+
+
+
+
+
+
+
+
+O ERROR É 
+
+
+'implicit  declaration of function 'get_negative_int' is invalid'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> DEVEMOS DEFINIR 1 PROTOTYPE DESSA FUNCTION LÁ EM CIMA,
+
+UM HINT PARA NOSSO CÓDIGO:
+
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+
+
+// Prototype
+int get_negative_int(void);
+
+int main(void)
+{
+
+    int i = get_negative_int(); // this function does not exist
+    printf("i: %i\n", i);
+    return 0;
+}
+
+
+
+int get_negative_int(void)
+{
+    int n;
+    do
+    {
+        n = get_int("Negative Integer: ");
+    }
+    while (n < 0);
+    return i;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AÍ TENTAMOS COMPILAR NOVAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+--> AGORA COMPILOU OK...
+
+
+
+
+
+
+--> MAS AO TESTARMOS ESSA FUNCTION,
+
+
+
+    MESMO QUANDO COLOCAMOS NEGATIVE INTEGERS 
+
+    COMO INPUT,
+
+
+    A FUNCTION NÃO CONTINUA... QUER DIZER QUE 
+
+    FICAMOS COM 1 BUG...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> AÍ TENTAMOS USAR O 'debug50',
+
+
+
+    para examinar o value de nossas variables....
+
+
+
+
+
+
+
+
+
+
+
+
+debug50 ./buggy1
+
+
+
+
+
+
+
+
+
+
+
+
+
+CALL STACK --> MOSTRA TODAS AS FUNCTIONS EXECUTADAS POR SEU PROGRAMA..
+
+
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+
+
+// Prototype
+int get_negative_int(void);
+
+int main(void)
+{
+
+    int i = get_negative_int(); // this function does not exist
+    printf("i: %i\n", i);
+    return 0;
+}
+
+
+
+int get_negative_int(void)
+{
+    int n;
+    do
+    {
+        n = get_int("Negative Integer: ");
+    }
+    while (n < 0);
+    return i;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> mas ' int i = get_negative_int()'
+
+
+
+
+ESTÁ CORRETO... A PARTE INCORRETA ESTÁ DENTRO DE 'get_negative_int()'...
+
+
+
+
+
+
+
+
+
+
+
+
+-> É POR ISSO QUE USAMOS 'step into',
+
+
+PARA 
+
+
+
+ENTRAR DENTRO DESSA FUNCTION DE 'get_negative_int()',
+
+
+
+
+para encontrar o que há de errado com ela...
+
+
+
+
+
+
+
+
+
+
+COM ISSO, NO CALL STACK,
+
+FICAMOS COM ISTO:
+
+
+
+
+
+
+
+get_negative_int   buggy1.c:19:1
+main               buggy1.c.10:1
+
+
+
+
+
+
+
+
+
+É COMO 1 STACK DE PRATOS, 
+EM 1 CAFETERIA...
+
+
+
+
+
+
+
+
+
+AS VARIABLES TAMBÉM MUDARAM, AGORA FICARAM APENAS 'n',
+
+PQ ESTAMOS VENDO 
+
+A VARIABLE DE 'n' 
+
+DENTRO 
+
+
+DESSA FUNCTION DE 'get_negative_int()'..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O ERRO ESTÁ EM 'while (n < 0)',
+
+que deveria ser 
+
+'while (n > 0)'...
+
+
+
+
+
+
+
+NESTA PARTE:
+
+
+
+
+int get_negative_int(void)
+{
+    int n;
+    do
+    {
+        n = get_int("Negative Integer: ");
+    }
+    while (n < 0);  ////// O PROBLEMA ESTÁ AQUI...
+    return i;
+}
+
+
+
+
+
+
+
+FICA TIPO ASSIM:
+
+
+
+
+
+int get_negative_int(void)
+{
+    int n;
+    do
+    {
+        n = get_int("Negative Integer: ");
+    }
+    while (n > 0);  /// SOLUÇÃO
+    return i;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS HÁ OUTRA TECNICA DE DEBUGGING,
+
+CHAMADA DE 'RUBBER DUCK DEBUGGING'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------> 'SOMETIMES, 
+            WHEN YOU HAVE A PROBLEM 
+            IN YOUR CODE, SOMETIMES IT 
+            IS GOOD TO TALK ABOUT IT'...
+
+
+
+
+
+
+
+
+----------> é por isso o pato de borracha,
+            vc fala consigo mesmo,
+
+            e aí percebe o erro...
+
+
+
+
+
+
+
+
+
+
+
+ok... agora veremos algumas das features poderosas do C...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> COMPUTERS UNDER THE HOOD...
+
+
+
+
+
+
+
+
+--> 'TYPES'..
+
+
+
+
+
+
+
+
+
+
+
+
+-> O C SUPORTA VÁRIOS DATA TYPES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BOOL 
+
+CHAR 
+
+
+DOUBLE 
+
+
+FLOAT 
+
+
+INT 
+
+
+LONG 
+
+STRING 
+
+
+
+
+
+
+
+
+
+
+
+
+--> TODOS ELES OCUPAM CERTA QUANTIDADE DE ESPAÇO...
+
+
+
+
+
+
+
+
+
+
+
+--> OS SIZES SÃO TIPO ASSIM:
+
+
+
+
+BOOL 1 byte
+
+CHAR  1 byte
+
+
+DOUBLE  8 bytes
+
+
+FLOAT  4 bytes
+
+
+INT  4 bytes 
+
+
+LONG  8 bytes
+
+STRING   ? bytes 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+esses são PRIMITIVE TYPES...
+
+
+
+
+
+
+
+
+RAM...
+
+
+
+
+
+
+
+É NA RAM QUE PROGRAMAS SÃO 
+
+ARMAZENADOS, QUANDO SÃO EXECUTADOS...
+
+
+
+
+E É NA RAM QUE FILES SÃO ARMAZENADAS,
+QUANDO SÃO ABERTAS...
+
+
+
+
+
+
+
+
+HARD DISK --> A VANTAGEM 
+                DELES É 
+
+                QUE NÃO PRECISAM DE ELETRICIDADE 
+                PARA ARMAZENAR SEUS DADOS, 'LONG-TERM'...
+
+
+
+
+
+
+
+RAM --> É VOLÁTIL... 
+            MAS É MT MAIS RÁPIDO DO QUE UM 
+            HD OU SSD...
+
+
+            É MT MAIS RÁPIDO PQ É PURAMENTE ELETRÔNICO,
+            NÃO TEM ASPECTOS MECÂNICOS...
+
+
+
+            --> É POR ISSO QUE PROGRAMAS E FILES SÃO EXECUTADOS 
+            MAIS RAPIDAMENTE...
+
+
+
+
+
+
+
+--> A RAZÃO DE PERDERMOS DATA QUANDO 
+    NOSSO PC OU NOTEBOOK DESLIGA,
+
+
+    É JUSTAMENTE PQ 
+
+    A DATA TINHA SIDO ARMAZENADA NA __ RAM,
+
+    E NÃO NO SSD/HD...
+
+
+
+
+
+
+
+
+
+
+
+
+
+AGORA FOCAREMOS NA RAM...
+
+
+
+
+
+
+
+
+
+
+
+-> QUANDO RODAMOS 1 PROGRAMA EM C,
+
+    ELE, POR DEFINIÇÃO,
+
+    ESTÁ SENDO 
+
+    EXECUTADO NA MEMÓRIA DO SEU PC...
+
+
+
+
+
+
+
+
+
+-> 
+
+
+https://m.media-amazon.com/images/I/51gTNg5VbDL._AC_UF1000,1000_QL80_.jpg
+
+
+
+
+
+
+
+
+
+
+EM CADA RAM,
+
+
+TEMOS RETANGULOS PRETOS....
+
+
+
+
+
+
+
+
+EM CADA 1 DE ESSES RETANGULOS PRETOS,
+
+
+FICAM ARMAZENADOS TODOS OS 0s e 1s...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> TEMOS VÁRIOS GB EM RAM...
+
+
+
+
+
+
+
+
+
+
+
+--> TEMOS MTos bytes dentro de cada GB...
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS PODEMOS PENSAR EM CADA RETANGULO PRETO 
+
+COMO 
+
+
+1 CONJUNTO DE BYTES...
+
+
+IMAGINE ASSIM:
+
+
+
+[][][][][][][][][]
+[][][][][][][][][]
+[][][][][][][][][]
+[][][][][][][][][]
+[][][][][][][][][]
+[][][][][][][][][]
+[][][][][][][][][]
+
+
+
+
+
+
+
+
+
+
+cada quadradinho é um byte...
+
+
+
+e todos bytes formam 1 retangulo preto...
+
+
+
+
+
+
+
+
+
+E CADA CHAR VAI OCUPAR 1 'byte' DE ESSE RETANGULO PRETO...
+
+
+
+
+ELE OCUPA 1 LOCAL DESSE RETANGULO, BASICAMENTE...
+
+
+
+
+
+
+
+
+
+SE VC ESTÁ ARMAZENANDO ALGO COMO 1 INT,
+
+
+VAI OCUPAR 4 BYTES....
+
+
+
+
+
+
+
+
+
+LONG OCUPA 8,
+
+POR ISSO 8 QUADRADOS OCUPADOS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> CERTO... ISSO FAZ SENTIDO...
+
+
+
+
+
+
+veja este exemplo:
+
+
+
+
+
+
+
+
+
+
+int score1 = 72;
+int score2 = 73;
+int score3 = 33;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ESCREVEMOS 1 PROGRAMA QUE VAI CRIAR ESSAS INTS...
+
+
+
+scores.c
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+#include <stdio.h>
+
+// Prototype
+float get_score(void);
+
+int main(void)
+{
+    int score1 = 72;
+    int score2 = 73;
+    int score3 = 33;
+
+    printf("Average: %f\n", (score1 + score2 + score3) / 3);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+ISSO VAI CALCULAR O AVERAGE ENTRE AS 3 NOTAS...
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS AÍ FICAMOS COM 1 ERROR DE COMPILATION:
+
+
+
+
+
+
+
+
+
+
+
+
+''format specifies type 'double', but the argument has type 'int'...
+
+
+
+
+
+
+
+
+
+
+
+o problema está na linha do print:
+
+
+
+
+
+
+    printf("Average: %f\n", (score1 + score2 + score3) / 3);
+
+
+
+
+
+
+
+
+
+
+
+ISSO ACONTECEU PQ ESTAMOS TENTANDO FAZER 'COERCE' 
+DE 1 RESULT INTEGER EM 1 FLOATING POINT VALUE,
+
+MAS VC NÃO FEZ NENHUMA ARITMÉTICA FLOAT...
+
+
+
+
+
+
+
+
+
+--> PARA PODERMOS RESOLVER ISSO, PODERÍAMOS CASTAR OS VALUES COMO FLOAT...
+
+
+
+
+
+
+
+
+
+
+--> MAS O FIX MAIS SIMPLES É SIMPLESMENTE 
+
+DIVIDIR POR '3.0',
+
+em vez de '3'..
+
+
+
+
+
+
+CONSEGUIMOS COMPILAR,
+
+E AÍ
+
+FICAMOS 
+
+
+COM 59.33333....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... MAS ONDE ESSES VALUES ESTÃO FICANDO ARMAZENADOS?
+
+
+
+
+
+
+
+
+
+IMAGINE ASSIM:
+
+
+
+
+[X][X][X][X][][][][][]    72 
+[X][X][X][X][][][][][]    73 
+[X][X][X][X][][][][][]    33
+[][][][][][][][][]
+[][][][][][][][][]
+[][][][][][][][][]
+[][][][][][][][][]
+
+
+
+
+
+
+
+
+
+
+
+ESSES 3 VAO OCUPAR 4 CAIXAS...
+
+
+
+
+
+
+
+É CLARO QUE ESSAS 4 CAIXAS 
+
+ESTÃO COM PATTERNS DE 0s e 1s,
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+00000000000000000000101010101010
+
+
+
+
+
+0000000000000000001010101010100
+
+
+
+
+
+
+
+
+
+
+
+
+
+CERTO.... 
+
+
+
+
+
+
+
+
+MAS ESSE CÓDIGO, APESAR DE ESTAR CORRETO,
+
+
+NÃO ESTÁ WELL-DESIGNED...
+
+
+
+
+
+
+
+
+
+o name scheme não está bom....
+
+'score1' 
+
+'score2'
+
+
+'score3'
+
+
+
+
+
+não são bons nomes...
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+UMA BOA IDEIA SERIA SOMAR OS 3 
+
+EM 1 VARIABLE SEPARADA, E AÍ 
+
+DEPOIS DIVIDIR A SUM DIRETAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> COLOCAR OS 3 SCORES EM 1 ARRAY...
+
+
+
+
+
+
+
+
+
+--> OUTRO PROBLEMA É QUE 
+    O CÓDIGO NÃO ESTÁ DINÂMICO...
+
+
+
+
+
+
+
+QUEREMOS SOMAR QUAISQUER QUANTIDADES DE SCORES... NÃO SÓ 3...
+
+
+
+
+
+
+
+
+
+
+
+--> outra feature do C, chamada de 'arrays'...
+
+
+
+
+É COMO UMA LISTA DE VALUES...
+
+
+
+
+
+
+
+
+
+
+
+--> PODEMOS CRIAR ESPAÇO PARA 3 SCORES,
+
+
+COM ESTA SINTAXE:
+
+
+
+
+
+
+
+
+
+int scores[3];
+
+
+
+
+
+
+
+--> TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+// Prototype
+float get_score(void);
+int scores[3];
+
+
+// * Without arrays:
+// int main(void)
+// {
+//     int score1 = 72;
+//     int score2 = 73;
+//     int score3 = 33;
+
+//     printf("Average: %f\n", (score1 + score2 + score3) / 3.0);
+//     return 0;
+// }
+
+// * With arrays:
+int main(void)
+{
+
+    scores[0] = 72;
+    scores[1] = 73;
+    scores[2] = 33
+
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+O PROFESSOR ESCREVE ASSIM:
+
+
+
+
+// * With arrays:
+int main(void)
+{
+    int scores[3];
+
+
+    scores[0] = 72;
+    scores[1] = 73;
+    scores[2] = 33
+
+    return 0;
+}
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+
+// Prototype
+float get_score(void);
+int scores[3];
+
+
+
+
+// * With arrays:
+int main(void)
+{
+
+
+    scores[0] = get_int("Score: ");
+    scores[1] = get_int("Score: ");
+    scores[2] = get_int("Score: ");
+
+    printf("Average: %f\n", (scores[0] + scores[1] + scores[2]) / 3.0);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+COMO PODEMOS DEIXAR ESSE CÓDIGO MAIS WELL-DESIGNED...?
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> PODEMOS PEDIR 1 INPUT PARA 
+MÚLTIPLOS PARAMETERS...
+
+
+
+
+
+
+--> AÍ USAR 1 METHOD TIPO 'REDUCE',
+
+PARA 
+
+PEGAR TODOS OS VALUES 
+
+
+
+E JUNTAR EM 1 SÓ...
+
+
+
+
+
+
+
+
+PODEMOS USAR 1 FOR LOOP PARA ISSO,
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+// * With arrays:
+int main(void)
+{
+    int total = get_int("Total number of scores: ");
+    int scores[total];
+
+    for (int i = 0; i < total; i++) {
+        scores[i] = get_int("Score: ");
+    }
+
+    printf("Average: %f\n", (scores[0] + scores[1] + scores[2]) / total);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+MAS O PROFESSOR ADICIONA 1 NOVA FEATURE DO C, AQUI,
+
+QUE É UMA CONSTANTE...
+
+
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+const ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONSTANTS...
+
+
+
+
+
+
+
+
+-> SE SABEMOS, ADIANTADAMENTE,
+
+
+QUE VAMOS QUERER REUTILIZAR 1 NÚMERO,
+
+
+SEM ALTERAR OS VALUES,
+
+
+
+PODEMOS 
+
+
+
+
+ESCREVER ALGO COMO 
+
+
+
+
+'const int total = 3'
+
+
+
+
+
+
+
+EX:
+
+
+
+
+const int TOTAL = 3;
+
+int main(void)
+{
+    int scores[total];
+
+    for (int i = 0; i < total; i++) {
+        scores[i] = get_int("Score: ");
+    }
+
+    printf("Average: %f\n", (scores[0] + scores[1] + scores[2]) / TOTAL);
+    return 0;
+}
+
+
+
+
+
+
+
+
+uma convenção é deixar o nome das constants como UPPERCASE,
+
+
+
+tipo assim:
+
+
+
+
+
+
+const int TOTAL = 3;
+
+int main(void)
+{
+    int scores[total];
+
+    for (int i = 0; i < total; i++) {
+        scores[i] = get_int("Score: ");
+    }
+
+    printf("Average: %f\n", (scores[0] + scores[1] + scores[2]) / TOTAL);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> o ideal seria deixar esse 'total' como float, lá para baixo...
+
+
+
+
+
+
+
+
+const int TOTAL = 3;
+
+int main(void)
+{
+    int scores[total];
+
+    for (int i = 0; i < total; i++) {
+        scores[i] = get_int("Score: ");
+    }
+
+    printf("Average: %f\n", (scores[0] + scores[1] + scores[2]) / (float) TOTAL);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TAMBÉM PRECISAMOS DE 1 FUNCTION QUE CALCULE 
+
+
+
+O AVERAGE DOS 3 SCORES...
+
+
+
+
+
+
+
+
+--> PARA ISSO,
+
+
+
+PRECISAMOS 
+
+
+
+
+DE 
+
+
+1 FUNCTION COMO 'average',
+
+
+
+
+QUE VAMOS DEFINIR TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+float average(int length, int array[]) {
+
+
+}
+
+
+
+
+
+
+
+
+A VANTAGEM DE especificar 1 type de 'array[]'
+
+
+É QUE 
+
+
+
+DEIXAMOS O PASS DOS ARGUMENTS TOTALMENTE DINÂMICO (qualquer quantidade de parameters)....
+
+
+
+
+
+Ex:
+
+
+
+
+
+
+
+
+float average(int length, int array[]) {
+    int sum = 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+float average(int length, int array[]) {
+    int sum = 0;
+
+
+    for (int i = 0; i < length; i++) {
+        sum += array[i];
+    }
+
+    return (float) sum / length;
+}
+
+
+
+
+
+
+
+
+
+
+
+E ASSIM:
+
+
+
+
+
+
+
+
+
+
+const int TOTAL = 3;
+
+int main(void)
+{
+    int scores[TOTAL];
+
+    for (int i = 0; i < TOTAL; i++) {
+        scores[i] = get_int("Score: ");
+    }
+
+    printf("Average: %f\n", average(TOTAL, scores));
+    return 0;
+}
+
+float average(int length, int array[]) {
+    int sum = 0;
+
+
+    for (int i = 0; i < length; i++) {
+        sum += array[i];
+    }
+
+    return (float) sum / (float) length;
+}
+
+
+
+
+
+
+
+APENAS 1 FLOAT EM 1 FÓRMULA JÁ FAZ COM QUE 
+
+O RETURN TYPE DA EQUAÇÃO INTEIRA 
+
+FICA COMO FLOAT...
+
+
+
+
+
+
+
+
+
+
+
+
+
+LENGTH DE 1 ARRAY ->  ''IS NOT BUILT INTO THE ARRAY ITSELF...   
+
+                        IF YOU DO NOT PASS THE LENGTH OF AN ARRAY TO ANOTHER 
+                        FUNCTION, THERE IS NO WAY TO DETERMINE ''HOW BIG THE ARRAY IS?'',
+
+                        THIS IS DIFFERENT THAN JAVA AND OTHER LANGUAGES... IN C,
+                        YOU MUST PASS ___ BOTH THE LENGTH OF THE ARRAY AND THE ARRAY ITSELF,
+                        SEPARATELY, TO BE ABLE TO USE IT, IN YOUR FUNCTIONS''...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ARRAYS E MEMORY 
+    SE JUNTAM PARA 
+
+    FORMAR FEATURES FAMILIARES DE QUASE QUALQUER PROGRAMA DE COMPUTADOR... 
+
+    ESPECIFICAMENTE, CRIAM O CONCEITO DE 'STRINGS'...
+
+
+
+
+
+
+
+
+
+
+STRING:
+
+
+
+
+
+
+
+
+'#" --> É UMA STRING...
+
+
+
+
+
+
+
+
+
+--> o professor cria 1 arquivo de nome 'brick.c'...
+
+
+
+
+
+
+
+
+--> AÍ ELE ESCREVE ALGO ASSIM:
+
+
+
+
+#include <stdio.h>
+
+int main(void)
+{
+    char c = '#';
+
+    printf("%c\n", c);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+E ISSO VAI PRINTAR '#',
+
+
+basicamente...
+
+
+
+
+
+
+
+
+
+
+
+--> OK...
+
+
+
+
+
+MAS E SE TROCARMOS '%c'
+
+
+por '%i'?
+
+
+
+
+
+
+
+se fizermos isso e castarmos o '#' como um INTEGER,
+
+para ver sua representação 
+
+
+em números, disso aí (ASCII hash):
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+// int main(void)
+// {
+//     char c = '#';
+
+//     printf("%c\n", c);
+//     return 0;
+// }
+
+
+int main(void)
+{
+    char c = '#';
+
+    printf("%i\n", (int) c);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... COM ISSO, FICAMOS COM '35'...
+
+
+E É REALMENTE ISSO,
+
+
+
+A REPRESENTAÇÃO ASCII É '35'...
+
+
+
+
+
+
+
+
+
+
+
+
+'''' IT TURNS OUT, IN C,
+
+    IF IT IS PRETTY STRAIGHTFORWARD TO THE COMPUTER 
+    THAT THIS IS A CHARACTER,
+    YOU DON'T NEED TO EXPLICITLY CAST IT... YOU CAN 
+    CAST IMPLICITLY 1 TYPE TO ANOTHER, JUST FROM 
+
+    CONTEXT...'''
+
+
+
+
+
+
+QUER DIZER QUE ISTO VAI FUNCIONAR DA MESMA FORMA,
+
+MESMO SEM O CASTING EXPLÍCITO:
+
+
+
+
+
+int main(void)
+{
+    char c = '#';
+
+    printf("%i\n", c);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... SE QUEREMOS USAR ESSA VARIABLE QUE É UM 'CHAR',
+
+
+APENAS 1 ÚNICO BYTE SERÁ OCUPADO... 1 BYTE... UM CHAR É UM SINGLE BYTE...
+
+
+
+
+
+
+
+
+
+
+SERÁ UM SINGLE BYTE, ARMAZENANDO O VALUE DE ''35'', em formato de 0s e 1s...
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... AÍ VOLTAMOS AO CÓDIGO...
+
+
+
+
+
+
+
+
+
+AÍ CRIAMOS 3 VARIABLES,
+
+
+c1, c2 e c3...
+
+
+
+
+
+
+
+--> ESCREVEMOS TIPO ASSIM:
+
+
+
+
+
+
+
+int main(void)
+{
+    char c1 = 'H';
+    char c1 = 'I';
+    char c1 = '!';
+
+
+    printf("%c%c%c\n", c1, c2, c3);
+    return 0;
+}
+
+
+
+
+
+
+
+
+RODAMOS ISSO, E FICAMOS COM 
+
+
+
+
+HI!
+
+
+
+
+
+
+
+
+MAS O PROFESSOR ENTÃO faz print de forma INT,
+
+tipo assim:
+
+
+
+int main(void)
+{
+    char c1 = 'H';
+    char c1 = 'I';
+    char c1 = '!';
+
+
+    printf("%i%i%i\n", c1, c2, c3);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FICA COMO 
+
+
+
+
+
+72 73 33 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> AINDA OCUPAMOS 1 ÚNICO BYTE PARA CADA CHAR...
+
+    MESMO COM ELES SENDO CONVERTIDOS EM 'INT'... cada um vira um int...
+
+
+
+
+
+
+
+
+
+-> CERTO, 
+
+    MAS O QUE ACONTECE SE 
+
+    FAZEMOS PRINT DE APENAS 1 ÚNICA STRING,
+
+
+    TIPO 'HI!',
+
+    tudo junto?
+
+
+
+
+
+
+
+
+--> SERÃO OCUPADOS 3 bytes,
+    ou então 1 único 'byte'?
+
+
+
+
+
+
+
+
+
+--> STRING --> AGORA VEREMOS O QUE SÃO 'STRINGS'...
+
+
+
+
+
+
+
+
+
+--> STRING É APENAS UM TERMO GUARDA-CHUVAA...
+
+
+
+
+--> TODAS PROGRAMMING LANGUAGES 
+    POSSUI ''''STRINGS'''',  
+            mesmo que algumas delas não 
+            tenham um data type com nome exato 'string'...
+
+
+
+
+
+
+
+
+---> A LINGUAGEM 'C'
+    NÃO TEM O DATA TYPE 'string' TECNICAMENTE,
+
+
+    nós apenas temos esse type por conta da library do 'cs50'...
+
+
+
+
+
+
+
+
+
+--> OK...
+
+
+ESCREVEMOS ASSIM:
+
+
+
+
+int main(void)
+{
+    string s = 'HI!';
+
+
+    printf("%s\n", s);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK...
+
+
+
+
+
+
+ISSO FICOU BASICAMENTE 
+
+
+
+
+COMO 
+
+'HI!'
+
+
+
+
+3 CAIXAS, 3 BYTES,
+
+OCUPADOS POR ESSA STRING...
+
+
+
+
+
+
+
+
+
+
+
+MAS TODA VEZ QUE TEMOS SEQUENCIAS DE CHARACTERS, COMO ESSA,
+
+FINALMENTE COMEÇAMOS A ENXERGAR AS CAPACIDADES DE 1 LINGUAGEM DE PROGRAMAÇÃO...
+
+
+
+
+
+
+
+
+
+MAS O QUE É UMA STRING?
+
+
+
+
+
+
+
+
+
+STRING --> É UM ARRAY...
+
+
+
+
+
+
+é um array de characters..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ARRAY DE SINGLE CHARACTERS...
+
+
+
+
+
+
+E PODEMOS ACESSAR 
+
+
+
+AS PARTES DA STRING COM A NOTAÇÃO '[]', bracket...
+
+
+
+
+
+
+
+
+
+
+
+
+
+COM ARRAYS CLÁSSICOS C,
+
+VC PRECISA PASSAR TANTO A QUANTIDADE DE ITEMS, COMO O ARRAY EM SI...
+
+
+
+
+
+
+
+
+
+MAS TODA VEZ QUE USAMOS 'printf()',
+
+
+SEMPRE PASSAMOS APENAS A STRING EM SI (o array  em si),
+
+
+
+SEM PRECISAR PASSAR O NÚMERO DE CHARACTERS/ITEMS NESSE ARRAY... E, MESMO ASSIM,
+
+
+
+O printf() consegue printar, magicamente, o array/string, sem essa length...
+
+
+
+
+
+
+
+
+
+
+OK...
+
+
+
+''BUT, THEN, HOW DOES A COMPUTER KNOW WHERE 
+    A STRING ENDS IN MEMORY, IF YOUR STRING IS A SEQUENCE OF CHARACTERS?'''
+
+
+
+
+
+
+
+
+
+
+bem... se sua string é de length 3,
+
+3 BYTES ('HI!')
+
+
+
+SUA STRING VAI USAR, POR TRÁS DAS CENAS,
+
+
+
+___ QUATRO__ BYTES....
+
+
+
+
+
+
+
+
+
+
+-_> ELA VAI USAR 4 BYTES...
+
+
+OS BYTES SERÃO:
+
+
+
+1 H 
+2 I 
+3 ! 
+4  \0
+
+
+
+
+
+
+
+
+
+BACKSLASH 0...
+
+
+
+
+
+ISSO REPRESENTA UM CARACTER ESPECIAL, O CARACTER 'NULL',
+
+
+QUE É SIMPLESMENTE UM CARACTER ESPECIAL QUE 
+REPRESENTA O FINAL DE UMA STRING...
+
+
+
+
+
+
+HI!\0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... SE ISSO N EXISTISSE,
+
+    O COMPUTADOR IA MISTURAR TODOS OS VALUES, SEM DISTINGUÍ-LOS...
+
+
+
+
+    SÃO 8 BITS DE '0',
+
+    dentro de 1 mesmo byte...
+
+
+
+
+
+
+
+
+
+
+
+E É _ JUSTAMENTE_ POR ISSO QUE _ '0' é considerado como 'NULL',
+
+em mtas linguagens de programação...
+
+
+
+
+
+
+OK...  MAS O QUE ACONTECE SE PRINTARMOS 
+
+
+'%c%c%c'?
+
+
+
+
+
+FICAMOS COM 'HI!' novamente...
+
+
+
+
+MAS SE PRINTAMOS ASSIM:
+
+
+
+
+
+int main(void)
+{
+    string s = "HI!";
+
+    printf("%i %i %i $i \n", s[0], s[1], s[2], s[3]);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> COM ISSO, FICAMOS 
+
+COM 
+
+
+
+72 73 33 0
+
+
+
+
+
+
+
+
+
+
+
+É CLARO QUE O 0 É O DIVISOR,
+
+O FINAL DESSA STRING...
+
+
+
+
+
+
+
+
+MAS O PROFESSOR APONTA QUE PODEMOS PROCURAR PELO VALUE DE 's[4]',
+
+IR ALÉM DO 'LIMITE' DE ESSA STRING...
+
+
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+int main(void)
+{
+    string s = "HI!";
+
+    printf("%i %i %i $i \n", s[0], s[1], s[2], s[3]);
+    return 0;
+}
+
+
+
+
+
+COM ISSO, FICAMOS COM:
+
+
+72 73 33 0 37 
+
+
+
+
+
+
+
+
+
+
+MAS O QUE É 37,
+
+EM ASCII?
+
+
+
+
+
+
+
+É '%'...
+
+
+
+
+
+
+
+
+
+-> E ISSO É RUIM, É UMA FEATURE PERIGOSA DO C,
+
+
+PQ 
+
+PODEMOS ACTUALLY 
+
+
+
+OLHAR EM OUTROS LUGARES DA MEMÓRIA DO C,
+
+
+
+
+
+
+'''YOU CAN TOUCH AND CHANGE 
+    ANY MEMORY YOU WANT...''
+
+
+
+
+
+
+
+''YOU MOST RESTRAIN YOURSELF TO NOT TOUCH MEMORY 
+THAT DOES NOT BELONG TO YOU''...
+
+
+
+
+
+
+
+
+
+
+
+-> E ISSO PODE CAUSAR CRASHES 
+    DE PROGRAMAS.... FAZ PROGRAMAS CRASHAREM...
+
+
+
+
+
+
+
+
+    -> É UMA FONTE DE COMMON BUGS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS AGORA QUE CONSEGUIMOS PENSAR EM STRINGS COMO ARRAYS,
+
+
+
+
+
+''LETS GO AHEAD AND CONSIDER HOW YOU CAN HAVE MULTIPLE STRINGS IN A PROGRAM''...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EXEMPLO:
+
+
+
+
+
+
+string s = "HI!"
+string t = "BYE!"
+
+
+
+
+
+
+
+
+
+MAS COMO VAI FICAR A MEMÓRIA DO COMPUTADOR?
+
+
+
+
+
+
+
+
+FICA ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+HI!\0   (4 CARACTERES)   
+BYE!\0     (5 CARACTERES)
+
+
+
+
+
+
+
+
+
+
+
+
+4 E 5 BYTES, RESPECTIVAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+BASICAMENTE, ESTAMOS JOGANDO COISAS NA MEMÓRIA, EM LOCAIS COMO ESSES...
+
+
+
+
+
+
+
+O PROFESSOR ENTÃO 
+
+
+
+CRIA 1 PROGRAMA 
+
+
+
+PARA 
+
+
+
+''PRINTS OUT 
+    THE TOTAL LENGTH OF A STRING''...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PARA ISSO, ELE CRIA UM NOVO PROGRAMA,
+
+DE NOME 'string.c'...
+
+
+
+
+
+
+
+
+EX:
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    string s = get_string("Input: ");
+    printf("output: ");
+
+    for (int i = 0; i < strlen(s); i++) {
+        printf("%c", s[i]);
+    } 
+    printf("\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ''HOW DO I KNOW WHEN TO STOP, STOP EXECUTING CODE FOR 
+A STRING?''
+
+
+
+
+
+
+
+UMA MANEIRA DE FAZER ISSO, BEM GIMMICKY,
+
+NO C,
+
+
+
+É 
+
+
+
+
+TER 1 BOOLEAN EXPRESSION TIPO ASSIM:
+
+
+
+
+
+
+s[i] != '\0'
+
+
+
+
+
+
+
+
+
+COM ISSO, ELE VAI CONTINUAR LOOPANDO,
+
+ATÉ QUE O CHARACTER EM QUESTÃO SEJA 'END OF STRING' (aquele caracter '0' ESPECIAL)...
+
+
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    string s = get_string("Input: ");
+    printf("output: ");
+
+    for (int i = 0; s[i] != '\0'; i++)
+    {
+        printf("%c", s[i]);
+    } 
+    printf("\n");
+}
+
+
+
+
+
+
+
+
+
+
+E ISSO FUNCIONOU...
+
+
+
+
+
+
+O PROGRAMA PEDE UM INPUT, E AÍ REPETE ISSO, COMO OUTPUT...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+''we are using this boolean expression to conditionally 
+
+determine if we want to print characters''..
+
+
+
+
+
+
+
+
+
+
+
+
+--> A FUNCTION MELHOR PARA ISSO É 'strlen()',
+
+
+
+QUE É 'string length'...
+
+
+
+
+
+-> ESSA FUNCTION EXISTE DENTRO DE 1 FILE, DE NOME 'string.h'...
+
+
+
+
+
+
+
+
+--> É POR ISSO QUE PODEMOS ESCREVER ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    string s = get_string("Input: ");
+    printf("output: ");
+
+    // for (int i = 0; s[i] != '\0'; i++) // * Oldschool way of checking for null terminator
+    for (int i = 0; i < strlen(s); i++) // * C way of checking for null terminator
+    {
+        printf("%c", s[i]);
+    } 
+    printf("\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... É CLARO QUE ESSA FUNCTION FOI ESCRITA NA LIBRARY,
+
+
+LIBRARY DE 'string.h'...
+
+
+
+
+
+
+
+
+
+-> MAS COMO AS PESSOAS ESCREVERAM ESSA FUNCTION?
+
+
+
+-> A IMPLEMENTAÇÃO PROVAVELMENTE 
+    USOU ESSA MESMA MECÂNICA DO PROFESSOR,
+
+    QUE FAZ O 'CHECK FOR THE NULL TERMINATOR', esse '/0`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> CERTO...
+
+
+
+
+
+
+MAS TEMOS ALGO RUIM NESSE CÓDIGO, ALGO N MT BEM DESIGNED...
+
+
+
+
+
+
+
+
+
+
+
+o problema é 
+
+
+QUE o value retornado por 'strlen()' 
+
+SEMPRE SERÁ O MESMO... NÃO PRECISAMOS CHECAR ISSO DUZENTAS VEZES,
+
+podemos rodar 1 única vez, e armazenar em 1 variable....
+
+
+
+
+tipo assim:
+
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+int main(void)
+{
+    string s = get_string("Input: ");
+    printf("output: ");
+
+    int str_length = strlen(s);
+
+    for (int i = 0; i < str_length; i++) // * C way of checking for null terminator
+    {
+        printf("%c", s[i]);
+    } 
+    printf("\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+o professor fala que 
+
+
+UMA DAS APLICAÇÕES DE TUDO ISSO É 
+
+'CRIPTOGRAFIA'...
+
+
+
+
+
+
+
+
+
+
+
+''SCRAMBLING'' --> É O ENCRYPT DE INFO...
+
+
+
+
+
+
+
+
+
+
+
+SUAS MESSAGES VÃO PROVAVELMENTE ESTAR EM 
+INGLES/ASCII...
+
+
+
+
+
+
+
+
+
+-> QUEREMOS CRIPTOGRAFAR NOSSA MESSAGE PARA OUTRO 
+
+FORMATO, PARA PROTEGER SEU CONTEÚDO...
+
+
+
+
+
+
+
+
+PENSE ASSIM:
+
+
+
+
+
+
+TEMOS 'HI!' 
+
+
+E 'BYE!',
+
+
+
+
+AMBOS COM AQUELE NULL TERMINATOR DE '\0'
+
+
+
+
+
+
+CERTO...
+
+
+
+
+
+
+
+PODEMOS PENSAR NESSAS COISAS COMO 's' ou 't'...
+
+
+
+
+
+
+
+
+
+PODEMOS ACESSAR OS INDIVIDUAL CHARACTERS COM COISAS COMO:
+
+
+s[0], s[1], s[2],
+
+
+t[0], ...
+
+
+
+
+
+
+
+
+
+
+
+OK...
+
+
+
+
+
+MAS DIGAMOS QUE QUEREMOS TER 1 ARRAY OF WORDS..
+
+
+
+
+
+
+TIPO:
+
+
+
+
+
+['tea', 'biscuit', 'water'];
+
+
+
+
+
+
+
+
+DIGAMOS QUE QUEREMOS CRIAR 1 ARRAY DE 2 SLOTS,
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+string words[2];
+
+words[0] = "HI!";
+
+words[1] = "BYE!";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK...
+
+
+
+
+FICAMOS COM WORDS EM 2 LOCATIONS DIFERENTES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+STRING --> É UM ARRAY...
+
+
+
+
+
+
+
+
+
+E AQUI TEMOS 1 ARRAY OF ARRAYS..
+
+
+ARRAY DE STRINGS...
+
+
+
+
+
+
+
+
+
+
+PODEMOS ACESSAR VALUES DETALHADAMENTE,
+
+TIPO ASSIM:
+
+
+
+
+
+
+words[0][0]   (seria o 'H')
+
+
+words[0][1]  (seria o 'I')
+
+
+
+
+
+
+etc, etc...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O PROFESSOR ENTÃO CRIA 1 NOVO PROGRAMA,
+
+QUE FAZ O CONVERT 
+
+
+DE 1 WORD PARA UPPERCASE...
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+
+// Convert to uppercase
+int main(void)
+{
+    string s = get_string("Before: ");
+    printf("After: ");
+
+    int n = strlen(s);
+
+    for (int i = 0; i < n; i++)
+    {
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+QUEREMOS PERGUNTAR:
+
+
+''IF THE CURRENT LETTER IS LOWERCASE,
+ CONVERT IT TO UPPERCASE... else, simply print 
+ this character directly, as it will already be 
+ uppercase''..
+
+
+
+
+
+
+
+
+
+ EX:
+
+
+
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+
+// Convert to uppercase
+int main(void)
+{
+    string s = get_string("Before: ");
+    printf("After: ");
+
+    int n = strlen(s);
+
+    for (int i = 0; i < n; i++)
+    {
+        if(s[i] >= 'a' && s[i] <= 'z') {
+            printf("%c", s[i] - 32);
+        }
+        else {
+            printf("%c", s[i]);
+        }
+    }
+}
+
+
+
+
+
+NÓS BASICAMENTE TRATAMOS 'a' e 'z' COMO NÚMEROS...
+pq eles realmente são números...
+
+
+
+
+
+
+
+ok... mas pq diabos fizemos '-32'?
+
+
+
+
+
+
+
+É PQ A DISTANCIA ENTRE OS UPPER E LOWER É SEMPRE 32... E ISSO É CONSISTENTE, NO ALFABETO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+e isso realmente funciona...
+
+
+
+
+digitamos 'david' 
+
+
+e ficamos com 
+
+'DAVID'...
+
+
+
+
+
+
+
+
+ISSO FUNCIONA, SIM,
+
+
+
+MAS PODEMOS 
+
+
+
+DEIXAR ISSO AINDA MELHOR, COM LIBRARIES...
+
+
+
+
+
+
+
+
+
+--> ISSO PQ NÃO PRECISAMOS REINVENTAR A RODA...
+
+
+
+
+
+
+
+
+
+
+--> TEMOS UMA FUNCTION QUE FAZ O CAPITALIZE DE LETTERS PARA NÓS...
+
+
+
+
+
+
+
+
+
+
+--> PARA ISSO, 
+PRECISAMOS DA LIBRARY DE 'ctype.h'...
+
+
+
+
+
+
+
+
+
+
+
+--> DENTRO DE ESSA LIBRARY, TEMOS A FUNCTION 
+
+
+
+'islower()'...
+
+
+
+
+
+
+
+
+PODEMOS ESCREVER 
+
+
+
+islower(s[i])
+
+
+
+
+
+
+
+
+
+
+
+AÍ PODEMOS COLOCAR ISSO EM 1 IF-ELSE...
+
+
+
+
+
+
+
+-> E, ENTÃO, PODEMOS USAR 
+
+a function 'toupper()',
+
+
+PARA 
+
+CONVERTER EM UPPER O 's[i]'...
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main(void)
+{
+    string s = get_string("Before: ");
+    printf("After: ");
+
+    int n = strlen(s);
+
+    for (int i = 0; i < n; i++)
+    {
+        if (islower(s[i]))
+        {
+            printf("%c", toupper(s[i]));
+        }
+        else
+        {
+            printf("%c", s[i]);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+MAS NEM PRECISAMOS COLOCAR O ELSE,
+
+
+PQ 
+
+
+
+ESSA CAPITALIZAÇÃO 
+DO 'toupper()'
+
+
+
+CONSEGUE HANDLAR TANTO OS CASES DE 
+
+
+
+'lowercase' e 'uppercase'...
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+
+
+
+
+int main(void)
+{
+    string s = get_string("Before: ");
+    printf("After: ");
+
+    int n = strlen(s);
+
+    for (int i = 0; i < n; i++)
+    {
+        if (islower(s[i]))
+        {
+            printf("%c", toupper(s[i]));
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... COM ISSO, FICAMOS COM 1 CÓDIGO BEM MAIS LEGÍVEL...
+
+
+
+
+
+
+
+
+
+
+
+-> CERTO... MAS É CLARO QUE O 'toupper()'
+
+
+REQUER 
+
+QUE 
+
+O VALUE SEJA 1 CHARACTER,
+
+E NÃO 
+
+
+
+UMA STRING INTEIRA..
+
+
+
+
+
+
+
+
+
+--> PODEMOS ENCONTRAR TODAS AS FUNCTIONS DISPONÍVEIS 
+
+AO C,
+
+EM 1 SITE ESPECIAL...
+
+
+
+
+
+
+
+
+
+
+
+SÃO AS "MANUAL PAGES"...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK...
+
+
+
+    MAS ATÉ AGORA 
+
+    NÃO ESCREVEMOS NENHUM PROGRAMA QUE 
+
+    CONSIDERA 
+
+
+    OS TERMOS ESCRITOS 
+
+
+    NO TERMINAL,
+
+    QUANDO O USER RODA NOSSOS PROGRAMAS... (tipo flags)..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PARA ISSO, O PROFESSOR CRIA UM NOVO PROGRAMA,
+
+DE nome 'argv.c'...
+
+
+
+
+
+
+ESSE NOME VAI FAZER SENTIDO , DAQUI A POUCO...
+
+
+
+
+
+
+
+
+
+COMEÇAMOS COM ISTO:
+
+
+
+
+
+
+
+
+#include <cs50.h>
+
+#include <stdio.h>
+
+int main(void)
+{
+}
+
+
+
+
+
+
+
+
+
+
+
+MAS VAMOS TROCAR O PARAMETER DO 'main',
+
+tirar esse 'void'...
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR COLOCA 
+
+
+
+OUTROS INPUTS  DENTRO DELE...
+
+
+
+
+
+
+
+
+--> ELE COLOCA TIPO 
+
+
+
+''int argc, string argv[]''...
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+#include <cs50.h>
+
+#include <stdio.h>
+
+
+// This is how we receive arguments from the command line, in C:
+int main(int argc, string argv[])
+{
+}
+
+
+
+
+
+
+
+
+
+
+TECNICAMENTE, ISSO NÃO É 100% NECESSÁRIO,
+
+MAS É CONVENÇÃO HUMANA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> ISSO SIGNIFICA 
+
+
+
+'''YOUR FUNCTION, main,
+    ACCEPTS 
+    AN INTEGER AS AN INPUT...
+
+    AND, THEN, AN __ ARRAY _OF STRINGS,
+
+    AS THE OTHER INPUT''...
+
+
+
+
+
+
+
+argc --> SERÁ UMA INTEGER, REPRESENTANDO 'ARGUMENT COUNT...
+
+
+            VAI REPRESENTAR '''O NÚMERO DE ARGUMENTS QUE 
+                                O SEU USER DIGITOU, NO TERMINAL,
+                                JUNTO DE SUA FUNCTION''...
+
+
+
+
+argv --> SIGNIFICA 'Argument Vector'... --> 'VECTOR'  é uma MANEIRA FANCY DE DIZER 'LIST'...
+
+
+
+
+
+
+
+
+
+
+
+
+QUER DIZER QUE 
+
+
+O 'argv' VAI CONTER TODAS AS STRINGS QUE O HUMANO ESCREVEU,
+DEPOIS DO NOME DO COMANDO...
+
+
+
+
+
+
+
+
+
+
+
+
+OK... AGORA DIGAMOS QUE QUEREMOS QUE 
+
+O 
+
+
+USUÁRIO SEJA CAPAZ DE ESCREVER O NOME DELE,
+
+
+E AÍ 
+
+O NOME DELE SERÁ OUTPUTTADO...
+
+
+
+
+
+
+
+
+
+
+
+-> PODEMOS FAZER TIPO ASSIM:
+
+
+
+
+
+
+#include <cs50.h>
+
+#include <stdio.h>
+
+
+// This is how we receive arguments from the command line, in C:
+int main(int argc, string argv[])
+{
+    if (argc == 2) {
+        printf("hello, %s\n", argv[1]);
+    } 
+    else 
+    {
+        printf("hello, world");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR COLOCOU ESSE CHECK POR 'argc == 2'
+
+PQ,
+
+
+SE O USUÁRIO 
+
+ESCREVER 'hello ARTHUR',
+
+
+
+o 'ARTHUR' SERÁ PRINTADO,
+
+
+lá com o 'hello, ARTHUR'...
+
+
+
+
+
+
+
+
+
+
+CERTO...
+
+
+
+
+E ISSO FUNCIONA, BASICAMENTE...
+
+
+
+
+
+
+OK... 
+
+
+
+
+AÍ O PROFESSOR AJUSTA 1 POUCO,
+
+PARA CONSEGUIR PRINTAR 
+
+
+TODOS OS CARACTERES DO INPUT DO USUÁRIO, FORA O COMANDO INICIAL...
+
+
+
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+
+// This is how we receive arguments from the command line, in C:
+int main(int argc, string argv[]) // argc is the number of arguments (including the program's name, like 'argv', in this case.), argv is an array of strings, passed by the user, in the command line, after the command invocation.
+{
+    if (argc == 2) {
+        // printf("hello, %s\n", argv[1]);
+
+        int n = strlen(argv[1]);
+
+        for (int i = 0; i < n; i++) {
+            printf("%c", argv[1][i]);
+        }
+    } 
+    else 
+    {
+        printf("hello, world");
+    }
+}
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
+
+
+// This is how we receive arguments from the command line, in C:
+int main(int argc, string argv[]) // argc is the number of arguments (including the program's name, like 'argv', in this case.), argv is an array of strings, passed by the user, in the command line, after the command invocation.
+{
+    if (argc == 2) {
+        int n = strlen(argv[1]);
+
+        for (int i = 0; i < n; i++) {
+            printf("%c\n", argv[1][i]);
+        }
+    } 
+    else 
+    {
+        printf("hello, world");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+COM ISSO, FICAMOS COM  CHARACTER POR LINHA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK.. OUTRA PERGUNTA:
+
+
+
+
+""PQ DIABOS MAIN tem return type de INT,
+    mesmo não fazendo o return de coisa alguma?''
+
+
+
+
+
+
+
+
+
+
+
+
+--> AS FUNCTIONS GERALMENTE POSSUEM '0'
+
+    COMO RETURN TYPES,
+
+    PARA INDICAR QUE ACABOU A EXECUÇÃO DA FUNCTION...
+
+
+
+
+
+
+
+É POR ISSO QUE O RETURN TYPE É 'INT'...
+
+
+
+
+
+
+
+
+
+INTEGERS GERALMENTE SÃO ASSOCIADAS A 'THINGS THAT WENT WRONG',
+
+
+COM PROBLEMAS...
+
+
+
+
+
+
+
+
+
+E '0' SIGNIFICA QUE NADA DEU ERRADO,
+        TUDO DEU CERTO...
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+--> PARA EXEMPLIFICAR ISSO,
+
+O PROFESSOR 
+
+
+QUER NOS MOSTRAR 
+
+
+
+
+
+O CONCEITO DE 'EXIT STATUS'...
+
+
+
+
+
+
+
+
+
+--> PARA ISSO, ELE ESCREVE 1 NOVO PROGRAMA,
+DE NOME 'exit.c'...
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+
+int main(int argc, string argv[])
+{
+    if (argc != 2) {
+        printf("Missing command-line\n");
+        return 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+OU SEJA,
+
+SE O CARA ESCREVER SÓ 
+
+
+'./exit',
+
+
+PARA RODAR O CÓDIGO,
+
+
+
+
+
+ELE VAI FICAR COM ESSE PRINT AÍ (pq o número de arguments não terá sido suficiente),
+
+
+E AÍ 
+
+
+O 
+PROGRAMA VAI 'EXIT WITH STATUS CODE 1'...
+
+
+
+
+
+
+
+
+--> CERTO... ENTÃO É ISSO AÍ...
+
+
+
+
+NUMBERS GERALMENTE REPRESENTAM ERRORS...
+
+
+
+
+
+
+
+
+PROGRAMMERS GERALMENTE FAZEM ISSO....
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... 
+
+
+    MAS AÍ O PROFESSOR ESCREVE MAIS 1 LINHA, MAIS  PRINT,
+
+    TIPO ASSIM:
+
+
+
+
+
+
+
+
+#include <cs50.h>
+#include <stdio.h>
+
+int main(int argc, string argv[])
+{
+    if (argc != 2) {
+        printf("Missing command-line\n");
+        return 1;
+    }
+
+    printf("Hello, %s\n", argv[1]); // This won't print, if the first if statement is true.
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+QUER DIZER QUE 
+
+
+
+
+O PROGRAM VAI 'EXIT WITH STATUS CODE 1'...
+
+
+
+
+
+
+
+
+--> se digitamos 2 arguments,
+
+ficamos com 
+
+
+'Hello, <YOUR_NAME>',
+
+
+e o exit code será de 0... (nada deu errado)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> CERTO...
+
+
+E VC PODE ACTUALLY VISUALIZAR ESSES RETURN VALUES,
+SE VC QUISER...
+
+
+
+
+
+
+
+
+--> VC PODE FAZER ISSO 
+
+
+
+COM O COMANDO 'echo $?',
+
+
+LOGO DEPOIS DE TER EXECUTADO O PROGRAM DE 'exit'...
+
+
+
+
+echo $? 
+
+
+
+
+
+
+
+
+-> ISSO NOS DÁ '1',
+
+nesse caso...
+
+
+
+
+
+
+
+
+
+
+
+
+--> ESSA É UMA CAPACIDADE DE PROGRAMAS ESCRITOS EM C...
+
+PODER ESCREVER ESSE 'echo $?',
+
+para visualizar o return code...
+
+
+
+
+
+
+
+
+
+
+
+
+-> E VC PODE RETORNAR DO 'main'
+
+
+
+QUALQUER TIPO DE NÚMERO, PARA INDICAR ONDE 
+
+O PROGRAM PAROU...
+
+
+
+
+
+É UMA MANEIRA BOA DE HANDLAR ERRORS, NO C...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> QUAIS PROBLEMAS PODEMOS RESOLVER, NESSA SEMANA?
+
+
+
+
+
+
+
+
+
+
+
+1) READABILITY 
+
+
+
+2) cryptography...
+
+
+
+
+
+
+
+
+
+            (CIPHER)
+input --> BLACK BOX --> OUTPUT (ciphertext)
+
+(plain text)
+
+
+
+
+
+
+
+
+cipher é um algorithm, 
+
+
+QUE ENCRIPTA O INPUT,
+
+
+TUDO PARA PRODUZIR OUTPUT QUE 1 THIRD-PARTY PODE ENTENDER...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O IDEAL É QUE O CIPHER POSSA SER REVERTIDO,
+
+TUDO PARA QUE 
+
+
+A PESSOA QUE RECEBE A MENSAGEM 
+
+
+FICA CAPAZ DE A DECRIPTAR...
+
+
+
+
+
+
+
+
+--> PARA CRIPTOGRAFAR,
+    SEMPRE É NECESSÁRIO 
+
+    1 SECRET KEY...
+
+
+
+
+
+
+DIGAMOS QUE 
+
+'I LOVE YOU'
+
+
+é uma string...
+
+
+
+
+
+
+
+
+QUER DIZER QUE ISSO TUDO FICA COMO 
+
+
+
+
+73   76 79 86 69   89 79 95
+
+
+
+
+
+
+
+
+
+PODERÍAMOS ADICIONAR, FACILMENTE, 1 
+
+A CADA 1 DE ESSES NUMBERS...
+
+
+
+
+
+
+
+AÍ, CONVERTIDOS EM CHARS,
+
+FICARIA TIPO ASSIM:
+
+
+
+
+
+
+J  MPWF  ZPV 
+
+
+
+
+
+
+
+ESSE VIRA O 'i love you',
+
+
+
+quando  decriptado...
+
+
+

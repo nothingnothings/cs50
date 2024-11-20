@@ -1,0 +1,5302 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+SCRATCH:
+
+
+
+
+
+
+
+
+
+
+
+
+
+VOCE SEMPRE SE PREOCUPA COM DUAS COISAS:
+
+
+
+
+
+
+
+1) INPUT (o problema)
+
+
+
+
+
+
+
+
+
+
+2) OUTPUT (a solução)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E VC SE PREOCUPA COM A 'CAIXA PRETA' 
+
+ENTRE O INPUT E O OUTPUT,
+
+QUE É ONDE A MÁGICA ACONTECE...
+
+
+
+
+FAZER OS COMPUTADORES SEGUIREM SUAS ORDENS... O CÓDIGO QUE VC ESCREVE..
+
+
+
+
+
+
+
+
+
+
+
+
+--> PRECISAMOS TER UMA LINGUAGEM COMUM...
+
+
+
+
+
+
+
+
+--> COMO PODEMOS REPRESENTAR INFO?
+
+
+
+
+
+
+
+--> CONTAR O NÚMERO DE PESSOAS NA SALA...
+
+
+
+
+
+
+
+
+
+
+--> CONTAR COM AS MÃOS --> bem primitivo...
+
+
+
+
+
+
+
+--> UNARY NOTATION --> 1 DEDO PARA CIMA OU PARA BAIXO... ESSA É A MANEIRA 
+                    PELA QUAL CONTAMOS,
+
+                    COM OS DEDOS...
+
+
+
+
+
+
+
+--> CONTAR ATÉ 10...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS USAMOS UM SISTEMA MAIS ÚTIL...
+
+
+
+
+
+
+
+
+
+NÚMEROS DECIMAIS... --> BASE 10...
+
+
+
+
+
+
+
+
+
+
+
+
+--> 10 DÍGITOS QUE TIPICAMENTE USAMOS... 0-9...
+
+
+
+
+
+
+
+
+--> MAS COMPUTADORES NÃO FALAM A MESMA LÍNGUA QUE NÓS...
+        SÃO MAIS SIMPLES... APESAR DE PARECEREM super complexos...
+
+
+
+
+
+
+
+
+
+-> OS COMPUTADORES FALAM 'MACHINE LANGUAGE'...
+
+
+
+
+
+
+
+
+
+
+--> QUE SISTEMA OS COMPUTADORES USAM...
+
+
+
+
+
+
+
+
+
+
+--> MACHINE LANGUAGE -> BINARY...
+
+
+
+
+
+
+
+
+
+
+--> 0 E 1..
+
+
+
+
+
+
+
+
+
+
+
+
+--> ELES USAM A BASE 2...
+
+
+
+
+
+
+
+-> BINARY SYSTEM...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> É UM SISTEMA QUE PARECE SIMPLES...
+
+
+
+
+
+
+
+
+
+-> PODE PARECER 1 PASSO PARA TRÁS, PQ 
+    NÃO PODEMOS REPRESENTAR MAIS DO QUE 0 E 1 com 2 números em 1 única casa...
+
+
+
+
+
+
+
+
+
+ESSES 0s e 1s são chamados também de 'BITS'...
+
+
+
+
+
+
+
+
+
+
+
+---> E BITS DERIVAM DE APENAS 2 PALAVRAS,
+
+'''''BINARY DIGITS'''''...
+
+
+
+
+
+
+
+
+
+
+BINARY --> 2 POSSIBILIDADES 
+
+
+
+
+DIGITS --> SÍMBOLOS NA TELA...
+
+
+
+
+
+
+
+
+
+
+
+
+E COMPUTADORES FALAM EM BINÁRIO,
+USANDO ESSAS COISAS CHAMADAS DE 'BITS'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS PQ É ASSIM?
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> PQ NÃO INVENTARAM PCS NO PASSADO COM NÚMEROS DE 0 A 9,
+
+para evitar esse pensamento em termo de binários?
+
+
+
+
+
+
+
+
+
+
+
+---> BEM, COMPUTADORES USAM 
+ELETRICIDADE COMO INPUT....
+
+
+
+
+
+
+
+
+
+
+
+-> SEMPRE DEIXAMOS NOSSOS APARELHOS CONECTADOS NA TOMADA...
+
+
+
+
+
+
+
+
+-> O ÚNICO INPUT DOS NOSSOS APARELHOS É ELETRICIDADE, DE CERTA FORMA...
+
+
+
+
+
+
+
+
+
+--> ELETRONS FLUINDO NO APARELHO, PARA CARREGÁ-LOS...
+
+
+
+
+
+
+
+
+
+
+--> SE ARMAZENAMOS ESSA ELETRICIDADE, PODEMOS PASSAR A 
+
+'REPRESENTAR INFORMAÇÃO COM ELA'...
+
+
+
+
+
+
+
+
+
+
+
+POR EXEMPLO, TEMOS LUZES...
+
+
+
+
+
+
+--> A LUZ ESTÁ APAGADA, MAS PODEMOS LIGÁ-LA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0 E 1...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> A IDEIA É QUE PODEMOS PEGAR 1 DISPOSITIVO SIMPLES,
+COMO 1 LAMPADA,
+
+
+E AO PLUGAR/DESPLUGGAR,
+
+PODEMOS REPRESENTAR INFORMAÇÃO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O LIGADO E DESLIGADO PODE SER CHAMADO
+
+
+DE 0 E 1, FALSE E TRUE...
+
+
+
+
+
+
+
+
+
+
+-> É ISSO QUE NOS DEU COMPUTADORES, E O SISTEMA BINÁRIO...
+
+
+
+
+
+
+
+--> MAS SE TEMOS APENAS 1 ÚNICA LAMPADA,
+
+
+E SE TEMOS APENAS 2 VALORES,
+
+
+
+COMO PODEMOS 
+
+
+
+'''CONTAR ATÉ MAIS DO QUE 1'''?
+
+
+
+
+
+
+
+
+
+
+-> PODEMOS USAR MAIS LÂMPADAS...
+
+
+
+
+
+
+
+
+
+3 LÂMPADAS...
+
+
+
+
+
+
+0 0 0       0 
+0 0 1       1 
+0 1 0       2 
+0 1 1       3 
+1 0 0       4 
+1 0 1       5 
+1 1 0       6 
+1 1 1       7 
+
+
+
+
+
+
+
+
+COMBINAÇÕES, BASICAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+PROGRAMAS TIPICAMENTE COMEÇAM A CONTAR DO 0...
+
+
+
+
+
+
+
+PQ FAZ SENTIDO... PQ QUANDO TUDO ESTÁ LIGADO,
+
+
+PODEMOS CHAMAR DE '0'....
+
+
+
+
+
+
+
+
+
+
+
+
+-_> QUER DIZER QUE, AQUI, PODEMOS 
+
+CONTAR ATÉ 7,
+
+
+COM 3 lâmpadas...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> NO MUNDO DA COMPUTAÇÃO,
+    A CONVENÇÃO É COMEÇAR A CONTAR A PARTIR DO 0...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> OK... MAS NO COMPUTADOR NÃO EXISTEM LAMPADAS,
+
+
+E SIM 
+
+
+
+'TINY TINY LITTLE SWTICHES',
+
+
+
+MILLIONS OF LITTLE SWITCHES...
+
+
+
+
+
+
+SÃO OS TRANSISTORES...
+
+
+
+
+
+
+
+
+-> E, HOJE EM DIA, COMPUTADORES POSSUEM MILHOES DESSAS COISAS,
+
+    QUE PODEM SER ATIVADAS ON E OFF EM DIFERENTES PADRÕES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS COMO VAMOS REPRESENTAR 
+    INFORMAÇAÕ, COM ESSES SWITCHES?
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> 123 --> É UM PADRÃO, DE 3 DÍGITOS...
+
+        NÃO É CENTO E VINTE TRÊS... E SIM 123...
+
+
+
+
+
+
+
+
+
+
+    100 10 1 
+     
+     1  2  3
+
+
+    100 + 20 + 3
+
+
+
+
+
+
+
+
+
+--> O MUNDO DOS COMPUTADORES USA ESSENCIALMENTE O MESMO SISTEMA...
+
+
+
+
+
+
+-> A ÚNICA DIFERENÇA É QUE 
+
+OS COMPUTADORES PODEM TER APENAS 0 E 1...
+
+
+
+
+
+
+
+
+
+
+10(2)  10(1)  10(0)
+
+
+
+
+
+
+
+BASE 10...
+
+
+
+
+
+
+
+
+
+-> NO SISTEMA BINÁRIO,
+
+USAM A BASE 2...
+
+
+
+
+
+
+
+2(2) 2(1) 2(0)
+
+
+
+
+
+
+
+
+
+
+
+---> SE TODAS AS LAMPADAS ESTAO APAGADAS --> 0...
+
+
+
+
+
+
+-_> SE TODAS ESTAO LIGADAS --> SERÁ O VALOR MÁXIMO, 7...
+
+
+
+
+
+
+
+
+
+
+
+
+---> 3 BITS --> PODEMOS PERMUTÁ-LOS DE 8 DIFERENTES MANEIRAS...
+
+
+
+
+
+
+
+
+0 A 7, basicamente...
+
+
+
+
+
+
+
+
+
+110010 
+
+
+
+2(5) 2(4) 0(3) 0(2) 2(1) 0
+
+
+
+
+32 + 16 + 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---> OK.. COMEÇAMOS COM ELETRICIDADE...
+
+
+
+
+
+-> AÍ COM NÚMEROS, REPRESENTADOS EM BINARY OU DECIMAL..
+
+
+
+
+
+
+
+
+
+
+-> PARECE QUE A ÚNICA COISA QUE O COMPUTADOR CONSEGUE FAZER 
+
+É CÁLCULOS...
+
+
+
+-> E, REALMENTE, NO INÍCIO OS COMPUTADORES ERAM CAPAZES APENAS DE FAZER ISSO...
+
+
+
+
+
+
+
+--> MAS NOSSOS APARELHOS CONSEGUEM FAZER MT MAIS DO QUE ISSO...
+
+
+
+
+
+
+
+
+CONSEGUEM TAMBÉM REPRESENTAR LETRAS DO ALFABETO... COMO INGLES...
+
+
+
+
+
+
+
+
+
+
+-> COMO PODEMOS FAZER ISSO COM SWITCHES,
+    APENAS SWITCHES DE ON E OFF...
+
+
+
+
+
+
+
+
+
+
+
+--> COMO PODEMOS FAZER ISSO?
+
+
+
+
+
+
+
+
+
+''PODEMOS ASSIGNAR OS NÚMEROS QUE RECEBEMOS DO BINÁRIO 
+PARA LETRAS ESPECÍFICAS DO ALFABETO''...
+
+
+
+
+
+
+
+
+
+--> PARECE QUE ESSA É NOSSA ÚNICA OPÇÃO...
+
+
+
+
+
+
+
+
+A -> número 1...
+
+
+
+
+B -> NÚMERO 2..
+
+
+
+etc...
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... HUMANOS DECIDIRAM FAZER ISSO HÁ ANOS,
+
+    MAS DE FORMA DIFERENTE...
+
+
+
+
+
+
+
+
+--> SISTEMA HEXADECIMAL...
+
+
+
+
+
+
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10 A 
+11 B 
+12 C 
+13 D
+14 E 
+15 F 
+16 G 
+
+
+
+
+
+
+
+
+
+MAS TODOS DECIDIRAM FAZER DE FORMA DIFERENTE...
+
+
+REPRESENTAR 'A' 
+
+
+
+como o número decimal que conhecemos como '65'...
+
+
+
+
+
+
+
+
+
+
+
+
+65 --> no formato bitwise,
+        ele tem ESTA APARÊNCIA:
+
+
+    01000001
+
+
+
+
+
+
+
+
+
+
+ESSE É O PADRÃO DE NÚMEROS QUE O COMPUTADOR 
+
+USA PARA REPRESENTAR O '65'...
+
+
+
+
+
+
+
+
+
+
+
+--> AGORA O COMPUTADOR VAI ''BE MINDFUL'' 
+
+DE QUAL TIPO DE PROGRAMA ESTAMOS USANDO..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CALCULADORAS OU EXCEL --> QUANDO RODAMOS SOFTWARE COMO CALCULADORAS OU 
+                            SPREADSHEET PROGRAM FAZENDO ANÁLISES NUMÉRICAS,
+                            O PROGRAMA DENTRO DO HARDWARE VAI TENTAR ENCONTRAR 
+                            O PATTERN DE SWITCHES QUE VAI REPRESENTAR O NÚMERO DE 65...
+
+
+
+
+
+
+--> o computador vai ser inteligente o suficiente 
+    para saber que 
+
+
+    ''65, ESSE PATTERN OF BITS,
+
+    NO CONTEXTO DE 1 TEXT MESSAGE OU EMAIL,
+
+    VAI REPRESENTAR A LETRA "A"''...
+
+
+
+
+
+
+'''THE PATTERN IS THE SAME, THE REPRESENTATION 
+    IS THE SAME, __ BUT_ _ THE __ CONTEXT__ IS WHAT DIFFERS''...
+
+
+
+
+
+
+
+
+
+
+
+
+--> O SISTEMA QUE OS HUMANOS QUE MAPPEIA ISSO,
+
+
+
+MAPPEIA:
+
+
+
+65 -> A 
+
+66 -> B 
+
+67 -> C 
+
+
+
+
+
+
+
+ESSE SISTEMA É CHAMADO DE 
+
+
+
+
+''''ASCII''...
+
+
+
+
+
+
+
+''AMERICAN-STANDARD CODE __ FOR__ INFORMATION __INTERCHANGE''...
+
+
+
+
+
+
+
+
+
+
+
+--> ISSO SIGNIFICA QUE HÁ UM WELL-DEFINED MAPPING,
+
+DEFINIDO POR HUMANOS HÁ MTOS ANOS, 
+
+QUE É USADO PARA MAPPEAR 
+
+
+
+LETRAS DO ALFABETO A NÚMEROS, COMEÇANDO COM '65'...
+
+
+
+
+
+
+
+
+
+
+E HÁ MAPS PARA PONTUATIONS, LOWER-CASE LETTERS, E TODO TIPO DE COISA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... DIGAMOS QUE VC RECEBE 1 TEXT MESSAGE CONTENDO 1 PADRÃO DE BITS/SEQUENCIA 
+DE DECIMAL NUMBERS QUE 
+
+
+FICA TIPO ASSIM:
+
+
+
+
+
+
+
+72
+73 
+33 
+
+
+
+
+HI!
+
+
+
+
+
+
+
+
+
+pq '33' é exclamação
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EXCLAMAÇÃO 
+
+
+
+
+
+
+
+
+
+
+-> pode ser encontrado aqui:
+
+
+
+https://asciichart.com/
+
+
+
+
+
+
+
+https://www.ascii-code.com/
+
+
+
+
+
+
+
+
+--> voce só saberia isso se tivesse decorado, ou olhado na internet...
+
+
+
+
+
+
+MAS OS CELULARES QUE UTILIZAMOS FAZEM ISSO INTRINSECAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+-> MAS TAMBÉM DEVEMOS CONSIDERAR 'QUANTOS 0 E 1 ESTAMOS USANDO PARA REPRESENTAR TUDO ISSO'...
+
+
+
+
+
+
+QUANDO VC RECEBE 1 MESSAGE DIZENDO 'HI',
+
+
+
+VC ESTÁ RECEBENDO TECNICAMENTE UM PADRAO DE BITS,
+
+
+QUE REPRESENTA ESSE PADRÃO DE BITS..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> COMPUTADORES HOJE EM DIA USAM TIPICAMENTE 8 BITS PARA REPRESENTAR ESSES CARACTERES...
+
+
+
+
+
+
+
+-> MAS QUANDO O ASCII SURGIU PELA PRIMEIRA VEZ,
+
+
+USAVAM 7 BITS, PQ O ESPAÇO ERA CARO, NAQUELA ÉPOCA...
+
+
+
+
+
+
+
+
+
+
+-> mas agora usamos 8 bits...
+
+
+
+
+
+
+
+
+-> CARACTERES EM MÚLTIPLOS DE 8...
+
+
+
+
+
+
+
+
+
+-> BITS NÃO SÃO 1 MEDIDA MT ÚTIL, PQ SÃO MT PEQUENOS (0 ou 1)...
+
+
+
+
+
+
+MAS CADA 1 DOS PADROES DE 8 BITS, QUE USAMOS COMO EXEMPLO AQUI,
+
+
+POSSUI UMA 'VOCABULARY WORD'...
+
+
+
+
+
+
+
+
+
+
+
+
+-> ESSA WORD, NO CASO,
+ 
+
+    É 'BYTES'...
+
+
+
+
+
+
+
+
+
+
+
+--> MEGABYTES --> GIGABYTES...
+
+
+
+
+
+
+
+
+
+
+
+--> TAMANHOS DE ARQUIVOS --> MILHOES DE BYTES, BILLION BYTES...
+
+
+
+
+
+
+
+
+
+-> MAS CADA 1 DESSES BYTES 
+    É SIMPLESMENTE 1 PATTERN DE ' _8 __ BITS, 8  0s and 1s''...
+
+
+
+
+
+
+
+
+
+
+
+
+QUER DIZER QUE UM 'bit'
+
+
+É 1/8 
+
+
+
+de 'BYTES'...
+
+
+
+
+
+
+
+
+
+
+
+
+OK... MAS ESTAMOS SENDO 'BIASED', AQUI...
+
+
+
+
+
+
+
+
+
+
+-> PQ ASCII É O PADRÃO __ AMERICANO...
+
+
+
+
+
+
+
+
+
+
+
+
+-> E EXISTEM OUTROS TIPOS DE TECLADO...
+
+
+
+
+
+
+
+
+
+
+
+--> HÁ OUTROS CARACTERES EM 1 TECLADO INGLES NORMAL...
+
+
+
+
+
+
+
+
+
+--> PESSOAS EM OUTRAS PARTES DO MUNDO 
+    USAM OUTROS TIPSO DE TECLADO...
+
+
+
+
+
+
+
+
+
+--> MAS O QUE ESTÁ FALTANDO, NO 'ASCII'?
+
+
+
+
+
+
+
+
+-> PERGUNTA:
+
+
+
+'''IF WE ARE USING ASCII,
+
+AND WE REALLY GIVE OURSELVES 
+
+
+8 BITS, OR 1 BYTE,
+
+
+
+HOW MANY DIFFERENT CHARACTERS 
+CAN WE POTENTIALLY DISPLAY''?
+
+
+
+
+
+
+
+256 
+
+
+
+
+
+2(8)
+
+
+
+
+
+
+
+
+-> 256 POSSIBILIDADES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS PQ UM TECLADO INGLES PODE SER LIMITANTE... E PQ 
+    O ASCII NÃO É APROPRIADO PARA REPRESENTAR HUMAN LANGUAGE?
+
+
+
+
+
+
+
+
+
+
+
+
+--> O QUE ESTÁ FALTANDO 
+
+
+SÃO DIFERENTES TIPOS DE CARACTERES,
+
+
+
+E COISAS COMO ACENTOS...
+
+
+
+
+
+
+
+--> CARACTERES ASIÁTICOS, ARÁBICO, ETC...
+
+
+
+
+
+
+
+
+
+
+HÁ MT MAIS SÍMBOLOS QUE USAMOS PARA COMUNICAÇÃO,
+ ALÉM DO ALFABETO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> HÁ OUTRAS COISAS QUE NÓS, HUMANOS,
+    USAMOS, COMO EMOJIS...
+
+
+
+
+
+
+
+
+
+
+
+--> EMOJIS -> PODEM SE PARECER COMO IMAGES,
+
+                MAS NÃO SÃO...
+
+
+
+                SÃO PATTERNS... PATTERNS DE 0s e 1s...
+
+
+                são caracteres em 1 ALFABETO, 
+                O 
+
+                ALFABETO EMOJI...
+
+
+
+
+
+
+
+            --> PADRÕES DE 0s e 1s que representam 
+                cada 1 dessas caras....
+
+
+
+
+
+
+
+
+    -> ISSO TUDO PQ O MUNDO SAIU DO 'ASCII' (8 bits total)
+
+    PARA USAR OU:
+
+
+    8 
+    16 
+    24 
+    32 bits...
+
+
+
+
+
+
+
+
+--> HOJE EM DIA, HÁ UM SISTEMA CHAMADO DE 'UNICODE',
+    CRIADO POR HUMANOS, 
+
+    QUE  SUPORTA NÃO SÓ INGLÊS,
+
+    MAS TODAS AS LINGUAGENS HUMANAS (esse é o objetivo... tanto eletrônica como escrita )
+
+
+
+
+
+--> PODEMOS REPRESENTAR COISAS COMO 
+
+O EMOJI DE RISO COM LÁGRIMAS, QUE É O MAIS FAMOSO E USADO...
+
+
+
+
+
+😂
+
+
+
+é o : joy : 
+
+
+
+
+
+
+
+
+
+O NÚMERO DECIMAL QUE REPRESENTA ESSA CARA, LAUGH WITH TEARS OF JOY,
+
+É 
+
+
+
+128514
+
+
+
+
+
+
+
+
+
+
+-> para representar certas linguagens humanas,
+
+precisamos bem mais do que 256 caracteres...
+
+
+
+
+
+
+
+
+
+
+-> PODEMOS USAR 16, 24, 32 BITS... SÃO MT MAIS POSSIBILIDADES...
+
+
+
+
+
+
+
+
+
+
+--> SE VC ESTÁ MANDANDO UM EMOJI, VC ESTÁ BASICAMENTE ENVIANDO 1 PADRAO DE BITS 
+
+
+
+como 
+
+
+0000000000000000011010000100100101000101 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... 
+
+
+
+
+
+
+
+RECAPITULANDO:
+
+
+
+
+
+1) ELETRICIDADE 
+
+
+
+
+2) NÚMEROS 
+
+
+
+
+3) REPRESENTAR LETTERS E EMOTIONS, NO FORMATO DE EMOJIS...
+
+
+
+
+
+
+
+
+
+
+
+--> OK... MAS EMOJIS SÃO TIPO IMAGENS...
+
+
+
+
+
+
+
+
+
+
+COMO COMPUTADORES REPRESENTAM COISAS COMO 'COLOR'?
+
+
+
+
+
+
+
+
+--> COMO É O AMARELO REPRESENTADO NO COMPUTADOR?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> SE TUDO O QUE TEMOS SÃO BITS...
+
+
+
+
+
+
+
+
+
+
+--> E SE NÓS, COMO CORES, PRECISAMOS REPRESENTAR CORES,
+
+O QUE PODE SER 1 POSSIBILIDADE?
+
+
+
+
+
+
+
+
+
+
+UM GRADIENTE, DE 0 a 1...
+
+
+
+
+
+
+
+0 a 255 
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> DIVIDIR, NÚMEROS PARA DIFERENTES TIPOS DE CORES...
+
+
+
+
+
+
+
+
+
+
+
+HÁ DIFERENTES MANEIRAS DE FAZER ISSO...
+
+
+
+
+
+
+
+
+
+--> RGB...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+R 
+G
+B 
+
+
+
+
+
+
+
+
+RED GREEN BLUE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PODEMOS CONSEGUIR TODAS AS CORES DO ARCO-ÍRIS,USANDO 
+
+
+RED GREEN E BLUE LIGHT...
+
+
+
+
+
+
+
+
+
+
+--> DIGAMOS QUE ABRIMOS UMA FOTO NO PHOTOSHOP...
+
+
+
+
+
+
+
+
+
+
+
+72 
+73 
+33 
+
+
+
+
+
+
+
+
+
+
+--> RED, GREEN, BLUE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> 256 X 256 X 256 
+
+
+
+
+
+
+
+
+ESSE É O NÚMERO DE POSSIBILIDADES...
+
+
+
+
+
+2(24)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+128.514...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O COMPUTADOR VAI CONTROLAR OS DIFERENTES PONTOS 
+NA SUA TELA,
+
+OS PIXELS,
+
+USANDO 
+
+rgb...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PIXELATION ---> 
+
+
+
+
+
+
+
+
+
+-> RESOLUTION  DE UMA IMAGE --> É QUANTOS PIXELS TEMOS HORIZONTALMENTE E VERTICALMENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+--> VC PODE VER QUE CADA 1 DESSES PIXELS ESTÁ USANDO 24 BITS (ou 3 bytes)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> TEMOS MILHARES DE PONTOS/PIXELS 
+NAS IMAGENS...
+
+
+
+E SE CADA 1 DOS PIXELS TEM 3 BYTES,
+
+
+
+
+
+É POR ISSO QUE AS FOTOS QUE TIRAMOS 
+
+E BAIXAMOS DA INTERNET SÃO TIPICAMENTE 
+
+
+
+MEDIDAS EM KILOBYTES, MEGABYTES,
+ ETC...
+
+
+
+
+
+
+
+
+
+
+
+
+E TUDO ISSO ACONTECE POR TRÁS DAS CENAS... ESTAMOS REPRESENTANDO INFO DESSA FORMA...
+
+
+
+
+
+
+
+
+
+
+--> OK, MAS AGORA OUTRA PERGUNTA:
+
+
+
+'''COMO COMPUTADORES REPRESENTAM ARQUIVOS DE VÍDEO?'''
+
+
+
+
+
+
+
+
+
+-> MUDANDOS OS BYTES RAPIDAMENTE...
+
+
+
+
+
+
+
+
+
+
+--> MUDAR RAPIDAMENTE O RGB DE PIXELS INDIVIDUALMENTE,
+    para combinar a imagem de cada segundo do vídeo...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> SE VC MUDAR AS CORES 
+
+MÚLTIPLAS VEZES 
+
+POR SEGUNDO, EM CADA PIXEL,
+
+
+SERÁ CRIADA A ILUSÃO DE MOVIMENTO....
+
+
+
+
+
+
+
+
+
+
+
+O QUE ACONTECE NO COMPUTADOR SÃO SEQUENCIAS DE PIXELS TROCANDO DE COR,
+
+
+QUE CRIAM OS VÍDEOS, BASICAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> TEMOS TAMBÉM OUTRAS REPRESENTAÇÕES... MÚSICA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> PIANO --> NOTAS DE 'A' a 'G'...
+
+
+
+
+
+
+
+
+
+--> MAS TAMBÉM HÁ SHARPS E FLATS...
+
+
+
+
+
+
+
+-> PRECISAMOS DE NÚMEROS PARA REPRESENTAR CADA 1 DESSAS NOTAS...
+
+
+
+
+
+
+
+
+-> TAMBÉM PODERÍAMOS USAR OUTROS NÚMEROS, PARA REPRESENTAR 
+
+
+
+A DURAÇÃO DE CADA NOTA...
+
+
+
+
+
+
+
+
+
+--> MÚSICA 
+
+PODE, BASICAMENTE, SER REPRESENTADA, NO MUNDO DA COMPUTAÇÃO,
+
+
+QUANTIFICADA, 
+
+EM APENAS PEQUENOS PEDAÇOS DE INFO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> JPEgs 
+
+
+PNGs 
+
+
+GIFs 
+
+
+
+word documents....
+
+
+
+.xsl 
+
+
+
+
+
+
+E TODOS ESSES FORMATOS...
+
+
+
+
+
+
+
+
+
+
+
+ESSAS FILE EXTENSIONS/FORMATS SIMPLESMENTE 
+
+
+
+SÃO CONVENÇÕES, AGREEMENTS, DE HUMANOS,
+
+DE COMO ORGANIZAR INFORMAÇÕES...
+
+
+
+
+
+
+
+
+
+
+SÃO PATTERNS...
+
+
+
+
+
+
+
+
+
+
+
+--> MAS TODOS ESSES PATTERNS SÃO 0s e 1s...
+
+
+
+
+
+
+
+
+
+
+
+--> OK... AGORA QUE CONCORDAMOS COM OS FORMATOS,
+
+
+
+
+TEMOS QUE 
+
+
+
+
+
+PENSAR EM COMO FORMULAR SOLUÇÕES...
+
+
+
+
+
+
+
+
+
+
+
+
+''ALL THAT REMAINS IN PROBLEM-SOLVING IS LOOK INSIDE THE BLACK BOX,
+
+
+AND UNDERSTAND HOW TO TAKE INPUTS AND CONVERT THEM INTO ACTUAL SOLUTIONS''...
+
+
+
+
+
+
+
+
+
+
+-> DENTRO DA BLACK BOX,
+
+
+BASICAMENTE TEMOS 'ALGORITHMS'...
+
+
+
+
+
+
+
+
+
+ALGORITHMS --> SÃO STEP-BY-STEP INSTRUCTIONS PARA RESOLVER PROBLEMS...
+
+
+
+
+
+
+
+
+--> NÓS, HUMANOS,
+
+    EXECUTAMOS ALGORITMOS MESMO SEM COMPUTADORES..
+
+
+
+
+    EX: SEGUIR UMA RECEITA DE COZINHA...
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS, AO CONTRÁRIO DE INSTRUÇÕES DE COZINHA,
+
+NÃO HÁ 
+
+AMBIGUIDADE 
+
+
+
+EM COMPUTADORES... ALGORITMOS,
+
+
+                    QUANDO IMPLEMENTADOS POR MÁQUINAS,
+
+
+
+                    DEVEM 
+
+
+
+
+                    SER CORRETOS,
+
+                    E TAMBÉM DEVEM SER PRECISOS...
+
+
+
+
+
+
+
+
+
+
+-> VC PRECISA SER PRECISO..
+
+
+
+
+
+
+
+
+
+--> PQ COMPUTADORES SEMPRE VÃO SER TOTALMENTE 
+    LITERAIS...
+
+
+
+
+
+
+
+
+--> QUANDO PROGRAMAMOS 1 ALGORITMO,
+    TEMOS QUE SEMPRE SER 
+
+
+    PRECISOS,
+
+    PARA QUE O COMPUTADOR 
+    NÃO INTERPRETE NOSSAS INSTRUÇÕES ERRONEAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+EX: CONTACT APPS --> MOSTRA TODOS NOSSOS AMIGOS E COLEGAS...
+
+
+
+
+
+
+
+
+-> A VERSÃO OLD SCHOOL DISSO ERA 
+
+
+
+
+AS LISTAS TELEFÔNICAS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> QUEREMOS RESOLVER 1 PROBLEMA:
+
+
+
+
+O PROBLEMA É O 'NOME A SER PROCURADO, DENTRO DA LISTA TELEFONICA'...
+
+
+
+
+
+
+
+
+
+
+
+--> AÍ PROCURAMOS ALI...
+
+
+
+
+
+
+
+
+
+
+SE ESTAR CORRETO É IMPORTANTE...
+
+
+
+
+
+FOLHEAR O NEGÓCIO, 1 POR VEZ,
+
+
+
+
+ISSO ESTÁ CORRETO?
+
+
+
+
+
+
+
+
+--> ESTÁ CORRETO,
+SIM,
+
+MAS É TERRIVELMENTE LENTO...
+
+
+
+
+
+
+
+
+
+--> ESTÁ LENTO...
+
+
+
+
+
+
+
+
+-> NÃO BASTA SER CORRETO,
+
+    MAS ELE TBM DEVE SER EFICIENTE....
+
+
+
+
+
+
+
+
+--> OK... ENTÃO, EM VEZ DE PROCURAR 1 FOLHA POR VEZ,
+
+
+
+PODEMOS PROCURAR 10 PÁGINAS POR VEZ...
+
+
+
+
+
+
+
+
+
+
+
+-> O ALGORITMO DE PROCURAR 
+    PELO NOME, 2 PAGES POR VEZ...
+
+
+
+    (pq o problema é resolvido 2 pages por vez)....
+
+
+
+
+
+
+
+--> MAS VC PODE ACABAR SKIPPANDO O NOME, EM 1 das PAGES...
+    E ISSO PODE SER 
+
+    1 PROBLEMA...
+
+
+
+
+
+
+
+
+
+
+-> DEVEMOS DESCARTAR O ALGORITMO INTEIRO?
+
+
+
+
+
+-> NÃO... 
+
+
+
+
+
+
+-> PQ ELE AINDA PODE CUMPRIR SEU PROPÓSITO...
+
+
+
+
+
+
+
+
+
+
+-> SE EU SKIPPAR 1 PAGE,
+PODEMOS VOLTAR 1 PÁGINA ATRÁS...
+
+
+
+
+
+
+
+
+
+
+
+--> ISSO PODE SER FEITO PARA CONSERTAR ESSE 'BUG'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS NÓS TIPICAMENTE VAMOS PULAR PARA A LETRA 
+
+QUE 
+
+
+
+
+IMPORTA A NÓS...
+
+
+
+
+
+
+
+
+
+--> PULAMOS PARA A LETRA D..
+
+
+
+
+
+
+
+
+
+
+
+
+--> GRAÇAS À ALFABETIZAÇÃO,
+
+
+
+
+    PODEMOS ACELERAR MT A PROCURA...
+
+
+
+
+
+
+
+
+vamos cortando pela metade, pela metade, pela metade,
+
+até chegar 
+
+
+
+
+até o resultado...
+
+
+
+
+
+
+
+
+
+1024 
+
+
+512 
+
+
+256 
+
+
+
+128 
+
+
+
+64 
+
+
+32 
+
+
+16 
+
+8 
+
+4 
+
+2 
+
+1 
+
+
+
+
+
+
+
+
+
+
+--> OU SEJA,
+
+ESSE ALGORITMO ESTÁ CERTO COMO O PRIMEIRO,
+
+
+
+E CERTO COMO O SEGUNDO (com o BUG FIX),
+
+
+MAS ELE É MT MAIS BEM-PROJETADO...
+
+
+
+
+
+
+
+
+os 2 primeiros algoritmos são lentos demais...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS O TERCEIRO ALGORITMO É BEM MAIS RÁPIDO...
+
+
+
+
+
+
+ISSO TUDO MOSTRA O QUE 
+
+É A PROGRAMAÇÃO E PROGRAMAÇÃO...
+
+
+
+
+
+
+
+
+POR ISSO SEMPRE VALE A PENA PENSAR 
+
+
+
+EM ALGORITMOS NÃO SÓ EM TERMOS DE CORREÇÃO,
+
+MAS DE EFICIÊNCIA...('well-designed')...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK.. MAS AGORA PRECISAMOS TRANSFORMAR ESSES ALGORITMOS EM  
+
+
+
+CÓDIGO...
+
+
+
+
+NO CASO, VEREMOS 'PSEUDOCODE'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> ALGUMAS DAS IDEIAS QUE SERÃO UTILIZADAS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PSEUDOCODE...
+
+
+
+
+
+
+
+
+--> NÃO PODEMOS TER AMBIGUIDADE, DEVE SER PRECISO..
+
+
+
+
+
+
+
+1 PICK UP PHONE BOOK 
+
+
+2 OPEN TO MIDDLE OF PHONE BOOK 
+
+
+3 LOOK AT PAGE 
+
+
+4) IF PERSON IS ON PAGE 
+      5)  CALL PERSON 
+
+
+6) ELSE IF PERSON IS EARLIER IN THE BOOK 
+      7) open to middle of left half of book 
+       8)  GO BACK TO LINE 3
+
+9) else if person is later in book 
+10)     OPEN TO MIDDLE OF RIGHT HALF OF BOOK 
+11)     GO BACK TO LINE 3 
+12) ELSE 
+        QUIT
+
+
+
+
+
+
+
+
+
+
+
+
+
+não se esqueça do último else,
+em que o nome do cara não está no livro...
+
+
+
+
+
+
+
+
+
+
+--> 4 CENÁRIOS POSSÍVEIS, AQUI...
+
+
+
+
+
+
+
+
+
+-> QUANDO VC TEM 1 PC QUE TRAVA OU REBOOTA,
+
+    ISSO É PROVAVELMENTE 
+
+    PQ ALGUM HUMANO NÃO PROGRAMOU 1 POSSÍVEL CENÁRIO...
+
+
+
+
+
+
+
+
+
+
+
+    PICK UP 
+
+    OPEN TO 
+    LOOK AT 
+
+
+
+    CALL 
+
+
+    OPEN TO 
+
+
+    GO BACK 
+
+
+
+
+
+
+
+
+
+
+    TODOS ESSES SÃO FUNCTIONS....
+
+
+
+
+
+
+    IF 
+    ELSE IF 
+
+    ELSE IF 
+
+    ELSE 
+
+
+
+
+
+
+
+--> SÃO 'FORKS IN THE ROAD',
+
+
+CONDITIONS...
+
+
+
+
+
+
+
+
+
+
+
+'IF PERSON IS ON PAGE' 
+
+
+
+
+'else if person is earlier in the book' 
+
+
+
+
+
+
+
+
+-> ESSAS SÃO BOOLEAN EXPRESSIONS...
+
+    respostas 1/0
+
+
+
+
+
+
+
+
+
+
+
+    GO BACK TO LINE 3 
+
+
+
+
+    GO BACK TO LINE 3 
+
+
+
+    --> ESSES SÃO LOOPS --> SÃO USADOS PARA REPETIR PARTES DO CÓDIGO, VÁRIAS VEZES...
+
+
+
+
+
+
+
+
+
+
+
+
+-> VAMOS USAR 1 PROGRAMMING LANGUAGE VISUAL, 
+
+    A SCRATCH...
+
+
+
+
+
+    --> ELA REPRESENTA 1 MONTE DOS FUNDAMENTOS DE PROGRAMAÇÃO...
+
+
+
+
+
+
+
+
+
+-> DEPOIS VEREMOS c,
+
+que é toda KEYBOARD-BASED...
+
+
+
+
+
+
+
+FUNCTIONS CONDITIONS 
+
+BOOLEAN EXPRESSIONS 
+
+LOOPS 
+
+VARIABLES 
+
+
+THREADS --> DEIXAM PCS FAZEREM MÚLTIPLAS COISAS AO MESMO TEMPO...
+
+EVENTS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+AÍ VEREMOS CÓDIGO DE VERDADE
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main(void)
+{
+    printf("hello, world\n");
+}
+
+
+
+
+
+
+
+
+
+
+--> 1 POUCO CRYPTIC....
+
+
+
+
+
+
+
+-> mas é parecido com javascript...
+
+
+
+
+
+
+
+
+
+ELE PRINTA HELLO WORLD...
+
+
+
+
+
+
+
+
+
+--> O SCRATCH É BEM MAIS FÁCIL....
+
+
+
+
+
+
+BEM MAIS GRÁFICO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> o scratch abstrai a SINTAXE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+MIT MEDIA LAB...
+
+
+
+
+
+
+
+
+
+
+
+--> SCRATCH.MIT.EDU
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O SCRATCH PODE SER TRANSFORMADO EM OUTROS SPRITES...
+
+
+
+
+
+
+
+
+
+
+-> TEMOS TODOS OS BUILDING BLOCKS QUE 
+
+VÊM JUNTO COM O SCRATCH...
+
+
+
+
+
+
+
+
+
+
+
+--> O OBJETIVO DE HOJE É DESTACAR APENAS ALGUMAS DAS IDEIAS QUE SÃO POSSÍVEIS,
+
+COM O SCRATCH...
+
+
+
+
+
+
+
+--> PODEREMOS FAZER DRAG AND DROP DAS PUZZLE PIECES 
+    NO DRAWING BOARD,
+
+    PARA VER COMO TUDO FUNCIONA..
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PARA PROGRAMAS MAIS COMPLEXOS, 
+    PODEMOS CRIAR AINDA MAIS PERSONAGENS E SPRITES,
+
+    E TER MAIS INTERAÇÕES NA TELA...
+
+
+
+
+
+
+
+
+
+
+--> MAS O PROFESSOR MOSTRA UM EXEMPLO,
+
+
+EM SCRATCH.MIT.EDU...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> CREATE...
+
+
+
+
+
+
+
+
+
+
+
+O PROFESSOR CRIA 1 PROGRAMA...
+
+
+
+
+
+
+
+
+
+-> HELLO WORLD...
+
+
+
+
+
+
+
+
+
+-> MAS COMO PODEMOS FAZER ISSO?
+
+
+
+
+
+
+
+
+
+--> TEMOS A PRIMEIRA PEÇA...
+
+
+
+
+
+
+
+-> ELA EXISTE NA CATEGORIA DE 'EVENTS',
+
+E É AMARELA...
+
+
+
+
+
+
+
+--> 'WHEN GREEN FLAG CLICKED'...
+
+
+
+
+
+
+
+
+
+
+QUEREMOS QUE ALGO ACONTEÇA QUANDO CLICAMOS 
+
+NAQUELA FLAG...
+
+
+
+
+
+
+
+
+-> AÍ ESCOLHEMOS A CATEGORIA DE 'LOOKS',
+
+
+E DEIXAMOS 'HELLO, WORLD' POR 2 SEGUNDOS...
+
+
+
+
+
+
+COM ISSO, FICAMOS COM NOSSO PRIMEIRO PROGRAMA,
+
+USANDO O SCRATCH...
+
+
+
+
+
+
+
+
+
+--> PODEMOS DEIXAR ESSE PROGRAMA MAIS INTERESSANTE,
+
+MAIS INTERATIVO,
+
+COM O LAYERING DESSES BUILDING BLOCKS,
+
+
+COM O BUILD DE MÚLTIPLAS ETAPAS...
+
+
+
+
+
+
+
+--> O PROFESSOR VAI NA CATEGORIA DE 'SENSING',
+
+AZUL...
+
+
+
+
+
+
+
+
+
+-> AÍ TEMOS O 'ASK WHATS YOUR NAME AND WAIT'..
+
+
+
+
+
+
+--> MAS PODEMOS TROCAR A PERGUNTA,
+
+DE 'WHATS YOUR NAME',
+
+
+POR OUTRA COISA, OUTRA PERGUNTA...
+
+
+
+
+
+WHEN GREEN FLAG CLICKED 
+
+
+ASK WHATS YOUR NAME AND WAIT'...
+
+
+
+
+
+
+
+
+
+
+-> MAS ESSE SEGUNDO BLOCK, DE ASK AND WAIT,
+
+
+TEM 1 VARIABLE, DE NOME 'ANSWER'... --> A RESPOSTA DO USER SERÁ 
+
+                                        ARMAZENADA NESSA VARIABLE...
+
+
+
+
+
+
+
+
+    
+
+
+    --> OK.. E QUEREMOS USAR ESSA VARIABLE...
+
+
+
+
+
+
+
+
+-> PARA ISSO, VAMOS ATÉ OS BLOCKS DE 'LOOKS',
+
+E AÍ 
+
+
+
+USAMOS O 'HELLO, ',
+
+
+
+
+
+
+MAS AGORA 
+
+
+CONECTAMOS 
+
+
+A VARIABLE DE 'ANSWER'
+
+
+DENTRO DO ESPAÇO DE 'SAY xxxxx',
+
+
+
+
+PARA QUE 
+
+
+
+
+O NOSSO PROGRAMA 
+
+
+
+
+
+OUTPUTTE O NOME QUE DIGITAMOS ANTES...
+
+
+
+
+
+
+
+
+
+-> OK... MAS FICAMOS COM APENAS 'ARTHUR',
+
+
+
+SEM O 'HELLO, ARTHUR'...
+
+
+
+
+
+
+
+
+
+---> ISSO PARECE SER 1 BUG...
+
+
+
+
+
+
+
+
+
+PQ TEMOS 3 FUNCTIONS:
+
+
+1) ASK 
+
+2) SAY 
+
+3) SAY 
+
+
+
+
+
+
+
+
+
+
+MAS QUAL FOI A CAUSA DE ESSE BUG?
+
+
+
+
+
+--> a segunda etapa está sendo OVERWRITTADA PELA TERCEIRA,
+
+PQ NÃO ADICIONAMOS PAUSA ALGUMA ENTRE OS PASSOS...
+
+
+
+
+
+
+
+
+
+-> QUEREMOS QUE TUDO SEJA OUTPUTTADO DE 1 ÚNICA VEZ...
+
+
+
+
+
+
+
+
+
+
+
+
+--> PARA ISSO, VAMOS ATÉ OS BLOCKS DE 'OPERATIONS'...
+
+
+
+
+
+
+
+
+
+--> TEMOS A PEÇA QUE É 
+
+
+'JOIN APPLES BANANAS'...
+
+
+
+
+
+
+
+
+
+
+-> AÍ PODEMOS JOINAR 
+
+
+
+'say hello answer (variable)'
+,
+
+
+
+
+
+PARA TERMOS ESSA RESPOSTA AÍ....
+
+
+
+
+
+
+
+
+
+
+
+UMA RESPOSTA COMO 'hello, Arthur'..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TUDO QUE ACABAMOS DE FAZER 
+
+ENCAIXA PERFEITAMENTE 
+
+NO MODELO DE 
+
+
+'SOLVING PROBLEMS',
+
+QUE É O 
+
+
+SIGNIFICADO DA PRÓPRIA CIÊNCIA DA COMPUTAÇÃO...
+
+
+
+
+
+
+
+
+
+
+
+-> OK... INPUTS, ALGORITHMS, OUTPUT
+
+
+
+
+
+
+
+
+
+
+
+
+-> COMO O SCRATCH SE ENCAIXA?
+
+
+
+
+
+
+
+
+
+
+INPUT --> WHATS YOUR NAME?
+
+
+
+
+
+
+ALGORITHM --> FOI IMPLEMENTADO COMO 1 FUNCTION NO SCRATCH,
+                COMO 'SAY'...
+
+
+
+            --> ''UM ALGORITHM, STEP-BY-STEP INSTRUCTIONS..
+
+            A FUNCTION IS A COMPUTER'S IMPLEMENTATION OF AN ALGORITHM'' (nesse caso, uma function de 'say')... 
+
+
+
+            -> O ALGORITHM É 
+
+
+            ASK -> WAIT 
+
+
+
+
+
+
+
+OUTPUT --> ''SAY HELLO, ANSWER''..
+
+
+
+
+
+
+
+
+
+
+O LEGAL É QUE, NA PROGRAMAÇÃO,
+
+
+PODEMOS USAR O OUTPUT DE 1 FUNCTION COMO INPUT DE OUTRA FUNCTION...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+QUANDO VC COMEÇA A COLOCAR ESSAS PEÇAS DE QUEBRA-CABEÇA 1 EM CIMA 
+
+DA OUTRA,
+
+
+VC AINDA 
+
+FICA COM O MESMO CONCEITO,
+
+DE 'INPUT E OUTPUT',
+
+
+
+com functions...
+
+
+
+
+
+
+
+
+--> MAS PODEMOS FORÇAR O GATO A FAZER COISAS MAIS INTERESSANTES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> O SCRATCH 
+
+
+
+    TEM 'EXTENSIONS'..
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR USA 'TEXT-TO-SPEECH'... 
+
+
+
+
+
+
+
+
+
+--> ISSO USA 1 CLOUD-BASED SERVICE,
+    QUE VAI ENVIAR AS PALAVRAS QUE O PROFESSOR DIGITAR,
+
+    E QUE ENTÃO VAI FALAR AS PALAVRAS QUE ELE ESCREVER...
+
+
+
+
+
+
+
+
+-> OK... FUNCIONOU...
+
+
+
+
+
+
+
+
+
+OK... MAS AGORA ESTAMOS COM 'HELLO, DAVID',
+
+
+UM OUTPUT DINÂMICO...
+
+
+
+
+
+
+
+
+
+
+
+-> OK....
+
+
+
+
+
+
+
+
+-> O PROFESSOR QUER DEIXAR A VOZ MAIS PARECIDA COM 
+
+
+1 GATO...
+
+
+
+
+
+
+
+-> O PROFESSOR PEGA O BLOCK DE 'PLAY SOUND MEOW TILL DONE'..
+
+
+
+
+
+
+
+
+COMO PODEMOS FAZER O GATO MIAR VÁRIAS VEZES..
+
+
+
+
+
+SEM PARAR...
+
+
+
+
+
+-> PARA ISSO, PRECISAMOS DE LOOPS...
+
+
+
+
+
+
+O PROFESSOR DEIXA PAUSAS ENTRE CADA MIADO...
+
+
+
+
+
+
+MEOW 
+
+PAUSE 
+
+MEOW 
+
+PAUSE 
+
+MEOW 
+
+
+
+
+
+
+
+
+
+
+'DONT REPEAT YOURSELF'...
+
+
+
+
+
+
+
+
+-> QUEREMOS UM LOOP....
+
+
+
+
+
+
+
+
+O SCRATCH TAMBÉM SUPORTA LOOPS...
+
+
+
+
+
+
+
+
+
+--> 'REPEAT' BLOCK... --> 
+
+
+    PODEMOS PEGAR O REPEAT,
+
+    CUJO VALUE DEFAULT É '10'....
+
+
+
+
+
+
+
+
+
+
+    -> TROCAMOS PARA FICAR 3 REPEATS...
+
+
+
+
+WHEN GREEN FLAG CLICKED 
+REPEAT 3 
+    PLAY SOUND MEOW UNTIL DONE 
+    WAIT 1 SECONDS.
+
+
+
+
+
+--> OK... AGORA O PROGRAMA FICOU MAIS TIGHT,
+
+MENOS ESCRITA, PARA OBTERMOS O MESMO RESULTADO...
+
+
+
+
+
+
+
+-> TEMOS O 'FOREVER' BLOCK (é um WHILE LOOP)...
+
+
+
+
+
+
+
+
+
+
+
+
+-> O FOREVER LOOP..
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR PEGA OUTRO BLOCK,
+
+DE 
+
+'POINT TOWARDS mouse-pointer'...
+
+
+
+
+
+
+
+
+-> aí deixamos o block de 'move',
+
+para fazer o scratch 'move 1 steps',
+
+
+
+cada vez que movemos nosso mouse cursor...
+
+
+
+
+
+
+
+
+
+
+-> MAS O QUE MAIS PODEMOS FAZER COM ESSE MOVIMENTO DE 'FOLLOW',
+
+DE FOLLOW O MOUSE?
+
+
+
+
+
+
+--> O PROFESSOR ABRE A EXTENSION DE 'PEN'...
+
+
+
+
+
+
+
+-> O PROFESSOR QUER QUE O GATO AINDA VÁ 
+
+
+
+
+AO 'MOUSE-POINTER'...
+
+
+
+
+
+
+
+
+--> OK... AGORA O GATO VAI IR ATÉ O LOCAL EM QUE O MOUSE ESTÁ...
+
+
+
+
+
+
+
+
+
+
+
+--> MAS O PROFESSOR QUER QUE O GATO SEJA CAPAZ DE 'DRAW SOMETHING' PARA NÓS...
+
+
+
+
+MAS ISSO APENAS QUANDO A PEN ESTIVER 'DOWN'..
+
+
+
+
+
+
+
+
+
+
+
+--> MAS COMO NOSSO PROGRAMA PODE DETECTAR SE ESTAMOS COM A 'PEN DOWN' OU 'PEN UP'...?
+
+
+
+
+
+
+
+
+
+
+
+
+--> PRECISAMOS DE UMA CONDITION PARA CHECAR SE A PEN ESTÁ UP OU DOWN...
+
+
+
+
+
+
+
+
+
+
+
+IF MOUSE DOWN,
+
+THEN PEN DOWN...
+
+ELSE, PEN UP...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK....
+
+
+
+
+
+
+
+
+MAS COMO PODEMOS CONTINUAR COM ISSO TUDO?
+
+
+
+
+
+
+
+
+
+
+
+HÁ OUTROS PRINCÍPIOS QUE PODEMOS INTRODUZIR...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> O PROFESSOR QUER 'COUNT UP',
+
+
+E 'KEEP TRACK OF INFORMATION'...
+
+
+
+
+
+
+--> PARA ISSO, COMEÇAMOS COM 
+
+
+
+''IF GREEN FLAG IS CLICKED''... ETC ETC...
+
+
+
+
+
+
+
+
+
+
+-> MAS O PROFESSOR CRIA 1 VARIABLE DE NOME 'counter'...
+
+
+
+
+
+
+
+-> O COUNTER INICIAL TEM 1 VALUE DE '1'...
+
+
+
+
+
+
+
+
+--> 
+''IF GREEN FLAG IS CLICKED''... ETC ETC...
+
+
+
+SET COUNTER TO 1 
+
+
+FOREVER 
+
+SAY counter for 1 seconds...
+
+
+
+
+''
+
+
+
+
+
+
+
+
+
+
+-> CERTO.... MAS SE QUEREMOS QUE O GATO MUDE
+    O COUNTER AO LONGO DO TEMPO, PRECISAMOS DE ALGO COMO 
+
+
+
+
+
+    ''IF GREEN FLAG IS CLICKED''... ETC ETC...
+
+
+
+SET COUNTER TO 1 
+
+FOREVER 
+
+SAY counter for 1 seconds
+
+change counter by 1 
+
+
+
+
+
+
+
+
+
+-> OK... ESSA VARIABLE VAI MANTER A INFO,
+    PERMANENTEMENTE...
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR MOSTRA ALGUNS DOS PROGRAMS QUE ELE ESCREVEU ANTECIPADAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+-> ELE ESCREVEU 1 FUNCTION/ALGORITHM 
+
+
+DE 'BOUNCE':
+
+
+
+
+
+
+
+
+
+
+WHEN GREEN FLAG CLICKED,
+
+SET ROTATION STYLE left-right  (conserta bug)
+
+FOREVER 
+    MOVE 10 STEPS 
+        IF (touching edge) THEN 
+            TURN AROUND 180 DEGREES...
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+        --> COM ISSO, CONSEGUIMOS CRIAR UMA ANIMAÇÃO 
+            DE 'GO BACK AND FORTH' PARA O GATO,
+
+
+            PQ ELE VAI MUDAR DE 1 LADO PARA O OUTRO, SEM PARAR...
+
+
+
+
+
+
+
+
+--> MAS ISSO É MEIO IDIOTA..
+
+
+
+
+
+    --> PQ O GATO NÃO ESTÁ ANDANDO, E SIM ESTÁ 'GLIDING'....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS PODEMOS CRIAR NOSSA PRÓPRIA ILUSÃO DE MOVIMENTO...
+
+
+
+
+
+
+-> PODEMOS FAZER ISSO POR MEIO DO 'ALTERNATE' ENTRE 
+2 COSTUMES,
+
+
+OS 2 COSTUMES DO SCRATCH...
+
+
+
+
+
+
+
+
+VAMOS FAZER TOGGLE ENTRE ESSAS 2 VERSÕES DO GATO,
+
+PARA PARECER QUE ELE ESTÁ CORRENDO/ANDANDO..
+
+
+
+
+
+
+
+SERÁ CRIADA A ILUSÃO DE MOVIMENTO....
+
+
+
+
+
+
+
+
+PARA FAZER ISSO, PODEMOS ESCREVER assim (com a peça 'next costume'):
+
+
+
+
+
+
+WHEN GREEN FLAG CLICKED,
+
+SET ROTATION STYLE left-right  (conserta bug)
+
+FOREVER 
+    MOVE 10 STEPS 
+        IF (touching edge) THEN 
+            TURN AROUND 180 DEGREES...
+    NEXT COSTUME
+
+
+
+
+
+
+
+
+
+
+
+
+O FRAME-RATE ESTÁ BEM BAIXO, MAS ESTÁ FUNCIONANDO,
+
+
+PARECE QUE ELE ESTÁ ANDANDO,
+
+E NÃO DESLIZANDO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+os programas vão ficar mais complicados....
+
+
+
+
+
+
+
+
+
+--> QUEREMOS TENTAR IMPLEMENTAR 
+    TODA NOSSA VISÃO...
+
+
+
+
+
+
+
+
+--> MAS DEVEMOS CONSTRUIR AS COISAS 1 PASSO POR VEZ...
+
+
+
+
+
+
+
+
+--> OUTRO EXEMPLO:
+
+
+''PET A CAT'...
+
+
+
+
+
+
+
+--> O CÓDIGO INICIAL É SIMPLES, MAS AINDA NÃO FAZ COISA ALGUMA:
+
+
+
+
+WHEN GREEN FLAG CLICKED 
+FOREVER 
+    IF TOUCHING MOUSE-POINTER THEN 
+    PLAY SOUND MEOW UNTIL DONE 
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->  COM ESSE CÓDIGO, ALGO ESTÁ ACONTECENDO,
+    MESMO QUE NÃO APARENTE ESTAR ACONTECENDO...
+
+
+
+
+    (o gato está 'waiting for clicks', basicamente)...
+
+
+
+
+
+
+
+
+
+
+
+O PROFESSOR ABRE UM 'SEA LION' --> ELE DEMONSTRA 1 PROGRAMA QUE 
+
+
+                                TEM MÚLTIPLOS 
+
+                                SCRIPTS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O CÓDIGO É TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+WHEN GREEN FLAG CLICKED:
+
+
+
+
+FOREVER 
+    IF MUTED = FALSE THEN 
+    START SOUND SEALION 
+    THINK HI HI HI FOR 2 SECONDS 
+
+    WAIT 1 SECONDS...
+
+
+
+
+
+
+
+
+ou seja, se não está mutado, 
+
+VC DEVE 'BARK'...
+
+
+
+
+
+
+
+
+
+
+
+MAS TEMOS 1 OUTRO SCRIPT, ESTE:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+WHEN GREEN FLAG IS CLICKED,
+
+
+SET MUTED TO FALSE 
+FOREVER 
+    IF KEY SPACE PRESSED? THEN 
+    IF MUTED = TRUE THEN 
+    SET MUTED TO FALSE 
+    ELSE 
+    SET MUTED TO TRUE 
+    WAIT 1 SECONDS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AS COISAS PODEM FICAR BEM FANCY BEM RAPIDAMENTE...
+
+
+
+
+
+
+
+
+
+'VIDEO SENSING'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> OS PROGRAMAS PODEM COMEÇAR DE MANEIRAS DIFERENTES, NO SSCRATCH...
+
+
+
+
+
+
+
+
+
+
+
+
+''WHEN VIDEO MOTION > 50,
+    PLAY SOUND MEOW UNTIL DONE''....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> QUANDO A CAMERA DO PC DETECTA 
+MOVIMENTO,
+
+
+O SCRIPT É EXECUTADO...
+
+
+
+
+
+
+
+
+
+
+
+
+--> AGORA TEMOS 1 PROGRAMA COM 2 SPRITES....
+
+
+
+
+
+
+
+
+
+
+
+'orange' e 'blue',
+
+
+2 puppets...
+
+
+
+
+
+
+
+
+
+WHEN GREEN FLAG CLICKED 
+    FOREVER 
+        IF KEY SPACE PRESSED THEN 
+        SAY MARCO FOR 2 SECONDS 
+        BROADCAST EVENT...
+
+
+
+
+
+
+
+
+
+
+
+
+
+        ''BROADCAST EVENT''...
+
+
+
+
+
+
+
+
+    --> ESSA É UMA MANEIRA DE FAZER 1 PROGRAMA PASSAR 1 EVENT A 1 OUTRO PROGRAM...
+
+
+
+
+
+
+
+
+
+-> O OUTRO BONECO TEM 1 1 SCRIPT DE '
+
+
+
+
+
+
+'''WHEN I RECEIVE EVENT,
+SAY POLO! FOR 2 SECONDS''...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> OS 2 PROGRAMAS FUNCIONAM EM CONJUNTO,
+
+MAS ELES FORAM ESCRITOS DE FORMA INDEPENDENTE, SÃO INDEPENDENTES,
+
+APESAR DE 
+
+ESTAREM 'INTERCOMMUNICATING'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> O PROFESSOR USA A EXTENSION DE 'TRANSLATE'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... MAS HÁ UMA MANEIRA DE MELHORAR O DESIGN DE UM MONTE DAS COISAS QUE 
+ESCREVEMOS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> EM 1 DE NOSSOS EXEMPLOS,
+
+TIVEMOS ESTE CÓDIGO:
+
+
+
+
+
+
+WHEN GREEN FLAG CLICKED 
+REPEAT 3 
+    PLAY SOUND MEOW UNTIL DONE 
+    WAIT 1 SECONDS.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... TEMOS 1 BLOCK DE REPEAT,
+
+
+E AÍ MANTIVEMOS O CÓDIGO MAIS SIMPLES...
+
+
+
+
+
+
+
+
+
+
+-> MAS AQUI ESQUECEMOS DE APLICAR 1 DOS OUTROS PRINCÍPIOS 
+    DA CIENCIA DE COMPUTAÇÃO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> É A 'ABSTRACTION'..
+
+
+
+
+
+
+
+
+
+
+
+-> BASICAMENTE, PEGAMOS 1 IDEIA COMPLICADA, 
+
+
+COMPLEXA,
+
+E AÍ A SIMPLIFICAMOS DE 1 MANEIRA...
+
+
+
+
+
+
+
+
+
+
+
+DEVEMOS PENSAR NELA DE FORMA SIMPLES,
+
+
+SEM PENSAR NOS DETALHES...
+
+
+
+
+
+
+
+
+
+
+
+
+--> O SCRATCH TEM 1 BLOCK DE 'THINK E 'SAY',
+
+
+MAS NÃO POSSUI UM 
+
+BLOCK DE 'MEOW'...
+
+
+
+
+
+
+
+
+
+-> PODEMOS CRIAR NOSSOS PRÓPRIOS BLOCKS,
+
+
+
+
+
+COM A CATEGORIA 'PINK'...
+
+
+
+
+
+
+
+
+--> PODEMOS 'DEFINE MEOW'...
+
+
+
+
+
+
+
+
+
+
+--> AÍ DEIXAMOS AS AÇÕES DEBAIXO DE ESSE 'MEOW'...
+
+
+
+
+
+
+
+
+
+
+
+
+-> COM ISSO, FICAMOS COM 1 NOVA PUZZLE PIECE, DE NOME 'MEOW',
+
+QUE É JUSTAMENTE UMA FUNCTION QUE PODEMOS REUTILIZAR 
+
+
+EM TODOS LUGARES QUE QUEREMOS..
+
+
+
+
+
+QUER DIZER QUE NOSSO CÓDIGO FICOU MAIS LEGÍVEL, FICOU TIPO ASSIM:
+
+
+
+
+
+
+WHEN GREEN FLAG CLICKED 
+REPEAT 3 
+    MEOW 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O PROFESSOR TAMBÉM FAZ OUTSOURCE 
+
+
+DO ARGUMENTO DE 'TIMES'
+
+DO MEOW,
+TIPO ASSIM:
+
+
+
+
+WHEN GREEN FLAG CLICKED 
+MEOW  X  TIMES 
+
+
+
+
+
+
+
+
+
+COM ISSO, FICAMOS COM 1 IMPLEMENTAÇÃO DE ABSTRACTION...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> GINGERBREAD TALES REMIX...
+
+
+
+
+
+
+
+

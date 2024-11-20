@@ -1,0 +1,11044 @@
+
+
+
+
+
+
+
+
+SEMANA 5...
+
+
+
+
+
+
+
+
+
+FALAMOS SOBRE POINTERS E SOBRE COMO PODEMOS MANIPULAR A MEMÓRIA DE NOSSO COMPUTADOR...
+
+
+
+
+
+
+
+
+
+
+-> DEPOIS QUE VC PODE REFERENCIAR LUGARES NA MEMÓRIA DO SEU PC, 
+    VC PODE COMEÇAR A CRIAR SUAS PRÓPRIAS FORMAS/SHAPES,
+
+
+    DATA STRUCUTRES, CUSTOMIZADAS...
+
+
+
+
+
+
+
+
+
+
+
+--> NA SEGUNDA SEMANA,
+    VIMOS O CONCEITO DE ARRAY:
+
+
+
+
+
+
+''IT IS A CONTIGUOUS SEQUENCE OF DATA, WHERE 
+    YOU CAN STORE A BUNCH OF INTEGERS, CHARS, ETC...'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> arrays podem ser representados assim:
+
+
+[][][]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS DIGAMOS QUE VC QUER ADICIONAR OUTRO NÚMERO A ESSE ARRAY..
+
+
+
+
+
+
+
+
+
+
+--> NO JAVASCRIPT, PODERÍAMOS USAR '.push()'...
+
+
+
+
+
+
+
+
+
+
+
+-> A PEGADA, NO C, 
+    É QUE ARRAYS NÃO SÃO FACILMENTE RESIZABLE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O PROBLEMA COM ARRAYS É QUE 
+
+        ''THAT CHUNK OF MEMORY DOES NOT EXIST IN A VACUUM''..
+
+
+
+
+
+
+
+--> 
+
+
+
+
+[1][2][3][some-byte]
+
+
+
+
+
+
+
+
+
+
+-> o 'some-byte'
+
+
+PODE JÁ ESTAR SENDO USADO POR OUTRA VARIÁVEL/PROGRAMA...
+
+
+
+
+
+[1][2][3][h][e][l][l][o]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> SE TENTARMOS COLOCAR 1 DATA NOVA, NA CAIXA ADJACENTE AO '3',
+
+    como '4',
+
+    VAMOS ACABAR OVERWRITTANDO A DATA DA STRING 'hello'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS QUAL É A SOLUÇÃO?
+
+
+
+
+
+
+
+
+
+--> POR ACASO NÃO PODEMOS ADICIONAR 1 NÚMERO EM 1 ARRAY,
+    EM 1 SITUAÇAÕ COMO ESSA?
+
+
+
+
+
+
+
+
+
+--> ''MAYBE YOU COULD COPY THE ELEMENTS IN THE ORIGINAL ARRAY AND 
+CREATE A NEW ARRAY'' 
+
+
+(mas isso não seria bom...)
+
+
+
+
+
+-> mas é exatamente isso que acontece...
+
+
+
+--> é criado um NOVO ARRAY,
+    COM 4 GARBAGE VALUES,
+
+    E ENTÃO 
+
+    OS VALUES ORIGINAIS, DO ARRAY  ORIGINAL ('123')
+    são COPIADOS 
+    PARA DENTRO DOS 3 PRIMEIROS SLOTS 
+
+    DESSE NOVO ARRAY (Que por enquanto tem apenas garbage values)
+
+
+
+
+
+
+
+EX:
+
+
+
+
+[1][2][3]
+
+
+
+[G][G][G][G]
+
+
+
+
+EX:
+
+
+
+[1][2][3]
+
+
+
+[1][2][3][G]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> AÍ PODEMOS NOS LIVRAR DA MEMÓRIA DO ARRAY ANTIGO,
+COM 'free()', ou algo assim...
+
+
+
+
+
+
+EX:
+
+
+
+
+[1][2][3][G]
+
+
+
+
+
+
+
+
+
+
+POR FIM, ADICIONAMOS O 4:
+
+
+
+
+
+
+[1][2][3][4]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS EXISTE 1 SOLUÇÃO QUE 
+    NÃO VIOLA A DEFINIÇÃO DE 'ARRAY'...
+
+
+
+
+
+    --> ''A ÚNICA DEFINIÇÃO DE 1 ARRAY É QUE 
+    ''A MEMÓRIA TEM QUE SER CONTÍGUA... TEM QUE 
+        EXISTIR LOGO DEPOIS DA MEMÓRIA JÁ EXISTENTE... ESSA 
+        É A DEFINIÇÃO DO ARRAY''...
+
+
+    
+
+    --> MAS ESSA SOLUÇÃO,
+        INICIALMENTE OK,
+
+        TEM 1 PROBLEMA... ELA ACABA NOS FAZENDO 
+        PERDER 1 POUCO DE __ TEMPO__..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O PROFESSOR FAZ 1 PERGUNTA:
+
+
+
+
+
+
+
+
+
+'''WHAT IS THE RUNNING TIME OF INSERTING INTO AN ARRAY?''
+
+
+
+
+
+
+
+
+
+
+a resposta foi colocada como 
+
+
+'O(n)'...
+
+
+
+
+
+
+
+--> ou seja,
+
+
+'LINEAR'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> SE TENTARMOS COPIAR TODOS OS ELEMENTOS 
+    DO ARRAY ANTIGO PARA O NOVO ARRAY, COMO QUEREMOS FAZER AGORA,
+
+    ISSO 
+
+    __ LEVARIA até 'n' steps (o que é ruim, 1 etapa para cada elemento novo)...
+
+
+
+
+
+
+
+
+
+UPPER BOUND --> 'O(n)'....
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS QUAL SERIA O LOWER BOUND 
+
+DO INSERT?
+
+
+
+
+
+
+
+
+
+--> BEST CASE SCENARIO --> APENAS 1 ELEMENTO NO ARRAY...
+
+
+
+
+
+
+
+
+
+
+
+OMEGA (1)...
+
+
+
+
+
+
+
+
+
+--> OU SEJA, APENAS 1 ÚNICO ELEMENTO NO ARRAY...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> 'VECTOR'...
+
+
+
+
+
+
+
+
+
+
+
+-> VECTOR --> É UM ARRAY QUE PODE SER RESIZED... GROW OR SHRINK...
+
+
+                ESSE É O CONCEITO DO __ JAVA__...
+
+
+
+
+
+
+
+
+--> MAS ISSO NÃO É O CONCEITO DE ARRAYS NO C...
+
+    NO C, 
+
+
+    ''THEY ARE CONTIGUOUS BLOCKS OF MEMORY,
+        WITH CONTIGUOUS VALUES.... BUT ONCE YOU DECIDE ON THEIR 
+        SIZE, THAT IS IT. THEY ARE NOT GOING TO RESIZE AUTOMATICALLY,
+        YOU NEED TO DO THAT MANUALLY''...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ARRAY --> É A DATA STRUCTURE MAIS SIMPLES POSSÍVEL..
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> VEREMOS DATA STRUCTURES MAIS FORTES...
+
+
+
+
+
+
+
+
+
+--> VAMOS ESTUDAR COISAS CHAMADAS DE 'POINTERS',
+QUE SÃO 
+
+LOCAIS NA MEMÓRIA...
+
+
+
+
+
+
+
+
+
+--> VEREMOS DATA STRUCTURES MAIS COMPLEXAS:
+
+
+
+1) UNIDIMENSIONAL 
+
+
+2) BIDIMENSIONAL ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESTAS KEYWORDS SÃO IMPORTANTES:
+
+
+
+
+
+
+1) struct 
+
+
+2) .  ---> usado para acessar data, dentro dos 'objects'...
+
+
+3) *  --> deference operator --> usado para 'GO TO THIS SPECIFIC ADDRESS'...
+
+
+
+
+
+
+
+
+
+
+--> com esses 3 elementos, seremos capazes de criar nossos próprios 
+    objects...s
+
+
+
+
+
+
+
+
+--> É COMUM 
+
+    ESSA TÉCNICA, NO C, 
+
+    COMBINAR O '*' e o '.'....
+
+
+
+
+
+
+    É TÃO COMUM USAR ESSAS 2 COISAS, QUE GERALMENTE 
+
+    USAMOS '->',
+
+    QUE RESUME 
+
+    O USO DE ESSES 2 OPERATORS...
+
+
+
+
+
+
+
+
+
+
+
+
+--> SINTATICAMENTE, HOJE,
+    USAREMOS OS BUILDING BLOCKS DAS AULAS ANTERIORES PARA COMEÇAR 
+    A RESOLVER OS PROBLEMAS DE FORMA DIFERENTE..
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PARA ISSO, USAREMOS O CONCEITO DE 'LINKED LISTS'...
+
+
+
+
+
+
+
+
+
+
+
+
+''LINKED LIST'' --> É UMA DATA STRUCTURE 
+
+                    QUE RESOLVE ALGUNS DOS PROBLEMAS 
+                    DOS ARRAYS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> ''PROBLEMA DOS ARRAYS'' --> 
+
+
+
+
+                                ''IF WE TAKE O(n) STEPS 
+                                TO INSERT INTO AN ARRAY, THAT 
+                                IS ANNOYING, BECAUSE IT IS VERY EXPENSIVE''....
+
+
+
+
+
+''IF WE HAVE MORE AND MORE ITEMS,
+    IT IS GOING TO TAKE MORE AND MORE TIME 
+    TO ADD OTHER ELEMENTS TO THE ARRAY'''
+
+
+
+    (because all the content of the original, smaller array, will need to 
+    be copied to the new array)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> A VANTAGEM 
+
+    DAS LINKED LISTS 
+
+
+    É 
+
+
+
+    QUE SÃO DATA STRUCTURES MAIS __ DINâMICAS...
+
+
+    ''YOU CAN GROW AND SHRINK THE DATA STRUCTURE 
+    WITHOUT NEEDING TO TOUCH ALL THE DATA OF THE ORIGINAL 
+    STRUCTURE, AND WITHOUT NEEDING TO COPY IT INTO THE LOCATION 
+    OF THE "NEW" ARRAY'''....
+
+
+
+
+
+
+
+
+
+
+
+
+-->  MAS QUAL É A APARÊNCIA DISSO, NA MEMÓRIA,
+    A APARêNCIA DAS LINKED LISTS?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    DIGAMOS QUE ARMAZENAMOS O VALOR '1',
+    
+    TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+
+
+    [1]
+    0x123 
+
+
+
+
+
+
+
+-> É AÍ QUE O NÚMERO ESTÁ ARMAZENADO...
+
+
+
+
+
+
+
+
+AÍ DIGAMOS QUE QUEREMOS ARMAZENAR O NÚMERO 2 E O NÚMERO 3,
+
+NESSES LOCAIS:
+
+
+
+
+
+
+    [1]
+    0x123 
+
+                                    
+                    [2]
+                    0x456
+
+
+
+                                                       [3]
+                                                      0x789
+
+
+
+
+
+
+
+
+
+
+
+
+ESSES NÚMEROS ESTÃO BASICAMENTE ESPALHADOS, NA MEMÓRIA DO COMPUTADOR...
+
+
+
+
+
+
+
+
+
+
+
+'PUT THESE VALUES WHERE THERE IS ROOM'...
+
+
+
+
+
+
+
+
+
+
+
+--> MAS SE VC COMEÇAR A ARMAZENAR VALUES 
+    EM QUALQUER LUGAR DA MEMÓRIA DO PC,
+
+    FICA IMPOSSÍVEL ENCONTRAR ESSES VALUES, MAIS TARDE...
+
+
+
+    JUSTAMENTE PQ ELES ESTARÃO ESPALHADOS...
+
+
+
+
+
+
+
+
+
+
+--> ''IN AN ARRAY, ALL THE BLOCKS ARE CONTIGUOUS,
+      THEY ARE IN A LINE...'''
+
+
+
+
+      ''BUT IF WE START TO TREAT THE MEMORY AS A CANVAS, 
+        WHERE WE CAN DRAW NUMBERS ANYWHERE WE WANT, THAT IS FINE,
+        SO LONG AS WE KEEP A WAY TO GET TO THE VALUES STORED IN THE MEMORY''..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PARA FAZER ISSO, PARA FICARMOS COM ALGO QUE NOS GUIE A 
+                    ESSES VALUES,
+
+                    VALUES ESPALHADOS NA MEMÓRIA DO PC,
+
+                    FAZ SENTIDO 
+                    ARMAZENAR 1 POUCO MAIS DE INFO, ALÉM DO VALUE ORIGINAL,
+
+                    EM CADA 'CÉLULA'
+
+                    QUE ARMAZENAMOS DENTRO DA MEMÓRIA...
+
+
+
+
+                TIPO ASSIM:
+
+
+
+
+
+              -------
+                [1]
+                
+              -------
+                                    
+                  ------
+                    [2]
+               
+                -----------
+
+                                                    --------
+                                                       [3]
+                                                    
+                                                    ----------
+
+
+
+
+
+
+
+
+
+
+NESSE SEGUNDO 'SLOT' DE CADA CÉLULA,
+
+VAMOS ARMAZENAR 'METADATA',
+
+
+
+VALUES QUE PARECEM IRRELEVANTES, MAS QUE VÃO NOS AJUDAR A 'KEEP TRACK' 
+
+DA NOSSA ACTUAL DATA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> AGORA DIGAMOS QUE ARMAZENAMOS 
+
+ADDRESSES, NA MEMORY, EM 
+
+CADA CÉLULA,
+
+TIPO ASSIM:
+
+
+
+
+
+              -------
+                [1 - 0x123] value e address deste chunk
+                0x456 - pointer ao próximo elemento da list
+              -------
+                                    
+                  ------
+                    [2 - 0x456] value e address deste chunk
+                    0x789 - pointer ao próximo elemento da list
+                -----------
+
+                                                    --------
+                                                       [3 - 0x789]  value e address deste chunk
+                                                       0x0 - significa que a list ACABA aqui.
+                                                    ----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAS PQ FIZEMOS ISSO?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ''SO THAT WE KNOW HOW THE FIRST ELEMENT 
+    IS RELATED TO THE SECOND, OR IF IT IS LINKED TO THE 
+    SECOND AND THIRD ELEMENTS''...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> estamos gastando mais 1 chunk of space, em cada célula,
+    PARA COLOCAR POINTERS QUE VÃO SEMPRE REFERENCIAR 'THE NEXT ELEMENT,
+    IN THAT ARRAY'...
+
+
+
+
+
+
+
+
+
+
+--> OU SEJA,
+    CADA CHUNK 
+
+    ESTÁ 'LINKANDO' AO PRÓXIMO ELEMENTO 
+    DO ARRAY...
+
+
+
+
+
+
+           -------
+                [1 - 0x123] value e address deste chunk
+                0x456 - pointer ao próximo elemento da list
+              -------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+o chunk '0x456', nesse caso, é o que LINKA 
+
+AO SEGUNDO ELEMENT DO ARRAY, que é '2' (endereço 0x456)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COM ISSO, FICAMOS COM 1 MANEIRA DE CONECTAR 
+
+
+OS ELEMENTOS, NESSE ARRAY.... É ASSIM QUE FICAM CONECTADOS..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+0x0 --> NULL...
+
+
+
+
+
+
+
+0x0 --> SIGNIFICA 'ABSENCE OF AN ADDRESS'....
+
+
+
+
+
+
+
+
+
+
+
+
+--> SIGNIFICA QUE NÃO HÁ NENHUM ADDRESS, ALI...
+
+
+
+
+
+
+
+
+DEVEMOS ABSTRAIR ISSO TUDO, E PENSAR NISSO 
+
+COMO 1 LISTA DE NÚMEROS, CONECTADOS JUNTOS.. (linked together).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> UNDER THE HOOD, OS LINKS SÃO IMPLEMENTADOS POR MEIO DE POINTERS...
+
+
+
+
+
+
+
+
+
+--> LINKED LIST ---> É UMA COLEÇÃO DE NODES, CONECTADA POR POINTERS...
+
+
+
+
+
+
+
+
+
+
+
+node -> GENERIC COMPUTER SCIENCE TERM THAT REFERS TO SOME KIND OF STRUCTURE 
+        THAT STORES SOMETHING THAT YOU CARE ABOUT...
+
+
+
+
+
+
+
+
+
+
+NESSE CASO,
+O QUE IMPORTA É 
+
+''A NUMBER + A POINTER TO ANOTHER ELEMENT IN A LIST''   ...
+
+
+
+
+
+
+
+
+ISTO É UM NODE:
+
+
+
+
+                -------
+                [1 - 0x123] value e address deste chunk
+                0x456 - pointer ao próximo elemento da list
+              -------
+
+
+
+
+
+
+
+
+
+
+
+
+E, EM C, VAMOS 
+IMPLEMENTAR TUDO ISSO 
+
+POR MEIO DAQUELA 
+
+
+COISA CHAMADA DE 'struct'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CERTO....
+
+
+
+
+
+
+
+
+
+''MAS ISSO NÃO SERIA 1 DESPERDÍCIO DE MEMÓRIA?
+    AGORA ESTAMOS USANDO TODAS ESSES CHUNKS, DENTRO DAS CELLS,
+    PARA ARMAZENAR ADDRESSES?''
+
+
+
+
+
+
+
+--> SIM... E ESSE É O PREÇO QUE PAGAMOS...
+    TODA VEZ QUE RESOLVEMOS 1 PROBLEM,
+    TEREMOS 
+
+    ALGUM CUSTO, ALGUM TRADE-OFF...
+
+
+
+
+
+
+
+
+
+
+
+--> SE VAI DEMORAR MT PARA COPIAR TUDO, DO OLD ARRAY PARA O NOVO ARRAY,
+    PRECISAMOS DE ESSE RECURSO, DOS 'NODES'... MAS O PREÇO QUE 
+    VC VAI PAGAR É __ MAIS ESPAÇO... VC VAI GASTAR MAIS ESPAÇO...
+
+
+
+
+
+
+
+
+
+
+
+
+ESPAÇO VS TEMPO...
+
+
+
+
+
+
+
+SPACE VS TIME --------> ESSE CONFLITO SEMPRE EXISTE, NA PROGRAMAÇÃO...
+
+
+
+
+
+
+
+
+
+
+
+-> DA ÚLTIMA VEZ QUE USAMOS STRUCTS,
+    EM C,
+
+
+    FIZEMOS ALGO ASSIM:
+
+
+
+
+
+
+
+
+typedef struct 
+{
+    string name;
+    string number;
+} person;
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAS AGORA NÃO NOS IMPORTAMOS COM PESSOAS E NÚMEROS,
+
+NOS IMPORTAMOS COM NODES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> DIGAMOS QUE 'EVERY NODE, IN THIS STRUCTURE,
+                IS GOING TO HAVE A __ NUMBER__.. AN INT...''
+
+
+
+-> MAS, ALÉM DA INT,
+    VAMOS COLOCAR 1 OUTRO VALUE... PRECISAMOS TER 
+
+    O SEGUNDO PEDAÇO DE DATA, QUE SERÁ JUSTAMENTE O 'POINTER'...
+    SERÁ O ADDRESS DO PRÓXIMO ELEMENTO...
+
+
+
+
+
+
+
+VAI FICANDO TIPO ASSIM:
+
+
+
+typedef struct 
+{
+    int number;
+} node;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> CERTO... MAS 
+
+
+''HOW CAN I DESCRIBE THIS STRUCTURE AS HAVING A POINTER TO 
+    __ ANOTHER _SUCH _ STRUCTURE, TO ANOTHER NODE?''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> TALVEZ USAR 'node*', como pointer a outro node...
+
+
+
+
+
+
+
+
+
+
+
+
+
+---> E É EXATAMENTE ISSO QUE DEVEMOS FAZER, TIPO ASSIM:
+
+
+
+
+
+
+node * ...
+
+
+
+
+
+
+
+
+-> QUANTO AO NOME DESSE CHUNK OF DATA de tipo 'node*',
+
+
+PODEMOS COLOCAR 'next' (mas poderia ser qualquer outro nome)...
+
+
+
+
+
+
+QUER DIZER QUE A STRUCTURE VAI FICANDO ASSIM:
+
+
+
+
+
+
+
+typedef struct 
+{
+    int number;
+    node *next;
+} node;
+
+
+
+
+
+
+
+
+deixamos o nome de 'next' pq 
+
+O ÚNICO PROPÓSITO DESSE CHUNK OF DATA, DENTRO DESSA STRUCTURE,
+
+SERÁ __ APONTAR__ PARA O PRÓXIMO NODE, NA MEMÓRIA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS AQUI FICAMOS COM 1 PROBLEMA...
+
+
+
+
+
+
+
+
+
+C --> É UMA LINGUAGEM SIMPLISTA, 
+    APESAR DE PARECER COMPLEXA...
+
+
+
+
+
+
+C --> 
+    ''DOES NOT UNDERSTAND ANYTHING THAT HASN'T COME BEFORE''...
+
+
+
+
+
+
+--> E COMO AQUI NÓS NÃO ESPECIFICAMOS 'O QUE É node*',
+    ELE NÃO VAI SABER ''O QUE É'' O 'node*',
+
+    o que é esse data type...
+
+
+
+
+
+
+
+
+
+
+
+
+''THE PROBLEM IS THAT,
+ BY NATURE OF HOW typedef WORKS,
+ A THING CALLED A NODE ___ DOES__ NOT 
+ EXIST_ UNTIL THE COMPILER IS FINISHED WITH THE 
+ READ OF THE LAST LINE OF THE CODE AND THE semi-colon''...
+
+
+
+
+
+
+
+
+
+
+--> EM OUTRAS PALAVRAS, SERIA INCORRETO
+ SE REFERIR A 
+
+ ""node"" DENTRO DE ESSA typedef structure,
+    PQ, LITERALMENTE POR CONTA DA MANEIRA PELA 
+        QUAL typedef FUNCIONA,
+
+        O 'node' NÃO EXISTE ATÉ QUE A ÚLTIMA LINHA,
+        de 'node;', é LIDA PELO COMPILER...
+
+
+
+
+    
+
+
+
+
+
+
+
+
+-> EXISTE 1 WORKAROUND A ISSO... A APARÊNCIA 
+É BEM ESTRANHA, MAS É ASSIM:
+
+
+
+
+
+
+typedef struct node
+{
+    int number;
+    node *next;
+} node;
+
+
+
+
+
+
+
+
+
+
+
+
+
+VC BASICAMENTE ADICIONA O NOME DA SUA STRUCTURE (no caso, 'node'),
+
+logo depois 
+
+
+da keyword de 'struct'...
+
+
+
+
+
+
+
+DEPOIS DISSO, DEVEMOS ESCREVER, DENTRO DA STRUCTURE,
+ISTO:
+
+
+
+
+typedef struct node
+{
+    int number;
+    struct node *next;
+} node;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> PARECE 1 POUCO VERBOSO... MAS É ASSIM 
+    QUE É FEITO, EM C...
+
+
+
+
+
+
+
+
+
+
+''typedef struct node'' É BASICAMENTE 1 DICA, PARECIDA COM PROTOTYPES (das functions),
+
+                        QUE DÁ AO COMPILER 1 PISTA DE QUE 
+
+                        ''OK, ALGO COMO 'node' vai existir''...
+
+
+
+
+
+
+
+
+
+
+
+
+--> CERTO... VC ENTAÕ PODE USAR ESSE 'node' DENTRO DESSA 
+DATA STRUCTURE,
+E REFERIR-SE A ELA COMO 
+
+
+'node*'...
+
+
+
+
+
+
+
+
+
+
+
+
+o 'node' na última linha 
+
+apenas serve como ALIAS,
+
+
+vc diz ao compiler que 
+
+
+''you don't need to call this thing "struct node" in every part 
+of the code, you can just call it "node" '.
+
+
+
+
+
+
+
+
+
+
+--> É 1 POUCO VERBOSO,
+    mas ISSO ESTÁ APENAS 
+
+    CRIANDO, NO COMPUTADOR,
+
+    A DEFINIÇÃO DE 1 'NODE',
+
+
+
+    AQUELE RETÂNGULO QUE DESENHAMOS ANTERIORMENTE...
+
+
+
+
+
+
+
+
+
+
+OK... MAS COMO PODEMOS TRADUZIR ISSO PARA CÓDIGO MAIS ÚTIL...? COMO PODEMOS 
+CRIAR 1 LINKED LIST,
+
+COM ESSA STRUCTURE...?
+
+
+
+
+
+
+
+
+
+
+
+linked lists SEMPRE 
+
+COMEÇAM, DA FORMA MAIS SIMPLES,
+
+
+
+COM 1 POINTER_...
+
+
+
+
+
+
+-> É UM POINTER QUE NÃO VAI APONTAR A COISA ALGUMA,
+    NO INÍCIO... ou seja, será um NULL POINTER...
+
+
+
+
+
+
+
+
+BEM, AGORA DIGAMOS QUE QUEREMOS CRIAR 1 LINKED LIST, COM 3 NUMBERS...
+
+COMO PODEMOS FAZER ISSO?
+
+
+
+
+
+
+
+
+
+digamos que criamos uma variable, chamada de 'list'..
+
+
+
+
+no início, ela tem apenas 1 null pointer, como explicado anteriormente...
+
+
+
+
+
+
+
+
+
+
+
+NÃO HÁ NENHUM ARRAY NESSA HISTÓRIA,
+
+PQ AGORA É 'ALL ABOUT LINKED LISTS'...
+
+
+
+
+
+
+
+--> PARA CRIAR OS NOVOS ELEMENTOS DA LIST,
+    PRECISAMOS COMEÇAR COM O USO 
+
+    DA FUNCTION DA SEMANA PASSADA, 'malloc' (memory allocate)...
+
+
+
+
+
+
+
+
+--> malloc nos deixa alocar memória,
+    quanta memória quisermos, desde que providenciemos o tamanho 
+    da coisa que vamos querer armazenar...
+
+
+
+
+
+
+
+
+--> VAMOS ALOCAR MEMÓRIA PARA A STRUCTURE DE NODE 1, STRUCTURE DE NODE 2, ETC ETC...
+
+
+
+E, POR FIM, USAR AS 'SETAS', OS POINTERS, 
+PARA CONECTAR OS NODES JUNTO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR ENTÃO DEMONSTRA, VISUALMENTE, QUE O MALLOC 
+    CRIOU MEMÓRIA PARA 1 NODE, 
+
+
+    E AÍ FICAMOS COM 1 REPRESENTAÇÃO TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+                
+    []      ---->     [1] number
+   list              [next] pointer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O POINTER DO ELEMENTO '1'
+
+está como null...
+
+
+
+
+
+
+--> NO MUNDO DO MALLOC,
+BASTA CHAMAR 
+
+'malloc'
+
+
+PARA CRIAR OUTRO NODE,
+
+E AÍ ligar o pointer do elemento 1 ao elemento 2...
+
+
+
+TIPO ASSIM:
+
+
+
+                
+    [] pointer --->   [1] number            [2] number
+   list              [next] pointer --->   [next] pointer
+
+
+
+
+
+
+
+
+
+
+MAS DIGAMOS QUE QUEREMOS INSERIR MAIS 1 ELEMENTO, '[3]'...
+
+
+PARA ISSO, USAMOS MALLOC OUTRA VEZ...
+
+
+
+
+
+
+
+
+
+
+
+'MALLOC' --> É POWERFUL,
+
+
+                PEGA MEMORY 'FROM WHERE IT IS AVAILABLE'...
+
+                TAKES MEMORY FROM YOUR PC'S __ HEAP_...
+
+
+
+
+                --> ISSO QUER DIZER QUE A PARTE DA MEMÓRIA PODE 
+                ESTAR EM 1 LUGAR BEEEEM DISTANTE,
+                MAS NÃO HÁ PROBLEMA COM ISSO,
+
+                PQ O POINTER VAI REALMENTE APONTAR PARA ESSA PARTE DA MEMÓRIA,
+                MESMO QUE ESTEJA BEM DISTANTE...
+
+
+
+
+
+
+
+
+
+    EX:
+
+
+
+
+
+    [] pointer --->   [1] number            [2] number                                   [3] number
+   list              [next] pointer --->   [next] pointer  ----------------------->    [next] pointer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... QUER DIZER QUE 
+    OS BLOCOS NÃO PRECISAM SER CONTIGUOUS,
+    NÃO PRECISAM SER ADJACENTES....
+
+
+
+
+
+
+
+
+
+
+--> A GRANDE DESVANTAGEM DISSO, NO CASO,
+
+É QUE 
+
+''WE CAN'T RELY ON BINARY SEARCH''...
+
+
+
+
+
+
+
+
+
+--> O BINARY SEARCH 
+    ERA ÓTIMO PQ ELE ERA BEM MAIS RÁPIDO,
+    ENCONTRAVA AS COISAS 
+
+    COM 1 VELOCIDADE DE O(log n),
+
+
+
+    que era bem mais rápido do que O(n),
+
+    linear search...
+
+
+
+
+
+
+
+
+
+-> MAS A VANTAGEM DE ESSE APPROACH É QUE 
+    VC NÃO PRECISA 
+
+    MAIS FICAR 'ALLOCATING AND COPYING' 
+    MORE MEMORY, E TODOS SEUS VALUES,
+    TODA VEZ QUE VC QUER FAZER RESIZE 
+    DO SEU ARRAY...
+
+
+
+
+
+
+--> O PONTO É QUE USAR MALLOC 
+    E FICAR CONSTRUINDO STRUCTURES 
+    VÊM A UM PREÇO... É EXHAUSTING,
+        MAS VC 
+
+        FICA COM A VANTAGEM DE 'SPREADING THINGS OUT IN MEMORY'...
+
+
+
+
+
+
+
+-> se vc tivesse de copiar sua data 
+    constantemente, para conseguir novos 
+    items nesses arrays,
+
+    isso mataria sua performance...
+
+
+
+
+
+
+
+
+
+--> É POR ISSO QUE USAR ESSAS DATA STRUCTURES DINÂMICAS,
+    COMO 'LINKED LISTS' (em que vc aloca MAIS ESPAÇO 
+    EM QUALQUER LUGAR DISPONÍVEL, E EM QUE VC ENTÃO 
+    SE LEMBRA DO LOCAL DE ESSE VALUE ARMAZENADO, POR MEIO 
+    DO STORE DO POINTER AO PRÓXIMO ELEMENT DA LIST ),
+
+    É REALMENTE O+ 'STATE OF THE ART' 
+
+    DE COMO CRIAR E MANTER ESSAS ESTRUTURAS,
+
+    ISSO SE A COISA MAIS IMPORTANTE PARA VOCÊ É TER ESSE DINAMISMO...
+
+
+
+
+
+
+
+
+
+
+--> CERTO...
+
+
+
+
+
+
+
+
+
+MAS COMO PODEMOS TRADUZIR ESSES BLOCKS FÍSICOS PARA 
+CÓDIGO DE VERDADE?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS EM QUE PONTO DO CÓDIGO 
+    VAMOS USAR O MALLOC?
+
+
+
+
+
+
+
+    WHEN YOU CALL MALLOC,
+
+    THE MALLOC FUNCTION
+
+    RETURNS TO YOU:
+
+    1) THE ADDRESS OF THE _ FIRST_ BYTE 
+        OF A CHUNK OF MEMORY...
+
+
+
+    
+
+
+
+
+
+
+
+--> QUER DIZER QUE CADA 1 DE ESSES NODE BLOCKS 
+    É O 'RETURN VALUE' DE CADA CALL DE 'malloc',
+
+    no nosso código...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> VAMOS TRADUZIR ISSO TUDO PARA CÓDIGO DE VERDADE...
+
+
+
+
+
+
+
+
+
+
+--> A LINHA DE CÓDIGO QUE REPRESENTA O INÍCIO DA HISTÓRIA É ESTA:
+
+
+
+
+
+
+node *list;
+
+
+
+
+
+
+
+
+
+--> COM ISSO, TEMOS APENAS 1 ÚNICA VARIABLE,
+    INICIALIZADA COMO NOME DE 'LIST'...
+
+
+
+
+
+
+
+-> a 'flecha' (pointer)
+    dela não está apontando a coisa alguma...
+
+
+
+
+
+
+
+--> ela existe na memória,  
+    mas é apenas um GARBAGE VALUE,
+    inicialmente, pq não aponta a coisa alguma...
+
+
+
+
+
+
+
+--> MAS SE INICIALIZAMOS ELA COM UM VALUE COMO 'NULL',
+
+tipo assim:
+
+
+
+node *list = NULL;
+
+
+
+
+
+
+
+
+
+
+
+--> FIGURATIVAMENTE, É COMO SE APONTÁSSEMOS A 'FLECHA' (pointer)
+    PARA O CHÃO......
+
+
+
+    o CHÃO representa o 'null'...
+
+
+
+
+
+--> PRATICAMENTE, É COMO SE ISSO CRIASSE, PARA VOCÊ,
+
+UMA 'EMPTY LINKED LIST'...
+
+
+
+
+
+
+
+
+
+--> LEMBRE-SE:
+
+O PROFESSOR TINHA SAÍDO DO PALCO PARA TRAZER 
+
+OUTRAS CAIXAS GRANDES... ISSO É BASICAMENTE O CALL DE 'malloc()',
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+
+node *n = malloc(sizeof(node));
+
+
+
+
+
+
+
+
+
+---> 'sizeof' --> É SIMPLESMENTE UM OPERADOR, NO C,
+                    QUE TE DIZ A LARGURA, EM BYTES,
+                    QUALQUER DATA TYPE TEM...
+
+
+
+
+
+
+---> malloc sempre 
+
+    EXIGE 1 ÚNICO ARGUMENTO... O NÚMERO DE BYTES 
+    QUE VC QUER ALOCAR, DINAMICAMENTE... ENTÃO,
+    ELE RETORNA 
+
+    'THE ADDRESS OF THE FIRST OF THESE BYTES'...
+
+
+
+
+-> O PROFESSOR ENTÃO 
+    ASSIGNA ESSE VALUE A 1 VARIÁVEL DE NOME 'n', 
+
+
+    com '*', JUSTAMENTE
+
+    PQ ESTAREMOS ARMAZENANDO UM ADDRESS, A PARTIR DE ESSE MALLOC()... 
+
+
+    o return type do malloc é sempre um ADDRESS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+ATÉ O MOMENTO, ESTAMOS COM ALGO TIPO ASSIM:
+
+
+
+
+
+
+
+list     (ESTÁ VAZIA, NÃO ESTÁ APONTANDO A COISA ALGUMA)...
+[]  
+
+
+
+
+
+n      (ESSA VARIÁVEL, QUE RECÉM DECLARAMOS, ESTÁ APONTANDO A ALGUM NODE... MAS ESSE NODE EM SI, QUE NEM EXISTE AINDA, CONTÉM APENAS GARBAGE VALUES...)
+[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> certo...
+
+
+
+
+
+
+
+
+
+--> mas então o professor propõe este código:
+
+
+
+
+
+
+if (n != NULL) {
+
+    (*n).number = 1;
+}
+
+
+
+
+
+
+
+
+
+
+COM ISSO, CHECAMOS SE O 'n' ESTÁ COMO 'null'...
+
+
+
+
+
+
+
+-> ''IN C, 
+    WHENEVER YOU CALL A FUNCTION THAT RETURNS A POINTER,
+    YOU SHOULD ALMOST ALWAYS CHECK IF IT IS NULL OR NOT NULL''...
+
+
+
+--> ''YOU DON'T WANT TO TOUCH THAT POINTER,
+      IF IT IS INDEED NULL, BECAUSE THAT 
+      WILL MEAN THAT THERE IS NO VALID ADDRESS IN IT'...
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS SE O 'n' não for NULL,
+    isso é uma boa coisa,
+    PQ QUER DIZER 
+
+    QUE 'n' É UM VALID ADDRESS, EM ALGUM LUGAR DA MEMÓRIA...
+
+
+    COMO ISSO É UM VALID ADDRESS, VAMOS QUERER 'GO TO THAT ADDRESS',
+
+    POR MEIO DA SINTAXE DE 
+
+    '*n'...
+
+
+
+    USAMOS O dot operator para 
+    ACESSAR A VARIABLE DE 'number',
+    dentro de essa estrutura...
+
+
+
+
+
+
+
+
+
+
+
+
+
+---> OK... ESSE NODE 
+    TERÁ 
+
+    O VALUE DE 'number' como sendo 1,
+
+    ASSIM QUE ESTE CÓDIGO FOR EXECUTADO:
+
+
+
+    
+if (n != NULL) {
+
+    (*n).number = 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS PRECISAMOS FAZER OUTRA COISA, AQUI...
+
+
+
+
+-> PRECISAMOS TROCAR O 'GARBAGE VALUE' 
+
+    DO 'next', dentro de essa estrutura,
+
+    POR UM POINTER QUE REALMENTE APONTE PARA 
+
+    O PRÓXIMO ELEMENTO DE ESSA 'LINKED LIST',
+
+    QUE SERÁ O NODE 2...
+
+
+
+
+
+
+
+
+
+
+
+MAS, ANTES DISSO, O PROFESSOR QUER TROCAR ESSE GARBAGE VALUE POR 1 VALUE DE 'NULL',
+
+POR ISSO ELE ESCREVE ASSIM:
+
+
+
+
+
+if (n != NULL) {
+
+    n->next =  NULL;
+}
+
+
+
+
+
+
+
+
+em vez de usar '(*n).'
+
+
+
+como fizemos antes,
+
+
+
+
+aquela sintaxe cumbersome,
+
+
+PODEMOS, EM VEZ DISSO,
+
+
+
+USAR A SINTAXE DE '->',
+
+
+
+
+que é um  SYNTACTIC SUGAR PARA AQUILO....
+
+
+
+
+
+
+
+
+
+
+
+
+É POR ISSO QUE ESCREVEMOS ASSIM:
+
+
+
+
+
+if (n != NULL) {
+
+    n->next = NULL;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+QUER DIZER QUE NOSSO CÓDIGO HAVIA FICADO ASSIM:
+
+
+
+
+
+if (n != NULL) {
+
+    (*n).number = 1;
+}
+
+
+
+if (n != NULL) {
+
+    n->next = NULL;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+A ARROW NOTATION 
+
+
+É PREFERIDA,
+
+EM VEZ DOS ASTERISCOS,
+
+
+
+É 
+
+QUE 
+
+ELA CAPTURA ESSA 'FISICALIDADE'...
+
+
+
+
+
+
+
+
+
+
+PQ VC 'START AT THE ADDRESS' (n),
+
+
+aí vc vai 'GO THERE' (vai até o local do 'n', de verdade), por meio 
+da '->', 
+
+
+e aí vc vai 'LOOK AT THE FIELD' (o 'next') em si, nesse caso...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> COM ISSO, COM ESSAS 2 ETAPAS,
+
+FICOU TIPO ASSIM:
+
+
+
+
+list     (ESTÁ VAZIA, NÃO ESTÁ APONTANDO A COISA ALGUMA)...
+[]  
+
+
+
+
+
+n   ----------------> (aponta para o node em si) -------> [1]
+[]                                                         [next - NULL]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->  OK... MAS QUAL É O PRÓXIMO PASSO?
+
+
+
+
+
+
+
+
+
+--> PRECISAMOS CONECTAR a variable de 'n', temporária,
+
+
+    à linked list em si ('list', a variable),
+
+
+    que atualmente não representa coisa alguma,
+
+
+    não aponta a coisa alguma ('NULL' pointer)...
+
+
+
+
+
+
+
+
+
+
+
+--> FAZEMOS ISSO POR MEIO DA SINTAXE 
+
+
+
+
+
+list = n;
+
+
+
+
+
+
+
+
+
+
+--> COM ISSO,
+
+
+
+
+''WE REMEMBER __WHERE__ THIS NODE IS,
+IN THE COMPUTER'S MEMORY''...
+
+
+
+
+
+
+''THEREFORE, UP TO THIS POINT,
+    'n' WAS ONLY A TEMPORARY VARIABLE... 
+    IT WAS A VARIABLE THAT WAS USED SO THAT I COULD 
+    KEEP TRACK OF THIS THING, THIS NODE, IN MEMORY...
+
+    BUT IF I WANT TO ADD THIS NODE, ULTIMATELY, TO 
+    MY LINKED LIST (variável 'list'), WHICH WAS/IS 
+    STILL POINTING TO THE GROUND''...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... MAS QUAL É O PRÓXIMO PASSO?
+
+
+
+
+
+
+
+--> A REPRESENTAÇAÕ FICOU TIPO ASSIM:
+
+
+
+
+
+
+
+list   (nos livramos da variable de 'n', temporária, e aí conectamos a linked list ao node 1) ------>     [1]
+[]                                                                                                        NULL  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NESSE PONTO, TEMOS 1 LINKED LIST,
+ 
+ DE TAMANHO 1...
+
+
+
+
+
+
+
+
+
+
+
+ AGORA SUPONHA QUE TEMOS ESTAS LINHAS DE CÓDIGO,
+ USADAS PARA ADICIONAR 1 SEGUNDO ELEMENTO NA LINKED LIST,
+
+ UM SEGUNDO NODE:
+
+
+
+
+
+
+
+
+node *n = malloc(sizeof(node));
+
+if (n != NULL) 
+{
+    n->number = 2;
+    n->next = NULL;
+}
+
+
+
+
+
+
+
+
+
+--> COM ISSO, NÓS REASSIGNAMOS UM VALUE À VARIABLE TEMPORÁRIA 
+
+DE 'n',
+
+
+E AÍ DEIXAMOS ESSE VALUE como sendo '2' no number slot,
+e 'NULL' no slot de 'next'...
+
+
+
+
+
+
+
+
+
+
+--> certo... mas ainda assim, ficamos com 1 desconexão...
+
+
+
+
+
+
+
+FICAMOS COM 1 DESCONEXÃO PQ ESSE NODE, APESAR DE EXISTIR,
+
+__ NÃO ESTÁ CONECTADO __ AO NODE 1...
+
+
+
+
+
+
+
+
+
+está tipo assim:
+
+
+
+
+
+
+
+
+
+
+
+list    ------>     [1]
+[]                  NULL  
+
+
+
+
+
+
+n   ----------------> (aponta para o node em si) -------> [2]
+[]                                                         [next - NULL]
+
+
+
+
+
+
+
+
+
+
+
+--> PARA CONECTARMOS O NODE 1 AO NODE 2,
+    NESSA LINKED LIST,
+
+
+    PODEMOS USAR A MESMA SINTAXE DE ANTES, TIPO ASSIM:
+
+
+
+
+
+
+
+
+list->next = n;
+
+
+
+
+
+
+OU SEJA,
+
+
+
+
+FICA TIPO 
+
+
+
+''I START AT THE LIST,
+    I FOLLOW THE ARROW,
+    AND THEN I UPDATE THE NEXT FIELD,
+    OF 'next', IN THAT NODE,
+    TO POINT TO THE 'n', which is my newly allocated node''...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> COM ISSO, FINALMENTE, TEMOS UMA LINKED LIST DE TAMANHO 2...
+
+
+
+
+--> E O NODE FINAL 
+
+    FICA COM UM 'next' de 'NULL',
+
+    justamente pq 
+
+    a LINKED LIST acaba ali...
+
+
+
+
+
+
+
+
+
+
+FICOU TIPO ASSIM:
+
+                    [1]               [2]
+list    ------>     next (node 2) --> NULL
+[]                  
+
+
+
+
+
+
+
+
+
+
+
+POR FIM, PODEMOS EXECUTAR O MESMO TIPO DE CÓDIGO, NOVAMENTE,
+
+
+PARA CRIAR E LINKAR O ITEM 3, NESSA LIST:
+
+
+
+
+
+
+
+
+
+node *n = malloc(sizeof(node));
+
+if (n != NULL) 
+{
+    n->number = 3;
+    n->next = NULL;
+}
+
+
+
+
+
+DEPOIS DISSO, LINKAMOS, COM ESTE CÓDIGO:
+
+
+
+
+
+
+
+list->next->next = n;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CERTO... 
+
+
+E ESSA É UMA SINTAXE QUE VC NÃO VAI 
+
+USAR COM FREQUÊNCIA... MAS 
+
+
+ELA TE MOSTRA 
+
+OS BUILDING BLOCKS BÁSICOS QUE ESTAMOS MANIPULANDO...
+
+
+
+
+
+
+
+
+
+
+FICA TIPO ASSIM:
+
+
+
+
+                    [1]               [2]                   [3]
+list    ------>     next (node 2) --> next (node 3) ---->   NULL
+[]                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... PARECE 1 MONTE DE TRABALHO... MAS  
+
+AGORA NOS PERMITE 
+
+CRESCER ESSA LIST, DINAMICAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PERGUNTA:
+
+
+
+''SE TEMOS 1 LISTA MT MAIOR,
+    NÃO VAI FICAR ENTEDIANTE 
+    FICAR ESCREVENDO '-> -> -> -> ->' sem parar?''
+
+
+
+
+
+
+
+
+
+
+
+-> É JUSTAMENTE POR ISSO 
+    QUE GERALMENTE NÃO ESCREVEMOS ASSIM..
+
+
+
+
+
+--> EM GERAL, VC VAI USAR ALGO COMO UM __ LOOP__...
+
+
+    AÍ VC GERALMENTE VAI USAR 1 TEMPORARY VARIABLE 
+    QUE VAI APONTAR PARA NODE 1, NODE 2, NODE 3, NODE 4,
+    etc etc...
+
+
+
+
+
+--> ''IF YOU USE A LOOP IN THE RIGHT WAY,
+YOU CAN END UP WRITING A SINGLE ARROW, BY 
+KEEPING UPDATING THE VARIABLE AGAIN AND AGAIN...''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS O PROFESSOR FAZ OUTRA PERGUNTA:
+
+
+
+
+
+
+
+
+''WHAT IS THE RUNNING TIME OF SEARCHING A LINKED LIST?''
+
+
+
+
+
+
+
+QUAL É O WORST CASE SCENARIO, DE SEARCH DE 1 LINKED LIST?
+
+
+
+
+
+
+
+
+
+
+--> A maior parte das pessoas colocou O(n)
+
+
+
+
+
+
+
+
+
+
+
+--> ''ONE OF THE TRADEOFFS OF 
+LINKED LISTS:''
+
+
+
+
+
+1) IN ARRAYS, YOU CAN JUMP TO THE END OF THE LIST 
+    IN __CONSTANT__ TIME... 
+
+    (you can jump to the middle element, to the final element, everything 
+    with constant time)
+
+
+
+
+2) WITH LINKED LISTS,
+    UNFORTUNATELY, EVERYTHING IS REPRESENTED 
+    BY A SINGLE ADDRESS, 
+
+    THE ADDRESS THAT POINTS TO THE VERY FIRST NODE...
+
+
+    THE COMPUTER CAN ONLY FOLLOW THESE 'BREADCRUMBS'...
+
+
+
+    --> E É POR ISSO 
+            QUE PROCURAR UMA LINKED LIST
+
+            TOMARÁ UM TEMPO DE O(n), o que é bem ruim...
+
+
+
+
+
+
+
+
+--> MAS TEMOS OUTRA PERGUNTA:
+
+
+
+
+
+
+
+
+
+''WHAT'S THE RUNNING TIME OF INSERTING INTO A LINKED LIST?''
+
+
+
+
+
+
+
+
+
+
+
+SERÁ O(1)...
+
+
+
+
+
+
+
+
+
+
+''if you    
+    ARE ABLE TO SACRIFICE SORTED ORDER,
+    IN THIS LIST,
+
+    YOU ARE ABLE TO GET A CONSTANT TIME OF O(1)...''
+
+
+
+
+--> OU SEJA, A LISTA VAI FICANDO MAIOR
+
+    LÁ DO MEIO DA LISTA,
+
+    EM VEZ DO FINAL... SE VC PERMITE ISSO,
+
+    AÍ VC PODE 'CUT THAT CORNER',
+
+    E AÍ OBTER 
+
+    ESSA INSERÇÃO DE TEMPO CONSTANTE (bem mais rápida)...
+
+
+
+
+
+-> ISSO PODE SER UMA COISA POSITIVA,
+    TER ESSE INSERT MAIS RÁPIDO... MAS VC AINDA VAI SACRIFICAR A 'SORTED ORDER'...
+
+
+
+
+
+
+
+
+
+COMO ISSO FICA, EM CÓDIGO DE VERDADE?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR CRIA 1 PROGRAMA, DE NOME 'list.c'...
+
+
+
+
+
+
+
+
+
+
+CRIAMOS UM ARRAY CLÁSSICO, TIPO ASSIM:
+
+
+
+
+
+
+#include <stdio.h>
+
+
+
+
+int main(void) {
+
+    int list[3];
+
+    list[0] = 1;
+    list[1] = 2;
+    list[2] = 3;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+--> AÍ O PROFESSOR FAZ PRINT DE TODOS OS VALUES, DENTRO DO ARRAY:
+
+
+
+
+
+
+
+#include <stdio.h>
+
+
+
+
+int main(void) {
+
+    int list[3];
+
+    list[0] = 1;
+    list[1] = 2;
+    list[2] = 3;
+
+    for (int i = 0; i < 3; i++) {
+        printf("%d\n", i);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+CERTO... MAS AO COMPILAR E EXECUTAR ESSE PROGRAMA,
+NÃO FICAMOS COM 123, POR ALGUMA RAZÃO...
+
+
+
+FICAMOS COM 
+
+
+
+
+0
+1
+2
+
+
+
+
+
+
+
+
+--> isso aconteceu pq o professor printou o 'i',
+
+e não 'list[i]'...
+
+
+
+
+
+
+
+
+O CORRETO É ISTO:
+
+
+
+
+
+
+#include <stdio.h>
+
+
+
+
+int main(void) {
+
+    int list[3];
+
+    list[0] = 1;
+    list[1] = 2;
+    list[2] = 3;
+
+    for (int i = 0; i < 3; i++) {
+        printf("%d\n", list[i]);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+com isso, ficamos com 123,
+
+sem problemas...
+
+
+
+
+
+
+
+
+
+
+
+--> MAS AGORA O PROFESSOR QUER ALGO MAIS DINÂMICO...
+
+
+
+
+
+
+
+''I DON'T WANT TO COMMIT, IN ADVANCE, 
+    TO THE CREATION OF AN ARRAY... I CAN 
+    DO THIS WITH A DYNAMICALLY ALLOCATED CHUNK OF MEMORY''..
+
+
+
+
+
+
+
+
+
+
+--> PARA ISSO, ELE ESCREVE ASSIM:
+
+
+
+
+
+
+
+#include <stdio.h>
+
+
+
+
+int main(void) {
+
+    int *list = malloc(3 * sizeof(int));
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+--> COM ISSO, CONSEGUIMOS ALOCAR 12 BYTES (3 x 4, 4 bytes é um integer)...
+
+
+
+
+
+
+
+--> COM ISSO, FICAMOS NÃO COM 1 ARRAY POR SI SÓ,
+
+
+    E SIM COM UM 'DYNAMICALLY ALLOCATED ARRAY'...
+
+
+
+
+
+
+
+
+
+
+
+-> E O RETURN VALUE, A ACTUAL LOCATION DE ESSE ARRAY,
+
+SERÁ ARMAZENADA DENTRO DE 'list', essa variable....
+
+
+
+
+
+
+
+
+
+
+--> CERTO... DEPOIS DISSO, PRECISAMOS _'CHECK IF THAT LOCATION IS NULL, IF THE POINTER IS NULL'...
+
+
+
+
+
+
+FAZEMOS ISSO COM ESTE CÓDIGO:
+
+
+
+
+
+
+#include <stdio.h>
+
+
+
+
+int main(void) {
+
+    int *list = malloc(3 * sizeof(int));
+    
+    if (list == NULL) {
+        return 1;
+    }
+
+
+}
+
+
+
+
+
+
+
+SE ISSO FOR EQUIVALENTE A NULL,
+
+CANCELAMOS A EXECUÇÃO E RETORNAMOS '1'...
+
+
+
+
+
+
+
+
+
+
+OK... MAS AGORA QUE TEMOS ESSE CHUNK DE MEMORY, EQUIVALENTE A 3x o tamanho de 1 int,
+
+
+
+
+ESSA É A 'MANEIRA MALLOC' DE TE DAR 1 ARRAY...
+
+
+
+
+
+
+
+
+
+
+
+
+--> ISSO PQ, ATÉ AGORA,
+    NÓS SEMPRE CRIAMOS ARRAYS POR MEIO DE '[]',
+
+    e com números dentro de '[]',
+
+    para indicar QUÃO GRANDE QUEREMOS NOSSO ARRAY....
+
+
+
+
+
+
+
+
+
+
+
+--> mas se temos 'malloc' e a capacidade de 
+pedir ao computador mais memória,
+
+''WHY DON'T WE ASK MALLOC FOR THREE TIMES THE SIZE OF AN INTEGER??''
+
+
+e é exatamente que o malloc faz... ele nos retorna UM 'CONTIGUOUS CHUNK OF MEMORY',
+DE TAMANHO 12 BYTES... back to back...
+
+
+
+
+
+
+
+
+OK... QUER DIZER QUE TEMOS 1 MEMORY QUE É GRANDE O SUFICIENTE PARA ARMAZENAR 3 INTS..
+
+
+
+
+
+
+
+
+E PODEMOS ASSIGNAR OS VALUES TIPO ASSIM, SUPOSTAMENTE:
+
+
+
+
+#include <stdio.h>
+
+
+
+
+int main(void) {
+
+    int *list = malloc(3 * sizeof(int));
+    
+    if (list == NULL) {
+        return 1;
+    }
+
+    list[0] = 1;
+    list[1] = 2;
+    list[2] = 3;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... AGORA PERCEBA ALGO:
+
+
+
+''THIS SORT OF EQUIVALENCE BETWEEN 
+USING ARRAYS AND POINTERS''...
+
+
+
+
+
+
+
+ISSO PQ O C É VERSÁTIL -->  ''IF YOU HAVE A CHUNK OF MEMORY RETURNED BY 
+                                MALLOC, YOU STILL CAN USE SQUARE BRACKET NOTATION,
+                                AND TREAT THAT CHUNK OF MEMORY AS AN ARRAY... THIS IS BECAUSE 
+                                AN ARRAY IS EXACTLY A CONTIGUOUS CHUNK OF MEMORY... AND THAT 
+                                IS EXACTLY WHAT IS RETURNED BY MALLOC'...
+
+
+
+
+
+
+
+
+
+
+
+
+SE VC QUISESSE SER FANCY,
+
+VC PODERIA ESCREVER ASSIM:
+
+
+
+*list = 1;
+*(list+1) = 2;
+*(list+3) = 3;
+
+
+
+
+
+
+
+
+
+
+
+MAS ESSA SINTAXE AÍ, DE '*',
+
+É RUIM,
+
+
+PQ É MEIO ILEGÍVEL... É CHAMADA DE 'POINTER ARITHMETIC'...
+
+
+
+
+
+
+
+
+--> O SQUARE BRACKETS É MELHOR,
+
+    PQ O COMPUTADOR SEMPRE VAI DESCOBRIR 
+
+    ''HOW FAR APART EACH OF THOSE INTEGERS ARE... BECAUSE 
+        IT KNOWS THE SIZE OF AN INT''...
+
+
+
+
+
+
+
+--> OK... MAS ESSA É A PARTE QUE FICA ANNOYING...
+
+
+
+
+
+
+
+
+
+
+
+--> DIGAMOS QUE:
+
+
+
+
+
+1) ALOCAMOS 3 INTEGERS 
+
+
+
+2) MAIS TARDE, PENSO ''AH, QUERO TER MAIS 1 ELEMENTO NESSA LIST''...
+
+
+
+
+3) PARA ISSO, EM C, SOMOS FORÇADOS 
+    A REFAZER O ARRAY, OU CRIAR 1 NOVO ARRAY...
+
+
+
+
+
+
+
+
+
+
+--> PODEMOS TENTAR ALOCAR MAIS MEMÓRIA DINAMICANTE, REALIZAR 
+ESSE PROCEDIMENTO AUTOMATICAMENTE, COM CÓDIGO...
+
+
+
+
+
+
+
+
+FICARIA TIPO ASSIM:
+
+
+
+
+#include <stdio.h>
+
+
+
+
+int main(void) {
+
+    int *list = malloc(3 * sizeof(int));
+    
+    if (list == NULL) {
+        return 1;
+    }
+
+    list[0] = 1;
+    list[1] = 2;
+    list[2] = 3;
+
+    int *tmp = malloc(4 * sizeof(int));
+
+
+
+}
+
+
+
+
+
+
+
+
+OU SEJA, CRIAMOS UM ARRAY TEMPORÁRIO, DE 4 ELEMENTOS...
+
+
+
+
+
+
+--> AÍ RODAMOS 
+     UM CHECK, PARA CHECAR SE O TMP ESTÁ COMO NULL..
+
+
+
+
+
+    TIPO ASSIM:
+
+
+
+
+    
+int main(void) {
+
+    int *list = malloc(3 * sizeof(int));
+    
+    if (list == NULL) {
+        return 1;
+    }
+
+    list[0] = 1;
+    list[1] = 2;
+    list[2] = 3;
+
+    int *tmp = malloc(4 * sizeof(int));
+
+    if (tmp == NULL) {
+        free(list);
+        return 1;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+OK...  
+
+
+MAS E O MALLOC NÃO RETORNOU NULL,
+
+
+O QUE FAZEMOS?
+
+
+
+
+
+
+
+
+
+
+
+--> RODAMOS 1 LOOP...
+
+
+
+
+
+DENTRO DO LOOP, VAMOS COPIAR TODOS ELEMENTOS 
+
+DO CHUNK OF MEMORY (ARRAY) ANTIGO, TIPO ASSIM:
+
+
+
+
+
+
+
+    
+int main(void) {
+
+    int *list = malloc(3 * sizeof(int));
+    
+    if (list == NULL) {
+        return 1;
+    }
+
+    list[0] = 1;
+    list[1] = 2;
+    list[2] = 3;
+
+    int *tmp = malloc(4 * sizeof(int));
+
+    if (tmp == NULL) {
+        free(list);
+        return 1;
+    }
+
+
+    for (int i = 0; i < 3; i++) {
+        tmp[i] = list[i]
+    }
+
+
+}
+
+
+
+
+
+
+
+
+FINALMENTE, ADICIONAMOS O ELEMENTO 4,
+
+NO SLOT 3 DESSE NOVO ARRAY, TIPO ASSIM:
+
+
+
+
+    
+int main(void) {
+
+    int *list = malloc(3 * sizeof(int));
+    
+    if (list == NULL) {
+        return 1;
+    }
+
+    list[0] = 1;
+    list[1] = 2;
+    list[2] = 3;
+
+    int *tmp = malloc(4 * sizeof(int));
+
+    if (tmp == NULL) {
+        free(list);
+        return 1;
+    }
+
+
+    for (int i = 0; i < 3; i++) {
+        tmp[i] = list[i]
+    }
+
+    tmp[3] = 4;
+
+}
+
+
+
+
+
+
+
+
+
+
+POR FIM,
+
+
+NÓS:
+
+
+1) FAZEMOS free()  DA MEMÓRIA DA LIST ORIGINAL....
+
+
+2) UPDATAMOS A VARIABLE DE 'list' original,
+    para que 
+
+    APONTE _ PARA A NOVA LIST,
+
+
+    COM 'list = tmp'...
+
+
+
+
+
+EX:
+
+
+
+    
+int main(void) {
+
+    int *list = malloc(3 * sizeof(int));
+    
+    if (list == NULL) {
+        return 1;
+    }
+
+    list[0] = 1;
+    list[1] = 2;
+    list[2] = 3;
+
+    int *tmp = malloc(4 * sizeof(int));
+
+    if (tmp == NULL) {
+        free(list);
+        return 1;
+    }
+
+
+    for (int i = 0; i < 3; i++) {
+        tmp[i] = list[i]
+    }
+
+    tmp[3] = 4;
+
+    free(list);
+
+    list = tmp;
+
+}
+
+
+
+
+
+
+POR FIM, 
+
+
+
+FAZEMOS 1 PRINT DE TODOS OS ELEMENTOS DO ARRAY, COM 1 FOR LOOP,
+
+TIPO ASSIM:
+
+
+
+
+
+
+    
+int main(void) {
+
+    int *list = malloc(3 * sizeof(int));
+    
+    if (list == NULL) {
+        return 1;
+    }
+
+    list[0] = 1;
+    list[1] = 2;
+    list[2] = 3;
+
+    int *tmp = malloc(4 * sizeof(int));
+
+    if (tmp == NULL) {
+        free(list);
+        return 1;
+    }
+
+
+    for (int i = 0; i < 3; i++) {
+        tmp[i] = list[i]
+    }
+
+    tmp[3] = 4;
+
+    free(list);
+
+    list = tmp;
+
+    for (int i = 0; i < 4; i++) {
+        printf("%i\n", list[i]);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+CERTO...
+
+
+
+
+
+
+
+
+
+
+OU SEJA,
+
+SAO MUITAS ETAPAS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> o professor fica com 1 erro...
+
+
+
+
+
+
+
+--> ESQUECEMOS DE IMPORTAR O 'sdlib.h'..
+
+
+
+
+
+EX:
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+int main(void) {
+
+    int *list = malloc(3 * sizeof(int));
+    
+    if (list == NULL) {
+        return 1;
+    }
+
+    list[0] = 1;
+    list[1] = 2;
+    list[2] = 3;
+
+    int *tmp = malloc(4 * sizeof(int));
+
+    if (tmp == NULL) {
+        free(list);
+        return 1;
+    }
+
+
+    for (int i = 0; i < 3; i++) {
+        tmp[i] = list[i]
+    }
+
+    tmp[3] = 4;
+
+    free(list);
+
+    list = tmp;
+
+    for (int i = 0; i < 4; i++) {
+        printf("%i\n", list[i]);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+COM ISSO, FICAMOS COM 1234 PRINTADOS,
+
+QUE É O QUE QUERÍAMOS...
+
+
+
+
+
+
+
+
+
+É ASSIM QUE CONSEGUIMOS ALOCAR 1 NOVO ELEMENTO,
+
+EM 1 ARRAY PRÉ-DEFINIDO...
+
+
+
+
+
+É UMA GRANDE MÃO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+---> O PROFESSOR USOU MALLOC AMBAS VEZES...
+
+
+
+
+
+
+
+
+
+'''''IF YOU CREATE AN ARRAY ON C USING 
+        [] NOTATION, YOU HAVE PAINTED YOURSELF INTO A CORNER...
+        YOU CAN'T USE ANY LINES OF CODE THAT WE HAVE SEEN AND 
+        RESIZE AN ARRAY THAT YOU HAVE DECLARED USING '[]'  '''...
+
+
+
+
+
+
+
+
+
+TECHNICALLY SPEAKING,
+
+WHEN YOU USE [], YOU ARE STATICALLY 
+ALLOCATING THE ARRAY __ ON THE STACK_...
+
+YOU ARE PUTTING IT INTO THE _ FRAME OF THE COMPUTER'S 
+MEMORY, THE FRAME THAT PERTAINS TO THAT FUNCTION'S STACK FRAME...
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS SE VC USAR O MALLOC,
+    A FERRAMENTA QUE APRENDEMOS NA SEMANA PASSADA,
+
+    E PEDIR 'GIVE ME A CHUNK OF MEMORY, FROM THE HEAP',
+
+
+    VC __ FICA CAPAZ DE FAZER RESIZE DAQUELE ARRAY ESTÁTICO,
+
+    APESAR DE SER CLUNKY PARA CARAMBA...
+
+
+
+
+
+
+
+
+
+-> E EXISTE UMA MANEIRA AINDA MAIS FÁCIL DE FAZER ESSE RESIZE,
+    TECNICAMENTE FALANDO... 
+
+
+
+    ''IF YOU WANT TO REALLOCATE AN ARRAY,
+        A CHUNK OF MEMORY, BY RESIZING IT,
+
+        YOU DON'T NEED TO DO ALL OF THIS...
+
+        YOU DONT NEED TO CALL MALLOC TWICE...''
+
+
+
+
+    
+
+    ''YOU CAN SIMPLY USE MALLOC AT THE BEGINNING,
+     AND THEN USE A __NEW FUNCTION__, CALLED 
+     'realloc()''...
+
+
+
+
+
+
+
+
+COM ISSO, NOSSO CÓDIGO FICA TIPO ASSIM:
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+
+    int *list = malloc(3 * sizeof(int));
+    
+    if (list == NULL) {
+        return 1;
+    }
+
+    list[0] = 1;
+    list[1] = 2;
+    list[2] = 3;
+
+    int *tmp = realloc(list, 4 * sizeof(int)); ////HERE IS THE CHANGE.
+
+    if (tmp == NULL) {
+        free(list);
+        return 1;
+    }
+
+    tmp[3] = 4;
+
+    free(list);
+
+    list = tmp;
+
+    for (int i = 0; i < 4; i++) {
+        printf("%i\n", list[i]);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OU SEJA,
+
+
+ISTO:
+
+
+
+
+
+
+
+    int *tmp = realloc(list, 4 * sizeof(int)); ////HERE IS THE CHANGE.
+
+
+
+
+
+
+
+
+
+
+
+
+
+O primeiro parametro é o 
+ADDRESS DE UM CHUNK OF MEMORY QUE JÁ TÍNHAMOS ASSIGNADO ANTERIORMENTE...
+
+
+O SEGUNDO ARGUMENTO É A QUANTIDADE DE BYTES QUE VC VAI QUERER RESIZE (vai aumentar/diminuir o tamanho do seu chunk of memory... nesse caso, o da variable 'list'):
+
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+    int *list = malloc(3 * sizeof(int));
+    
+    ...
+
+    int *tmp = realloc(list, 4 * sizeof(int)); ////HERE IS THE CHANGE.
+
+
+
+
+
+
+
+
+
+
+
+a grande vantagem disso tudo é que 
+
+o 'realloc'
+
+
+
+TAMBÉM NOS DEIXA REMOVER AQUELA PARTE 
+
+
+DE 
+
+
+'''''
+
+
+    for (int i = 0; i < 3; i++) {
+        tmp[i] = list[i]
+    }
+
+
+
+
+'''''
+
+
+
+
+OU SEJA,
+
+
+O REALLOC 
+
+__ TAMBÉM JÁ FAZ ESSA PARTE DE 'copy the elements from the old chunk of memory, to the new''..
+
+
+
+
+
+
+
+
+
+--> certo...
+
+
+
+
+
+
+
+
+
+
+
+REALLOC --> TE DÁ MAIS DO QUE   
+            APENAS 1 NOVO CHUNK OF MEMORY,
+            RESIZED,
+
+            E O ADDRESS DE ESSE NOVO CHUNK OF MEMORY...
+
+            ESSE ADDRESS "NOVO" SERÁ, ACTUALLY, O EXATO MESMO 
+            ADDRESS...
+
+
+            E COMO SERÁ O MESMO ADDRESS,
+            O SEU SISTEMA OPERACIONAL VAI MANTER OS 
+            ELEMENTOS ORIGINAIS...
+
+
+
+            -> O COMPUTADOR JÁ REALIZA A REALLOCATION, ESSE COPYING,
+            PARA VOCÊ...
+
+
+
+
+
+
+
+
+
+
+CERTO...
+
+
+
+FAZ SENTIDO...
+
+
+
+
+
+
+ISSO AINDA É UM ARRAY, NÃO É UMA LINKED LIST...
+
+
+
+
+
+
+
+
+
+
+
+
+-> AINDA PRECISAMOS TRANSICIONAR ESSE 'CHUNK OF MEMORY',
+    USANDO ARRAYS, PARA 
+    ACTUAL NODES...
+
+
+
+
+
+
+
+
+
+
+---> OUTRA PERGUNTA:
+
+
+''por que vc não fez o 
+    free de 'tmp' ao final do programa?''
+
+
+
+
+
+--> É PQ O PROFESSOR ESQUECEU...
+    
+
+    --> DEVEMOS FAZER O FREE DE 'list',
+
+    TIPO ASSIM:
+
+
+
+
+
+
+// * With realloc
+int main(void) {
+
+    int *list = malloc(3 * sizeof(int));
+    
+    if (list == NULL) {
+        return 1;
+    }
+
+    list[0] = 1;
+    list[1] = 2;
+    list[2] = 3;
+
+    int *tmp = realloc(list, 4 * sizeof(int));
+
+    if (tmp == NULL) {
+        free(list);
+        return 1;
+    }
+
+    tmp[3] = 4;
+
+    free(list);
+
+    list = tmp;
+
+    for (int i = 0; i < 4; i++) {
+        printf("%i\n", list[i]);
+    }
+
+    free(list);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O VALGRIND NÃO GOSTARIA DISSO... 
+
+
+
+SEMPRE É BOM FAZER FREE 
+
+DA MEMÓRIA, AO FINAL...
+
+
+
+
+
+
+
+
+
+
+--> OUTRA PERGUNTA:
+
+
+
+
+
+''WHY DOES LINKED LISTS 
+    IMPROVE THIS SITUATION,
+    IF WE CAN JUST USE 
+    ARRAYS, MALLOC AND REALLOC 
+    TO DO ALL THIS STUFF?''
+
+
+
+
+
+
+
+
+
+
+
+
+--> a resposta:
+
+
+
+
+
+''O QUE FIZEMOS, AGORA, É UMA 
+REGRESSION... TIVEMOS DE FAZER TUDO ISSO MANUALMENTE...
+TIVEMOS DE COPIAR TODOS OS VALUES DO ARRAY ORIGINAL, PARA O NOVO ARRAY''...
+
+
+
+
+
+
+
+
+
+
+
+
+-> ISSO QUER DIZER QUE O APPROACH QUE TOMAMOS, ATÉ AGORA,
+    COM ESSE PROGRAMA, SEMPRE USARAM O(n) 
+
+    QUANTO AO INSERT... não é efetivo...
+
+
+
+
+
+
+--> QUER DIZER QUE ESTA É A TRADUÇÃO DE CÓDIGO 
+    DAQUELE APPROACH 'SLOW', QUE EXPLICAMOS NO INÍCIO...
+
+
+
+
+
+
+
+
+
+-> O OBJETIVO FINAL, AGORA, SERÁ 
+MUDAR ESSE CÓDIGO, DEIXÁ-LO DINÂMICO,
+
+PARA FICARMOS COM 1 PROPER LINKED LIST... NÃO 
+
+APENAS COMO 1 ARRAY OF INTEGERS..
+
+
+
+
+
+
+
+
+
+RECAPITULANDO:
+
+
+
+
+
+
+1) ARRAYS 
+
+
+
+2) SEARCHING IS GREAT IN ARRAYS IF WE KEEP THEM SORTED...
+    
+    YOU GET O(log n),
+
+    THE BEST TIMING FUNCTION...
+
+
+
+
+
+
+3) ASSIM QUE VC COMEÇA A MODIFICAR 1 ARRAY,
+    O SEARCH EM ARRAYS COMEÇA A FICAR VERY EXPENSIVE,
+    RAPIDAMENTE...
+
+
+
+    -> VC PODE FICAR COM O(n) timing function, 
+        para copiar o conteúdo de 1 array antigo, para 
+        1 novo array...
+
+
+
+    --> o O(n) é mt custoso, expensive,
+        VC NÃO QUER TER DE CONSTANTEMENTE TER DE COPIAR SUA DATA,
+        OVER AND OVER, NA MEMÓRIA DO SEU PROGRAMAA...
+
+
+
+4) PODEMOS EVITAR ISSO TUDO POR MEIO DO USO DE POINTERS...
+    POINTERS E O USO DAQUELA ESTRUTURA CHAMADA DE 'LINKED LIST'...
+
+    APESAR DISSO, ESSA MELHORIA VEM A 1 CUSTO... O CUSTO É 
+    'ADDITIONAL MEMORY'... VC GASTA MAIS MEMÓRIA,
+    MAS VC FICA COM MAIOR DINAMISMO...
+
+    --> É ATÉ MESMO POSSÍVEL CONSEGUIR 
+        CONSTANT TIME, O(1), 
+
+        MAS AINDA FICAMOS COM 1 SACRIFÍCIO, QUE É 'SORTABILITY'...
+
+
+
+
+
+
+
+
+
+
+
+CERTO...
+
+
+
+
+
+
+
+--> já programamos várias coisas com arrays clássicos...
+
+
+
+
+
+
+
+
+
+-> o professor nos mostrou a ferramenta 
+    'malloc()',
+
+    que nos deixa OBTER 
+
+    A MEMÓRIA QUE QUISERMOS,
+
+    E QUE ISSO NOS PERMITE 
+    RESIZE ARRAYS.. MAS, MESMO ASSIM,
+
+    VIMOS QUE AINDA 
+
+    SOMOS FORÇADOS A COPIAR 
+
+    DATA USANDO OU 1 for loop, ou 
+
+    'realloc()'...
+
+
+
+
+
+
+
+
+--> para programas menores,  não há diferença,
+    mas em apps grandes, 
+
+    TODO ESSE O(n) time 
+
+
+    faz toda diferença... 
+
+    e é justamente por isso que devemos tentar evitar isso,
+    e obter dinamismo..
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ''THE CODE
+    VIA WHICH YOU CAN ADD TO LINKED LISTS 
+    DYNAMICALLY IS ACTUALLY PART OF THE CHALLENGE 
+    FOR THIS WEEK'',
+
+
+
+
+    MAS DEVEMOS VER ALGUNS DOS BUILDING BLOCKS QUE PODEMOS USAR PARA ALLOCATE NODES 
+    E 'STITCH THEM TOGETHER', quando sabemos 
+
+
+    ''HOW MANY BLOCKS WE WANT, IN ADVANCE''..
+
+
+
+
+
+
+
+
+
+
+
+
+--> PARA NOSSO EXEMPLO,
+    O PROFESSOR CRIA 1 NOVO ARQUIVO 'list.c',
+
+
+
+    E AÍ ESCREVE TIPO ASSIM (ter 3 nodes):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node {
+    int number;
+    struct node *next;
+} node 
+
+int main (void) {
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... 
+
+
+
+
+
+
+
+
+
+
+agora devemos usar essa estrutura (o 'node'), no caso,
+
+
+DENTRO DE 'main()'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> PARA ISSO, O PROFESSOR CRIA UMA EMPTY LINKED LIST...
+
+
+
+
+
+
+
+
+--> PARA ISSO, PARA CRIAR 1 EMPTY LINKED LIST,
+
+
+
+BASTA ESCREVER 
+
+
+
+node *list;
+
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node {
+    int number;
+    struct node *next;
+} node 
+
+int main (void) {
+    
+    node *list;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CERTO... MAS, INFELIZMENTE,
+
+SEMPRE QUE VC DECLARA 1 VARIABLE SEM NENHUM VALUE ASSIGNADO 
+A ELA,
+
+
+O VALUE INICIAL É 'GARBAGE'...
+
+
+
+
+
+
+
+E GARBAGE É SEMPRE RUIM, NO MUNDO DOS POINTERS...
+
+
+
+
+
+
+
+--> ''  IF YOU CREATE THIS VARIABLE, CALLED 'list', 
+        AND YOU DO NOT EXPLICITLY INITIALIZE ITS VALUE 
+        TO SOMETHING LIKE 'NULL', and leave it 
+        as a garbage value,
+         
+         IT is the same 
+
+         as letting this pointer point anywhere,
+
+         like 
+
+         --> <-- ^^ >>  <--''  -------> o problema, com isso,
+                                        é que vc pode acabar seguindo seu código 
+                                        até 1 lugar completamente absurdo, e é 
+                                        nessa parte que vc encontra coisas como 
+                                        'SEGMENTATION FAULTS', erros que aparecem 
+                                        quando vc ENCOSTA EM MEMÓRIA QUE VC NÃO DEVERIA TOCAR...
+
+
+
+
+
+--> E É JUSTAMENTE POR ISSO QUE GARBAGE VALUES SÃO SUPER RUINS,
+    AINDA MAIS NO CONTEXTO  DE POINTERS...
+
+
+
+
+
+
+    --> É POR ISSO QUE VC SEMPRE VAI QUERER INICIALIZAR O POINTER COMO 1 VALUE DE 'NULL',
+
+    TIPO  ASSIM:
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node {
+    int number;
+    struct node *next;
+} node 
+
+int main (void) {
+    
+    node *list = NULL; // * always initialize pointers to NULL, to avoid segmentation faults (due to garbage values in the pointer slot)
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+CERTO... AGORA DIGAMOS 
+
+
+
+QUE QUEREMOS FAZER 'INSERT'
+
+
+
+DE 1 NOVO NODE, NESSA LINKED LIST..
+
+
+
+
+
+
+
+--> PARA ISSO,
+
+    PRECISAMOS CRIAR 1 NOVA VARIABLE, 'n',
+
+
+    EM QUE VAMOS CRIAR UM NODE, com malloc,
+
+
+    E que vamos assignar como 1...
+
+
+
+
+
+
+tipo assim:
+
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node {
+    int number;
+    struct node *next;
+} node 
+
+int main (void) {
+    
+    node *list = NULL; // * always initialize pointers to NULL, to avoid segmentation faults (due to garbage values in the pointer slot)
+
+    node *n = malloc(sizeof(node));
+
+    if (n == NULL) {
+        return 1;
+    }
+
+    n->number = 1;
+    n->next = NULL;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+DEPOIS, FAZEMOS POINT DO POINTER DESSA LIST A ESSE NODE,
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node {
+    int number;
+    struct node *next;
+} node 
+
+int main (void) {
+    
+    node *list = NULL; // * always initialize pointers to NULL, to avoid segmentation faults (due to garbage values in the pointer slot)
+
+    node *n = malloc(sizeof(node));
+
+    if (n == NULL) {
+        return 1;
+    }
+
+    n->number = 1;
+    n->next = NULL;
+
+    list = n;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+depois disso, repetimos o código, com o segundo node...
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node {
+    int number;
+    struct node *next;
+} node 
+
+int main (void) {
+    
+    node *list = NULL; // * always initialize pointers to NULL, to avoid segmentation faults (due to garbage values in the pointer slot)
+
+    node *n = malloc(sizeof(node));
+
+    if (n == NULL) {
+        free(list);
+        return 1;
+    }
+
+    n->number = 1;
+    n->next = NULL;
+
+    list = n;
+
+    n = malloc(sizeof(node));
+
+    if (n == NULL) {
+        free(list);
+        return 1;
+    }
+
+    n->number = 2;
+    n->next = NULL;
+
+    list->next = n;
+
+    n = malloc(sizeof(node));
+
+    if (n == NULL) {
+        free(list);
+        return 1;
+    }
+
+    n->number = 3;
+    n->next = NULL;
+
+    list->next->next = n;
+
+    for (node *i = list; i != NULL; i = i->next) {
+        printf("%i\n", i->number);
+    }
+
+    free(list);
+
+}
+
+
+
+
+
+
+
+
+COM ISSO, ficamos com 1 linked list de 3 elementos...
+
+
+
+
+esqueci de fazer o free de outras coisas, tipo assim:
+
+
+
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node {
+    int number;
+    struct node *next;
+} node 
+
+int main (void) {
+    
+    node *list = NULL; // * always initialize pointers to NULL, to avoid segmentation faults (due to garbage values in the pointer slot)
+
+    node *n = malloc(sizeof(node));
+
+    if (n == NULL) {
+        free(list);
+        return 1;
+    }
+
+    n->number = 1;
+    n->next = NULL;
+
+    list = n;
+
+    n = malloc(sizeof(node));
+
+    if (n == NULL) {
+        free(list);
+        return 1;
+    }
+
+    n->number = 2;
+    n->next = NULL;
+
+    list->next = n;
+
+    n = malloc(sizeof(node));
+
+    if (n == NULL) {
+        free(list);
+        return 1;
+    }
+
+    n->number = 3;
+    n->next = NULL;
+
+    list->next->next = n;
+
+    for (node *i = list; i != NULL; i = i->next) {
+        printf("%i\n", i->number);
+    }
+
+    free(n);
+    free(list);
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK...
+
+
+
+
+
+
+
+
+
+
+
+o loop para o print ficou 1 pouco diferente, tipo assim:
+
+
+
+
+
+
+
+    for (node *i = list; i != NULL; i = i->next) {
+        printf("%i\n", i->number);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> por ser pointers, e não values primitivos,
+
+    o professor escreve assim:
+
+
+
+
+
+
+
+
+    for (node *tmp = list; i != NULL; tmp = tmp->next) {
+        printf("%i\n", i->number);
+    }
+
+
+
+
+
+
+
+
+-> é a mesma ideia de 1 for loop comum,
+    mas formatada de forma diferente...
+
+
+
+    mas não estamos usando integers,
+    e sim estamos fazendo:
+
+
+
+    1) 'GIVE ME A TEMPORARY POINTER, TO THE START OF THE LIST... call that  variable tmp''...
+
+
+
+    2) SO LONG AS TMP IS NOT NULL (pointing at a legitimate block),
+        print tmp->number, the value of the number field, in that node...
+
+
+
+
+
+
+
+
+
+
+
+    EX:
+
+
+
+
+
+
+
+
+
+
+
+
+
+    #include <stdio.h>
+#include <stdlib.h>
+
+typedef struct node {
+    int number;
+    struct node *next;
+} node 
+
+int main (void) {
+    
+    node *list = NULL; // * always initialize pointers to NULL, to avoid segmentation faults (due to garbage values in the pointer slot)
+
+    node *n = malloc(sizeof(node));
+
+    if (n == NULL) {
+        free(list);
+        return 1;
+    }
+
+    n->number = 1;
+    n->next = NULL;
+
+    list = n;
+
+    n = malloc(sizeof(node));
+
+    if (n == NULL) {
+        free(list);
+        return 1;
+    }
+
+    n->number = 2;
+    n->next = NULL;
+
+    list->next = n;
+
+    n = malloc(sizeof(node));
+
+    if (n == NULL) {
+        free(list);
+        return 1;
+    }
+
+    n->number = 3;
+    n->next = NULL;
+
+    list->next->next = n;
+
+    for (node *tmp = list; tmp != NULL; tmp = tmp->next) {
+        printf("%i\n", tmp->number);
+    }
+
+    free(n);
+    free(list);
+
+
+}
+
+
+
+
+
+
+
+
+
+O LOOP VAI PARAR 
+
+QUANDO O node tiver um next que apontar até '0x0', NULL...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> RESPONDENDO À PERGUNTA ANTERIOR:
+
+'POR ACASO PRECISAMOS FICAR ESCREVENDO -> -> -> -> em chains,
+    sem parar?''
+
+
+
+
+
+--> NÃO, NÃO PRECISAMOS...
+
+
+
+BASTA 
+
+USAR ESSA PARTE DO FOR LOOP,
+
+
+A SINTAXE 
+
+
+''  tmp = tmp->next ''
+
+
+
+
+
+
+
+
+
+isso é basicamente a mesma coisa que 'i++',
+
+mas no mundo de LINKED LISTS...
+
+
+
+
+
+não é a mesma coisa que I++ 
+
+pq 
+
+vc não vai 'look one byte to the right/left'',
+
+
+e sim 
+
+
+vai 'follow an arrow, follow an arrow, etc...', perpetuamente...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> OK... MAS COMO PODEMOS FAZER FREE() de essa list inteira,
+
+de toda a memória dela?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> o professor escreve assim:
+
+
+
+while (list != NULL) {
+    node *tmp = list->next;
+    free(list);
+    list = tmp;
+}
+
+
+
+
+
+
+
+
+
+EX:
+
+
+
+    // Free the list and all nodes
+    while (list != NULL) 
+    {
+        node *tmp = list->next;
+        free(list);
+        list = tmp;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+FAZEMOS ISSO JUSTAMENTE 
+
+PARA NÃO DEIXAR 'STRANDED' TODOS 
+
+OS NODES SUBSEQUENTES...
+
+
+
+
+O QUE ACONTECE, AQUI, É ISTO:
+
+
+
+
+        node *tmp = list->next; ///// GO ONE SLOT, TO THE FIRST ELEMENT OF THE LIST, WITH THIS 'next' CALL..
+        free(list); // When we say 'free(list)', we are basically telling it to free the CURRENT NODE...
+        list = tmp; // we assign the current 'list' as the node that we visited with 'list->next', and then repeat the loop...
+
+
+
+
+
+
+
+
+
+
+-> QUER DIZER QUE OS NODES SÃO TODOS LIBERADOS, DA ESQUERDA PARA A DIREITA...
+
+
+
+
+
+
+
+
+
+
+-> OK... COM ISSO, TRANSFORMAMOS 1 ARRAY EM 1 
+
+LINKED LIST...
+
+
+
+
+
+
+
+LINKED LIST HARDCODADA, PQ TEMOS APENAS 3 ELEMENTOS...
+
+
+MAS JÁ TEMOS 1 POUCO DE SAMPLE SYNTAX, QUE PODEMOS USAR PARA MANIPULAR ESSES NODES...
+
+
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR ADMITE QUE PODERÍAMOS TER USADO 
+
+'malloc()' e ALOCAR OS 3 ELEMENTOS, ALL AT ONCE...
+
+
+
+O PROFESSOR FEZ ISSO 1 POR VEZ APENAS PARA MOSTRAR MELHOR COMO 
+É FEITO...
+
+
+
+
+
+
+
+
+
+
+
+
+--> MALLOC PODE 
+
+    FALHAR NO ALLOCATE DE MEMÓRIA... SE SEU PC 
+    FICAR SEM MEMÓRIA, BASICAMENTE...
+
+
+    AÍ O MALLOC VAI RETORNAR NULL PARA VOCÊ... 
+
+    É POR ISSO QUE VC DEVE SEMPRE CHECAR POR 'NULL',
+
+    NO RETURN TYPE DO MALLOC... 
+
+
+
+    EM MACS E PCS,
+
+
+    UMA DAS RAZÕES MAIS COMUNS DE PROGRAMAS FREEZAREM E CRASHAREM 
+
+
+    É JUSTAMENTE ALGUÉM TER ESQUECIDO DE ESCREVER ESSE CHECK,
+
+
+    E POR CONTA DO PROGRAMA TER TOCADO EM MEMÓRIA QUE NÃO DEVERIA 
+    TER TOCADO...
+
+
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR MOSTRA 1 EXEMPLO FINAL, ENVOLVENDO LINKED LISTS...
+
+
+
+
+
+EXEMPLO ENVOLVENDO LINKED LISTS UNIDIMENSIONAIS...
+
+
+
+
+
+
+
+
+
+
+
+--> DEPOIS DISSO, O PROFESSOR VAI MOSTRAR 1 EXEMPLO 
+
+ENVOLVENDO 2 DIMENSOES...
+
+
+
+
+
+
+O PROFESSOR CRIA UMA NOVA LIST,
+
+
+MAS DESSA VEZ COM OS NÚMEROS 
+
+
+
+
+1245 ....
+
+
+
+
+
+
+
+4 items, basicamente... e não estão totalmente em ordem...  
+
+
+
+
+--> DIGAMOS QUE QUEREMOS:
+
+1) INSERIR NOVOS ELEMENTOS NESSA LIST 
+
+
+2) MAS INSERIR CONSIDERANDO 'SORTED ORDER'...
+
+
+
+
+
+
+
+
+
+
+
+-> OU SEJA, VAMOS QUERER 'INSERT THINGS IN THE MIDDLE',
+
+    e não ao início ou final, como geralmente fazemos...
+
+
+
+
+
+
+
+
+
+--> SE QUEREMOS REALMENTE 
+    INSERIR ESSES ELEMENTOS NO MEIO, 
+
+    PRECISAREMOS TRABALHAR 1 POUCO MAIS...
+
+
+
+
+
+
+
+-> DIGAMOS QUE QUEREMOS ADICIONAR O NÚMERO 1, NESSA LINKED LIST...
+
+
+
+
+
+
+
+--> PARA ISSO, O CÓDIGO PODE SER ESTE:
+
+
+
+
+
+
+
+node *n = malloc(sizeof(node));
+
+if (n != NULL) 
+{
+    n->number = 1;
+    n->next = NULL;
+}
+
+
+
+
+
+
+
+ESSE É O MESMO CÓDIGO QUE ESCREVEMOS ANTES... 
+
+
+
+
+
+
+NÓS:
+
+
+1) ALLOCATE THE SIZE OF A NODE 
+
+
+2) WE CHECK IF IT EQUALS NULL 
+
+
+3) WE INITIALIZE IT WITH THE VALUE WE CARE ABOUT 
+
+
+4) BY DEFAULT, WE SET NEXT EQUAL TO 'NULL'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+QUER DIZER QUE, COM ISSO, O NODE COM O NÚMERO 1 
+
+
+
+FICOU SOLTO EM ALGUM LUGAR DA MEMÓRIA,
+
+AINDA 
+
+
+DESCONECTADO DOS ITEMS DA LINKED LIST...
+
+
+
+
+
+
+
+
+
+
+
+intuitivamente, poderíamos plugar 
+o pointer da list 
+
+
+
+AO NODE de número 1... mas 
+
+
+SE FIZERMOS ISSO,
+
+VAMOS ACABAR DEIXANDO 'ÓRFÃOS' 
+
+OS 3 OUTROS NODES,
+
+
+
+OS NODES '245'... --> DEIXAMOS ELES 
+
+
+                        'ÓRFÃOS'
+
+                        JUSTAMENTE PQ 
+
+                        NÓS TEREMOS 'FORGOTTEN WHERE THEY ARE'...
+
+
+
+
+
+
+
+
+
+SE NÃO TEMOS NENHUMA OUTRA VARIABLE 
+
+NO NOSSO CÓDIGO, ESSES OUTROS NODES FICARÃO ÓRFÃOS,
+
+E, POR CONTA DISSO, FICAREMOS COM 1 MEMORY LEAK ABSURDO...
+
+
+
+3 NODES FICARÃO COMPLETAMENTE PERDIDOS NA MEMORY,
+
+SIZE OF 3 NODES,
+
+QUE 
+
+VC NUNCA CONSEGUIRÁ OBTER DE VOLTA... A NÃO SER QUE 
+VC REINICIE O COMPUTADOR,
+
+OU O PROGRAMA QUITTE E O OPERATING SYSTEM LIMPE AS COISAS, PARA VOCÊ...
+
+
+
+
+
+
+
+
+ISSO QUER DIZER QUE 
+
+
+
+''THE ORDER OF OPERATIONS __ ACTUALLY _ MATTERS''...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> ok.. qual é o approach correto, como é o código correto?
+
+
+
+
+
+
+
+É ASSIM:
+
+
+
+
+
+
+
+
+1) comece 
+
+em 'n',
+
+e aí 
+
+UPDATE O FIELD DE 'next',
+
+PARA QUE APONTE __ 
+
+PARA 'THE SAME THING 
+        THE LIST WAS ORIGINALLY POINTING AT''..
+
+
+
+
+
+ex:
+
+
+
+n->next = list;
+
+
+
+
+
+
+2) AÍ, SÓ DEPOIS, 
+    UPDATE A LIST,
+
+    PARA QUE ELA 'POINT TO THE NEW NODE'...
+
+
+
+ex:
+
+
+list = n;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... QUER DIZER QUE O CÓDIGO MUDA UM POUCO...
+
+MUDA UM POUCO PQ ADICIONAMOS O NOVO ELEMENTO, '1',
+
+
+AO INÍCIO DA LINKED LIST...
+
+
+
+
+
+
+
+
+
+
+AGORA DIGAMOS 
+QUE QUEREMOS ALOCAR UM NOVO NÚMERO, '3',
+
+
+A ESSA LINKED LIST DE 1245..
+
+
+
+
+
+
+
+
+
+
+--> ELE PRECISA SER ALOCADO NO MEIO, ENTRE 12 E 45..;
+
+
+
+
+
+
+
+
+
+
+--> PRECISAMOS EVITAR DEIXAR OS NODES 4 E 5 ÓRFÃOS...
+
+
+
+
+
+
+PRECISAMOS DUPLICAR A LIGAÇÃO, COMO ANTES,
+
+E AÍ 
+
+
+TROCAR AS LIGAÇÕSE...
+
+
+
+
+
+
+
+--> tudo para evitar memory leaks,
+    evitar que os nodes fiquem 'perdidos'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> OK.. MAS ESTAMOS PRESTES A ABANDONAR AS LINKED LISTS...
+
+
+
+
+
+LINKED LISTS --> THEY ARE 'GOOD',
+
+
+                BUT THEY ARE __ NOT GREAT...
+
+
+
+
+
+
+
+
+
+--> GOOD --> PQ SÃO DINÂMICAS, E PODEMOS  ADICIONAR ELEMENTOS NO INÍCIO... ISSO SE EU NÃO ME IMPORTAR 
+                                                                            COM SORTED ORDER...
+
+                                                                            MAS SEMPRE TEMOS QUE TRABALHAR 
+                                                                            BASTANTE PARA 
+                                                                            CONSEGUIR INSERIR ELEMENTS,
+                                                                            MANTENDO A SORTED ORDER,
+
+                                                                            NO MIDDLE E END...
+
+
+
+
+
+
+
+--> QUER DIZER QUE FICAMOS COM O DINAMISMO,
+    MAS NÃO FICAMOS COM 1 MELHORIA DE PERFORMANCE...
+
+
+
+
+
+
+
+
+
+
+--> MAS JÁ ABRIMOS 1 NOVO MUNDO A NÓS... AGORA PODEMOS 
+'STITCH TOGETHER THESE DATA STRUCTURES, IN MEMORY',
+BY USING POINTERS AS OUR __ THREADS...
+
+
+
+
+
+PODEMOS USAR A MEMÓRIA COMO CANVAS,
+
+DESENHAR QUAISQUER VALUES QUE QUISERMOS,
+
+
+E AÍ KINDOF 'REMEMBER' OS LOCAIS ONDE ESSES VALUES ESTÃO... MAS O PROBLEMA 
+
+DISSO É 
+
+QUE TUDO ISSO É MT UNIDIMENSIONAL... CONSIDERA APENAS 'LEFT-RIGHT'...
+
+
+
+
+
+
+
+
+
+
+MAS AGORA DEVEMOS PENSAR ISSO EM OUTRAS DIMENSÕES, COMO 'UP' AND 'DOWN'...
+
+
+
+
+
+
+
+
+---> HUMANOS PODEM PENSAR 
+
+    NISSO TUDO DE FORMA MAIS ABSTRATA, COMO 'UP' E 'DOWN'...
+
+
+
+
+
+
+
+
+
+--> PARA ISSO, PODEMOS PENSAR EM 'TREES'...
+
+
+
+
+
+
+--> TREES SEMPRE POSSUEM 
+    UP AND DOWN...
+
+
+
+
+
+
+
+
+
+
+--> TREES DE HEREDITARIEDADE...
+
+
+
+
+
+
+
+
+
+
+
+GROWS FROM TOP TO BOTTOM...
+
+
+
+
+
+
+
+
+
+
+            I 
+            I 
+        ----------
+        I   I    I 
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COM TREES, ESSE CONCEITO DE TREES,
+
+
+PODEMOS ACTUALLY PEGAR ALGUMAS DAS LIÇÕES 
+
+APRENDIDAS COM AS 'LINKED LISTS',
+
+MAS PODEMOS, AO MESMO TEMPO,
+
+
+TER ALGUMAS DAS FEATURES TÍPICAS DE ARRAYS...
+
+
+
+
+
+
+
+
+
+
+
+--> AGORA VAMOS IMPLEMENTAR UMA 'BINARY SEARCH TREE'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> BINARY SEARCH --> É AQUELE ALGORITMO DE PESQUISA BOM, QUE VIMOS NA SEMANA 1...
+
+
+
+
+
+
+
+
+
+
+
+
+-> 'TREE' --> ESSE CONCEITO, QUE VEREMOS AGORA...
+
+
+
+
+
+
+
+
+
+
+
+DIGAMOS QUE TEMOS O ARRAY DA SEMANA 1,
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+1234567
+
+
+
+
+
+
+
+
+
+
+
+--> ELE ESTÁ SORTED, O QUE QUER DIZER QUE PODEMOS APLICAR O BINARY SEARCH NELE...
+
+
+
+
+
+
+
+
+
+
+
+
+--> ESSE TIPO DE SEARCH É POWERFUL PQ O ALGORITMO DELE É O(log n),
+    e concluímos 
+    que 
+
+    é bem melhor do que O(n)...
+
+
+    mas o problema com binary search É QUE 
+    ELE REQUER 
+
+    QUE VC TENHA SEMPRE 1 ARRAY,
+
+
+
+    TENHA UM ARRAY QUE ESTEJA ORDERED... TUDO PARA QUE 
+
+    VC TENHA 'RANDOM ACCESS'... --> VC 
+
+                                    DEVE SER CAPAZ DE 'INDEX INTO' 
+
+                                    NO SEU ARRAY,
+
+                                    COM AQUELA NOTATION DE 
+
+                                    [0] 
+
+                                    [n] [n - 1] 
+
+                                    [n/2],
+
+
+                                    etc...
+
+
+                            --> VC PRECISA SER CAPAZ DE RODAR ARITMÉTICA 
+                                NA DATA STRUCTURE...
+
+
+                            
+
+                        
+                            --> AS LINKED LISTS ERAM BOAS PQ ERAM DINâMICAS,
+                                MAS ERAM RUINS 
+                                PQ 
+
+                                IMPOSSIBILITAVAM ESSA ARITMÉTICA, 
+                                PQ NÃO SÃO ARRAYS,
+
+                                NÃO PERMITEM ESSE ACESSO COM []...
+
+
+
+
+
+-> MAS E SE COMEÇARMOS A PENSAR NÃO EM 1 DIMENSÃO APENAS,
+    MAS EM 2 DIMENSÕES?
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+            [4]
+
+      [2]          [6]
+    
+   [1]  [3]      [5]  [7]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+com isso, FICAMOS COM MAIS DO QUE APENAS WIDTH/LENGTH,
+FICAMOS TAMBÉM COM 'HEIGHT'...
+
+
+
+
+
+
+
+
+
+
+
+--> CERTO... E AÍ PODEMOS JUNTAR TODOS ESSES VALUES,
+                STITCH THEM TOGETHER,
+                USANDO 
+
+                POINTERS...
+
+
+
+
+
+
+
+--> TIPO ASSIM:
+
+
+
+
+        ----[4]----
+       i            i
+      [2]          [6]
+    I    i        i    i
+   [1]  [3]      [5]  [7]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VÁRIOS PARENTS E CHILDS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> COMPUTER SCIENTISTS REALMENTE USAM ESSA ESTRUTURA...
+
+ELES USAM ESTRUTURA PARA QUE:
+
+
+
+
+1) VC TENHA O __ DINAMISMO DE UMA LINKED LIST (com pointers e etc),
+    em que VC FICA CAPAZ DE ADICIONAR MAIS E MAIS NODES à TREE,
+
+    mais e mais squares, ainda mais para baixo da tree, e aí 
+    usar pointers para ligá-los...
+
+
+
+
+
+2) VC EVITE DE COLOCAR ESSES NÚMEROS EM LOCAIS ALEATÓRIOS,
+    E USE 1 ALGORITMO PARA POSICIONAR ESSES ELEMENTOS,
+    PARA ORDENÁ-LOS...
+
+
+
+
+
+--> NO CASO, o professor usou o pattern de 
+
+    'MIDDLE ELEMENT'... o parent é sempre o 
+
+    MIDDLE ELEMENT dos números que vêm antes/depois...
+
+
+
+
+
+
+
+
+--> A LEFT CHILD VAI SER MENOR DO QUE O VALUE DO PARENT,
+
+E O RIGHT CHILD VAI SER MAIOR...
+
+
+
+
+
+
+
+
+
+
+
+
+-> ESSA É UMA DEFINIÇÃO RECURSIVA... É UMA 
+    ESTRUTURA RECURSIVA... 
+
+
+    
+
+    ALGORITMOS/FUNCTIONS PODEM SER RECURSIVAS,
+
+    POR MEIO DO 'CALL THEMSELVES',
+
+
+    MAS ESTRUTURAS TAMBÉM PODEM SER 
+    RECURSIVAS...
+
+
+E CADA UMA DAS CHILDREN É UMA TREE POR SI SÓ,
+
+AGAIN AND AGAIN...
+
+
+
+
+
+
+
+
+
+
+
+--> E TODAS AS ESTRUTURAS RECURSIVAS SÃO UMA OPORTUNIDADE 
+    PARA USAR CÓDIGO RECURSIVO..
+
+
+
+
+
+
+
+
+
+
+--> MAS AÍ FICAMOS COM O DINAMISMO DE PODER ADICIONAR MAIS NODES A ESSA TREE,
+    POR MEIO DO ANEXO DE NOVOS NODES, NA PARTE INFERIOR DA TREE...
+
+    ALÉM DISSO, PRESERVAMOS A PARTE DE 'ORDERING',
+
+    QUE É NECESSÁRIA PARA O BINARY SEARCH...
+
+    É POR ISSO QUE O NOME É 
+
+    'BINARY SEARCH TREE'...
+
+
+
+
+
+
+
+
+
+
+
+--> COM ISSO, PODEMOS PESQUISAR 
+    COISAS DE FORMA MAIS EFICIENTE...
+
+
+
+
+
+
+
+
+EX: ''quero encontrar o número 3''...
+
+
+
+
+
+
+
+
+
+
+COMEÇAMOS PELO TOPO, O PARENT...
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+        ----[4]----
+       i            i
+      [2]          [6]
+    I    i        i    i
+   [1]  [3]      [5]  [7]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> AÍ SABEMOS QUE O '3' É MENOR DO QUE 4...
+
+
+    POR ISSO, PODEMOS EXCLUIR TODA PARTE 
+
+
+    DA DIREITA, DO 6,
+
+    QUE É MAIOR...
+
+
+
+    VAI FICANDO TIPO ASSIM:
+
+
+
+
+
+        ----[4]----
+       i            
+      [2]          
+    I    i        
+   [1]  [3]     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DEPOIS DISSO,
+
+
+
+PROCURAMOS ASSIM:
+
+
+        ----[4]----
+       i            
+      [2]          
+       i        
+      [3]     
+
+
+
+
+
+
+
+
+
+
+
+E AÍ FICAMOS COM O RESULTADO, '3',
+
+NESSA PARTE DA TREE...
+
+
+
+
+
+
+
+
+
+
+
+--> QUER DIZER QUE FICAMOS COM O MESMO TIPO DE PERFORMANCE 
+    DA SEMANA 1,
+
+    O BINARY SEARCH,
+
+    POR MEIO DESSA ESTRUTURA DE ÁRVORE, DE SEUS NODES...
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS COMO PODEMOS IMPLEMENTAR ISSO, NO CÓDIGO...?
+
+
+
+
+
+
+
+
+
+BEM, ANTERIORMENTE, PARA A LINKED LIST,
+
+USAMOS ALGO COMO ISTO:
+
+
+
+
+
+
+typedef struct node 
+{
+    int number;
+    struct node *next;
+}
+node;
+
+
+
+
+
+
+
+
+
+
+
+
+--> AGORA, NO CASO, VAMOS DEFINIR O NODE ASSIM:
+
+
+
+
+
+
+
+typedef struct node 
+{
+    int number;
+    struct node *left;
+    struct node *right;
+}
+node;
+
+
+
+
+
+
+
+
+
+
+
+OU SEJA, DEFINIMOS 2 POINTERS:
+
+
+
+1) UM POINTER PARA A ESQUERDA 
+
+
+
+2) OUTRO POINTER, PARA A DIREITA...
+
+
+
+
+
+
+
+
+FICAMOS COM 2 POINTERS, EM VEZ DE 1 ÚNICO POINTER...
+
+
+
+
+
+
+
+
+
+
+-> É CLARO QUE ISSO IMPLICA 
+    1 GASTO MAIOR DE MEMÓRIA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS COMO PODEMOS IMPLEMENTAR BINARY SEARCH,
+    COM ESSE TIPO DE ESTRUTURA?
+
+
+
+
+
+
+
+
+--> É AQUI QUE BINARY SEARCH FICA INTERESSANTE,
+    COM ESSE TIPO DE ESTRUTURA...
+
+
+
+
+
+
+
+
+
+
+
+
+--> É COM DATA STRUCTURES E POINTERS QUE 
+
+A RECURSION COMEÇA A REALMENTE BRILHAR...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> DIGAMOS QUE TEMOS 1 FUNCTION,
+    CUJO PROPÓSITO É PROCURAR EM 1 TREE,
+    1 NÚMERO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+bool search(node *tree, int number) 
+{
+
+}
+
+
+
+
+
+
+
+
+
+OS ARGUMENTOS SÃO:
+
+
+
+
+
+
+
+1) um pointer, a um NODE... ou seja,
+    1 pointer a 1 tree....
+
+
+
+
+
+2) VAI EXIGIR 1 NUMBER... O NUMBER PELO QUAL VAMOS 
+    LOOK FOR...
+
+
+
+
+
+
+
+
+
+--> A PRIMEIRA COISA QUE FAZEMOS, AQUI,
+
+É CHECAR POR NULL,
+
+
+NESSE PARÂMETRO DE 'tree',
+
+TIPO ASSIM:
+
+
+
+
+
+bool search(node *tree, int number) 
+{
+
+    if (tree == NULL) 
+    {
+        return false;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CHECADO ESSE POINTER POR 'NULL',
+
+
+
+CONTINUAMOS...
+
+
+
+
+ELSE,
+
+
+VAMOS 
+
+CHECAR SE 
+
+
+''THE NUMBER WHICH WE ARE LOOKING FOR 
+IS _ LESS __ THAN THE TREE'S OWN NUMBER''....
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+bool search(node *tree, int number) 
+{
+
+    if (tree == NULL) 
+    {
+        return false;
+    }
+    else if (number < tree->number)
+    {
+        return search(tree->left, number);
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> OU SEJA,
+
+AQUI TEREMOS RECURSION...
+
+
+PQ VAMOS CHAMAR A PRÓPRIA FUNCTION DE 'search',
+
+MAS 
+
+
+COM a parte do 'left'...
+
+
+
+
+e vamos usar a -> (arrow) PARA 
+
+'go' até o address de esse child...
+
+
+
+
+
+
+
+
+
+
+
+--> COM ISSO, CONSEGUIMOS 
+    DIVIDIR A TREE PELA METADE...
+
+
+
+
+
+
+
+
+    --> AÍ ESCREVEMOS A OUTRA PARTE, O SEARCH PELA PARTE
+    DA DIREITA,
+
+    TIPO ASSIM:
+
+
+
+    
+bool search(node *tree, int number) 
+{
+
+    if (tree == NULL) 
+    {
+        return false;
+    }
+    else if (number < tree->number)
+    {
+        return search(tree->left, number);
+    }
+    else if (number > tree->number)
+    {
+        return search(tree->right, number);
+    }
+
+
+}
+
+
+
+
+
+
+CERTO...
+
+
+
+
+
+DEPOIS DISSO,
+
+
+
+
+TEMOS MAIS 2 CASES...
+
+
+
+
+
+
+
+
+
+
+--> O TERCEIRO CASE É ''O NÚMERO FOI ENCONTRADO''...
+
+
+
+
+--> PARA ISSO, PODEMOS ESCREVER ASSIM:
+
+
+
+
+
+bool search(node *tree, int number) 
+{
+
+    if (tree == NULL) 
+    {
+        return false;
+    }
+    else if (number < tree->number)
+    {
+        return search(tree->left, number);
+    }
+    else if (number > tree->number)
+    {
+        return search(tree->right, number);
+    }
+    else {
+        printf("The number was found");
+        return true;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONSEGUIMOS BINARY SEARCH DE VOLTA, O QUE É LEGAL...
+
+
+
+
+
+
+
+MAS PAGAMOS 1 PREÇO.... O PREÇO 
+
+
+É A MEMÓRIA...
+
+
+
+
+
+
+
+SPACE... --> 
+
+
+
+
+
+
+
+
+NO CASO, GASTAMOS MEMORY SPACE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+inserting --> TAMBÉM 
+                NÃO É MAIS 'CONSTANT TIME'...
+
+
+
+
+
+
+--> O INSERT VAI DEMORAR MAIS...
+    PQ PRECISAMOS 'PRESERVE THE ORDER',
+
+    E VAMOS PRECISAR BALANCEAR TUDO...
+
+
+
+
+
+
+--> COMO ESTAMOS COM 2 POINTERS PARA CADA NODE,
+    FICAMOS COM MAIS ESPAÇO GASTO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> QUAL SERÁ O RUNNING TIME 
+    DO INSERT, EM 1 TREE DESSAS?
+
+
+
+
+
+
+
+
+
+
+
+
+    ''WHATS THE RUNNING TIME OF INSERTING INTO A BINARY SEARCH TREE?''
+
+
+
+
+
+
+--> É 
+
+
+O (log n)...
+
+
+
+
+
+
+
+
+ --> BINARY SEARCH --> GERALMENTE SIGNIFICA ALGO LOGARÍTIMICO...
+
+
+
+
+
+
+
+
+
+O (log n)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... MAS PQ ISSO?
+
+
+
+
+
+
+
+
+
+É PQ SIMPLESMENTE VAMOS CRIANDO NODES MAIS PARA BAIXO...
+
+
+
+
+
+
+
+
+EX: 'QUERO ADICIONAR 1 NOVO NODE, DE VALUE 8'....
+
+
+
+
+
+fica tipo assim:
+
+
+
+
+
+
+
+
+        ----[4]----
+       i            i
+      [2]          [6]
+    I    i        i    i
+   [1]  [3]      [5]  [7]
+                        i
+                    --------
+                            i 
+                           [8]
+
+
+
+
+
+
+
+
+
+
+
+
+
+QUANTAS ETAPAS DEMORA PARA ENCONTRAR A LOCATION DO 
+
+'8',
+
+para inserí-lo?
+
+
+
+
+
+é realmente O (log n)...
+
+
+
+
+
+
+
+
+OK... MAS DIGAMOS QUE 
+        COMEÇAMOS 
+
+        A INSERIR ELEMENTS QUE 
+
+
+
+        NOS DEÊM ''A BIT OF BAD LUCK''...
+
+
+
+
+
+--> OU SEJA,
+
+IMAGINE QUE INSERIMOS OS NÚMEROS ASSIM:
+
+
+
+
+
+
+1 
+V
+2 
+V
+3
+
+
+
+
+
+
+
+
+
+
+ESSA TREE ESTÁ TECNICAMENTE CORRETA,
+
+MAS É UM 'CORNER CASE',
+
+1 CASE PERVERSO,
+
+
+
+
+JUSTAMENTE PQ A MANEIRA PELA QUAL VC 
+INSERE AS COISAS, NESSE EXEMPLO,
+
+
+VAI SE PARECER 
+
+MAIS COM O INSERT 
+
+
+EM 1 LINKED LIST...
+
+
+
+
+
+
+
+
+OK... QUER DIZER QUE FICAMOS COM 
+
+
+1 'BINARY SEARCH TREE',
+
+MAS, AO MESMO TEMPO,
+
+FICAMOS COM UMA 'LINKED LIST'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> QUER DIZER QUE ATÉ MESMO AS DATA STRUCTURES 
+MAIS BEM INTENCIONADAS, SE RECEBEREM ALGUM INPUT ERRADO,
+TIVEREM AZAR OU ALGUM DESIGN RUIM, PODEM EVOLUIR PARA 
+
+1 DATA STRUCTURE TOTALMENTE DIFERENTE, POR ACASO...
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS HÁ UMA MANEIRA DE RESOLVER ISSO,
+    MESMO COM ESSA SITUAÇÃO PERVERSA,
+
+    1 JEITO DE INSERIR ELEMENTS EXTRAS,
+    MESMO COM ESSE IMPREVISTO...
+
+
+
+
+
+
+
+
+---> ''A SOLUTION 
+        TO MAKE SURE THAT THIS TREE,
+        WITH 123, DOESN'T GET LONG AND STRINGY''...
+
+
+
+
+
+
+
+
+
+--> ALGUMAS PESSOAS SUGEREM QUE VC FAÇA 
+    COM QUE '2' SEJA O ROOT NODE, NO TOPO DA TREE...
+
+
+
+
+
+
+
+
+
+
+    tipo asSim:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        2 
+        i
+    i------i
+    1      3
+
+
+
+
+
+E ESSA É JUSTAMENTE A SOLUÇÃO... MUDAMOS 
+
+
+QUAL É A 'ROOT' 
+
+
+DA TREE...
+
+
+
+
+
+
+
+
+
+
+--> AULAS DE DATA STRUCTURE MAIS AVANÇADAS, SOBRE ALGORITMOS,
+
+VC 
+
+VAI ESTUDAR COISAS COMO:
+
+
+ AVL TREES (red black trees),
+
+    QUE SÃO DIFERENTES TIPOS DE ESTRUTURAS 'TREE',
+    QUE 
+    POSSUEM ALGORITMOS BUILT-IN QUE 
+
+    BASICAMENTE 
+
+    SHIFTAM AS COISAS, DE ACORDO COM O NECESSÁRIO... TUDO PARA QUE 
+
+    A TREE SEJA CONSTANTEMENTE REBALANCEADA, A MEDIDA QUE COISAS 
+    SÃO INSERIDAS...
+
+
+
+
+
+
+
+
+
+--> RESUMINDO: ESSE 'BALANCING' PODE CUSTAR 1 POUCO DE 
+                TEMPO, 
+
+                MAS VAI GERALMENTE VALER A PENA,
+
+                PQ VAI SALVAR TEMPO, OVERALL...
+
+
+
+
+
+
+
+
+--> É POR ISSO QUE DIZEMOS QUE 
+
+
+
+''INSERT EM 
+
+    UMA __BALANCED__ BINARY SEARCH TREE 
+
+    É __ O (log n), MAS ISSO 
+
+    EXIGE QUE VC 
+
+    GARANTA QUE 
+
+    A SUA TREE FIQUE 'BALANCED' '''
+
+
+
+
+
+
+
+
+
+
+--> OK...
+
+
+
+
+
+
+
+
+
+
+O (log n) 
+
+
+É BEM MELHOR DO QUE O(n)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... MAS COMO PODEMOS FICAR COM O MELHOR DOS 2 MUNDOS...?
+
+
+
+O MELHOR DAS LINKED LISTS E O MELHOR DOS ARRAYS...
+
+
+
+
+
+
+
+
+
+
+
+
+-_> TIPO UM FRANKENSTEIN...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> A MELHOR COISA SERIA SE 
+
+
+
+
+
+
+O RUNTIME FOSSE UM 
+
+
+
+CONSTANT TIME,
+
+
+DE 'O(n)'...
+
+
+
+
+
+--> para isso, 
+    PRECISAMOS DE UM NOVO CONCEITO,
+
+
+
+    DE 'HASH TABLES'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+HASH TABLE --> É OUTRA DATA STRUCTURE,
+                QUE É ESSENCIALMENTE 
+
+                UM __ ARRAY__ DE LINKED LISTS...
+
+
+
+
+
+
+
+
+
+
+
+
+-> HASH TABLE:
+
+
+
+
+
+
+
+
+
+
+--> DIGAMOS QUE COMEÇAMOS COM 1 ARRAY, DE TAMANHO 26...
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+CERTO... 26 CÉLULAS...
+
+
+
+
+
+
+
+AGORA SUPONHA QUE A DATA STRUCTURE QUE VAMOS ARMAZENAR, AGORA,
+
+
+É ALGO MAIS INTERESSANTE DO QUE NUMBERS...
+
+
+
+COMO:
+
+1) NAMES 
+
+2) DICTIONARIES...
+
+
+
+
+
+
+
+
+
+
+SERIA BOM SE O TEMPO FOSSE CONSTANTE, PARA ENCONTRAR PESSOAS NESSA LIST...
+
+
+
+
+
+
+
+
+
+
+
+
+--> AÍ DIGAMOS QUE TEMOS ESSE ARRAY,
+
+DE TAMANHO 26...
+
+
+
+
+
+
+
+
+26 --> 26 LETRAS, DO ALFABETO...
+
+
+
+
+
+
+A TO Z...
+
+
+
+
+
+
+
+
+
+--> AGORA DIGAMOS QUE QUEREMOS 
+    INSERIR TODOS MEUS AMIGOS 
+
+
+    NO APP DE CONTATOS... ONDE ELES FICARIAM, BASICAMENTE?
+
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+A[]
+B[]
+C[]
+D[]
+E[]
+F[]
+G[]
+H[]
+I[]
+J[]
+K[]
+L[]
+M[]
+N[]
+O[]
+P[]
+Q[]
+R[]
+S[]
+T[]
+U[]
+V[]
+W[]
+X[]
+Y[]
+Z[]
+
+
+
+
+
+
+
+
+
+
+
+CERTO... AGORA DIGAMOS QUE, AO INSERIR UM NOVO AMIGO/CONTATO,
+
+
+COLOCO ESSE AMIGO EM ALGUMA LOCATION EM QUE ''THERE IS A RELATION TO THE NAME ITSELF''...
+
+
+
+
+
+
+
+--> NÃO VAMOS COLOCAR NO INÍCIO,
+    NÃO VAMOS COLOCAR ELE ALFABETICAMENTE,
+
+    E SIM 
+
+    VAMOS COLOCAR 
+
+    EM 1 LOCAL ESPECÍFICO DE ESSE ARRAY...
+
+
+
+
+
+DIGAMOS QUE O NOME É 'Albus'...
+
+
+
+
+
+
+
+
+--> O PROFESSOR COLOCA ELE NO PRIMEIRO SLOT DO ARRAY,
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+A[] -> Albus
+B[]
+C[]
+D[]
+E[]
+F[]
+G[]
+H[]
+I[]
+J[]
+K[]
+L[]
+M[]
+N[]
+O[]
+P[]
+Q[]
+R[]
+S[]
+T[]
+U[]
+V[]
+W[]
+X[]
+Y[]
+Z[]
+
+
+
+
+
+
+
+AÍ DIGAMOS QUE QUEREMOS ADICIONAR 'ZACHARIAS'...
+
+
+
+
+
+
+
+
+
+
+
+
+A[] -> Albus
+B[]
+C[]
+D[]
+E[]
+F[]
+G[]
+H[]
+I[]
+J[]
+K[]
+L[]
+M[]
+N[]
+O[]
+P[]
+Q[]
+R[]
+S[]
+T[]
+U[]
+V[]
+W[]
+X[]
+Y[]
+Z[] -> Zacharias
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> CERTO...
+
+
+
+
+
+
+
+AQUI ESTAMOS 'JUMPING AROUND'...
+
+PULAMOS DE '0' PARA '25',
+
+
+
+MAS FIZEMOS ISSO EM CONSTANT TIME,
+
+O QUE É ÓTIMO...
+
+
+
+
+
+
+
+
+
+
+
+--> DIGAMOS QUE A TERCEIRA PESSOA É 'HERMIONE'...
+
+
+
+
+
+
+
+
+--> PODEMOS COLOCAR 
+
+NO SLOT roughly do 'h',
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+
+A[] -> Albus
+B[]
+C[]
+D[]
+E[]
+F[]
+G[]
+H[] -> Hermione
+I[]
+J[]
+K[]
+L[]
+M[]
+N[]
+O[]
+P[]
+Q[]
+R[]
+S[]
+T[]
+U[]
+V[]
+W[]
+X[]
+Y[]
+Z[] -> Zacharias
+
+
+
+
+
+
+
+
+
+
+
+7 --> sétimo caracter do alfabeto, H....
+
+
+
+
+
+
+
+
+
+
+
+
+-> AÍ ADICIONAMOS MTAS OUTRAS PESSOAS,
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+A[] -> Albus
+B[]
+C[] -> Cedric
+D[] -> Draco
+E[]
+F[] -> Fred
+G[] -> Ginny
+H[] -> Hermione
+I[]
+J[] -> James
+K[] -> Kingsley
+L[] -> Luna
+M[] -> Minerva
+N[] -> Neville
+O[]
+P[] -> Petunia
+Q[]
+R[] -> Ron
+S[] -> Severus
+T[]
+U[]
+V[] -> Vernon
+W[]
+X[]
+Y[]
+Z[] -> Zacharias
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAS AÍ FICAMOS COM 1 PROBLEMA...
+
+
+
+
+
+
+
+--> O PROBLEMA É SIMPLES:
+
+
+''PODEMOS TER APENAS 1 PESSOA 
+    POR SLOT DE LETRA,
+    NESSE NEGÓCIO''...
+
+
+
+
+
+
+
+
+
+
+
+
+EX: QUEREMOS ARMAZENAR HERMIONE E HARRY, EM 1 MESMO SLOT...
+
+
+
+
+
+
+--> AMBOS COMEÇAM COM H...
+
+
+
+
+
+
+--> SE ISSO É UM ARRAY, ISSO É UM DEAL-BREAKER,
+    PQ AÍ TUDO QUEBRA... PQ PODERÍAMOS, SIM,
+    AUMENTAR O ARRAY,
+
+    MAS AÍ TERÍAMOS DE REORDENAR TUDO,
+
+    E SERIA UMA MESS...
+
+
+
+
+
+
+
+
+
+--> MAS TEMOS UMA ALTERNATIVA, AQUI...
+
+
+
+
+
+
+-> PODEMOS PEGAR EMPRESTADA A IDEIA DE 'LINKED LISTS'...
+
+
+
+
+
+
+
+-> PODEMOS CRIAR 1 __ ARRAY__ DE LINKED LISTS...
+
+
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+A[] -> Albus
+B[]
+C[] -> Cedric
+D[] -> Draco
+E[]
+F[] -> Fred
+G[] -> Ginny
+H[] -> Hermione -> Harry
+I[]
+J[] -> James
+K[] -> Kingsley
+L[] -> Luna
+M[] -> Minerva
+N[] -> Neville
+O[]
+P[] -> Petunia
+Q[]
+R[] -> Ron
+S[] -> Severus
+T[]
+U[]
+V[] -> Vernon
+W[]
+X[]
+Y[]
+Z[] -> Zacharias
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> COM ISSO, EVITAMOS ESSE PROBLEMA...
+
+
+
+
+
+
+
+
+
+-> NÃO É IDEAL, 
+    PQ AÍ FICAMOS COM 2 ETAPAS PARA CHEGAR AO HARRY,
+
+    EM VEZ DE 1 ÚNICA ETAPA...
+
+
+
+
+
+
+
+MESMA COISA PARA O HAGRID, 3 ETAPAS:
+
+
+
+
+
+
+A[] -> Albus
+B[]
+C[] -> Cedric
+D[] -> Draco
+E[]
+F[] -> Fred
+G[] -> Ginny
+H[] -> Hermione -> Harry -> Hagrid
+I[]
+J[] -> James
+K[] -> Kingsley
+L[] -> Luna
+M[] -> Minerva
+N[] -> Neville
+O[]
+P[] -> Petunia
+Q[]
+R[] -> Ron
+S[] -> Severus
+T[]
+U[]
+V[] -> Vernon
+W[]
+X[]
+Y[]
+Z[] -> Zacharias
+
+
+
+
+
+
+
+
+
+MAS SOLUCIONAMOS O PROBLEMA...
+
+
+
+
+
+
+
+
+
+
+
+--> E 1 HASH TABLE É EXATAMENTE ESSE TIPO DE ESTRUTURA...
+    É UM ARRAY DE LINKED LISTS (pode ser implementado dessa forma),
+
+
+    E FUNCIONA A PARTIR DA IDEIA DE 
+
+
+    UMA 'HASH FUNCTION'..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> HASH FUNCTION --> É O QUE NOS DEIXA MAPPEAR NÃO SÓ 
+                        'HERMIONE, HARRY, HAGRID',
+
+
+                        MAS TAMBÉM 
+
+
+                        RON, REMUS,
+
+                        SERVUS, SIRIUS,
+
+
+
+                        TODOS ELES __ DETERMINISTICAMENTE... ( ou seja, sem NENHUMA ALEATORIEDADE)...
+
+
+
+
+
+
+
+                    --> ''NO RANDOMNESS INVOLVED, HERE... EVERY TIME 
+                        I LOOK AT THESE PEOPLE'S NAMES, I WILL FIGURE OUT WHERE 
+                        THEY BELONG, AND THAT LOCATION WILL NEVER CHANGE'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAS COMO FAZEMOS ISSO?
+
+
+
+
+
+
+
+
+
+
+
+-> BASTA RETORNARMOS AO CONCEITO DE PROBLEM SOLVING ITSELF...
+
+AQUILO:
+
+
+
+
+
+
+
+
+INPUT -> [] -> OUTPUT 
+
+        BLACK BOX ...
+
+
+
+
+-> A HASH FUNCTION 
+    É BASICAMENTE O 'SECRET SAUCE',
+
+    DENTRO DE ESSA BLACK BOX...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> HASH FUNCTION --> É UMA FUNCTION QUE 
+                    ACEITA, COMO INPUT,
+
+
+                    1 STRING...
+
+
+
+
+1 STRING COMO 'HARRY', OU 'HERMIONE'...
+
+
+
+
+
+
+
+
+
+
+
+
+--> OBTIDA ESSA STRING,
+    ESSA HASH FUNCTION RETORNA 1 OUTPUT,
+
+    QUE GERALMENTE SERÁ UM __ NÚMERO...
+
+
+
+
+
+
+
+
+
+
+--> NO NOSSO CASO, AQUI, O NÚMERO SERÁ ENTRE 0 E 25...
+
+
+
+
+
+
+
+
+
+
+
+
+--> PARA CONSEGUIRMOS IMPLEMENTAR ESSA HASH FUNCTION,
+    NO CÓDIGO,
+
+    TEREMOS QUE ESCREVER UMA FUNCTION C QUE:
+
+
+
+
+        1) EXIGE 1 STRING (ou char*)
+
+        2) E RETORNA UM INT, DE 0 A 25...
+
+
+
+
+
+        TUDO PARA QUE EU SAIBA 'HOW TO CONVERT 
+                                HARRY/HAGRID/HERMIONE'
+
+                                AO NÚMERO 7, POR EXEMPLO...
+
+
+
+
+
+
+
+
+
+
+                ALBUS --> VIRA 0 
+
+
+
+                ZACHARIAS --> VIRA 25...
+
+
+
+
+
+
+
+
+
+
+
+-> O PADRÃO:
+
+
+
+
+
+
+O CÓDIGO QUE VOU ESCREVER VAI BASICAMENTE OLHAR PARA O INPUT DO USER,
+
+AÍ DETERMINAR O PRIMEIRO CARACTER,
+
+
+
+E AÍ VAI OBTER 1 NÚMERO ENTRE 0 E 25...
+
+
+
+
+
+
+
+--> A PARTIR DISSO, PODEMOS PEGAR 
+    NOSSOS BUILDING BLOCKS E RESOLVER NOSSO PROBLEMA MAIS EFICIENTEMENTE...
+
+
+
+
+
+
+
+
+
+-_> MAS FICAMOS COM OUTRO PROBLEMA... ALGUMAS DE NOSSAS LINKED LISTS 
+FICAM 1 POUCO LONGAS DEMAIS...
+
+            --> FICAMOS COM VÁRIAS CHAINS...
+
+                CHAINS EM CADA ENTRY DO ARRAY...
+
+
+
+
+
+
+
+
+EX:
+
+
+
+A[] -> Albus
+B[]
+C[] -> Cedric
+D[] -> Draco
+E[]
+F[] -> Fred
+G[] -> Ginny
+H[] -> Hermione -> Harry -> Hagrid
+I[]
+J[] -> James
+K[] -> Kingsley
+L[] -> Luna -> Lily -> Lucius -> Lavender
+M[] -> Minerva
+N[] -> Neville
+O[]
+P[] -> Petunia
+Q[]
+R[] -> Ron
+S[] -> Severus
+T[]
+U[]
+V[] -> Vernon
+W[]
+X[]
+Y[]
+Z[] -> Zacharias
+
+
+
+
+
+
+
+
+
+
+
+
+E COMO FICAMOS COM VÁRIOS ITEMS EM ALGUMAS DAS LINKED LISTS,
+
+
+NÃO FICAMOS COM CONSTANT TIME...
+
+
+
+
+
+
+
+ALGUNS ITEMS DO ARRAY, QUE POSSUEM 1 ÚNICO ITEM NA LINKED LIST,
+
+ENTREGAM CONSTANT TIME PARA PROCURAR ITEMS... MAS OS OUTROS,
+
+EM QUE HÁ MTOS NOMES NAS 'CORRENTES', DEMORAM MAIS...
+
+
+
+
+
+
+
+--> O QUE PODERÍAMOS FAZER, PARA MELHORAR ESSA SITUAÇÃO....
+
+
+    AINDA USAR 1 HASH TABLE,
+
+    UMA HASH FUNCTION,
+
+    MAS RESOLVER ESSE PROBLEMA,
+
+
+    DE TER MUITAS 'COLLISIONS',
+
+
+    mtos nomes colidindo, uns com os outros...
+
+
+
+
+
+
+
+
+
+--> ALGUNS ALUNOS RESPONDEM
+ 
+ ''TALVEZ OLHAR MAIS DO QUE A PRIMEIRA 
+    LETRA, OLHAR A SEGUNDA LETRA, ETC...''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ou seja,
+
+
+
+
+1 LINKED LIST PARA CADA 1 DAS COMBINAÇÕES DE CARACTERES?
+
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+Ha[] -> Harry -> Hagrid
+Hb[]
+Hc[]
+Hd[]
+He[] -> Hermione
+Hf[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK, ISSO RESOLVEU 1 POUCO DO CHAINING,
+
+MAS AINDA TEMOS 1 POUCO DE 'MESMA LOCATION',
+
+
+COMO COM 'HARRY' E 'HAGRID'...
+
+
+
+
+
+
+
+
+
+
+--> ISSO AINDA É UM PROBLEMA, BASICAMENTE...
+
+
+
+
+
+
+
+
+
+--> PRECISAMOS DE UMA SOLUÇÃO MELHOR...
+
+
+
+
+
+
+
+--> SERIA BOM CONSEGUIR ESPALHAR AINDA MAIS...
+
+
+
+
+
+
+
+
+
+
+
+-> PARA ISSO, BASTA USAR AS 3 PRIMEIRAS LETRAS...
+
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+Haa[] -> ... -> ...
+Hab[]
+Hac[]
+Had[]
+Hae[] -> ...
+Haf[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COM ISSO, CONSEGUIMOS ESPALHAR OS NOMES, NOS BUCKETS, BEM MELHOR DO QUE ANTES....
+
+
+
+
+
+
+
+
+
+
+MAS QUE PREÇO ESTAMOS PAGANDO, AQUI?
+
+
+
+
+
+
+
+
+
+
+-> ESTAMOS FICANDO COM 1 LOOKUP TIME BEM MELHOR,
+
+
+
+    MAS ESTAMOS FICANDO COM GASTOS DE MEMÓRIA ABSURDOS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> QUANTIDADES DE MEMÓRIA ABSURDAS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+ORIGINALMENTE, TÍNHAMOS 26 BUCKETS --> 26 SLOTS...
+
+
+
+
+
+
+AA a ZZ, ficamos com 676 buckets...
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAS SE FICAMOS COM 26*26*26,
+
+
+FICAMOS COM 
+
+
+
+17576 buckets...
+
+
+
+
+
+
+
+
+O PROBLEMA, AQUI,
+
+É QUE 
+
+
+
+''I PROBABLY DON'T KNOW 
+    THAT MANY PEOPLE,
+
+    PEOPLE THAT START WITH ZFA...'' 
+
+
+
+
+
+
+
+-->  MTOS DOS BUCKETS FICARÃO EMPTY,
+
+    MAS VC AINDA VAI PRECISAR DELES,
+
+    PARA QUE SUA ARITMÉTICA CONSIGA FUNCIONAR...
+
+
+
+
+
+
+    --> QUER DIZER QUE O TRADEOFF 
+        É BEM RUIM, NESSE CASO...
+
+
+
+
+
+
+
+--> É POR ISSO QUE ENCONTRAR OS TRADEOFFS MAIS BENÉFICOS 
+    É BEM DIFÍCIL...
+
+
+
+
+
+
+
+
+
+
+-> OK... MAS HASH TABLES SÃO FAMILIARES...
+
+
+
+
+
+
+
+-> LEMBRA 1 POUCO 
+
+'PLAYING CARDS'..
+
+
+
+
+
+
+
+cartas de hearts, spades, clubs, diamonds..
+
+
+
+
+
+
+
+
+
+-> NÓS DIVIDIMOS ELAS EM CATEGORIAS...
+
+
+
+
+
+
+
+
+
+
+
+O PROFESSOR PEGA 4 BUCKETS,
+
+1 PARA CADA NAIPE...
+
+
+
+
+
+
+
+
+--> SE VC JÁ DIVIDIU CARTAS POR:
+
+1) SUIT 
+
+2) NUMBER,
+
+
+
+
+VC JÁ FEZ HASH DE VALUES, NA SUA VIDA...
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+
+DIAMOND   CLUB     HEART     SPADES 
+
+
+
+
+
+
+
+
+
+
+--> AÍ VC PODE HASHEAR 1 CARTA POR VEZ,
+    COLOCAR EM CADA 1 DOS BUCKETS, A PARTIR DO INPUT...
+
+
+
+
+
+
+
+    EX: 'ACE OF SPADES, VAI NO BUCKET DOS SPADES'...
+
+
+
+
+
+
+
+
+--> BASICAMENTE CRIAMOS 1 VALUE NUMÉRICO,
+    A PARTIR DE CADA INPUT...
+
+
+
+
+
+
+
+
+
+
+
+--> MAS PQ FAZEMOS ISSO?
+
+
+
+
+
+
+
+
+
+--> PARA CHEGARMOS ÀS COISAS MAIS RÁPIDO...
+
+
+
+    --> FICAMOS COM OPTIMIZAÇÕES, BASICAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> UMA HASH TABLE É ALL ABOUT 'STORE INFORMATION',
+
+                        MAS STORE INFORMATION JUSTAMENTE PARA QUE VC 
+                        CONSIGA CHEGAR A ESSA INFO MAIS RAPIDAMENTE...
+
+
+
+
+
+
+
+                        PQ SE VC PRECISA PROCURAR A CARTA DE OUROS DENTRO DOS OUROS,
+
+                        VC VAI PRECISAR PROCURAR DENTRE 13 CARTAS, EM VEZ DE 52...
+
+                        o que é uma grande melhoria...
+
+
+
+
+
+
+
+--> QUER DIZER QUE 
+HASH TABLES TE DEIXAM 
+
+
+'BUCKETIZE' SEUS INPUTS,
+
+
+E AÍ OBTER ACESSO A SUA DATA MAIS RAPIDAMENTE...
+
+
+
+
+NÃO NECESSARIAMENTE EM 1 ÚNICA ETAPA, MAS CERTAMENTE MAIS RÁPIDO 
+
+DO QUE PROCURAR ALGO LINEAR OU LOGARITMICAMENTE...
+
+
+
+
+
+
+
+
+
+--> IDEALMENTE,
+    VC ESTÁ TENTANDO ESCOLHER UMA HASH FUNCTION QUE _ MINIMIZE__ O NÚMERO 
+    DE ELEMENTOS QUE 'COLIDEM',
+
+
+
+    ISSO POR MEIO NÃO DE ALGO COMO 'A to Z',
+
+    e sim algo como 
+
+    'AA to ZZ'...
+
+
+
+
+
+
+
+
+
+
+--> OK... AÍ A PERGUNTA É 
+
+
+
+
+''WHATS THE RUNNING TIME OF SEARCHING A HASH TABLE?''
+
+
+
+
+
+
+
+
+
+--> é O(n), tecnicamente...
+
+
+
+
+
+
+
+
+
+
+
+--> AQUI TEMOS A DIFERENÇA ENTRE 
+
+    
+    A ACADEMIA E A PROGRAMAÇÃO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+REAL WORLD PROGRAMMER --> UM BUCKET COM 13 CARTAS É BEM MELHOR DO QUE 1 BUCKET DE 52 CARTAS... É BEM MAIS RÁPIDO O SEARCH...
+
+
+
+
+
+
+ACADEMIC --> 'Asymptotically', é tecnicamente O(n)... 
+
+
+
+            Asymptotically --> significa ''a medida que a quantidade de cartas aumenta''...
+
+
+
+    
+
+
+
+
+
+MAS AQUI TEMOS 1 CONTRASTE 
+
+
+ENTRE O MUNDO REAL E O 
+
+MUNDO TÉCNICO..
+
+
+
+
+
+
+
+
+
+
+''SIM, AINDA É TECNICAMENTE O MESMO QUE 1 LINKED LIST''....
+
+
+
+
+
+
+''MAS SE VC ACTUALLY HASHEAR ESSES VALUES IN ADVANCE,
+    VC VAI FICAR COM ALGO BEM MAIS RÁPIDO, IN WALL CLOCK TIME''...
+
+
+
+
+
+
+
+
+
+
+
+
+
+RESUMINDO:
+
+dizer que 'O(n)'
+
+
+É CORRETO...
+
+
+
+
+MAS QUANTO à REAL WORLD PROGRAMMING,
+
+
+
+ISSO NÃO ACONTECE...
+
+
+
+
+
+
+
+
+
+
+-> O PROBLEMA DESSA SEMANA VAI PEDIR QUE VC 
+
+IMPLEMENTE 1 HASH TABLE COM 100k english words...
+
+
+
+
+
+
+-_> O DESAFIO VAI SER CARREGAR 
+
+    TODAS ESSAS PALAVRAS NA MEMÓRIA DO SEU PC,
+    USANDO 1 HASH TABLE....
+
+
+
+
+
+
+
+
+--> ''SE VC FOR SIMPLISTA 
+    E TENTAR USAR 1 HASH TABLE 
+    COM APENAS A to Z, 26 buckets,
+    VC VAI FICAR COM MTAS COLISÕES...''
+
+
+
+
+    ''ISSO PQ 140.000 words...
+
+    MTAS PALAVRAS VAO COMEÇAR COM AS MESMAS LETRAS''...
+
+
+
+
+
+
+
+
+
+
+AA TO ZZ -- TALVEZ MELHOR...
+
+
+
+
+AAA TO ZZZ --> TALVEZ MELHOR...
+
+
+
+
+
+
+MAS VC TEM QUE BALANCEAR 
+
+
+
+
+'MEMÓRIA X TEMPO'...
+
+
+
+
+
+
+
+
+
+
+--> VER QUÃO POUCA MEMÓRIA VC 
+    
+    PODE USAR,
+
+    AO MESMO TEMPO 
+    QUE SEU CÓDIGO N DEMORE ANOS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... MAS O PROFESSOR MOSTRA ALGUMAS OUTRAS IDEIAS 
+QUE PODEMOS IMPLEMENTAR, com nossos building blocks...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR FALA DO CONCEITO DE 'tries'...
+
+
+
+
+
+
+
+
+
+
+
+--> 'TRIES' --> É UM TIPO DE TREE __ DIFERENTE_...
+
+
+
+
+
+
+
+
+
+
+' TRIES' -> É UM __ 'PREFIX TREE'...
+
+
+
+
+
+
+
+
+
+
+'TRIES' -> É TIPICAMENTE USADA PARA ARMAZENAR WORDS,
+            OU OUTROS TIPOS DE DATA MAIS SOFISTICADOS, EM VEZ DE 
+            APENAS NUMBERS..
+
+
+
+
+
+
+
+'TRIES' --> É UMA __ TREE 
+            FORMADA POR ARRAYS...
+
+
+
+
+
+    
+
+
+
+
+--> ou seja, é uma mistureba de conceitos...
+
+
+
+
+
+
+
+
+
+
+
+
+UM TRI TEM ESTE FORMATO:
+
+
+
+
+[][][][][][][][][][][][][][][][][][][][][][][][][][]
+
+
+
+
+
+
+
+
+
+
+
+
+
+CERTO... MAS ELA TEM 1 PROPRIEDADE INCRÍVEL,
+MELHOR DO QUE TUDO QUE VIMOS ATÉ AGORA...
+
+
+
+
+
+
+
+
+CADA 1 DOS QUADRADOS É UM 'NODE'...
+
+
+
+
+
+
+
+'NODE' --> em cada 1 deles temos 1 ARRAY, de tamanho 26...
+
+
+
+
+
+
+
+
+
+
+
+--> E CADA 1 DAS LOCATIONS, BUCKETS, REPRESENTA 'A TO Z'...
+
+
+
+
+
+
+
+
+--> CADA VEZ QUE VAMOS INSERIR 1 NOME,
+NÓS VAMOS 'WALK THROUGH THE LETTERS OF THEIR NAME',
+
+E AÍ 
+
+VAMOS 
+
+__ SEGUIR___ 
+
+1 SÉRIE DE POINTERS... DE 1 NODE A OUTRO..
+
+
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+QUERO INSERIR HAGRID... FICA TIPO ASSIM:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> CERTO...
+
+
+
+
+
+AÍ, SE QUEREMOS INSERIR O 'A', de HAGRID,
+
+
+
+VOU EM FRENTE E CRIO UM NOVO NODE, REPRESENTANDO 26 LETTERS...
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+              H  
+[][][][][][] [X] [][][][][][][][][][][][][][][][][][][]
+
+
+ A               
+[X] [][][][][][][][][][][][][][][][][][][][][][][][][]
+
+
+
+
+                G
+[X][][][][][][] [] [][][][][][][][][][][][][][][][][][]
+
+
+
+
+
+
+
+
+
+
+
+E POR ASSIM VAI...
+
+
+
+
+
+
+
+
+
+
+
+
+''TRI'' --> É UMA TREE,
+                EM QUE CADA 1 DOS 
+
+
+                ___ NODES__ É UM __ ARRAY...
+
+
+
+
+
+                E, CADA 1 DE ESSES ARRAYS
+
+                É UM __  __ ARRAY__ DE POINTERS,
+
+                POINTERS _ A OUTROS NODES_...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... AGORA DIGAMOS QUE QUEREMOS 'CHECK IF HAGRID IS IN OUR LIST OF CONTACTS'...
+
+
+
+
+
+
+--> COMEÇARÍAMOS PELO 'H',
+
+    aí seguiríamos O pointer de 'H',
+
+    até o array de 'A'...
+
+
+
+
+
+
+
+
+--> ok... 
+
+
+
+
+
+
+
+
+
+
+
+--> A RAZÃO PARA ESSA COMPLEXIDADE TODA:
+
+
+
+''EVEN IF WE HAVE A BILLION NAMES IN MY PHONEBOOK,
+    I WILL STILL ONLY HAVE 
+    6 STEPS TO FIND OUT THAT HAGRID IS IN MY PHONEBOOK''...
+
+
+
+
+    --> OU SEJA,
+
+        O NÚMERO DE CARACTERES 
+        EM 'HAGRID'...
+
+
+
+
+
+    --> COM ISSO, FICAMOS COM 1 
+        RUNTIME CONSTANTE,
+
+        DE O(1)...
+
+
+    
+
+
+    -> E ERA ISSO QUE ESTÁVAMOS BUSCANDO...
+
+        É ESSA ESTRUTURA DE 'tries' 
+
+        QUE RESOLVE O NOSSO PROBLEMA...
+
+
+
+
+
+
+
+
+
+
+    -> 'TRI' --> TE DÁ O HOLY GRAIL DE 'LOOKUP' E 'INSERTION' TIMES, DE O(1)... isso pq NÃO DEPENDE DE O(n), e sim apenas depende do comprimento do name que vc está inputtando...
+
+
+
+
+
+
+
+    ---> O OBJETIVO DESTE DIA TODO,
+
+        CHEGAR AO 'O(1)'...
+
+
+        O CONSTANT TIME...
+
+
+
+
+
+
+    --> MAS É CLARO QUE TEMOS 1 TRADEOFF...
+
+
+
+
+
+
+
+
+    ---> O PRICE É MEMORY..
+
+
+
+
+    --> 'TRIES' SÃO BOAS,
+        MAS 
+
+        ''THEY ARE NOT ALL THAT''....
+
+
+
+
+
+
+
+
+    --> O PROBLEMA É...
+
+
+
+
+
+
+
+
+
+    ''DIGAMOS QUE VC TEM 2 PESSOAS 
+        NA SUA LISTA DE CONTATOS....
+
+        DANIEL 
+        E
+        DANIELLE'''..
+
+
+
+    
+
+    --> o problema é que 'daniel' retornaria 
+        TRUE
+
+
+        antes de 'DANIELLE',
+
+
+        e isso resultaria em 1 problema...
+
+
+
+    
+    --> ISSO PODE SER CONSERTADO NO CÓDIGO,
+
+        É UM PROBLEMA 'SOLVABLE'
+
+        MAS AINDA 
+
+
+        HÁ 1 PREÇO A SER PAGO,
+
+
+        POR ESSA PERFORMANCE AUMENTADA...
+
+
+
+
+
+
+
+    --> O PROBLEMA É REALMENTE 
+
+        A MEMÓRIA...
+
+
+        FICARÍAMOS COM DÚZIAS E DÚZIAS DE POINTERS...
+
+
+
+
+
+
+    -> ESTAMOS GASTANDO 1 MONTE DE BITS/BYTES...
+
+
+
+    1 monte de pointers estão sendo armazenados como 'NULL'...
+
+
+
+
+
+
+
+
+    -> ESTAMOS DESPERDIÇANDO QUANTIDADES ABSURDAS DE MEMÓRIA... VÁRIOS GB...
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+--> VC FICA COM GASTOS ABSURDOS DE MEMÓRIA...
+
+
+
+
+
+
+--> A PROPRIEDADE MAIS IMPORTANTE DE 1 ARRAY É CONTIGUIDADE...
+
+
+    MAS SE VC TEM CADA NODE CONTENDO UM ARRAY DE TAMANHO 26,
+
+    VC TEM QUE GASTAR A MEMÓRIA..
+
+
+
+
+
+
+
+
+
+
+--> QUER DIZER QUE ISSO PODE SER TEORICAMENTE 
+    EFETIVO/EFICIENTE,
+
+    MAS NO MUNDO REAL, PODE SER NADA EFETIVO/EFICIENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+CERTO...
+
+
+
+
+
+
+O PROFESSOR NOS MOSTRA MAIS ALGUNS EXEMPLOS DOS TIPOS DE PROBLEMAS 
+QUE PODEMOS RESOLVER COM DATA STRUCTURES...
+
+
+
+
+
+
+PQ VIMOS:
+
+
+1) ARRAYS 
+
+
+2) LINKED LISTS 
+
+
+3) TREES -> MELHOR DE AMBOS OS MUNDOS, ARRAYS E LINKED LISTS... MAS AINDA TEMOS QUE GASTAR MAIS ESPAÇO, COM POINTERS...
+
+
+4) HASHED TABLES --> FAZ MERGE TOGETHER DE 2 IDEIAS, ARRAYS E LINKED LISTS... E ISSO COMEÇA A FUNCIONAR (spell checker)...
+
+
+5) TRIES --> é um tipo de TREE, que é ótimo, mas vem a um grande custo (MEMORY COSTS)...
+
+
+
+
+
+
+
+
+
+
+
+
+-> OK... QEUR DIZER QUE, COM TODOS ESSES BUILDING BLOCKS A SUA DISPOSIÇÃO,
+    VC PODE OS UTILIZAR, ESSES LOW-LEVEL IMPLEMENTATION DETAILS,
+
+    PARA RESOLVER PROBLEMAS 'HIGHER LEVEL'...
+
+
+
+
+
+--> E ESSES PROBLEMAS 'HIGHER LEVEL' 
+
+    PODEM SER CHAMADOS DE 'ABSTRACT DATA STRUCTURES',
+
+    OU 
+
+    'ABSTRACT DATA TYPES'...
+
+
+
+
+
+
+
+
+
+
+
+ABSTRACT DATA STRUCTURE --> É UMA 'MENTAL STRUCTURE',
+                            QUE PODEMOS IMAGINAR,
+
+                            QUE REFLETE ALGUM PROBLEMA DO MUNDO REAL,
+
+                            QUE É IMPLEMENTADA POR MEIO DA UTILIZAÇÃO 
+                            DE ALGUMA OUTRA DATA STRUCTURE....
+
+
+
+
+
+
+
+                    
+
+
+                    ABSTRAÇÃO -> PEGAR DETALHES DE IMPLEMENTAÇÃO 
+                                    LOWER,
+
+                                    E AÍ SIMPLIFICAR,
+
+                                    PARA RESOLVER PROBLEMAS DE ORDEM MAIOR, HIGHER LEVEL...
+
+
+
+
+
+
+
+
+
+QUEUES --> É UM TIPO DE ABSTRACT DATA STRUCTURE __ COMUM__...
+
+
+
+
+
+
+
+
+
+QUEUE --> É UMA DATA STRUCTURE QUE TEM CERTAS PROPRIEDADES...
+
+
+
+
+
+
+
+
+QUEUES TEM ESTAS PROPRIEDADES:
+
+
+
+
+1) FIFO 
+
+
+    ''FIFO'' --> FIRST IN, FIRST OUT...
+
+    QUER DIZER QUE A PRIMEIRA PESSOA DA FILA É A 'PRIMEIRA A SAIR' (a primeira a ser atendida)..
+
+
+
+2) TEM DUAS OPERAÇÕES ASSOCIADAS  A ELA... SÃO ELAS:
+
+    A) ENQUEUE 
+
+    B) DEQUEUE 
+
+
+
+
+
+
+    ELAS TAMBÉM PODEM SER CHAMADAS DE 'ADD' OU 'REMOVE', OU WHATEVER...
+
+
+
+
+
+
+
+    ENQUEUE --> ACONTECE QUANDO VC É ADICIONADO À FILA... VC TEM QUE ESPERAR...
+
+
+
+    DEQUEUE -> ACONTECE QUANDO VC É ATENDIDO, E SAI DA FILA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+FIFO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS COMO VC PODE IMPLEMENTAR UMA QUEUE,
+    PORTANTO?
+
+
+
+
+
+
+
+--> A VANTAGEM DE ISSO SER UMA ABSTRACT DATA STRUCTURE 
+    É JUSTAMENTE QUE 
+    ISSO 
+
+    É UMA ABSTRACTION,
+
+    VC PODE IMPLEMENTAR ISSO DE DIFERENTES MANEIRAS...
+
+
+
+
+
+
+
+    VC PODERIA USAR:
+
+
+    1) ARRAY 
+
+
+    2) LINKED LIST ...
+
+
+
+
+    -> QUALQUER UMA DESSAS PODERIA FUNCIONAR...
+
+
+
+
+
+
+
+
+
+
+----> OK... mas se vc traduzisse 1 fila para 1 array,
+    qual seria o downside...
+     
+
+     o downside seria 
+
+     que ADICIONAR NOVOS ELEMENTOS, NA QUEUE,
+
+
+     SERIA BEM LENTO...
+
+
+
+
+
+     E TIRAR PESSOAS DA FILA DEIXARIA BURACOS NA FILA,
+    E O TAMANHO DO ARRAY NÃO SERIA RESIZED...
+
+
+
+
+    ''YOU GET EMPTY SPACES AT THE BEGINNING OF THE LINE,
+        BUT YOU STILL DON'T HAVE ROOM AT THE END OF THE LINE, FOR NEW PEOPLE''...
+
+
+
+    --> E FICARIA BEM INEFICIENTE, A CÓPIA DOS VALUES...
+
+        VC FICARIA COM UM RUNTIME DE 'O(n)'...
+
+
+
+
+
+
+
+
+
+--> OK... E QUANTO A LINKED LISTS?
+
+
+
+
+
+
+
+-> A LINKED LIST TE DEIXARIA ADICIONAR NOVOS ELEMENTOS/PESSOAS NA FILA...
+    NÃO TEM ESSA LIMITAÇÃO DOS ARRAYS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS HÁ OUTROS ABSTRACT DATA STRUCTURES, ALÉM DE QUEUES... COMO STACKS...
+
+
+
+
+
+
+
+
+
+STACKS:
+
+
+
+SÃO OUTRA ESTRUTURA QUE PODE SER IMPLEMENTADA COM ARRAYS, LINKED LISTS, ETC...
+
+
+
+
+
+
+
+
+
+
+
+-> MAS A PROPRIEDADE PRINCIPAL DE STACKS É DIFERENTE... É 
+
+'LIFO',
+
+
+'LAST IN, FIRST OUT'...
+
+
+
+
+
+
+
+BASTA PENSAR EM 1 MONTE DE PRATOS EM 1 CAFETERIA...
+
+
+
+
+
+
+
+
+
+AS BANDEIJAS FICAM EMPILHADAS TIPO ASSIM 
+
+
+-
+-
+-
+-
+-
+-
+- 
+
+
+
+
+
+
+
+
+-> E O PRATO MAIS DE CIMA 
+
+É 
+
+O PRIMEIRO A SAIR...
+
+
+É POR ISSO QUE 'THE LAST IN IS THE FIRST __ TO __ GET OUT'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+e stacks são úteis A DEPENDER DO CONTEXTO... TANTO NA VIDA REAL, COMO NO CÓDIGO...
+
+
+
+
+
+
+
+
+
+-> CERTO... 
+
+
+E AS OPERATIONS SUPORTADAS POR STACKS SÃO ESSENCIALMENTE:
+
+
+1) 'PUSH' 
+
+
+2) 'POP' 
+
+
+
+
+
+
+
+
+--> como arrays do javascript..
+
+
+
+
+
+
+
+
+
+
+
+
+TEMOS OUTRA DATA STRUCTURE,
+
+QUE É 'DICTIONARIES'...
+
+
+
+
+
+
+
+
+
+
+
+
+
+DICTIONARY --> É UM ABSTRACT DATA TYPE...
+
+
+
+
+
+
+
+
+-> É UM ABSTRACT DATA TYPE,
+
+QUE PODE SER IMPLEMENTADO COM 
+
+ARRAYS, LINKED LISTS, HASH TABLES, TRIES, ETC,
+
+
+
+QUE _ TE DEIXA 
+
+
+
+ASSOCIAR 
+
+
+_KEYS__ COM __ VALUES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> É POR ISSO QUE O NOME É 'DICTIONARY'...
+
+
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+
+
+
+helicóptero: "veículo voador com hélice"...
+
+
+
+
+
+
+
+
+
+
+
+
+
+ELE ASSOCIA KEYS COM VALUES...
+
+
+
+
+
+
+
+
+E DICTS GERALMENTE ESTÃO AO NOSSO REDOR...
+
+
+
+
+
+
+
+
+
+MAS VC PODE IMAGINAR CORNER CASES 
+
+EM QUE ESSE DICTIONARY NÃO 
+
+É FAIL-PROOF...
+
+
+
+
+
+
+
+HÁ CASES/LIMITAÇÕES, EM QUE ESSE SISTEMA, DE DICTS,
+
+
+PODE 'BREAK DOWN'...
+
+
+
+
+
+
+
+
+
+
+PROBLEMA:
+
+''TWO PEOPLE HAVE THE SAME NAME''...
+
+
+
+
+
+
+
+
+
+TRADEOFFS BETWEEN TIME AND SPACE...
+
+
+
+
+
+
+
+
+
+
+FIFO VS LIFO...
+
+
+
+
+
